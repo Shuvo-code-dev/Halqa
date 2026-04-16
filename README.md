@@ -11,7 +11,7 @@ This project follows a dual-licensing structure to protect both the code and the
 * **Software & Source Code**: Licensed under the [GNU General Public License v3.0 (GPL-3.0)](LICENSE).  
     *You are free to use, study, and share the code, provided you keep it open-source.*
 
-* **Documentation, Images & Media**: Licensed under [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](CCBY-NC4.0LICENSE).  
+* **Documentation, Images & Media**: Licensed under [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://github.com/Shuvo-code-dev/Halqa/blob/main/CC%20BY-NC%204.0%20LICENSE).  
     *You may share and adapt these materials for non-commercial purposes, with proper attribution.*
 
 ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
