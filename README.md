@@ -43,4 +43,4 @@ This project follows a dual-licensing structure to protect both the code and the
   *You may share and adapt these materials for non-commercial purposes, with proper attribution.*
 
 ---
-*Created with ❤️ by the **Halqa Community**.*Powered by **Oi Applications**.*
+*Created with ❤️ by the **Halqa Community**. *Powered by **Oi Applications**.*
