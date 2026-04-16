@@ -24,8 +24,8 @@
 - [ ] Mobile App Development
 
 ## 🛠️ Built With
-- **Language/Framework:** [Mention your tech stack, e.g., Markdown, Next.js, etc.]
-- **Deployment:** [e.g., GitHub Pages / Vercel]
+- **Version Control:** Git & GitHub
+- **Deployment:** Vercel
 
 ## 🤝 Contributing
 We love contributors! If you want to add a resource, fix a roadmap, or improve the code:
