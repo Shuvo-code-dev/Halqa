@@ -25,7 +25,7 @@
 
 ## 🛠️ Built With
 - **Version Control:** Git & GitHub
-- **Deployment:** Vercel
+- **Content:** Markdown
 
 ## 🤝 Contributing
 We love contributors! If you want to add a resource, fix a roadmap, or improve the code:
