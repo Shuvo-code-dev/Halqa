@@ -70,6 +70,51 @@ export default function Roadmaps() {
             <span className={styles.step}>Flutter / React Native</span>
           </div>
         </Link>
+
+        <Link href="/roadmaps/linux" className={`${styles.card} glass-panel`}>
+          <div className={styles.cardHeader}>
+            <h2 className={styles.domain}>Linux & DevOps</h2>
+            <span className={`${styles.status} ${styles.active}`}>Active</span>
+          </div>
+          <p className={styles.description}>
+            The engine room. Master the command line, server security, containers, and deployment automation.
+          </p>
+          <div className={styles.steps}>
+            <span className={styles.step}>Linux Terminal</span>
+            <span className={styles.step}>Docker</span>
+            <span className={styles.step}>CI/CD</span>
+          </div>
+        </Link>
+
+        <Link href="/roadmaps/apple" className={`${styles.card} glass-panel`}>
+          <div className={styles.cardHeader}>
+            <h2 className={styles.domain}>Apple Ecosystem</h2>
+            <span className={`${styles.status} ${styles.active}`}>Active</span>
+          </div>
+          <p className={styles.description}>
+            Design and build high-performance native apps for iOS and macOS using Swift and SwiftUI.
+          </p>
+          <div className={styles.steps}>
+            <span className={styles.step}>Swift</span>
+            <span className={styles.step}>SwiftUI</span>
+            <span className={styles.step}>App Store</span>
+          </div>
+        </Link>
+
+        <Link href="/roadmaps/cs" className={`${styles.card} glass-panel`}>
+          <div className={styles.cardHeader}>
+            <h2 className={styles.domain}>CS Fundamentals</h2>
+            <span className={`${styles.status} ${styles.active}`}>Active</span>
+          </div>
+          <p className={styles.description}>
+            The foundation of computer science. Understand data structures, algorithms, and binary logic.
+          </p>
+          <div className={styles.steps}>
+            <span className={styles.step}>Algorithms</span>
+            <span className={styles.step}>Data Structures</span>
+            <span className={styles.step}>OS Basics</span>
+          </div>
+        </Link>
       </div>
     </div>
   );
