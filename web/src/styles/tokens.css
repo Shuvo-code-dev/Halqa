@@ -1,0 +1,36 @@
+:root {
+  /* Colors - Deep Black Base */
+  --bg-primary: #020202;
+  --bg-secondary: #0d0d0d;
+  --bg-glass: rgba(13, 13, 13, 0.6);
+  --bg-glass-hover: rgba(26, 26, 26, 0.8);
+  
+  /* Accent - Liquid Teal */
+  --accent: #2dd4bf;
+  --accent-glow: rgba(45, 212, 191, 0.2);
+  --accent-muted: rgba(45, 212, 191, 0.1);
+  
+  /* Text & Typography */
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  
+  /* Borders & Blur */
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-glass-bright: rgba(255, 255, 255, 0.15);
+  --radius-card: 16px;
+  --radius-button: 100px;
+  --blur-standard: 12px;
+  
+  /* Layout */
+  --max-width: 1200px;
+  --nav-height: 72px;
+  --sidebar-width: 280px;
+  
+  /* Z-Index */
+  --z-base: 1;
+  --z-nav: 100;
+  --z-modal: 1000;
+  --z-toast: 2000;
+}

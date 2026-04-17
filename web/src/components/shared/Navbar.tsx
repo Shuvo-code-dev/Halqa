@@ -1,11 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { gsap } from '@lib/gsap';
 import Link from 'next/link';
-import styles from './layout.module.css';
-
+import { useEffect, useRef } from 'react';
 import LanguageSwitcher from './LanguageSwitcher';
+import styles from './layout.module.css';
 
 export default function Navbar() {
   const navRef = useRef<HTMLElement>(null);

@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { gsap } from '@lib/gsap';
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
 import styles from './page.module.css';
 
 export default function Roadmaps() {

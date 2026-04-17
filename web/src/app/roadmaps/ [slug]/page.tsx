@@ -1,83 +1,60 @@
 'use client';
 
 import { useState, useMemo, useEffect, useRef } from 'react';
+import { useParams, notFound } from 'next/navigation';
 import Link from 'next/link';
-import styles from '../frontend/page.module.css';
+import { gsap } from '@lib/gsap';
 import { useUser } from '@/context/UserContext';
 import { useLanguage } from '@/context/LanguageContext';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SharedSidebar from '@/components/SharedSidebar';
+import { ROADMAP_REGISTRY } from '@lib/roadmaps/data';
+import SharedSidebar from '@shared/SharedSidebar';
+import styles from '../roadmap.module.css';
 
-const STAGES = [
-  {
-    id: '01',
-    title: 'Mobile Fundamentals',
-    description: 'Understanding the mobile paradigm. Viewports, Touch Targets, and Sensors.',
-    why: 'Mobile development requires a different mindset. Screen real-estate is limited, and users interact primarily with touch, not cursors.',
-    topics: ['Mobile Viewports', 'Touch Events', 'Performance Optimization', 'Offline Support'],
-    guide: 'Develop a mobile-first UI component that handles both swipe and long-press interactions using the Pointer Events API.',
-    resource: 'https://developer.mozilla.org/en-US/docs/Web/API/Touch_events',
-    related: { label: 'Oi QR Scanner', link: '/projects', id: 'oi-qr', type: 'Project' }
-  },
-  {
-    id: '02',
-    title: 'Cross-Platform Frameworks',
-    description: 'Build for both iOS and Android with React Native and Expo.',
-    why: 'Write once, run anywhere. Cross-platform tools allow you to reach 100% of the mobile market with a single codebase.',
-    topics: ['React Native Basics', 'Expo Ecosystem', 'Native Modules', 'Styling in RN'],
-    guide: 'Set up a basic Expo project. Create a screen that shows a list of items fetched from an API, with a "Pull to Refresh" feature.',
-    resource: 'https://reactnative.dev/docs/getting-started',
-    related: { label: 'Oi Wallet', link: '/projects', id: 'oi-wallet', type: 'Project' }
-  },
-  {
-    id: '03',
-    title: 'Progressive Web Apps (PWA)',
-    description: 'Web apps that feel like native apps. Service Workers and App Manifests.',
-    why: 'PWAs are the bridge between web and mobile. They allow for installation, offline access, and push notifications without the app store fees.',
-    topics: ['Service Workers', 'Caching Strategies', 'Web App Manifest', 'Push API'],
-    guide: 'Convert a simple website into a PWA. Ensure it scores 100/100 on the Lighthouse PWA audit and works without internet.',
-    resource: 'https://web.dev/progressive-web-apps/'
-  },
-  {
-    id: '04',
-    title: 'Mobile UX & UI Design',
-    description: 'Mastering the ergonomics of thumb-driven interfaces.',
-    why: 'A mobile app is only as good as its UX. Ergonomics and micro-interactions determine whether a user stays or deletes your app.',
-    topics: ['Ergonomic Design', 'Gesture Navigation', 'Mobile Typography', 'Haptic Feedback'],
-    guide: 'Audit a popular mobile app. Identify three areas where gesture navigation could be improved and sketch your solutions.',
-    resource: 'https://material.io/design/platform-guidance/android-navigation.html'
+export default function RoadmapPage() {
+  const { slug } = useParams();
+  const roadmap = ROADMAP_REGISTRY[slug as string];
+  
+  if (!roadmap) {
+    notFound();
   }
-];
 
-export default function MobileRoadmap() {
   const { toggleStageCompletion, isStageCompleted, completedStages } = useUser();
   const { t } = useLanguage();
   const [expandedStage, setExpandedStage] = useState<number | null>(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  const roadmapPath = '/roadmaps/mobile';
+  const roadmapPath = `/roadmaps/${slug}`;
 
+  // GSAP Animations with high-performance cleanup
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Stage Reveals
+      // Stage Reveals with scroll trigger
       const stages = gsap.utils.toArray(`.${styles.stage}`);
       stages.forEach((stage: any) => {
         gsap.from(stage, {
           scrollTrigger: {
             trigger: stage,
-            start: "top 90%",
+            start: "top 92%",
             toggleActions: "play none none none"
           },
           y: 30,
           opacity: 0,
           duration: 0.8,
-          ease: "back.out(1.7)"
+          ease: "back.out(1.4)"
         });
+      });
+
+      // Entry Stagger
+      gsap.from(`header > *`, {
+        y: 20,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "expo.out"
       });
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [slug]);
 
   const toggleStage = (index: number) => {
     setExpandedStage(expandedStage === index ? null : index);
@@ -89,15 +66,15 @@ export default function MobileRoadmap() {
   };
 
   const sidebarItems = useMemo(() => {
-    return STAGES.map(s => ({
-        id: s.id,
-        label: s.title,
-        icon: isStageCompleted(roadmapPath, s.id) ? '✅' : '⏳'
+    return roadmap.stages.map(s => ({
+      id: s.id,
+      label: s.title,
+      icon: isStageCompleted(roadmapPath, s.id) ? '✅' : '⏳'
     }));
-  }, [completedStages]);
+  }, [completedStages, roadmap, slug]);
 
   const handleSidebarClick = (id: string) => {
-    const stageIdx = STAGES.findIndex(s => s.id === id);
+    const stageIdx = roadmap.stages.findIndex(s => s.id === id);
     if (stageIdx !== -1) setExpandedStage(stageIdx);
     
     const el = document.getElementById(`stage-${id}`);
@@ -107,29 +84,27 @@ export default function MobileRoadmap() {
   return (
     <div className="module-layout" ref={containerRef}>
       <SharedSidebar 
-        title={t('roadmaps.mobile.title') || 'Mobile <span class="text-gradient">Innovation</span>'}
-        subtitle="The future of software is portable."
+        title={roadmap.title}
+        subtitle={roadmap.subtitle}
         searchTerm=""
         onSearchChange={() => {}}
         items={sidebarItems}
-        activeItemId={expandedStage !== null ? STAGES[expandedStage].id : ''}
+        activeItemId={expandedStage !== null ? roadmap.stages[expandedStage].id : ''}
         onItemClick={handleSidebarClick}
         itemTypeLabel="Journey Stages"
       />
 
       <main className="module-content">
         <header className={styles.header}>
-            <Link href="/roadmaps" className={styles.backLink}>
-                &larr; {t('common.backToRoadmaps') || 'Back to Roadmaps'}
-            </Link>
-            <h1 className={styles.title}>Mobile <span className="text-gradient">Innovation</span></h1>
-            <p className={styles.subtitle}>
-            The future of software is portable. Master cross-platform development and high-performance native experiences.
-            </p>
+          <Link href="/roadmaps" className={styles.backLink}>
+            &larr; {t('common.backToRoadmaps') || 'Back to Roadmaps'}
+          </Link>
+          <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: roadmap.title }} />
+          <p className={styles.subtitle}>{roadmap.subtitle}</p>
         </header>
 
         <div className={styles.timeline}>
-          {STAGES.map((stage, index) => {
+          {roadmap.stages.map((stage, index) => {
             const isDone = isStageCompleted(roadmapPath, stage.id);
             
             return (
@@ -194,7 +169,7 @@ export default function MobileRoadmap() {
                     <div className={styles.proTip} onClick={(e) => e.stopPropagation()}>
                       <div className={styles.proTipHeader}>🧪 Ecosystem Integration</div>
                       <p className={styles.proTipText}>
-                        Ready to see this in a real app? Check out <strong>{stage.related.label}</strong> in our <Link href={stage.related.link} className={styles.proTipLink}>{stage.related.type}</Link>.
+                        Ready to see this in action? Check out <strong>{stage.related.label}</strong> in our <Link href={stage.related.link} className={styles.proTipLink}>{stage.related.type}</Link>.
                       </p>
                     </div>
                   )}
@@ -215,9 +190,9 @@ export default function MobileRoadmap() {
           })}
 
           <div className={styles.completion}>
-            <div className={styles.completionIcon}>🏆</div>
-            <h3 className={styles.completionTitle}>Mobile Masteryed</h3>
-            <p className={styles.completionText}>You can now build premium cross-platform and native experiences.</p>
+            <div className={styles.completionIcon}>{roadmap.icon}</div>
+            <h3 className={styles.completionTitle}>{roadmap.completionTitle}</h3>
+            <p className={styles.completionText}>{roadmap.completionText}</p>
           </div>
         </div>
       </main>

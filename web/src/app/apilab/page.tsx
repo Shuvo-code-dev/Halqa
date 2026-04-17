@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useRef, useMemo } from 'react';
 import styles from './page.module.css';
-import { API_REGISTRY, API_CATEGORIES, ApiEntry } from '@/lib/apilab-registry';
-import gsap from 'gsap';
+import { API_REGISTRY, API_CATEGORIES, ApiEntry } from '@lib/apilab-registry';
+import { gsap } from '@lib/gsap';
 import { useLanguage } from '@/context/LanguageContext';
-import SharedSidebar from '@/components/SharedSidebar';
+import SharedSidebar from '@shared/SharedSidebar';
 
 const ITEMS_PER_PAGE = 12;
 

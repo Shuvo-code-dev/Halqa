@@ -2,7 +2,7 @@
 
 import { useLanguage } from '@/context/LanguageContext';
 import { useUser } from '@/context/UserContext';
-import { SUPPORTED_LANGUAGES } from '@/lib/languages';
+import { SUPPORTED_LANGUAGES } from '@lib/languages';
 import styles from './StatusBar.module.css';
 
 export default function StatusBar() {

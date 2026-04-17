@@ -3,14 +3,14 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import styles from './page.module.css';
-import { CODELAB_REGISTRY } from '@/lib/codelab-registry';
+import { CODELAB_REGISTRY } from '@lib/codelab-registry';
 import { useLanguage } from '@/context/LanguageContext';
 import { useUser } from '@/context/UserContext';
-import gsap from 'gsap';
-import SharedSidebar from '@/components/SharedSidebar';
+import { gsap } from '@lib/gsap';
+import SharedSidebar from '@shared/SharedSidebar';
 
 const DynamicPreview = ({ componentName, paused }: { componentName: string, paused: boolean }) => {
-  const Component = useMemo(() => dynamic<{ paused: boolean }>(() => import(`@/components/codelab/presets/${componentName}`), {
+  const Component = useMemo(() => dynamic<{ paused: boolean }>(() => import(`@modules/codelab/presets/${componentName}`), {
     ssr: false,
     loading: () => <div className={styles.loader}>Loading Lab...</div>
   }), [componentName]);

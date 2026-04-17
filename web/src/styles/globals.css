@@ -1,25 +1,5 @@
-:root {
-  /* Deep Black Backgrounds */
-  --bg-primary: #020202;
-  --bg-secondary: #0d0d0d;
-  --bg-glass: rgba(13, 13, 13, 0.6);
-  --bg-glass-hover: rgba(26, 26, 26, 0.8);
-  
-  /* Glassmorphism Borders */
-  --border-glass: rgba(255, 255, 255, 0.08);
-  
-  /* Text */
-  --text-primary: #ffffff;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
-  
-  /* Muted Neon Accent */
-  --accent: #2dd4bf; /* Muted Teal */
-  --accent-glow: rgba(45, 212, 191, 0.2);
+@import "./tokens.css";
 
-  /* Layout */
-  --max-width: 1200px;
-}
 
 html, body {
   scroll-behavior: smooth;

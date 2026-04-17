@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import styles from "@/components/layout.module.css";
+import "@styles/globals.css";
+import Navbar from "@shared/Navbar";
+import Footer from "@shared/Footer";
+import styles from "@shared/layout.module.css";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -40,12 +40,12 @@ export const metadata: Metadata = {
 import { LanguageProvider } from "@/context/LanguageContext";
 import { UserProvider } from "@/context/UserContext";
 import { AIProvider } from "@/context/AIContext";
-import GsapRegistry from "@/components/GsapRegistry";
-import AIAgent from "@/components/AIAgent";
-import MeshBackground from "@/components/MeshBackground";
-import QuickAccess from "@/components/QuickAccess";
-import StatusBar from "@/components/StatusBar";
-import NoiseOverlay from "@/components/NoiseOverlay";
+import GsapRegistry from "@shared/GsapRegistry";
+import AIAgent from "@shared/AIAgent";
+import MeshBackground from "@shared/MeshBackground";
+import QuickAccess from "@shared/QuickAccess";
+import StatusBar from "@shared/StatusBar";
+import NoiseOverlay from "@shared/NoiseOverlay";
 
 export default function RootLayout({
   children,
