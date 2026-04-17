@@ -39,7 +39,9 @@ export const metadata: Metadata = {
 
 import { LanguageProvider } from "@/context/LanguageContext";
 import { UserProvider } from "@/context/UserContext";
+import { AIProvider } from "@/context/AIContext";
 import GsapRegistry from "@/components/GsapRegistry";
+import AIAgent from "@/components/AIAgent";
 
 export default function RootLayout({
   children,
@@ -51,13 +53,16 @@ export default function RootLayout({
       <body>
         <LanguageProvider>
           <UserProvider>
-            <div className={styles.mainLayout}>
-              <Navbar />
-              <main className={styles.mainContent}>
-                {children}
-              </main>
-              <Footer />
-            </div>
+            <AIProvider>
+              <div className={styles.mainLayout}>
+                <Navbar />
+                <main className={styles.mainContent}>
+                  {children}
+                </main>
+                <Footer />
+                <AIAgent />
+              </div>
+            </AIProvider>
           </UserProvider>
         </LanguageProvider>
       </body>
