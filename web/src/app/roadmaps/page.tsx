@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './page.module.css';
 
 export default function Roadmaps() {
@@ -11,10 +12,10 @@ export default function Roadmaps() {
       </header>
       
       <div className={styles.grid}>
-        <div className={`${styles.card} glass-panel`}>
+        <Link href="/roadmaps/frontend" className={`${styles.card} glass-panel`}>
           <div className={styles.cardHeader}>
             <h2 className={styles.domain}>Frontend</h2>
-            <span className={`${styles.status} ${styles.soon}`}>Coming Soon</span>
+            <span className={`${styles.status} ${styles.active}`}>Active</span>
           </div>
           <p className={styles.description}>
             Master HTML, CSS, JavaScript, and React. Build beautiful user interfaces and responsive web applications.
@@ -24,7 +25,7 @@ export default function Roadmaps() {
             <span className={styles.step}>JavaScript</span>
             <span className={styles.step}>React</span>
           </div>
-        </div>
+        </Link>
 
         <div className={`${styles.card} glass-panel`}>
           <div className={styles.cardHeader}>
