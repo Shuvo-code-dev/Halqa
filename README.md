@@ -98,4 +98,4 @@ npm run dev
 
 <br />
 
-> **License:** MIT © Shuvo-Code-Dev 2026. *Designed for the engineering elite.*
+Made with ❤️ by **Halqa Community**. Powerd by **Oi Applications**
