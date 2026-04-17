@@ -1,12 +1,67 @@
-.container {
+/* Dashboard Layout Shell */
+.dashboardContainer {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 2rem 6rem;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
   animation: fadeIn 0.5s ease-out;
 }
 
+/* Sidebar Styling */
+.sidebar {
+  position: sticky;
+  top: 8rem;
+  width: 250px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-right: 1px solid var(--border-glass);
+  padding-right: 1.5rem;
+}
+
+.sidebarTitle {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.filterBtn {
+  text-align: left;
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.filterBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.filterBtn.active {
+  background: var(--accent-glow);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Main Content Area */
+.mainContent {
+  flex-grow: 1;
+  min-width: 0;
+}
+
 .header {
-  text-align: center;
   margin-bottom: 4rem;
 }
 
@@ -22,24 +77,27 @@
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
   max-width: 600px;
-  margin: 0 auto;
   line-height: 1.6;
+}
+
+.categorySection {
+  margin-bottom: 4rem;
 }
 
 .categoryTitle {
   font-size: 1.8rem;
   color: var(--text-primary);
-  margin: 3rem 0 1.5rem;
+  margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border-glass);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
@@ -237,7 +295,7 @@
   opacity: 1;
 }
 
-/* DEMO STYLES */
+/* --- DEMO STYLES (Phase 1 & 2) --- */
 
 /* Fog Background */
 .fogContainer {
@@ -246,7 +304,6 @@
   overflow: hidden;
   background: #020202;
 }
-
 .fogBlob {
   position: absolute;
   filter: blur(40px);
@@ -254,7 +311,6 @@
   opacity: 0.5;
   animation: float 8s ease-in-out infinite;
 }
-
 .fogBlob1 {
   background: #2dd4bf;
   width: 150px;
@@ -262,7 +318,6 @@
   top: -20px;
   left: -20px;
 }
-
 .fogBlob2 {
   background: #7c3aed;
   width: 200px;
@@ -271,7 +326,6 @@
   right: -20px;
   animation-delay: -4s;
 }
-
 .fogGlass {
   position: absolute;
   inset: 0;
@@ -279,7 +333,6 @@
   -webkit-backdrop-filter: blur(60px);
   z-index: 1;
 }
-
 .fogText {
   position: relative;
   z-index: 2;
@@ -287,11 +340,7 @@
   font-weight: 700;
   color: #fff;
 }
-
-.paused {
-  animation-play-state: paused !important;
-}
-
+.paused { animation-play-state: paused !important; }
 @keyframes float {
   0%, 100% { transform: translateY(0) scale(1); }
   50% { transform: translateY(20px) scale(1.1); }
@@ -309,14 +358,9 @@
   -webkit-text-fill-color: transparent;
   animation: shine 3s linear infinite;
 }
+@keyframes shine { to { background-position: 200% center; } }
 
-@keyframes shine {
-  to {
-    background-position: 200% center;
-  }
-}
-
-/* Modern Bento */
+/* Modern Bento (Phase 1) */
 .bentoGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -324,7 +368,6 @@
   gap: 0.5rem;
   width: 100%;
 }
-
 .bentoItem {
   background: rgba(255,255,255,0.05);
   border-radius: 8px;
@@ -335,11 +378,10 @@
   font-size: 0.8rem;
   color: #a1a1aa;
 }
-
 .bentoWide { grid-column: span 2; }
 .bentoTall { grid-row: span 2; }
 
-/* Existing Basics */
+/* Demo Halqa Btn (Legacy Phase 1) */
 .demoHalqaBtn {
   background: #000;
   color: var(--text-primary);
@@ -352,14 +394,221 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .demoHalqaBtn:hover {
   border-color: var(--accent);
   box-shadow: 0 0 15px var(--accent-glow);
   transform: translateY(-1px);
 }
 
-@media (max-width: 768px) {
-  .title { font-size: 2.5rem; }
-  .grid { grid-template-columns: 1fr; }
+/* ============================
+   PHASE 2 PREMIUM COMPONENTS
+   ============================ */
+
+/* Apple-Style Bento Grid */
+.appleBento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 150px 150px;
+  gap: 12px;
+  width: 100%;
+  padding: 1rem;
+}
+.appleBentoCard {
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.3s ease;
+  cursor: crosshair;
+}
+.appleBentoCard:hover {
+  transform: scale(0.98);
+  background: rgba(30, 30, 30, 0.8);
+}
+.appleBentoFeature {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: linear-gradient(145deg, rgba(30,30,30,0.9), rgba(10,10,10,0.9));
+}
+.appleBentoText {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.appleBentoSub {
+  color: #71717a;
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+/* Infinite Logo Marquee */
+.marqueeContainer {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  padding: 2rem 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.02) 20%, rgba(255,255,255,0.02) 80%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+.marqueeTrack {
+  display: flex;
+  gap: 3rem;
+  padding-right: 3rem;
+  animation: scrollMarquee 15s linear infinite;
+  min-width: 100%;
+}
+.marqueeTrack.paused {
+  animation-play-state: paused;
+}
+.marqueeItem {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #3f3f46;
+  white-space: nowrap;
+}
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Floating macOS Dock */
+.dockContainer {
+  position: absolute;
+  bottom: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 8px 12px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+.dockIconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.dockIcon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #3f3f46, #18181b);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  origin: bottom;
+}
+
+/* Command Palette UI */
+.cmdModal {
+  width: 380px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+}
+.cmdInputWrap {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cmdInputWrap svg {
+  color: #71717a;
+}
+.cmdInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  width: 100%;
+}
+.cmdInput::placeholder { color: #52525b; }
+.cmdList {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.cmdItem {
+  padding: 0.75rem 1rem;
+  color: #a1a1aa;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.cmdItem.active {
+  background: var(--accent-glow);
+  color: var(--accent);
+}
+.cmdHotKey {
+  margin-left: auto;
+  font-size: 0.7rem;
+  background: #27272a;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #71717a;
+  font-family: monospace;
+}
+
+/* Slot Counter */
+.counterWrap {
+  display: flex;
+  height: 60px;
+  overflow: hidden;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent);
+  text-shadow: 0 0 20px var(--accent-glow);
+  line-height: 60px;
+}
+.counterColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media (max-width: 900px) {
+  .dashboardContainer {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+  .sidebar {
+    position: relative;
+    top: 0;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-glass);
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .filterBtn {
+    white-space: nowrap;
+  }
 }

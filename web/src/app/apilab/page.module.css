@@ -1,0 +1,296 @@
+.dashboardContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 2rem 6rem;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.sidebar {
+  position: sticky;
+  top: 8rem;
+  width: 250px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-right: 1px solid var(--border-glass);
+  padding-right: 1.5rem;
+}
+
+.sidebarTitle {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.filterBtn {
+  text-align: left;
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.filterBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.filterBtn.active {
+  background: var(--accent-glow);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.mainContent {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.header {
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.categorySection {
+  margin-bottom: 4rem;
+}
+
+.categoryTitle {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(10, 10, 12, 0.4);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255,255,255, 0.15);
+}
+
+.cardBody {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cardDesc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  letter-spacing: 0.02em;
+}
+
+.badgeAuth { background: rgba(139, 92, 246, 0.1); color: #a78bfa; border: 1px solid rgba(167, 139, 250, 0.2); }
+.badgeHttpsYes { background: rgba(52, 211, 153, 0.1); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.2); }
+.badgeHttpsNo { background: rgba(248, 113, 113, 0.1); color: #f87171; border: 1px solid rgba(248, 113, 113, 0.2); }
+.badgeCorsYes { background: rgba(96, 165, 250, 0.1); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.2); }
+.badgeCorsNo { background: rgba(251, 146, 60, 0.1); color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.2); }
+.badgeCorsUnknown { background: rgba(156, 163, 175, 0.1); color: #9ca3af; border: 1px solid rgba(156, 163, 175, 0.2); }
+
+.actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.actionBtn {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  padding: 0.6rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.actionBtnPrimary {
+  background: rgba(45, 212, 191, 0.1);
+  color: var(--accent);
+  border-color: rgba(45, 212, 191, 0.2);
+}
+
+.actionBtn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.actionBtnPrimary:hover {
+  background: rgba(45, 212, 191, 0.2);
+  color: var(--accent);
+}
+
+.viewContainer {
+  background: #000;
+  border-top: 1px solid var(--border-glass);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.viewContainer.open {
+  max-height: 800px;
+}
+
+.pane {
+  padding: 1.5rem;
+  display: block;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.schemaHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.schemaTitle {
+  font-size: 0.85rem;
+  color: #71717a;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pre {
+  margin: 0;
+  font-family: 'Fira Code', Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #e2e8f0;
+  white-space: pre-wrap;
+}
+
+/* Syntax Highlighting */
+.jsonKey { color: #e06c75; }
+.jsonString { color: #98c379; }
+.jsonNumber { color: #d19a66; }
+.jsonBoolean { color: #c678dd; }
+.jsonNull { color: #56b6c2; }
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1000;
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .dashboardContainer {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+  .sidebar {
+    position: relative;
+    top: 0;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-glass);
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .filterBtn {
+    white-space: nowrap;
+  }
+}
