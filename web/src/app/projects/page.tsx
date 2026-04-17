@@ -48,13 +48,71 @@ const BLUEPRINTS = [
 
 export default function Projects() {
   const [openDrawer, setOpenDrawer] = useState<string | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Header Animation
+      gsap.from(`.${styles.header} > *`, {
+        y: 20,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "expo.out",
+      });
+
+      // Grid Animation
+      gsap.from(`.${styles.card}`, {
+        y: 30,
+        opacity: 0,
+        stagger: 0.05,
+        duration: 1,
+        ease: "expo.out",
+        delay: 0.2,
+      });
+
+      // Parallax Mouse Effect
+      const cards = gsap.utils.toArray(`.${styles.card}`);
+      cards.forEach((card: any) => {
+        const speed = 20; // max px offset
+        
+        card.addEventListener('mousemove', (e: MouseEvent) => {
+          const { left, top, width, height } = card.getBoundingClientRect();
+          const x = (e.clientX - left) / width - 0.5;
+          const y = (e.clientY - top) / height - 0.5;
+
+          gsap.to(card, {
+            x: x * speed,
+            y: y * speed,
+            rotationX: -y * 10,
+            rotationY: x * 10,
+            duration: 0.4,
+            ease: "power3.out"
+          });
+        });
+
+        card.addEventListener('mouseleave', () => {
+          gsap.to(card, {
+            x: 0,
+            y: 0,
+            rotationX: 0,
+            rotationY: 0,
+            duration: 0.6,
+            ease: "elastic.out(1, 0.3)"
+          });
+        });
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const toggleDrawer = (id: string) => {
     setOpenDrawer(openDrawer === id ? null : id);
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={containerRef}>
       <header className={styles.header}>
         <h1 className={styles.title}>Project <span className="text-gradient">Hub</span></h1>
         <p className={styles.subtitle}>

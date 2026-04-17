@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "roadmaps": "Feuilles de route",
+    "codelab": "Labo de code",
+    "apilab": "API Lab",
+    "projects": "Projets",
+    "resources": "Ressources"
+  },
+  "codelab": {
+    "title": "Collection de composants <span class=\"text-gradient\">Élite</span>",
+    "subtitle": "Blocs de construction haute performance pour interfaces modernes.",
+    "searchPlaceholder": "Rechercher des composants...",
+    "categories": "Catégories"
+  }
+}

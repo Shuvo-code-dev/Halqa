@@ -12,6 +12,21 @@
   transition: all 0.3s ease;
 }
 
+.stage.open {
+  border-color: var(--accent);
+  background: rgba(45, 212, 191, 0.05);
+}
+
+.stage.completed {
+  opacity: 0.7;
+  border-color: rgba(45, 212, 191, 0.2);
+}
+
+.stage.completed .stageNumber {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
 .stage:hover {
   border-left-color: var(--accent);
 }
@@ -156,12 +171,6 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-}
-
-.stage {
-  position: relative;
-  padding-left: 2rem;
-  border-left: 2px solid var(--border-glass);
 }
 
 .stageNumber {
@@ -323,4 +332,37 @@
   text-decoration: underline;
   text-underline-offset: 3px;
   font-weight: 600;
+}
+
+.completeToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(45, 212, 191, 0.1);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: min-content;
+  white-space: nowrap;
+}
+
+.completeToggle:hover {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+.completeToggle.isDone {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

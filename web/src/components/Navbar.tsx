@@ -1,11 +1,32 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import Link from 'next/link';
 import styles from './layout.module.css';
 
 import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navbar() {
+  const navRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const links = gsap.utils.toArray(`.${styles.navLink}`);
+      links.forEach((link: any) => {
+        link.addEventListener('mouseenter', () => {
+          gsap.to(link, { scale: 1.05, duration: 0.3, ease: "power2.out" });
+        });
+        link.addEventListener('mouseleave', () => {
+          gsap.to(link, { scale: 1, duration: 0.3, ease: "power2.inOut" });
+        });
+      });
+    }, navRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <header className={`${styles.navbar} glass-panel`}>
+    <header className={`${styles.navbar} glass-panel`} ref={navRef}>
       <div className={styles.navContainer}>
         <Link href="/" className={styles.logo}>
           Halqa<span className={styles.accent}>.</span>

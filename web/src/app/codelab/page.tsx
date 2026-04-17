@@ -1,10 +1,12 @@
 "use client";
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import styles from './page.module.css';
 import { CODELAB_REGISTRY } from '@/lib/codelab-registry';
 import { useLanguage } from '@/context/LanguageContext';
+import { useUser } from '@/context/UserContext';
+import gsap from 'gsap';
 
 const DynamicPreview = ({ componentName, paused }: { componentName: string, paused: boolean }) => {
   const Component = useMemo(() => dynamic<{ paused: boolean }>(() => import(`@/components/codelab/presets/${componentName}`), {
@@ -17,34 +19,93 @@ const DynamicPreview = ({ componentName, paused }: { componentName: string, paus
 
 export default function CodeLab() {
   const { t } = useLanguage();
+  const { toggleBookmark, isBookmarked, bookmarks } = useUser();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Header Animation
+      gsap.from(`.${styles.header} > *`, {
+        y: 30,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "expo.out",
+      });
+
+      // Grid Animation
+      gsap.from(`.${styles.card}`, {
+        y: 40,
+        opacity: 0,
+        stagger: 0.05,
+        duration: 1,
+        ease: "expo.out",
+        delay: 0.2,
+      });
+      // Search Bar Animation
+      const searchInput = containerRef.current?.querySelector(`.${styles.searchInput}`);
+      if (searchInput) {
+        searchInput.addEventListener('focus', () => {
+          gsap.to(searchInput, { 
+            scale: 1.02, 
+            borderColor: "rgba(255,255,255,0.4)", 
+            duration: 0.4, 
+            ease: "expo.out" 
+          });
+        });
+        searchInput.addEventListener('blur', () => {
+          gsap.to(searchInput, { 
+            scale: 1, 
+            borderColor: "rgba(255,255,255,0.1)", 
+            duration: 0.4, 
+            ease: "expo.out" 
+          });
+        });
+      }
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [openPanels, setOpenPanels] = useState<Record<string, string>>({});
   const [openDetails, setOpenDetails] = useState<Record<string, boolean>>({});
   const [pausedStates, setPausedStates] = useState<Record<string, boolean>>({});
+  const [copyStatus, setCopyStatus] = useState<Record<string, string>>({});
   const [showToast, setShowToast] = useState(false);
 
-  const categories = ['All', 'Text', 'Animations', 'Backgrounds', 'UI'];
+  const categories = ['All', 'Bookmarks', 'Text', 'Animations', 'Backgrounds', 'UI'];
   
   const filteredComps = useMemo(() => {
     return CODELAB_REGISTRY.filter(comp => {
-      const matchesCategory = activeCategory === 'All' || comp.category === activeCategory;
+      const matchesCategory = activeCategory === 'All' 
+        ? true 
+        : activeCategory === 'Bookmarks' 
+          ? isBookmarked(comp.id) 
+          : comp.category === activeCategory;
+      
       const matchesSearch = comp.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           comp.description.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
-  }, [activeCategory, searchQuery]);
+  }, [activeCategory, searchQuery, bookmarks]);
 
   const togglePanel = (id: string) => setOpenPanels(prev => prev[id] ? { ...prev, [id]: '' } : { ...prev, [id]: 'react' });
   const switchTab = (id: string, tab: string) => setOpenPanels(prev => ({ ...prev, [id]: tab }));
   const toggleAnimation = (id: string) => setPausedStates(prev => ({ ...prev, [id]: !prev[id] }));
   const toggleDetails = (id: string) => setOpenDetails(prev => ({ ...prev, [id]: !prev[id] }));
 
-  const copyToClipboard = async (code: string) => {
+  const copyToClipboard = async (id: string, code: string, type: 'react' | 'css') => {
     try {
       await navigator.clipboard.writeText(code);
+      const key = `${id}-${type}`;
+      setCopyStatus(prev => ({ ...prev, [key]: 'Copied!' }));
       setShowToast(true);
-      setTimeout(() => setShowToast(false), 2500);
+      setTimeout(() => {
+        setCopyStatus(prev => ({ ...prev, [key]: '' }));
+        setShowToast(false);
+      }, 2000);
     } catch(err) {}
   };
 
@@ -57,7 +118,7 @@ export default function CodeLab() {
   };
 
   return (
-    <div className={styles.dashboardContainer}>
+    <div className={styles.dashboardContainer} ref={containerRef}>
       <aside className={styles.sidebar}>
         <div className={styles.searchBlock}>
           <input 
@@ -74,6 +135,7 @@ export default function CodeLab() {
           {categories.map(cat => (
             <button key={cat} onClick={() => setActiveCategory(cat)} className={styles.filterBtn + ' ' + (activeCategory === cat ? styles.active : '')}>
               {cat === 'All' ? 'All Components' : cat}
+              {cat === 'Bookmarks' && bookmarks.length > 0 && <span className={styles.countBadge}>{bookmarks.length}</span>}
             </button>
           ))}
         </nav>
@@ -90,11 +152,19 @@ export default function CodeLab() {
              const activeTab = openPanels[item.id] || '';
              const isPaused = pausedStates[item.id] || false;
              const isDetailsOpen = openDetails[item.id] || false;
+             const bookmarked = isBookmarked(item.id);
 
              return (
               <div key={item.id} className={styles.card + ' glass-panel'}>
                 <div className={styles.previewArea}>
                   <DynamicPreview componentName={item.componentName} paused={isPaused} />
+                  <button 
+                    onClick={() => toggleBookmark(item.id)} 
+                    className={`${styles.bookmarkBtn} ${bookmarked ? styles.isBookmarked : ''}`}
+                    aria-label="Bookmark Component"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill={bookmarked ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                  </button>
                 </div>
                 
                 <div className={styles.cardBody}>
@@ -112,6 +182,9 @@ export default function CodeLab() {
                     <button onClick={() => toggleDetails(item.id)} className={styles.actionBtn}>
                       {isDetailsOpen ? 'Hide Info' : 'Details'}
                     </button>
+                    <a href="https://playroomjs.com" target="_blank" rel="noopener noreferrer" className={styles.actionBtn} title="Open in Playground">
+                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
                     {item.hasAnimation && (
                       <button onClick={() => toggleAnimation(item.id)} className={styles.actionBtn}>
                         {isPaused ? '▶' : '⏸'}
@@ -119,7 +192,6 @@ export default function CodeLab() {
                     )}
                   </div>
 
-                  {/* EDUCATIONAL DETAILS PANEL */}
                   <div className={styles.detailsTray + ' ' + (isDetailsOpen ? styles.open : '')}>
                     <div className={styles.detailsContent}>
                        <div className={styles.detailBlock}>
@@ -134,10 +206,6 @@ export default function CodeLab() {
                             ))}
                          </div>
                        </div>
-                       <div className={styles.detailBlock}>
-                         <div className={styles.detailLabel}>Actionable Guide</div>
-                         <p className={styles.detailVal}>{t(`codelab.components.${item.id}.guide`)}</p>
-                       </div>
                     </div>
                   </div>
                 </div>
@@ -148,11 +216,19 @@ export default function CodeLab() {
                     <button className={styles.tab + ' ' + (activeTab === 'css' ? styles.active : '')} onClick={() => switchTab(item.id, 'css')}>CSS</button>
                   </div>
                   <div className={styles.pane + ' ' + (activeTab === 'react' ? styles.active : '')}>
-                    <div className={styles.copyHeader}><button onClick={() => copyToClipboard(item.tsxCode)} className={styles.copyBtn}>Copy TSX</button></div>
+                    <div className={styles.copyHeader}>
+                       <button onClick={() => copyToClipboard(item.id, item.tsxCode, 'react')} className={styles.copyBtn}>
+                          {copyStatus[`${item.id}-react`] || 'Copy TSX'}
+                       </button>
+                    </div>
                     <pre className={styles.pre} dangerouslySetInnerHTML={highlightCode(item.tsxCode)} />
                   </div>
                   <div className={styles.pane + ' ' + (activeTab === 'css' ? styles.active : '')}>
-                    <div className={styles.copyHeader}><button onClick={() => copyToClipboard(item.cssCode)} className={styles.copyBtn}>Copy CSS</button></div>
+                    <div className={styles.copyHeader}>
+                       <button onClick={() => copyToClipboard(item.id, item.cssCode, 'css')} className={styles.copyBtn}>
+                          {copyStatus[`${item.id}-css`] || 'Copy CSS'}
+                       </button>
+                    </div>
                     <pre className={styles.pre} dangerouslySetInnerHTML={highlightCode(item.cssCode)} />
                   </div>
                 </div>
@@ -166,7 +242,7 @@ export default function CodeLab() {
           )}
         </div>
 
-        <div className={styles.toast + ' ' + (showToast ? styles.show : '')}>Snippet copied 🚀</div>
+        <div className={styles.toast + ' ' + (showToast ? styles.show : '')}>Done! 🚀</div>
       </main>
     </div>
   );

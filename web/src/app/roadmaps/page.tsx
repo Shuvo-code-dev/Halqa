@@ -1,9 +1,40 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import Link from 'next/link';
 import styles from './page.module.css';
 
 export default function Roadmaps() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Header Animation
+      gsap.from(`.${styles.header} > *`, {
+        y: 20,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "expo.out",
+      });
+
+      // Grid Animation
+      gsap.from(`.${styles.card}`, {
+        y: 30,
+        opacity: 0,
+        stagger: 0.05,
+        duration: 1,
+        ease: "expo.out",
+        delay: 0.2,
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={containerRef}>
       <header className={styles.header}>
         <h1 className={styles.title}>Learning <span className="text-gradient">Roadmaps</span></h1>
         <p className={styles.subtitle}>
