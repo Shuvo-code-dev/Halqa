@@ -43,7 +43,7 @@ export default function Roadmaps() {
       </header>
       
       <div className={styles.grid}>
-        <Link href="/roadmaps/frontend" className={`${styles.card} glass-panel`}>
+        <Link href="/roadmaps/frontend" className={`${styles.card} halqa-card`}>
           <div className={styles.cardHeader}>
             <h2 className={styles.domain}>Frontend</h2>
             <span className={`${styles.status} ${styles.active}`}>Active</span>
@@ -58,7 +58,7 @@ export default function Roadmaps() {
           </div>
         </Link>
 
-        <Link href="/roadmaps/backend" className={`${styles.card} glass-panel`}>
+        <Link href="/roadmaps/backend" className={`${styles.card} halqa-card`}>
           <div className={styles.cardHeader}>
             <h2 className={styles.domain}>Backend</h2>
             <span className={`${styles.status} ${styles.active}`}>Partial</span>
@@ -73,7 +73,7 @@ export default function Roadmaps() {
           </div>
         </Link>
 
-        <Link href="/roadmaps/fullstack" className={`${styles.card} glass-panel`}>
+        <Link href="/roadmaps/fullstack" className={`${styles.card} halqa-card`}>
           <div className={styles.cardHeader}>
             <h2 className={styles.domain}>Full-Stack</h2>
             <span className={`${styles.status} ${styles.active}`}>Active</span>
@@ -88,7 +88,7 @@ export default function Roadmaps() {
           </div>
         </Link>
 
-        <Link href="/roadmaps/mobile" className={`${styles.card} glass-panel`}>
+        <Link href="/roadmaps/mobile" className={`${styles.card} halqa-card`}>
           <div className={styles.cardHeader}>
             <h2 className={styles.domain}>Mobile</h2>
             <span className={`${styles.status} ${styles.active}`}>Active</span>
@@ -102,7 +102,7 @@ export default function Roadmaps() {
           </div>
         </Link>
 
-        <Link href="/roadmaps/linux" className={`${styles.card} glass-panel`}>
+        <Link href="/roadmaps/linux" className={`${styles.card} halqa-card`}>
           <div className={styles.cardHeader}>
             <h2 className={styles.domain}>Linux & DevOps</h2>
             <span className={`${styles.status} ${styles.active}`}>Active</span>
@@ -117,7 +117,7 @@ export default function Roadmaps() {
           </div>
         </Link>
 
-        <Link href="/roadmaps/apple" className={`${styles.card} glass-panel`}>
+        <Link href="/roadmaps/apple" className={`${styles.card} halqa-card`}>
           <div className={styles.cardHeader}>
             <h2 className={styles.domain}>Apple Ecosystem</h2>
             <span className={`${styles.status} ${styles.active}`}>Active</span>
@@ -132,7 +132,7 @@ export default function Roadmaps() {
           </div>
         </Link>
 
-        <Link href="/roadmaps/cs" className={`${styles.card} glass-panel`}>
+        <Link href="/roadmaps/cs" className={`${styles.card} halqa-card`}>
           <div className={styles.cardHeader}>
             <h2 className={styles.domain}>CS Fundamentals</h2>
             <span className={`${styles.status} ${styles.active}`}>Active</span>

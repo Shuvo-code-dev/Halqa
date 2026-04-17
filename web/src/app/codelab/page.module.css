@@ -418,3 +418,33 @@
   .sidebarNav { flex-direction: row; flex-wrap: wrap; }
   .grid { grid-template-columns: 1fr; }
 }
+
+.viewFooter {
+  padding: 2rem;
+  border-top: 1px solid var(--border-glass);
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.backToLabBtn {
+  background: transparent;
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  padding: 0.75rem 1.5rem;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.backToLabBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(45, 212, 191, 0.05);
+  transform: translateY(-2px);
+}

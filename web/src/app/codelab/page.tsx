@@ -7,6 +7,7 @@ import { CODELAB_REGISTRY } from '@/lib/codelab-registry';
 import { useLanguage } from '@/context/LanguageContext';
 import { useUser } from '@/context/UserContext';
 import gsap from 'gsap';
+import SharedSidebar from '@/components/SharedSidebar';
 
 const DynamicPreview = ({ componentName, paused }: { componentName: string, paused: boolean }) => {
   const Component = useMemo(() => dynamic<{ paused: boolean }>(() => import(`@/components/codelab/presets/${componentName}`), {
@@ -117,31 +118,27 @@ export default function CodeLab() {
     return { __html: highlighted };
   };
 
-  return (
-    <div className={styles.dashboardContainer} ref={containerRef}>
-      <aside className={styles.sidebar}>
-        <div className={styles.searchBlock}>
-          <input 
-            type="text" 
-            placeholder={t('codelab.searchPlaceholder')} 
-            className={styles.searchInput}
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-        </div>
-        
-        <nav className={styles.sidebarNav}>
-          <h3 className={styles.sidebarLabel}>{t('codelab.categories')}</h3>
-          {categories.map(cat => (
-            <button key={cat} onClick={() => setActiveCategory(cat)} className={styles.filterBtn + ' ' + (activeCategory === cat ? styles.active : '')}>
-              {cat === 'All' ? 'All Components' : cat}
-              {cat === 'Bookmarks' && bookmarks.length > 0 && <span className={styles.countBadge}>{bookmarks.length}</span>}
-            </button>
-          ))}
-        </nav>
-      </aside>
+  const sidebarItems = useMemo(() => {
+    return categories.map(cat => ({
+      id: cat,
+      label: cat === 'All' ? 'All Components' : cat,
+      count: cat === 'Bookmarks' ? bookmarks.length : undefined,
+    }));
+  }, [bookmarks.length]);
 
-      <main className={styles.mainContent}>
+  return (
+    <div className="module-layout" ref={containerRef}>
+      <SharedSidebar 
+        title={t('codelab.title') || 'Code <span class="text-gradient">Lab</span>'}
+        subtitle={t('codelab.subtitle')}
+        searchTerm={searchQuery}
+        onSearchChange={setSearchQuery}
+        items={sidebarItems}
+        activeItemId={activeCategory}
+        onItemClick={setActiveCategory}
+      />
+
+      <main className="module-content">
         <header className={styles.header}>
           <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: t('codelab.title') }} />
           <p className={styles.subtitle}>{t('codelab.subtitle')}</p>
@@ -155,7 +152,7 @@ export default function CodeLab() {
              const bookmarked = isBookmarked(item.id);
 
              return (
-              <div key={item.id} className={styles.card + ' glass-panel'}>
+              <div key={item.id} className={styles.card + ' halqa-card'}>
                 <div className={styles.previewArea}>
                   <DynamicPreview componentName={item.componentName} paused={isPaused} />
                   <button 
@@ -230,6 +227,11 @@ export default function CodeLab() {
                        </button>
                     </div>
                     <pre className={styles.pre} dangerouslySetInnerHTML={highlightCode(item.cssCode)} />
+                  </div>
+                  <div className={styles.viewFooter}>
+                    <button onClick={() => togglePanel(item.id)} className={styles.backToLabBtn}>
+                        &larr; Back to Component List
+                    </button>
                   </div>
                 </div>
               </div>

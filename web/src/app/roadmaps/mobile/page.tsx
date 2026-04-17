@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import styles from '../frontend/page.module.css';
 import { useUser } from '@/context/UserContext';
+import { useLanguage } from '@/context/LanguageContext';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
+import SharedSidebar from '@/components/SharedSidebar';
 
 const STAGES = [
   {
@@ -16,7 +17,8 @@ const STAGES = [
     why: 'Mobile development requires a different mindset. Screen real-estate is limited, and users interact primarily with touch, not cursors.',
     topics: ['Mobile Viewports', 'Touch Events', 'Performance Optimization', 'Offline Support'],
     guide: 'Develop a mobile-first UI component that handles both swipe and long-press interactions using the Pointer Events API.',
-    resource: 'https://developer.mozilla.org/en-US/docs/Web/API/Touch_events'
+    resource: 'https://developer.mozilla.org/en-US/docs/Web/API/Touch_events',
+    related: { label: 'Oi QR Scanner', link: '/projects', id: 'oi-qr', type: 'Project' }
   },
   {
     id: '02',
@@ -25,7 +27,8 @@ const STAGES = [
     why: 'Write once, run anywhere. Cross-platform tools allow you to reach 100% of the mobile market with a single codebase.',
     topics: ['React Native Basics', 'Expo Ecosystem', 'Native Modules', 'Styling in RN'],
     guide: 'Set up a basic Expo project. Create a screen that shows a list of items fetched from an API, with a "Pull to Refresh" feature.',
-    resource: 'https://reactnative.dev/docs/getting-started'
+    resource: 'https://reactnative.dev/docs/getting-started',
+    related: { label: 'Oi Wallet', link: '/projects', id: 'oi-wallet', type: 'Project' }
   },
   {
     id: '03',
@@ -48,22 +51,14 @@ const STAGES = [
 ];
 
 export default function MobileRoadmap() {
-  const { toggleStageCompletion, isStageCompleted } = useUser();
+  const { toggleStageCompletion, isStageCompleted, completedStages } = useUser();
+  const { t } = useLanguage();
   const [expandedStage, setExpandedStage] = useState<number | null>(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const roadmapPath = '/roadmaps/mobile';
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Header Animation
-      gsap.from(`.${styles.header} > *`, {
-        y: 20,
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.8,
-        ease: "expo.out",
-      });
-
       // Stage Reveals
       const stages = gsap.utils.toArray(`.${styles.stage}`);
       stages.forEach((stage: any) => {
@@ -73,10 +68,10 @@ export default function MobileRoadmap() {
             start: "top 90%",
             toggleActions: "play none none none"
           },
-          x: -30,
+          y: 30,
           opacity: 0,
           duration: 0.8,
-          ease: "power3.out"
+          ease: "back.out(1.7)"
         });
       });
     }, containerRef);
@@ -93,109 +88,139 @@ export default function MobileRoadmap() {
     toggleStageCompletion(roadmapPath, stageId);
   };
 
+  const sidebarItems = useMemo(() => {
+    return STAGES.map(s => ({
+        id: s.id,
+        label: s.title,
+        icon: isStageCompleted(roadmapPath, s.id) ? '✅' : '⏳'
+    }));
+  }, [completedStages]);
+
+  const handleSidebarClick = (id: string) => {
+    const stageIdx = STAGES.findIndex(s => s.id === id);
+    if (stageIdx !== -1) setExpandedStage(stageIdx);
+    
+    const el = document.getElementById(`stage-${id}`);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
   return (
-    <div className={styles.container} ref={containerRef}>
-      <header className={styles.header}>
-        <Link href="/roadmaps" className={styles.backLink}>
-          &larr; Back to Roadmaps
-        </Link>
-        <h1 className={styles.title}>Mobile <span className="text-gradient">Innovation</span></h1>
-        <p className={styles.subtitle}>
-          The future of software is portable. Master cross-platform development and high-performance native experiences.
-        </p>
-      </header>
-      
-      <div className={styles.timeline}>
-        {STAGES.map((stage, index) => {
-          const isDone = isStageCompleted(roadmapPath, stage.id);
-          
-          return (
-            <div 
-              key={stage.id} 
-              className={`${styles.stage} ${expandedStage === index ? styles.open : ''} ${isDone ? styles.completed : ''}`}
-              onClick={() => toggleStage(index)}
-            >
-              <div className={styles.stageNumber}>
-                {isDone ? (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                ) : stage.id}
-              </div>
-              
-              <div className={styles.stageHeader}>
-                <div>
-                  <h2 className={styles.stageTitle}>{stage.title}</h2>
-                  <p className={styles.stageDescription}>{stage.description}</p>
+    <div className="module-layout" ref={containerRef}>
+      <SharedSidebar 
+        title={t('roadmaps.mobile.title') || 'Mobile <span class="text-gradient">Innovation</span>'}
+        subtitle="The future of software is portable."
+        searchTerm=""
+        onSearchChange={() => {}}
+        items={sidebarItems}
+        activeItemId={expandedStage !== null ? STAGES[expandedStage].id : ''}
+        onItemClick={handleSidebarClick}
+        itemTypeLabel="Journey Stages"
+      />
+
+      <main className="module-content">
+        <header className={styles.header}>
+            <Link href="/roadmaps" className={styles.backLink}>
+                &larr; {t('common.backToRoadmaps') || 'Back to Roadmaps'}
+            </Link>
+            <h1 className={styles.title}>Mobile <span className="text-gradient">Innovation</span></h1>
+            <p className={styles.subtitle}>
+            The future of software is portable. Master cross-platform development and high-performance native experiences.
+            </p>
+        </header>
+
+        <div className={styles.timeline}>
+          {STAGES.map((stage, index) => {
+            const isDone = isStageCompleted(roadmapPath, stage.id);
+            
+            return (
+              <div 
+                key={stage.id} 
+                id={`stage-${stage.id}`}
+                className={`${styles.stage} ${expandedStage === index ? styles.open : ''} ${isDone ? styles.completed : ''}`}
+                onClick={() => toggleStage(index)}
+              >
+                <div className={styles.stageNumber}>
+                  {isDone ? (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  ) : stage.id}
                 </div>
-                <div className={styles.chevron}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                </div>
-              </div>
-
-              <div className={`${styles.stageDetails} ${expandedStage === index ? styles.open : ''}`}>
-                <div className={styles.detailsGrid}>
-                  <div className={styles.detailBlock}>
-                    <div className={styles.detailTitle}>The "Why"</div>
-                    <p className={styles.detailText}>{stage.why}</p>
+                
+                <div className={styles.stageHeader}>
+                  <div>
+                    <h2 className={styles.stageTitle}>{stage.title}</h2>
+                    <p className={styles.stageDescription}>{stage.description}</p>
                   </div>
-
-                  <div className={styles.detailBlock}>
-                    <div className={styles.detailTitle}>Core Topics</div>
-                    <ul className={styles.topicList}>
-                      {stage.topics.map((topic, tIdx) => (
-                        <li key={tIdx} className={styles.topicItem}>{topic}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className={styles.detailBlock}>
-                    <div className={styles.detailTitle}>Actionable Guide</div>
-                    <p className={styles.detailText}>{stage.guide}</p>
-                    <button 
-                      className={`${styles.completeToggle} ${isDone ? styles.isDone : ''}`}
-                      onClick={(e) => handleToggleDone(e, stage.id)}
-                    >
-                      <div className={styles.check}>
-                        {isDone ? (
-                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        ) : (
-                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><circle cx="12" cy="12" r="10"/></svg>
-                        )}
-                      </div>
-                      {isDone ? 'Completed' : 'Mark as Complete'}
-                    </button>
+                  <div className={styles.chevron}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                   </div>
                 </div>
 
-                {index === 0 && (
-                  <div className={styles.proTip} onClick={(e) => e.stopPropagation()}>
-                    <div className={styles.proTipHeader}>🧪 Lab Integration</div>
-                    <p className={styles.proTipText}>
-                      Applying web styles to mobile? Remember to escape your JSX tags. See our <Link href="/projects" className={styles.proTipLink}>Mobile Blueprints</Link> for ready-made examples.
-                    </p>
+                <div className={`${styles.stageDetails} ${expandedStage === index ? styles.open : ''}`}>
+                  <div className={styles.detailsGrid}>
+                    <div className={styles.detailBlock}>
+                      <div className={styles.detailTitle}>The "Why"</div>
+                      <p className={styles.detailText}>{stage.why}</p>
+                    </div>
+
+                    <div className={styles.detailBlock}>
+                      <div className={styles.detailTitle}>Core Topics</div>
+                      <ul className={styles.topicList}>
+                        {stage.topics.map((topic, tIdx) => (
+                          <li key={tIdx} className={styles.topicItem}>{topic}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className={styles.detailBlock}>
+                      <div className={styles.detailTitle}>Actionable Guide</div>
+                      <p className={styles.detailText}>{stage.guide}</p>
+                      <button 
+                        className={`${styles.completeToggle} ${isDone ? styles.isDone : ''}`}
+                        onClick={(e) => handleToggleDone(e, stage.id)}
+                      >
+                        <div className={styles.check}>
+                          {isDone ? (
+                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                          ) : (
+                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><circle cx="12" cy="12" r="10"/></svg>
+                          )}
+                        </div>
+                        {isDone ? 'Completed' : 'Mark as Complete'}
+                      </button>
+                    </div>
                   </div>
-                )}
 
-                <a 
-                  href={stage.resource} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className={styles.deepDiveBtn}
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  Deep Dive Resources
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
+                  {stage.related && (
+                    <div className={styles.proTip} onClick={(e) => e.stopPropagation()}>
+                      <div className={styles.proTipHeader}>🧪 Ecosystem Integration</div>
+                      <p className={styles.proTipText}>
+                        Ready to see this in a real app? Check out <strong>{stage.related.label}</strong> in our <Link href={stage.related.link} className={styles.proTipLink}>{stage.related.type}</Link>.
+                      </p>
+                    </div>
+                  )}
+
+                  <a 
+                    href={stage.resource} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={styles.deepDiveBtn}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Deep Dive Resources
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  </a>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
 
-        <div className={styles.completion}>
-          <div className={styles.completionIcon}>🏆</div>
-          <h3 className={styles.completionTitle}>Mobile Mastery</h3>
-          <p className={styles.completionText}>You can now build premium cross-platform and native experiences.</p>
+          <div className={styles.completion}>
+            <div className={styles.completionIcon}>🏆</div>
+            <h3 className={styles.completionTitle}>Mobile Masteryed</h3>
+            <p className={styles.completionText}>You can now build premium cross-platform and native experiences.</p>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

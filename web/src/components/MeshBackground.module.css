@@ -1,0 +1,48 @@
+.container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  background: var(--bg-primary);
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  mix-blend-mode: soft-light;
+}
+
+.blob1 {
+  width: 600px;
+  height: 600px;
+  background: var(--accent);
+  top: -10%;
+  left: -10%;
+}
+
+.blob2 {
+  width: 500px;
+  height: 500px;
+  background: #3b82f6;
+  bottom: -10%;
+  right: -10%;
+}
+
+.blob3 {
+  width: 400px;
+  height: 400px;
+  background: #8b5cf6;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .blob {
+    opacity: 0.1;
+    filter: blur(80px);
+  }
+}

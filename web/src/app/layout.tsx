@@ -42,6 +42,10 @@ import { UserProvider } from "@/context/UserContext";
 import { AIProvider } from "@/context/AIContext";
 import GsapRegistry from "@/components/GsapRegistry";
 import AIAgent from "@/components/AIAgent";
+import MeshBackground from "@/components/MeshBackground";
+import QuickAccess from "@/components/QuickAccess";
+import StatusBar from "@/components/StatusBar";
+import NoiseOverlay from "@/components/NoiseOverlay";
 
 export default function RootLayout({
   children,
@@ -55,12 +59,16 @@ export default function RootLayout({
           <UserProvider>
             <AIProvider>
               <div className={styles.mainLayout}>
+                <StatusBar />
                 <Navbar />
                 <main className={styles.mainContent}>
                   {children}
                 </main>
                 <Footer />
                 <AIAgent />
+                <MeshBackground />
+                <QuickAccess />
+                <NoiseOverlay />
               </div>
             </AIProvider>
           </UserProvider>

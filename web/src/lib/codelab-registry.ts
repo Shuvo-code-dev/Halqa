@@ -14,6 +14,17 @@ export interface ComponentMetadata {
 }
 
 export const CODELAB_REGISTRY: ComponentMetadata[] = [
+  // --- BATCH 3: ECOSYSTEM EXPANSION ---
+  {
+    id: 'halqa-qr',
+    name: 'Halqa QR Generator',
+    category: 'UI',
+    description: 'Functional, high-fidelity QR generator with custom accent mapping and mobile conversion CTA.',
+    hasAnimation: false,
+    componentName: 'HalqaQr',
+    tsxCode: `/* qrcode.react implementation */`,
+    cssCode: `/* Glassmorphism containers */`
+  },
   // --- BATCH 2: PHYSICS & VISUAL FX ---
   {
     id: 'ballpit',

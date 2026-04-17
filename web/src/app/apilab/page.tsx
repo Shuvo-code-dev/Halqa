@@ -5,6 +5,7 @@ import styles from './page.module.css';
 import { API_REGISTRY, API_CATEGORIES, ApiEntry } from '@/lib/apilab-registry';
 import gsap from 'gsap';
 import { useLanguage } from '@/context/LanguageContext';
+import SharedSidebar from '@/components/SharedSidebar';
 
 const ITEMS_PER_PAGE = 12;
 
@@ -81,37 +82,26 @@ export default function ApiLab() {
     } catch(err) {}
   };
 
-  return (
-    <div className={styles.dashboardContainer} ref={containerRef}>
-      <aside className={styles.sidebar}>
-        <div className={styles.sidebarHeader}>
-          <h1 className={styles.miniTitle}>API <span className="text-gradient">Lab</span></h1>
-          <p className={styles.miniSubtitle}>Master public data streams.</p>
-        </div>
-        <div className={styles.searchBox}>
-          <input 
-            type="text" 
-            placeholder="Search APIs..." 
-            className={styles.sidebarSearch}
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-        <h3 className={styles.sidebarTitle}>Categories</h3>
-        <div className={styles.categoryList}>
-          {API_CATEGORIES.map(cat => (
-            <button 
-              key={cat} 
-              onClick={() => setActiveCategory(cat)}
-              className={`${styles.filterBtn} ${activeCategory === cat ? styles.active : ''}`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-      </aside>
+  const sidebarItems = useMemo(() => {
+    return API_CATEGORIES.map(cat => ({
+      id: cat,
+      label: cat,
+    }));
+  }, []);
 
-      <main className={styles.mainContent}>
+  return (
+    <div className="module-layout" ref={containerRef}>
+      <SharedSidebar 
+        title={t('apilab.title') || 'API <span class="text-gradient">Lab</span>'}
+        subtitle="Master public data streams."
+        searchTerm={searchTerm}
+        onSearchChange={setSearchTerm}
+        items={sidebarItems}
+        activeItemId={activeCategory}
+        onItemClick={setActiveCategory}
+      />
+
+      <main className="module-content">
         <section className={styles.gridSection}>
           <div className={styles.resultMeta}>
             Found {filteredAPIs.length} APIs in {activeCategory}
@@ -119,7 +109,7 @@ export default function ApiLab() {
           
           <div className={styles.grid}>
             {visibleAPIs.map((api) => (
-              <div key={api.id} className={`${styles.card} glass-panel`}>
+              <div key={api.id} className={`${styles.card} halqa-card`}>
                 <div className={styles.cardHeader}>
                   <div className={styles.catBadge}>{api.category}</div>
                   <h3 className={styles.cardTitle}>{api.name}</h3>

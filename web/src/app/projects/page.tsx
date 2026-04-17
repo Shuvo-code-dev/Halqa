@@ -41,6 +41,7 @@ const BLUEPRINTS = [
     roadmap: { name: "Full-Stack Stage 03", link: "/roadmaps/fullstack", icon: "🗺️" },
     code: { name: "Shiny Text Effect", link: "/codelab", icon: "🧪" },
     api: { name: "CoinGecko Market Feed", link: "/apilab", icon: "🔌" },
+    progress: 35,
     steps: [
       "Establish a secure Ethers.js provider connection to the Ethereum/Polygon networks.",
       "Fetch live gas prices and market trends using the CoinGecko public API.",
@@ -55,6 +56,7 @@ const BLUEPRINTS = [
     roadmap: { name: "Mobile Stage 01", link: "/roadmaps/mobile", icon: "🗺️" },
     code: { name: "Apple Bento Grid", link: "/codelab", icon: "🧪" },
     api: { name: "IP Geolocation API", link: "/apilab", icon: "🔌" },
+    progress: 60,
     steps: [
       "Convert the Halqa web navigation system into a React Navigation native stack.",
       "Optimize the high-end GSAP animations for mobile performance using useNativeDriver.",
@@ -142,7 +144,7 @@ export default function Projects() {
           const isOpen = openDrawer === bp.id;
 
           return (
-            <div key={bp.id} className={styles.card + ' glass-panel'}>
+            <div key={bp.id} className={styles.card + ' halqa-card'}>
               <div className={styles.cardBody}>
                 <div className={styles.cardTop}>
                   <h3 className={styles.cardTitle}>{bp.title}</h3>
@@ -170,6 +172,23 @@ export default function Projects() {
                     </Link>
                   </div>
                 </div>
+
+                {bp.progress !== undefined && (
+                  <div className={styles.progressContainer}>
+                    <div className={styles.progressLabel}>
+                      <span>Development Status</span>
+                      <span>{bp.progress}%</span>
+                    </div>
+                    <div className={styles.progressTrack}>
+                      <div 
+                        className={styles.progressBar} 
+                        style={{ width: `${bp.progress}%` }}
+                      >
+                        <div className={styles.progressGlow} />
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 <div className={styles.cardActions}>
                   <button 
@@ -207,6 +226,11 @@ export default function Projects() {
                       </li>
                     ))}
                   </ul>
+                  <div className={styles.drawerFooter}>
+                    <button onClick={() => toggleDrawer(bp.id)} className={styles.backToLabBtn}>
+                        &larr; Back to Blueprint List
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
