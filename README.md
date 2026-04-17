@@ -1,10 +1,7 @@
 <div align="center">
-
 <br />
 <br />
-
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=400&size=13&duration=4000&pause=800&color=999999&center=true&vCenter=true&width=600&separator=%3B&lines=navigate+%C2%B7+the+noise+%C2%B7+master+%C2%B7+the+code;from+zero+%C2%B7+to+developer+%C2%B7+for+free;one+path+%C2%B7+zero+noise+%C2%B7+always+open" alt="Halqa" />
-
 <br />
 <br />
 
