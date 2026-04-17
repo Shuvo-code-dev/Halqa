@@ -139,8 +139,14 @@
   color: var(--accent);
 }
 
-.actionBtn {
+.cardActions {
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.actionBtn {
   width: 100%;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-glass);
@@ -166,6 +172,40 @@
 .actionBtn:hover:not(.open) {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.2);
+}
+
+.githubBtn {
+  width: 100%;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border: none;
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.githubBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.githubBtnDisabled {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed var(--border-glass);
+  color: var(--text-muted);
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: not-allowed;
 }
 
 /* Expandable Drawer */

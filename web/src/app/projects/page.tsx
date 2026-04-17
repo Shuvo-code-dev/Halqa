@@ -6,42 +6,59 @@ import styles from './page.module.css';
 
 const BLUEPRINTS = [
   {
+    id: "oi-qr",
+    title: "Oi QR Scanner",
+    tag: "High-Performance Utility",
+    githubLink: "https://github.com/Shuvo-code-dev/Oi-QR-Scanner",
+    roadmap: { name: "Frontend Stage 02", link: "/roadmaps/frontend", icon: "🗺️" },
+    code: { name: "Click Spark Particles", link: "/codelab", icon: "🧪" },
+    api: { name: "QR Generator Engine", link: "/apilab", icon: "🔌" },
+    steps: [
+      "Implement a robust camera view using the Expo Camera or Browser MediaDevices API.",
+      "Integrate the Zxing or similar high-speed QR decoding library.",
+      "Style the scanner overlay with Halqa custom-themed neon borders and scan-line animations."
+    ]
+  },
+  {
     id: "ai-chat",
-    title: "AI-Powered Chat",
+    title: "Halqa Brain Interface",
     tag: "Next.js + AI",
-    roadmap: { name: "Full-Stack Stage 04", link: "/roadmaps/fullstack", icon: "🗺️" },
-    code: { name: "Glowing Input UI", link: "/codelab", icon: "🧪" },
+    githubLink: "https://github.com/Shuvo-code-dev/Halqa",
+    roadmap: { name: "Full-Stack Stage 01", link: "/roadmaps/fullstack", icon: "🗺️" },
+    code: { name: "Glassmorphism UI", link: "/codelab", icon: "🧪" },
     api: { name: "Google Gemini API", link: "/apilab", icon: "🔌" },
     steps: [
       "Securely init a Next.js App Router API route fetching directly from the Gemini Endpoint.",
       "Bind user interactive queries dynamically to the Halqa Glowing Input UI components.",
-      "Persist message threads natively mapping Prisma Schema to your database."
+      "Implement the 'Brain' system prompt for specialized ecosystem knowledge."
     ]
   },
   {
-    id: "crypto-dash",
-    title: "Crypto Dashboard",
-    tag: "React Data Stream",
-    roadmap: { name: "Frontend Stage 03", link: "/roadmaps/frontend", icon: "🗺️" },
-    code: { name: "Glassmorphism Card", link: "/codelab", icon: "🧪" },
+    id: "oi-wallet",
+    title: "Oi Wallet",
+    tag: "Crypto & Blockchain",
+    githubLink: "#", // Coming soon
+    roadmap: { name: "Full-Stack Stage 03", link: "/roadmaps/fullstack", icon: "🗺️" },
+    code: { name: "Shiny Text Effect", link: "/codelab", icon: "🧪" },
     api: { name: "CoinGecko Market Feed", link: "/apilab", icon: "🔌" },
     steps: [
-      "Establish absolute async fetching of live cryptocurrency payloads utilizing CoinGecko via useEffect.",
-      "Map pure price data cleanly onto the transparent Halqa Glass Card layout.",
-      "Architect React Context to maintain automatic 60-second price polling globally."
+      "Establish a secure Ethers.js provider connection to the Ethereum/Polygon networks.",
+      "Fetch live gas prices and market trends using the CoinGecko public API.",
+      "Render a premium, high-contrast wallet dashboard with Halqa visual effects."
     ]
   },
   {
-    id: "weather-app",
-    title: "Native Weather Map",
-    tag: "Expo Geolocation",
-    roadmap: { name: "Mobile Stage 02", link: "/roadmaps/mobile", icon: "🗺️" },
+    id: "halqa-mobile",
+    title: "Halqa Mobile",
+    tag: "Expo Native",
+    githubLink: "#", // Coming soon
+    roadmap: { name: "Mobile Stage 01", link: "/roadmaps/mobile", icon: "🗺️" },
     code: { name: "Apple Bento Grid", link: "/codelab", icon: "🧪" },
-    api: { name: "OpenWeather Engine", link: "/apilab", icon: "🔌" },
+    api: { name: "IP Geolocation API", link: "/apilab", icon: "🔌" },
     steps: [
-      "Deploy Expo Go application capturing raw device geolocation utilizing Expo Location APIs.",
-      "Feed coordinates structurally into the OpenWeatherMap endpoints to extract local climate arrays.",
-      "Dissect current conditions mapping metrics natively onto asymmetrical Bento Grid containers."
+      "Convert the Halqa web navigation system into a React Navigation native stack.",
+      "Optimize the high-end GSAP animations for mobile performance using useNativeDriver.",
+      "Implement offline persistence using SQLite or AsyncStorage for roadmap progress."
     ]
   }
 ];
@@ -154,12 +171,30 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <button 
-                  onClick={() => toggleDrawer(bp.id)} 
-                  className={styles.actionBtn + ' ' + (isOpen ? styles.open : '')}
-                >
-                  {isOpen ? 'Close Blueprint' : 'Start Building'}
-                </button>
+                <div className={styles.cardActions}>
+                  <button 
+                    onClick={() => toggleDrawer(bp.id)} 
+                    className={styles.actionBtn + ' ' + (isOpen ? styles.open : '')}
+                  >
+                    {isOpen ? 'Close Blueprint' : 'Start Building'}
+                  </button>
+                  {bp.githubLink && bp.githubLink !== "#" && (
+                    <a 
+                      href={bp.githubLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className={styles.githubBtn}
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                      GitHub
+                    </a>
+                  )}
+                  {bp.githubLink === "#" && (
+                     <button className={styles.githubBtnDisabled} disabled>
+                       Coming Soon
+                     </button>
+                  )}
+                </div>
               </div>
 
               {/* Expandable Checklist Drawer */}

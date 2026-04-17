@@ -84,6 +84,10 @@ export default function ApiLab() {
   return (
     <div className={styles.dashboardContainer} ref={containerRef}>
       <aside className={styles.sidebar}>
+        <div className={styles.sidebarHeader}>
+          <h1 className={styles.miniTitle}>API <span className="text-gradient">Lab</span></h1>
+          <p className={styles.miniSubtitle}>Master public data streams.</p>
+        </div>
         <div className={styles.searchBox}>
           <input 
             type="text" 
@@ -108,13 +112,6 @@ export default function ApiLab() {
       </aside>
 
       <main className={styles.mainContent}>
-        <header className={styles.header}>
-          <h1 className={styles.title}>API <span className="text-gradient">Lab</span></h1>
-          <p className={styles.subtitle}>
-            A curated directory of elite public APIs for developers. Grab endpoints instantly and integrate top-tier data into your Halqa projects.
-          </p>
-        </header>
-
         <section className={styles.gridSection}>
           <div className={styles.resultMeta}>
             Found {filteredAPIs.length} APIs in {activeCategory}

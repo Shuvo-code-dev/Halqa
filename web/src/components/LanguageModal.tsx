@@ -27,8 +27,8 @@ export default function LanguageModal({ isOpen, onClose }: LanguageModalProps) {
           ease: "power2.out"
         });
         gsap.fromTo(modalRef.current, 
-          { scale: 0.9, opacity: 0, filter: 'blur(10px)' },
-          { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: "back.out(1.7)" }
+          { scale: 0.95, opacity: 0, y: 20 },
+          { scale: 1, opacity: 1, y: 0, duration: 0.5, ease: "power4.out" }
         );
         gsap.from(`.${styles.langCard}`, {
           y: 20,

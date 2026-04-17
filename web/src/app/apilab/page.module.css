@@ -1,7 +1,7 @@
 .dashboardContainer {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem 2rem 6rem;
+  padding: 1rem 2rem 6rem;
   display: flex;
   gap: 3rem;
   align-items: flex-start;
@@ -9,12 +9,32 @@
 
 .sidebar {
   position: sticky;
-  top: 8rem;
+  top: 6rem;
   width: 250px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.sidebarHeader {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.miniTitle {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: -0.02em;
+}
+
+.miniSubtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
 }
 
 .searchBox {
@@ -40,11 +60,11 @@
 }
 
 .sidebarTitle {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   color: var(--text-muted);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   font-weight: 700;
 }
 
@@ -58,16 +78,13 @@
   text-align: left;
   background: transparent;
   border: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
   padding: 0.6rem 1rem;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .filterBtn:hover {
@@ -78,7 +95,7 @@
 .filterBtn.active {
   background: var(--accent-glow);
   color: var(--accent);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .mainContent {
@@ -86,29 +103,12 @@
   min-width: 0;
 }
 
-.header {
-  margin-bottom: 3rem;
-}
-
-.title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.02em;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  max-width: 700px;
-  line-height: 1.6;
-}
-
 .resultMeta {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   margin-bottom: 2rem;
   font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .grid {
@@ -120,54 +120,57 @@
 .card {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1.8rem;
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:hover {
   transform: translateY(-4px);
   border-color: rgba(45, 212, 191, 0.3);
-  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .cardHeader {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .catBadge {
   display: inline-block;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   color: var(--accent);
   background: var(--accent-glow);
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 4px;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
+  margin-bottom: 0.6rem;
+  font-weight: 800;
 }
 
 .cardTitle {
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 800;
   color: var(--text-primary);
+  margin: 0;
 }
 
 .badgeRow {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .statusBadge {
-  font-size: 0.7rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
+  font-size: 0.65rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.05em;
 }
 
 .success { background: rgba(52, 211, 153, 0.1); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.2); }
@@ -177,9 +180,9 @@
 
 .cardDesc {
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   flex-grow: 1;
 }
 
@@ -190,21 +193,21 @@
 
 .actionBtn {
   flex: 1;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-glass);
-  color: var(--text-secondary);
-  padding: 0.7rem;
-  border-radius: 8px;
+  color: var(--text-primary);
+  padding: 0.8rem;
+  border-radius: 10px;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .actionBtn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text-primary);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
 }
 
 .loader {
@@ -214,16 +217,15 @@
   align-items: center;
   gap: 1rem;
   color: var(--text-muted);
-  font-size: 0.9rem;
 }
 
 .spinner {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border: 2px solid rgba(255, 255, 255, 0.1);
   border-top-color: var(--accent);
   border-radius: 50%;
-  animation: rotate 0.8s linear infinite;
+  animation: rotate 1s linear infinite;
 }
 
 @keyframes rotate {
@@ -234,12 +236,12 @@
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background: var(--text-primary);
+  background: var(--accent);
   color: var(--bg-primary);
-  padding: 0.8rem 1.6rem;
+  padding: 1rem 2rem;
   border-radius: 12px;
-  font-weight: 700;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  font-weight: 800;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
   transform: translateY(100px);
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -251,23 +253,27 @@
   opacity: 1;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .dashboardContainer {
     flex-direction: column;
     padding: 1rem;
+    gap: 2rem;
   }
   .sidebar {
     position: relative;
     top: 0;
     width: 100%;
-    gap: 1rem;
   }
+  .sidebarHeader { margin-bottom: 1rem; padding-bottom: 1rem; }
   .categoryList {
     flex-direction: row;
     overflow-x: auto;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.8rem;
+    gap: 0.5rem;
   }
   .filterBtn {
     white-space: nowrap;
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
   }
 }
