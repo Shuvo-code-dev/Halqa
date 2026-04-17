@@ -1,18 +1,9 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
+about: Suggest a new idea or improvement for Halqa
 title: ''
 labels: ''
 assignees: ''
-
----
-
----
-name: "🚀 Feature Request"
-about: "Suggest a new idea or improvement for the circle"
-title: "[FEAT] : Short title for your idea"
-labels: "enhancement"
-assignees: ""
 
 ---
 
