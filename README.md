@@ -1,65 +1,154 @@
 <div align="center">
 
-# Halqa 🪶
-**"Navigate the Noise, Master the Code."**
+<br/>
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](LICENSE)
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg?style=flat-square)](https://github.com/Shuvo-code-dev/Halqa/blob/main/CC%20BY-NC%204.0%20LICENSE)
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+```
+██╗  ██╗ █████╗ ██╗      ██████╗  █████╗
+██║  ██║██╔══██╗██║     ██╔═══██╗██╔══██╗
+███████║███████║██║     ██║   ██║███████║
+██╔══██║██╔══██║██║     ██║▄▄ ██║██╔══██║
+██║  ██║██║  ██║███████╗╚██████╔╝██║  ██║
+╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚══▀▀═╝ ╚═╝  ╚═╝
+```
 
-<p align="center">
-  A minimalist, community-driven platform for A-Z free coding resources and roadmaps. Designed to simplify the journey of aspiring developers by filtering out the noise.
-</p>
+<br/>
 
-[Explore Roadmaps](#-available-roadmaps) • [Contributing](#-contributing) • [Security](#-security-policy) • [Support](#-support)
+### *"Navigate the Noise. Master the Code."*
+
+<br/>
+
+[![License: GPL v3](https://img.shields.io/badge/Code-GPL%20v3-1a1a2e?style=for-the-badge&logoColor=white)](LICENSE)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/Content-CC%20BY--NC%204.0-1a1a2e?style=for-the-badge)](https://github.com/Shuvo-code-dev/Halqa/blob/main/CC%20BY-NC%204.0%20LICENSE)
+[![Next.js](https://img.shields.io/badge/Built%20with-Next.js%2015-000000?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
+[![Open Source](https://img.shields.io/badge/Open-Source-1a1a2e?style=for-the-badge&logo=github)](https://github.com/Shuvo-code-dev/Halqa)
+
+<br/>
+
+> A community-driven, zero-cost platform that cuts through the chaos of learning to code —
+> one clear, structured roadmap at a time.
+
+<br/>
+
+[**Explore Roadmaps**](#-roadmaps) · [**Contribute**](#-contributing) · [**Support the Mission**](#-support)
 
 </div>
 
 ---
 
-## 🌌 The Vision
-In an era of information overload, **Halqa** acts as a minimalist filter. We believe learning to code shouldn't be expensive or confusing. We provide hand-picked, structured paths to take you from your first line of code to a professional developer role.
+<br/>
 
-## 🌟 Key Features
-- **🎯 Step-by-Step Roadmaps:** No more guessing what to learn next.
-- **📚 Zero-Cost Resources:** Only the best, completely free books, videos, and documentation.
-- **🌑 Antigravity Philosophy:** A distraction-free, high-contrast UI for deep focus.
-- **🤝 Community First:** Built for the community, by the community.
+## ◌ &nbsp; What is Halqa?
 
-## 🗺️ Roadmap Progress
-- [ ] **Frontend Mastery** (HTML, CSS, JS, React, Next.js) - *In Progress*
-- [ ] **Backend Foundations** (Python, Node.js, PostgreSQL)
-- [ ] **Full-Stack Integration**
-- [ ] **Mobile Development** (React Native/Flutter)
+**Halqa** (حلقة) means *circle* — a gathering of people united by a common purpose.
 
-## 🛠️ Tech Stack
-- **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
-- **Design:** Custom CSS Modules
-- **Deployment:** Vercel
-- **Content:** Markdown-driven Roadmaps
+We are that circle for developers.
 
-## 🤝 Contributing
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create.
-1. Read our [CONTRIBUTING.md](CONTRIBUTING.md).
-2. **Fork** the Project.
-3. **Create** your Feature Branch (`git checkout -b feature/AmazingFeature`).
-4. **Commit** your Changes (`git commit -m 'Add some AmazingFeature'`).
-5. **Push** to the Branch (`git push origin feature/AmazingFeature`).
-6. **Open** a Pull Request.
+In a world drowning in tutorials, bootcamps, and contradictory advice, Halqa is the quiet room. We curate only what matters — structured paths, free resources, and zero noise — so you can focus entirely on becoming the developer you're meant to be.
 
-## ❤️ Support
-If Halqa is helping you in your coding journey, consider supporting the project:
-- ⭐ **Star this repository** to help others find it.
-- 📢 **Share it** with your fellow developers.
-- [Insert Sponsor Link Here]
+No paywalls. No fluff. Just the signal.
 
-## ⚖️ Licensing
-- **Code:** Licensed under [GPL-3.0](LICENSE).
-- **Content:** Licensed under [CC BY-NC 4.0](https://github.com/Shuvo-code-dev/Halqa/blob/main/CC%20BY-NC%204.0%20LICENSE).
+<br/>
+
+## ✦ &nbsp; Core Principles
+
+| | Principle | What it means |
+|---|---|---|
+| 🎯 | **Structured Paths** | No more "what do I learn next?" — every roadmap is a clear, ordered journey |
+| 📖 | **Zero Cost** | Every resource is 100% free — books, videos, docs, all hand-picked |
+| 🌑 | **Distraction-Free** | A high-contrast, minimal UI built for deep focus, not engagement loops |
+| 🤝 | **Community First** | Built by developers, for developers. Every contribution matters |
+
+<br/>
+
+## 🗺️ &nbsp; Roadmaps
+
+Our roadmaps are living documents — constantly refined by the community.
+
+```
+◉ Frontend Mastery          [▓▓▓▓░░░░░░]  In Progress
+  └─ HTML → CSS → JS → React → Next.js
+
+◌ Backend Foundations       [░░░░░░░░░░]  Coming Soon
+  └─ Python → Node.js → PostgreSQL
+
+◌ Full-Stack Integration    [░░░░░░░░░░]  Planned
+  └─ Connecting the dots
+
+◌ Mobile Development        [░░░░░░░░░░]  Planned
+  └─ React Native / Flutter
+```
+
+> 📌 **Want to see a roadmap added?** [Open an issue →](https://github.com/Shuvo-code-dev/Halqa/issues)
+
+<br/>
+
+## 🛠️ &nbsp; Built With
+
+```
+Framework   →   Next.js 15 (App Router)
+Styling     →   Custom CSS Modules
+Content     →   Markdown-driven Roadmaps
+Deployment  →   Vercel
+```
+
+<br/>
+
+## 🤝 &nbsp; Contributing
+
+Halqa lives and breathes through its contributors. Every fix, roadmap addition, or resource suggestion makes it better for thousands of developers.
+
+**How to join the circle:**
+
+```bash
+# 1. Fork the repository
+# 2. Create your feature branch
+git checkout -b feature/your-amazing-idea
+
+# 3. Make your changes and commit
+git commit -m "feat: add awesome resource to JS roadmap"
+
+# 4. Push and open a Pull Request
+git push origin feature/your-amazing-idea
+```
+
+Before contributing, please read our **[CONTRIBUTING.md](CONTRIBUTING.md)** — it's short, we promise.
+
+<br/>
+
+## ⚖️ &nbsp; Licensing
+
+Halqa uses a dual-license model to protect both code freedom and content integrity:
+
+- **Source Code** — [GPL-3.0](LICENSE) · Free to use, modify, and distribute with attribution
+- **Roadmap Content** — [CC BY-NC 4.0](https://github.com/Shuvo-code-dev/Halqa/blob/main/CC%20BY-NC%204.0%20LICENSE) · Share freely, never for commercial use
+
+<br/>
+
+## 💛 &nbsp; Support
+
+If Halqa has helped you on your coding journey — even a little — here's how you can give back:
+
+- ⭐ **Star this repo** — it helps others discover Halqa
+- 📣 **Share it** — tweet it, post it, send it to a friend who's learning to code
+- 🛠️ **Contribute** — your knowledge is the most valuable resource we have
+- ☕ **Sponsor** — *(link coming soon)*
+
+<br/>
 
 ---
+
 <div align="center">
-  Created with ❤️ by the <b>Halqa Community</b>.<br/>
-  Powered by <b>Oi Applications</b>.
+
+<br/>
+
+*"The best time to start was yesterday. The second best time is now."*
+
+<br/>
+
+**Halqa** is crafted with ❤️ by the community · Powered by **Oi Applications**
+
+<br/>
+
+[![Star on GitHub](https://img.shields.io/github/stars/Shuvo-code-dev/Halqa?style=social)](https://github.com/Shuvo-code-dev/Halqa)
+
 </div>
