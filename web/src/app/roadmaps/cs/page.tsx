@@ -3,34 +3,47 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import styles from '../frontend/page.module.css';
+import { useUser } from '@/context/UserContext';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from 'react';
 
 const STAGES = [
   {
     id: '01',
-    title: 'Data Structures & Big O',
-    description: 'Master the DNA of computer science. Understand how data is stored and retrieved.',
-    why: 'Efficiency is the hallmark of a senior engineer. Big O analysis allows you to predict performance before a single line of code is run.',
-    topics: ['Big O Notation', 'Arrays & Linked Lists', 'Stacks & Queues', 'Hash Tables'],
-    guide: 'Implement a custom Hash Table in JavaScript. Focus on resolving collisions and understanding why O(1) lookup is the golden standard.',
-    resource: 'https://www.bigocheatsheet.com/'
+    title: 'Data Structures',
+    description: 'Learn how information is organized. Master Arrays, Linked Lists, Stacks, and Queues.',
+    why: 'Efficient data storage is the backbone of performance. Choosing the right structure reduces complexity and memory usage.',
+    topics: ['Complexity Analysis (Big O)', 'Memory Management', 'Linear Structures', 'Hash Tables'],
+    guide: 'Implement a Linked List from scratch in JavaScript. Create methods for `push`, `pop`, and `find`.',
+    resource: 'https://visualgo.net/en/list'
   },
   {
     id: '02',
-    title: 'Algorithms & Sorting',
-    description: 'Learn how to solve complex problems with logical precision.',
-    why: 'Algorithmic thinking is the core of problem solving. Mastering sorting and searching allows you to handle massive datasets with minimal latency.',
-    topics: ['QuickSort & MergeSort', 'Binary Search', 'Recursion Mastery', 'Tree Traversals (BFS/DFS)'],
-    guide: 'Visualize the QuickSort algorithm. Write a recursive function that searches a Binary Search Tree (BST) for a specific node in O(log n) time.',
-    resource: 'https://visualgo.net/en'
+    title: 'Algorithms',
+    description: 'The science of solving problems. Master Sorting, Searching, and Recursion.',
+    why: 'Algorithms are the tools you use to manipulate data. Understanding them allows you to write smarter, faster code.',
+    topics: ['Sorting (Merge, Quick)', 'Binary Search', 'Recursion Patterns', 'Dynamic Programming'],
+    guide: 'Write a recursive function to solve the Fibonacci sequence, then optimize it using memoization.',
+    resource: 'https://www.geeksforgeeks.org/fundamentals-of-algorithms/'
   },
   {
     id: '03',
-    title: 'Memory Management',
-    description: 'Understand the physical limits of hardware—Heap, Stack, and Pointers.',
-    why: 'Software doesn\'t exist in a vacuum. Understanding memory allows you to prevent leaks and build high-performance systems.',
-    topics: ['Heap vs Stack', 'Pointers & References', 'Garbage Collection', 'Thread Concurrency'],
-    guide: 'Learn the difference between "Pass by Value" and "Pass by Reference". Sketch out a memory diagram of how a recursive function consumes the stack.',
-    resource: 'https://cs50.harvard.edu/x/'
+    title: 'Operating Systems',
+    description: 'Understand how software interacts with hardware. Processes, Threads, and Memory.',
+    why: 'Knowing how the OS manages resources helps you write code that doesn\'t crash or leak memory.',
+    topics: ['Process Management', 'Multi-threading', 'Virtual Memory', 'File Systems'],
+    guide: 'Research the difference between a Process and a Thread. Write a short explanation of how Node.js handles concurrency.',
+    resource: 'https://www.tutorialspoint.com/operating_system/index.htm'
+  },
+  {
+    id: '04',
+    title: 'System Design',
+    description: 'Architecting for scale. Load Balancing, Caching, and Microservices.',
+    why: 'Great code fails if the architecture can\'t handle traffic. System design is how you build systems that last.',
+    topics: ['Scalability Patterns', 'Database Sharding', 'Message Queues', 'CDN & Caching'],
+    guide: 'Design a high-level architecture for a simple chat app. Draw the diagram and list the components.',
+    resource: 'https://github.com/donnemartin/system-design-primer'
   }
 ];
 
@@ -86,9 +99,9 @@ export default function CSRoadmap() {
         <Link href="/roadmaps" className={styles.backLink}>
           &larr; Back to Roadmaps
         </Link>
-        <h1 className={styles.title}>CS <span className="text-gradient">Fundamentals</span></h1>
+        <h1 className={styles.title}>Computer <span className="text-gradient">Science</span></h1>
         <p className={styles.subtitle}>
-          The theoretical bedrock of engineering. Master the algorithms and architectures that define modern computing.
+          The academic foundation of engineering. From binary logic to distributed systems architecture.
         </p>
       </header>
       
@@ -153,24 +166,34 @@ export default function CSRoadmap() {
                   </div>
                 </div>
 
-              <a 
-                href={stage.resource} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.deepDiveBtn}
-                onClick={(e) => e.stopPropagation()}
-              >
-                Deep Dive Resources
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
+                {index === 0 && (
+                  <div className={styles.proTip} onClick={(e) => e.stopPropagation()}>
+                    <div className={styles.proTipHeader}>🧪 Lab Integration</div>
+                    <p className={styles.proTipText}>
+                      Implementing a Red-Black Tree? Our <Link href="/codelab" className={styles.proTipLink}>Data Visualizer</Link> component can help you see the nodes in 3D.
+                    </p>
+                  </div>
+                )}
+
+                <a 
+                  href={stage.resource} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.deepDiveBtn}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Deep Dive Resources
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
 
         <div className={styles.completion}>
           <div className={styles.completionIcon}>🧬</div>
-          <h3 className={styles.completionTitle}>Computer Scientist</h3>
-          <p className={styles.completionText}>You have mastered the logical foundations of engineering.</p>
+          <h3 className={styles.completionTitle}>Foundations Solidified</h3>
+          <p className={styles.completionText}>You now possess the theoretical depth of a senior software engineer.</p>
         </div>
       </div>
     </div>

@@ -3,68 +3,49 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import styles from './page.module.css';
-
-const STAGES = [
-  {
-    id: '01',
-    title: 'HTML Foundations',
-    description: 'HyperText Markup Language is the backbone of every website. Master semantic structure for SEO and accessibility.',
-    why: 'Without proper HTML, search engines and assistive technology are blind. It is the structural integrity of your application.',
-    topics: ['Semantic Elements', 'ARIA Roles', 'Forms & Tables', 'Meta Tags'],
-    guide: 'Start by building a pure HTML skeletal layout of a complex dashboard. Focus strictly on using correct tags (<main>, <section>, <article>) before adding any CSS.',
-    resource: 'https://developer.mozilla.org/en-US/docs/Web/HTML'
-  },
-  {
-    id: '02',
-    title: 'Modern CSS',
-    description: 'Cascading Style Sheets turn documents into professional layouts. Master Flexbox and CSS Grid.',
-    why: 'Pixel-perfect precision and responsiveness are the hallmarks of a pro. Modern CSS allows for complex layouts without heavy JS.',
-    topics: ['Flexbox & Grid', 'Custom Properties', 'Media Queries', 'CSS Transitions'],
-    guide: 'Apply a "Mobile First" approach. Define your base styles for smaller screens and layer in Grid complexities as you move to desktop breakpoints.',
-    resource: 'https://developer.mozilla.org/en-US/docs/Learn/CSS'
-  },
-  {
-    id: '03',
-    title: 'JavaScript Logic',
-    description: 'The engine of the web. Master data types, async operations, and the Event Loop.',
-    why: 'Logic is the difference between a static page and a functioning product. JavaScript handles every user interaction.',
-    topics: ['ES6+ Syntax', 'Async/Await', 'DOM API', 'Closures & Scope'],
-    guide: 'Avoid using libraries early on. Build a task manager using only vanilla JS and LocalStorage to understand state persistence and DOM updates.',
-    resource: 'https://javascript.info/'
-  },
-  {
-    id: '04',
-    title: 'Version Control',
-    description: 'Learn how to manage code, track changes, and collaborate with teams effectively using Git.',
-    why: 'Collaborative engineering is impossible without Git. It provides a historical immutable record of your work.',
-    topics: ['Branching Strategies', 'Pull Requests', 'Merge Conflicts', 'Rebasing'],
-    guide: 'Use the CLI for Git. Mastering the command line commands (commit, push, rebase) is far faster and more reliable than any GUI.',
-    resource: 'https://git-scm.com/doc'
-  },
-  {
-    id: '05',
-    title: 'React Mastery',
-    description: 'Master state management, component composition, and hooks to build complex UIs.',
-    why: 'React is the industry standard for UI architecture. It allows for declarative, predictable, and reusable component systems.',
-    topics: ['Hooks API', 'Context Provider', 'Props Drilling', 'Memoization'],
-    guide: 'Focus on "Thinking in React". Break down your UI into a hierarchy of components and identify the minimal representation of state.',
-    resource: 'https://react.dev/learn'
-  },
-  {
-    id: '06',
-    title: 'Next.js & Deployment',
-    description: 'Build production-ready, SEO-optimized, full-stack React framework apps.',
-    why: 'Next.js bridges the gap between frontend and backend, providing absolute performance and developer experience.',
-    topics: ['App Router', 'Server Components', 'Edge Caching', 'API Routes'],
-    guide: 'Migrate your React apps to Next.js to leverage Server-Side Rendering (SSR). Deploy your result to Vercel for instant public access.',
-    resource: 'https://nextjs.org/learn'
-  }
-];
-
 import { useUser } from '@/context/UserContext';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
+
+const STAGES = [
+  {
+    id: '01',
+    title: 'HTML & CSS Mastery',
+    description: 'The bones and skin of the web. Semantic HTML5, Flexbox, and Modern Grid.',
+    why: 'Structure and layout are the foundation of any web interface. Mastering these ensures your site is accessible and responsive across all devices.',
+    topics: ['Semantic Tags', 'Accessibility (A11y)', 'Flexbox & CSS Grid', 'Custom Properties'],
+    guide: 'Build a responsive landing page header without using any frameworks. Focus on perfect alignment and mobile-first responsiveness.',
+    resource: 'https://developer.mozilla.org/en-US/docs/Learn/HTML'
+  },
+  {
+    id: '02',
+    title: 'Modern JavaScript',
+    description: 'The engine of interactivity. ES6+, Closures, and Async patterns.',
+    why: 'JavaScript allows you to fetch data, handle user input, and build complex logic. It is the core language of the frontend developer.',
+    topics: ['ES6 Syntax', 'Promises & Async/Await', 'DOM Manipulation', 'State Management Basics'],
+    guide: 'Create a "To-Do" app using only Vanilla JS. Implement adding, deleting, and persistence using localStorage.',
+    resource: 'https://javascript.info/'
+  },
+  {
+    id: '03',
+    title: 'React.js Ecosystem',
+    description: 'Declarative UI building. Hooks, Component Design, and Performance.',
+    why: 'React is the industry standard for building scalable applications. Its component-based architecture makes code reusable and maintainable.',
+    topics: ['Hooks (useState, useEffect)', 'Props & State Flow', 'React Router', 'Context API'],
+    guide: 'Rewrite your "To-Do" app in React. Break it into components: Header, List, and Item. Use Context for global state if needed.',
+    resource: 'https://react.dev/learn'
+  },
+  {
+    id: '04',
+    title: 'Next.js & Routing',
+    description: 'Server-side rendering, API routes, and App Router architecture.',
+    why: 'Next.js provides optimized performance and SEO out of the box. Mastering it allows you to build production-ready fullstack apps.',
+    topics: ['App Router', 'Server Components', 'API Routes', 'Dynamic Metadata'],
+    guide: 'Build a simple blog that fetches data from a mock API. Use Next.js dynamic routing to create a page for each post.',
+    resource: 'https://nextjs.org/docs'
+  }
+];
 
 export default function FrontendRoadmap() {
   const { toggleStageCompletion, isStageCompleted } = useUser();
@@ -89,13 +70,13 @@ export default function FrontendRoadmap() {
         gsap.from(stage, {
           scrollTrigger: {
             trigger: stage,
-            start: "top 90%",
+            start: "top 85%",
             toggleActions: "play none none none"
           },
-          x: -30,
+          y: 30,
           opacity: 0,
           duration: 0.8,
-          ease: "power3.out"
+          ease: "back.out(1.7)"
         });
       });
     }, containerRef);
@@ -118,9 +99,9 @@ export default function FrontendRoadmap() {
         <Link href="/roadmaps" className={styles.backLink}>
           &larr; Back to Roadmaps
         </Link>
-        <h1 className={styles.title}>Frontend <span className="text-gradient">Mastery</span></h1>
+        <h1 className={styles.title}>Frontend <span className="text-gradient">Architect</span></h1>
         <p className={styles.subtitle}>
-          Master the art of building beautiful, responsive, and performance-optimized user interfaces.
+          The complete journey to becoming a world-class UI engineer. From the basics of HTML to advanced React architectures.
         </p>
       </header>
       
@@ -184,30 +165,30 @@ export default function FrontendRoadmap() {
                     </button>
                   </div>
                 </div>
+
+                {index === 2 && (
+                  <div className={styles.proTip} onClick={(e) => e.stopPropagation()}>
+                    <div className={styles.proTipHeader}>🧪 Lab Integration</div>
+                    <p className={styles.proTipText}>
+                      Ready to practice global state? See a high-performance implementation in our <Link href="/codelab" className={styles.proTipLink}>Apple-Style Bento Grid</Link>.
+                    </p>
+                  </div>
+                )}
+
+                <a 
+                  href={stage.resource} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.deepDiveBtn}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Deep Dive Resources
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
               </div>
-
-              {index === 4 && (
-                <div className={styles.proTip} onClick={(e) => e.stopPropagation()}>
-                  <div className={styles.proTipHeader}>🧪 Lab Integration</div>
-                  <p className={styles.proTipText}>
-                    Ready to practice global state? See a high-performance implementation in our <Link href="/codelab" className={styles.proTipLink}>Apple-Style Bento Grid</Link>.
-                  </p>
-                </div>
-              )}
-
-              <a 
-                href={stage.resource} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.deepDiveBtn}
-                onClick={(e) => e.stopPropagation()}
-              >
-                Deep Dive Resources
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
             </div>
-          </div>
-        ))}
+          );
+        })}
 
         <div className={styles.completion}>
           <div className={styles.completionIcon}>🏆</div>

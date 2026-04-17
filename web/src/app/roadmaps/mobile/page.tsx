@@ -3,50 +3,49 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import styles from '../frontend/page.module.css';
-
-const STAGES = [
-  {
-    id: '01',
-    title: 'JSX & Native Components',
-    description: 'Learn how to translate web knowledge into the native mobile world.',
-    why: "Mobile uses native primitives (&lt;View&gt;, &lt;Text&gt;) instead of HTML. Understanding this bridge is essential for performance.",
-    topics: ['View, Text, Image', 'StyleSheet API', 'Platform Specific Code', 'Native Bridging'],
-    guide: "Initialize a project using Expo. Create a simple profile screen using only Native components. Focus on vertical and horizontal alignment.",
-    resource: 'https://reactnative.dev/docs/getting-started'
-  },
-  {
-    id: '02',
-    title: 'Mobile Flexbox & Layout',
-    description: 'Master the specific nuances of Flexbox for mobile screen variety.',
-    why: "Mobile layouts are dynamic and must handle thousands of devices. Mastering Flexbox is the only way to ensure consistency.",
-    topics: ['Flex Direction (Column)', 'Justify vs Align', 'Safe Area Views', 'Dimensions API'],
-    guide: "Build a grid system that adapts to both iPhone and Android sizes. Use the `SafeAreaView` to ensure your content is never hidden by \"notches\".",
-    resource: 'https://reactnative.dev/docs/flexbox'
-  },
-  {
-    id: '03',
-    title: 'Navigation & State',
-    description: 'Master the user flow between screens using React Navigation.',
-    why: "Unlike the web, mobile \"stack\" navigation is physical and state-dependent. Proper flow ensures a premium app feel.",
-    topics: ['Stack Navigation', 'Tab Bars', 'Passing Params', 'Deep Linking'],
-    guide: "Implement a multi-screen app with a bottom tab bar. Ensure state persists correctly when navigating between \"Home\" and \"Settings\".",
-    resource: 'https://reactnavigation.org/docs/getting-started/'
-  },
-  {
-    id: '04',
-    title: 'TestFlight & Distribution',
-    description: 'Learn the "Last Mile" of app development—getting into users\' hands.',
-    why: "A perfect app is useless if it's trapped on your computer. Distribution is a complex technical hurdle of its own.",
-    topics: ['App Store Connect', 'Signing & Certificates', 'TestFlight Beta', 'Fastlane Automation'],
-    guide: "Generate a production build using Expo Application Services (EAS). Upload your binary to TestFlight and invite your first group of beta testers.",
-    resource: 'https://docs.expo.dev/build/introduction/'
-  }
-];
-
 import { useUser } from '@/context/UserContext';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
+
+const STAGES = [
+  {
+    id: '01',
+    title: 'Mobile Fundamentals',
+    description: 'Understanding the mobile paradigm. Viewports, Touch Targets, and Sensors.',
+    why: 'Mobile development requires a different mindset. Screen real-estate is limited, and users interact primarily with touch, not cursors.',
+    topics: ['Mobile Viewports', 'Touch Events', 'Performance Optimization', 'Offline Support'],
+    guide: 'Develop a mobile-first UI component that handles both swipe and long-press interactions using the Pointer Events API.',
+    resource: 'https://developer.mozilla.org/en-US/docs/Web/API/Touch_events'
+  },
+  {
+    id: '02',
+    title: 'Cross-Platform Frameworks',
+    description: 'Build for both iOS and Android with React Native and Expo.',
+    why: 'Write once, run anywhere. Cross-platform tools allow you to reach 100% of the mobile market with a single codebase.',
+    topics: ['React Native Basics', 'Expo Ecosystem', 'Native Modules', 'Styling in RN'],
+    guide: 'Set up a basic Expo project. Create a screen that shows a list of items fetched from an API, with a "Pull to Refresh" feature.',
+    resource: 'https://reactnative.dev/docs/getting-started'
+  },
+  {
+    id: '03',
+    title: 'Progressive Web Apps (PWA)',
+    description: 'Web apps that feel like native apps. Service Workers and App Manifests.',
+    why: 'PWAs are the bridge between web and mobile. They allow for installation, offline access, and push notifications without the app store fees.',
+    topics: ['Service Workers', 'Caching Strategies', 'Web App Manifest', 'Push API'],
+    guide: 'Convert a simple website into a PWA. Ensure it scores 100/100 on the Lighthouse PWA audit and works without internet.',
+    resource: 'https://web.dev/progressive-web-apps/'
+  },
+  {
+    id: '04',
+    title: 'Mobile UX & UI Design',
+    description: 'Mastering the ergonomics of thumb-driven interfaces.',
+    why: 'A mobile app is only as good as its UX. Ergonomics and micro-interactions determine whether a user stays or deletes your app.',
+    topics: ['Ergonomic Design', 'Gesture Navigation', 'Mobile Typography', 'Haptic Feedback'],
+    guide: 'Audit a popular mobile app. Identify three areas where gesture navigation could be improved and sketch your solutions.',
+    resource: 'https://material.io/design/platform-guidance/android-navigation.html'
+  }
+];
 
 export default function MobileRoadmap() {
   const { toggleStageCompletion, isStageCompleted } = useUser();
@@ -100,9 +99,9 @@ export default function MobileRoadmap() {
         <Link href="/roadmaps" className={styles.backLink}>
           &larr; Back to Roadmaps
         </Link>
-        <h1 className={styles.title}>Mobile <span className="text-gradient">Engineering</span></h1>
+        <h1 className={styles.title}>Mobile <span className="text-gradient">Innovation</span></h1>
         <p className={styles.subtitle}>
-          Build cross-platform mobile applications using modern frameworks like React Native and the Expo ecosystem.
+          The future of software is portable. Master cross-platform development and high-performance native experiences.
         </p>
       </header>
       
@@ -166,38 +165,35 @@ export default function MobileRoadmap() {
                     </button>
                   </div>
                 </div>
-                  <div className={styles.detailTitle}>Actionable Guide</div>
-                  <p className={styles.detailText}>{stage.guide}</p>
-                </div>
+
+                {index === 0 && (
+                  <div className={styles.proTip} onClick={(e) => e.stopPropagation()}>
+                    <div className={styles.proTipHeader}>🧪 Lab Integration</div>
+                    <p className={styles.proTipText}>
+                      Applying web styles to mobile? Remember to escape your JSX tags. See our <Link href="/projects" className={styles.proTipLink}>Mobile Blueprints</Link> for ready-made examples.
+                    </p>
+                  </div>
+                )}
+
+                <a 
+                  href={stage.resource} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.deepDiveBtn}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Deep Dive Resources
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
               </div>
-
-              {index === 0 && (
-                <div className={styles.proTip} onClick={(e) => e.stopPropagation()}>
-                  <div className={styles.proTipHeader}>🧪 Lab Integration</div>
-                  <p className={styles.proTipText}>
-                    Applying web styles to mobile? Remember to escape your JSX tags. See our <Link href="/projects" className={styles.proTipLink}>Mobile Blueprints</Link> for ready-made examples.
-                  </p>
-                </div>
-              )}
-
-              <a 
-                href={stage.resource} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.deepDiveBtn}
-                onClick={(e) => e.stopPropagation()}
-              >
-                Deep Dive Resources
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
             </div>
-          </div>
-        ))}
+          );
+        })}
 
         <div className={styles.completion}>
           <div className={styles.completionIcon}>🏆</div>
-          <h3 className={styles.completionTitle}>Mobile Mastered</h3>
-          <p className={styles.completionText}>You can now build and ship native apps to millions of devices.</p>
+          <h3 className={styles.completionTitle}>Mobile Mastery</h3>
+          <p className={styles.completionText}>You can now build premium cross-platform and native experiences.</p>
         </div>
       </div>
     </div>

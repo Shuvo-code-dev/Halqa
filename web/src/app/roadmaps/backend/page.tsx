@@ -3,6 +3,10 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import styles from '../frontend/page.module.css';
+import { useUser } from '@/context/UserContext';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from 'react';
 
 const STAGES = [
   {
@@ -42,11 +46,6 @@ const STAGES = [
     resource: 'https://auth0.com/docs/get-started/authentication-and-authorization-concepts'
   }
 ];
-
-import { useUser } from '@/context/UserContext';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
 
 export default function BackendRoadmap() {
   const { toggleStageCompletion, isStageCompleted } = useUser();
@@ -167,28 +166,29 @@ export default function BackendRoadmap() {
                   </div>
                 </div>
 
-              {index === 1 && (
-                <div className={styles.proTip} onClick={(e) => e.stopPropagation()}>
-                  <div className={styles.proTipHeader}>🧪 Lab Integration</div>
-                  <p className={styles.proTipText}>
-                    Need to simulate real-world API responses for your testing? Pull live mock data from the <Link href="/apilab" className={styles.proTipLink}>API Lab Repository</Link>.
-                  </p>
-                </div>
-              )}
+                {index === 1 && (
+                  <div className={styles.proTip} onClick={(e) => e.stopPropagation()}>
+                    <div className={styles.proTipHeader}>🧪 Lab Integration</div>
+                    <p className={styles.proTipText}>
+                      Need to simulate real-world API responses for your testing? Pull live mock data from the <Link href="/apilab" className={styles.proTipLink}>API Lab Repository</Link>.
+                    </p>
+                  </div>
+                )}
 
-              <a 
-                href={stage.resource} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.deepDiveBtn}
-                onClick={(e) => e.stopPropagation()}
-              >
-                Deep Dive Resources
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
+                <a 
+                  href={stage.resource} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.deepDiveBtn}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Deep Dive Resources
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
 
         <div className={styles.completion}>
           <div className={styles.completionIcon}>🏆</div>
