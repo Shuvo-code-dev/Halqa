@@ -168,7 +168,6 @@ We welcome the engineering elite. If you find a bug, have a component suggestion
 
 <br />
 
-<<<<<<< HEAD
 ---
 
 ## ⬡ License
@@ -180,7 +179,4 @@ Halqa is a dual-licensed project designed to protect both our engineering labor 
 
 <br />
 
-> **© Shuvo-Code-Dev 2026.** *Halqa is a masterpiece in progress, engineered for the community.*
-=======
-Made with ❤️ by **Halqa Community**. Powerd by **Oi Applications**
->>>>>>> e6dd0dd7ad6c0887acba8da81dc9fc8929403473
+> **© Shuvo-Code-Dev 2026.** Build with ❤️ by **Halqa Community**. Powerd by **[Oi Applications](https://play.google.com/store/apps/dev?id=5209526810797458542)**.
