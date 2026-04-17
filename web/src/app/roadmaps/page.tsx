@@ -27,10 +27,10 @@ export default function Roadmaps() {
           </div>
         </Link>
 
-        <div className={`${styles.card} glass-panel`}>
+        <Link href="/roadmaps/backend" className={`${styles.card} glass-panel`}>
           <div className={styles.cardHeader}>
             <h2 className={styles.domain}>Backend</h2>
-            <span className={`${styles.status} ${styles.soon}`}>Coming Soon</span>
+            <span className={`${styles.status} ${styles.active}`}>Partial</span>
           </div>
           <p className={styles.description}>
             Focus on server-side logic, databases, APIs, and system architecture using Node.js or Python.
@@ -40,10 +40,7 @@ export default function Roadmaps() {
             <span className={styles.step}>Databases</span>
             <span className={styles.step}>APIs</span>
           </div>
-          <a href="https://github.com/Shuvo-code-dev/Halqa/discussions" target="_blank" rel="noopener noreferrer" className={styles.voteBtn}>
-            📣 Vote for this Path
-          </a>
-        </div>
+        </Link>
 
         <div className={`${styles.card} glass-panel`}>
           <div className={styles.cardHeader}>

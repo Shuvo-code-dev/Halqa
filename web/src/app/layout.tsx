@@ -12,8 +12,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Halqa | A-Z Free Coding Resources & Roadmaps",
-  description: "A minimalist, community-driven platform for aspiring developers to find structured coding roadmaps and curated free resources.",
+  title: "Halqa | Navigate the Noise, Master the Code",
+  description: "A minimalist, community-driven platform for A-Z free coding resources and structured roadmaps.",
 };
 
 export default function RootLayout({
