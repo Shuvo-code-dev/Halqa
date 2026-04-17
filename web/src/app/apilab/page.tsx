@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useMemo } from 'react';
 import styles from './page.module.css';
-import { API_REGISTRY, API_CATEGORIES, ApiEntry } from '@lib/apilab-registry';
+import { API_REGISTRY, API_CATEGORIES } from '@lib/apilab-registry';
 import { gsap } from '@lib/gsap';
 import { useLanguage } from '@/context/LanguageContext';
 import SharedSidebar from '@shared/SharedSidebar';
@@ -15,8 +15,15 @@ export default function ApiLab() {
   const [searchTerm, setSearchTerm] = useState('');
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
   const [showToast, setShowToast] = useState(false);
+  const [prevFilters, setPrevFilters] = useState({ activeCategory, searchTerm });
   const containerRef = useRef<HTMLDivElement>(null);
   const loadMoreRef = useRef<HTMLDivElement>(null);
+
+  // Reset visible count on filter change (Render-time fix for cascading render error)
+  if (prevFilters.activeCategory !== activeCategory || prevFilters.searchTerm !== searchTerm) {
+    setPrevFilters({ activeCategory, searchTerm });
+    setVisibleCount(ITEMS_PER_PAGE);
+  }
 
   // Filter Logic
   const filteredAPIs = useMemo(() => {
@@ -46,10 +53,6 @@ export default function ApiLab() {
     return () => observer.disconnect();
   }, [filteredAPIs]);
 
-  // Reset visible count on filter change
-  useEffect(() => {
-    setVisibleCount(ITEMS_PER_PAGE);
-  }, [activeCategory, searchTerm]);
 
   // GSAP Animations
   useEffect(() => {
@@ -79,7 +82,9 @@ export default function ApiLab() {
       await navigator.clipboard.writeText(text);
       setShowToast(true);
       setTimeout(() => setShowToast(false), 2500);
-    } catch(err) {}
+    } catch {
+      // Error handled silently
+    }
   };
 
   const sidebarItems = useMemo(() => {

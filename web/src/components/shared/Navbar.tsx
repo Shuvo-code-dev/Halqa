@@ -11,8 +11,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const links = gsap.utils.toArray(`.${styles.navLink}`);
-      links.forEach((link: any) => {
+      const links = gsap.utils.toArray(`.${styles.navLink}`) as HTMLElement[];
+      links.forEach((link) => {
         link.addEventListener('mouseenter', () => {
           gsap.to(link, { scale: 1.05, duration: 0.3, ease: "power2.out" });
         });

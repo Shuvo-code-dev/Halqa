@@ -33,8 +33,8 @@ export default function Projects() {
       });
 
       // Parallax Mouse Effect (Refactored to GSAP defaults)
-      const cards = gsap.utils.toArray(`.${styles.card}`);
-      cards.forEach((card: any) => {
+      const cards = gsap.utils.toArray(`.${styles.card}`) as HTMLElement[];
+      cards.forEach((card) => {
         const speed = 15;
         
         const onMouseMove = (e: MouseEvent) => {

@@ -40,7 +40,6 @@ export const metadata: Metadata = {
 import { LanguageProvider } from "@/context/LanguageContext";
 import { UserProvider } from "@/context/UserContext";
 import { AIProvider } from "@/context/AIContext";
-import GsapRegistry from "@shared/GsapRegistry";
 import AIAgent from "@shared/AIAgent";
 import MeshBackground from "@shared/MeshBackground";
 import QuickAccess from "@shared/QuickAccess";

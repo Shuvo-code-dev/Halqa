@@ -18,6 +18,8 @@ const DynamicPreview = ({ componentName, paused }: { componentName: string, paus
   return <Component paused={paused} />;
 };
 
+const CATEGORIES = ['All', 'Bookmarks', 'Text', 'Animations', 'Backgrounds', 'UI'];
+
 export default function CodeLab() {
   const { t } = useLanguage();
   const { toggleBookmark, isBookmarked, bookmarks } = useUser();
@@ -76,7 +78,6 @@ export default function CodeLab() {
   const [copyStatus, setCopyStatus] = useState<Record<string, string>>({});
   const [showToast, setShowToast] = useState(false);
 
-  const categories = ['All', 'Bookmarks', 'Text', 'Animations', 'Backgrounds', 'UI'];
   
   const filteredComps = useMemo(() => {
     return CODELAB_REGISTRY.filter(comp => {
@@ -90,7 +91,7 @@ export default function CodeLab() {
                           comp.description.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
-  }, [activeCategory, searchQuery, bookmarks]);
+  }, [activeCategory, searchQuery, isBookmarked]);
 
   const togglePanel = (id: string) => setOpenPanels(prev => prev[id] ? { ...prev, [id]: '' } : { ...prev, [id]: 'react' });
   const switchTab = (id: string, tab: string) => setOpenPanels(prev => ({ ...prev, [id]: tab }));
@@ -107,11 +108,13 @@ export default function CodeLab() {
         setCopyStatus(prev => ({ ...prev, [key]: '' }));
         setShowToast(false);
       }, 2000);
-    } catch(err) {}
+    } catch {
+      // Error handled silently
+    }
   };
 
   const highlightCode = (code: string) => {
-    let highlighted = code
+    const highlighted = code
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/(let|const|var|import|export|from|function|return|if|else|true|false)\b/g, '<span class="' + styles.codeKeyword + '">$1</span>');
@@ -119,7 +122,7 @@ export default function CodeLab() {
   };
 
   const sidebarItems = useMemo(() => {
-    return categories.map(cat => ({
+    return CATEGORIES.map(cat => ({
       id: cat,
       label: cat === 'All' ? 'All Components' : cat,
       count: cat === 'Bookmarks' ? bookmarks.length : undefined,
@@ -191,17 +194,17 @@ export default function CodeLab() {
 
                   <div className={styles.detailsTray + ' ' + (isDetailsOpen ? styles.open : '')}>
                     <div className={styles.detailsContent}>
-                       <div className={styles.detailBlock}>
-                         <div className={styles.detailLabel}>The "Why"</div>
-                         <p className={styles.detailVal}>{t(`codelab.components.${item.id}.why`)}</p>
-                       </div>
+                        <div className={styles.detailBlock}>
+                          <div className={styles.detailLabel}>The &quot;Why&quot;</div>
+                          <p className={styles.detailVal}>{t(`codelab.components.${item.id}.why`)}</p>
+                        </div>
                        <div className={styles.detailBlock}>
                          <div className={styles.detailLabel}>Core Topics</div>
-                         <div className={styles.topicsCloud}>
-                            {(t(`codelab.components.${item.id}.topics`) as any || []).toString().split(',').map((topic: string) => (
-                              <span key={topic} className={styles.topicTag}>{topic}</span>
-                            ))}
-                         </div>
+                          <div className={styles.topicsCloud}>
+                             {(t(`codelab.components.${item.id}.topics`) as string || '').split(',').map((topic: string) => (
+                               <span key={topic} className={styles.topicTag}>{topic}</span>
+                             ))}
+                          </div>
                        </div>
                     </div>
                   </div>
