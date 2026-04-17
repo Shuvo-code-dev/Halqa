@@ -42,10 +42,10 @@ export default function Roadmaps() {
           </div>
         </Link>
 
-        <div className={`${styles.card} glass-panel`}>
+        <Link href="/roadmaps/fullstack" className={`${styles.card} glass-panel`}>
           <div className={styles.cardHeader}>
             <h2 className={styles.domain}>Full-Stack</h2>
-            <span className={`${styles.status} ${styles.soon}`}>Coming Soon</span>
+            <span className={`${styles.status} ${styles.active}`}>Active</span>
           </div>
           <p className={styles.description}>
             The ultimate path to building complete web applications from the browser interface down to the database schema.
@@ -55,15 +55,12 @@ export default function Roadmaps() {
             <span className={styles.step}>Backend</span>
             <span className={styles.step}>DevOps</span>
           </div>
-          <a href="https://github.com/Shuvo-code-dev/Halqa/discussions" target="_blank" rel="noopener noreferrer" className={styles.voteBtn}>
-            📣 Vote for this Path
-          </a>
-        </div>
+        </Link>
 
-        <div className={`${styles.card} glass-panel`}>
+        <Link href="/roadmaps/mobile" className={`${styles.card} glass-panel`}>
           <div className={styles.cardHeader}>
             <h2 className={styles.domain}>Mobile</h2>
-            <span className={`${styles.status} ${styles.soon}`}>Coming Soon</span>
+            <span className={`${styles.status} ${styles.active}`}>Active</span>
           </div>
           <p className={styles.description}>
             Build cross-platform mobile applications using modern frameworks like React Native or Flutter.
@@ -72,10 +69,7 @@ export default function Roadmaps() {
             <span className={styles.step}>Dart / JS</span>
             <span className={styles.step}>Flutter / React Native</span>
           </div>
-          <a href="https://github.com/Shuvo-code-dev/Halqa/discussions" target="_blank" rel="noopener noreferrer" className={styles.voteBtn}>
-            📣 Vote for this Path
-          </a>
-        </div>
+        </Link>
       </div>
     </div>
   );

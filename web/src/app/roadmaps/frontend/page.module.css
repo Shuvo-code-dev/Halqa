@@ -164,3 +164,46 @@
   color: var(--text-secondary);
   font-size: 1rem;
 }
+
+/* Pro-Tip CSS */
+.proTip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 1.2rem;
+  background: rgba(45, 212, 191, 0.05);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;
+  box-shadow: 0 4px 20px rgba(45, 212, 191, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proTip:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 25px rgba(45, 212, 191, 0.15);
+}
+
+.proTipHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.proTipText {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.proTipLink {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
