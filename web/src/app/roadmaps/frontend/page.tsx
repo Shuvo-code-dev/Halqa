@@ -78,6 +78,76 @@ export default function FrontendRoadmap() {
           </div>
         </div>
 
+        {/* Stage 4 */}
+        <div className={styles.stage}>
+          <div className={styles.stageNumber}>04</div>
+          <h2 className={styles.stageTitle}>Version Control (Git & GitHub)</h2>
+          <p className={styles.stageDescription}>
+            Learn how to manage code, track changes, and collaborate with teams effectively. Essential for any professional developer.
+          </p>
+          <div className={styles.resources}>
+            <div className={styles.resourceHeader}>Primary Resources</div>
+            <div className={styles.resourceItem}>
+              <div className={styles.resourceInfo}>
+                <span className={styles.resourceName}>Git & GitHub for Beginners</span>
+                <span className={styles.resourceType}>freeCodeCamp Course</span>
+              </div>
+              <a href="https://www.freecodecamp.org/news/git-and-github-crash-course/" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
+                Watch Course
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Stage 5 */}
+        <div className={styles.stage}>
+          <div className={styles.stageNumber}>05</div>
+          <h2 className={styles.stageTitle}>React Mastery</h2>
+          <p className={styles.stageDescription}>
+            Master state management, components, hooks, and lifecycle events to build complex user interfaces using the foremost frontend library.
+          </p>
+          <div className={styles.resources}>
+            <div className={styles.resourceHeader}>Primary Resources</div>
+            <div className={styles.resourceItem}>
+              <div className={styles.resourceInfo}>
+                <span className={styles.resourceName}>React.dev</span>
+                <span className={styles.resourceType}>Official Interactive Docs</span>
+              </div>
+              <a href="https://react.dev/learn" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
+                Start Learning
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Stage 6 */}
+        <div className={styles.stage}>
+          <div className={styles.stageNumber}>06</div>
+          <h2 className={styles.stageTitle}>Next.js & Deployment</h2>
+          <p className={styles.stageDescription}>
+            Build production-ready, SEO-optimized, full-stack React framework apps and deploy them seamlessly to Vercel.
+          </p>
+          <div className={styles.resources}>
+            <div className={styles.resourceHeader}>Primary Resources</div>
+            <div className={styles.resourceItem}>
+              <div className={styles.resourceInfo}>
+                <span className={styles.resourceName}>Next.js Learn Dashboard</span>
+                <span className={styles.resourceType}>Official Next.js Tutorial</span>
+              </div>
+              <a href="https://nextjs.org/learn" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
+                Build Dashboard
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Completion */}
+        <div className={styles.completion}>
+          <div className={styles.completionIcon}>🏆</div>
+          <h3 className={styles.completionTitle}>Frontend Mastered</h3>
+          <p className={styles.completionText}>You now have the skills to build and deploy production-grade frontend applications.</p>
+        </div>
+
       </div>
     </div>
   );

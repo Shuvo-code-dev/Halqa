@@ -40,6 +40,27 @@ export default function Roadmaps() {
             <span className={styles.step}>Databases</span>
             <span className={styles.step}>APIs</span>
           </div>
+          <a href="https://github.com/Shuvo-code-dev/Halqa/discussions" target="_blank" rel="noopener noreferrer" className={styles.voteBtn}>
+            📣 Vote for this Path
+          </a>
+        </div>
+
+        <div className={`${styles.card} glass-panel`}>
+          <div className={styles.cardHeader}>
+            <h2 className={styles.domain}>Full-Stack</h2>
+            <span className={`${styles.status} ${styles.soon}`}>Coming Soon</span>
+          </div>
+          <p className={styles.description}>
+            The ultimate path to building complete web applications from the browser interface down to the database schema.
+          </p>
+          <div className={styles.steps}>
+            <span className={styles.step}>Frontend</span>
+            <span className={styles.step}>Backend</span>
+            <span className={styles.step}>DevOps</span>
+          </div>
+          <a href="https://github.com/Shuvo-code-dev/Halqa/discussions" target="_blank" rel="noopener noreferrer" className={styles.voteBtn}>
+            📣 Vote for this Path
+          </a>
         </div>
 
         <div className={`${styles.card} glass-panel`}>
@@ -54,6 +75,9 @@ export default function Roadmaps() {
             <span className={styles.step}>Dart / JS</span>
             <span className={styles.step}>Flutter / React Native</span>
           </div>
+          <a href="https://github.com/Shuvo-code-dev/Halqa/discussions" target="_blank" rel="noopener noreferrer" className={styles.voteBtn}>
+            📣 Vote for this Path
+          </a>
         </div>
       </div>
     </div>

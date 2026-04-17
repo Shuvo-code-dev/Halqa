@@ -93,3 +93,25 @@
   border-radius: 100px;
   color: var(--text-muted);
 }
+
+.voteBtn {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px dashed var(--border-glass);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.voteBtn:hover {
+  background-color: var(--bg-glass);
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}

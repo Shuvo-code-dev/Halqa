@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         <p className={styles.footerText}>
-          &copy; {new Date().getFullYear()} Proudly made with ❤️ by Halqa Community.
+          Built with ❤️ by the Halqa Community · Powered by Oi Applications
         </p>
       </div>
     </footer>
