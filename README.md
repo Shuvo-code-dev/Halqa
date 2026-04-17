@@ -3,10 +3,7 @@
 <br />
 <br />
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=13&duration=3000&pause=1000&color=C0C0C0&center=true&vCenter=true&width=600&lines=Initializing+Halqa...;Loading+roadmaps...;Filtering+the+noise...;Welcome%2C+Developer.">
-  <img alt="Typing SVG" src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=13&duration=3000&pause=1000&color=333333&center=true&vCenter=true&width=600&lines=Initializing+Halqa...;Loading+roadmaps...;Filtering+the+noise...;Welcome%2C+Developer.">
-</picture>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=400&size=13&duration=4000&pause=800&color=999999&center=true&vCenter=true&width=600&separator=%3B&lines=navigate+%C2%B7+the+noise+%C2%B7+master+%C2%B7+the+code;from+zero+%C2%B7+to+developer+%C2%B7+for+free;one+path+%C2%B7+zero+noise+%C2%B7+always+open" alt="Halqa" />
 
 <br />
 <br />
