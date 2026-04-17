@@ -119,6 +119,55 @@
   gap: 0.75rem;
 }
 
+.filterRow {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2.5rem 0 3rem 0;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.filterRow::-webkit-scrollbar {
+  display: none;
+}
+
+.filterBtn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.filterBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.filterBtnActive {
+  background: rgba(45, 212, 191, 0.1);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 15px rgba(45, 212, 191, 0.15);
+}
+
+.emptyState {
+  text-align: center;
+  padding: 5rem 1rem;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-style: italic;
+  width: 100%;
+}
+
 .tierFree {
   background-color: rgba(45, 212, 191, 0.1);
   color: var(--accent);
