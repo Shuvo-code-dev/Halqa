@@ -13,6 +13,7 @@ export default function Navbar() {
           <Link href="/roadmaps" className={styles.navLink}>Roadmaps</Link>
           <Link href="/codelab" className={styles.navLink}>Code Lab</Link>
           <Link href="/apilab" className={styles.navLink}>API Lab</Link>
+          <Link href="/projects" className={styles.navLink}>Projects</Link>
           <Link href="/resources" className={styles.navLink}>Resources</Link>
           <a href="https://github.com/Shuvo-code-dev/Halqa" target="_blank" rel="noopener noreferrer" className={styles.navBtn}>
             GitHub
