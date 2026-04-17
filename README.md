@@ -4,15 +4,6 @@
 
 <br />
 
-```text
-  _    _          _        ____          
- | |  | |   /\     | |      / __ \   /\    
- | |__| |  /  \    | |     | |  | | /  \   
- |  __  | / /\ \   | |     | |  | |/ /\ \  
- | |  | |/ ____ \  | |____ | |__| / ____ \ 
- |_|  |_/_/    \_ \______| \____/_/    \_\
-```
-
 **Navigate the Noise. Master the Code.**  
 *A high-fidelity, unified ecosystem for the modern developer.*
 
