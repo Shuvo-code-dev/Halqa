@@ -4,6 +4,123 @@
   margin: 0 auto;
 }
 
+.stage {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid var(--border-glass);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stage:hover {
+  border-left-color: var(--accent);
+}
+
+.stageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.stageDetails {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-top: 0;
+}
+
+.stageDetails.open {
+  max-height: 1000px;
+  opacity: 1;
+  padding-top: 1rem;
+}
+
+.chevron {
+  color: var(--text-muted);
+  transition: transform 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.stage.open .chevron {
+  transform: rotate(180deg);
+  color: var(--accent);
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.detailBlock {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-glass);
+}
+
+.detailTitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.detailText {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.topicList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.topicItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.topicItem::before {
+  content: "•";
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.deepDiveBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+}
+
+.deepDiveBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
 .header {
   margin-bottom: 4rem;
 }

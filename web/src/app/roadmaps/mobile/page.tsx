@@ -1,7 +1,55 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from '../frontend/page.module.css';
 
+const STAGES = [
+  {
+    id: '01',
+    title: 'JSX & Native Components',
+    description: 'Learn how to translate web knowledge into the native mobile world.',
+    why: "Mobile uses native primitives (&lt;View&gt;, &lt;Text&gt;) instead of HTML. Understanding this bridge is essential for performance.",
+    topics: ['View, Text, Image', 'StyleSheet API', 'Platform Specific Code', 'Native Bridging'],
+    guide: "Initialize a project using Expo. Create a simple profile screen using only Native components. Focus on vertical and horizontal alignment.",
+    resource: 'https://reactnative.dev/docs/getting-started'
+  },
+  {
+    id: '02',
+    title: 'Mobile Flexbox & Layout',
+    description: 'Master the specific nuances of Flexbox for mobile screen variety.',
+    why: "Mobile layouts are dynamic and must handle thousands of devices. Mastering Flexbox is the only way to ensure consistency.",
+    topics: ['Flex Direction (Column)', 'Justify vs Align', 'Safe Area Views', 'Dimensions API'],
+    guide: "Build a grid system that adapts to both iPhone and Android sizes. Use the `SafeAreaView` to ensure your content is never hidden by \"notches\".",
+    resource: 'https://reactnative.dev/docs/flexbox'
+  },
+  {
+    id: '03',
+    title: 'Navigation & State',
+    description: 'Master the user flow between screens using React Navigation.',
+    why: "Unlike the web, mobile \"stack\" navigation is physical and state-dependent. Proper flow ensures a premium app feel.",
+    topics: ['Stack Navigation', 'Tab Bars', 'Passing Params', 'Deep Linking'],
+    guide: "Implement a multi-screen app with a bottom tab bar. Ensure state persists correctly when navigating between \"Home\" and \"Settings\".",
+    resource: 'https://reactnavigation.org/docs/getting-started/'
+  },
+  {
+    id: '04',
+    title: 'TestFlight & Distribution',
+    description: 'Learn the "Last Mile" of app development—getting into users\' hands.',
+    why: "A perfect app is useless if it's trapped on your computer. Distribution is a complex technical hurdle of its own.",
+    topics: ['App Store Connect', 'Signing & Certificates', 'TestFlight Beta', 'Fastlane Automation'],
+    guide: "Generate a production build using Expo Application Services (EAS). Upload your binary to TestFlight and invite your first group of beta testers.",
+    resource: 'https://docs.expo.dev/build/introduction/'
+  }
+];
+
 export default function MobileRoadmap() {
+  const [expandedStage, setExpandedStage] = useState<number | null>(0);
+
+  const toggleStage = (index: number) => {
+    setExpandedStage(expandedStage === index ? null : index);
+  };
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -10,123 +58,79 @@ export default function MobileRoadmap() {
         </Link>
         <h1 className={styles.title}>Mobile <span className="text-gradient">Engineering</span></h1>
         <p className={styles.subtitle}>
-          The direct bridge to building native iOS and Android experiences leveraging cross-platform React Native and Expo architectures.
-          <br /><br />
-          <span className={styles.stageNumber} style={{ position: 'relative', display: 'inline-block', left: 0, marginTop: '1rem' }}>Active Path</span>
+          Build cross-platform mobile applications using modern frameworks like React Native and the Expo ecosystem.
         </p>
       </header>
       
       <div className={styles.timeline}>
-        {/* Stage 1 */}
-        <div className={styles.stage}>
-          <div className={styles.stageNumber}>01</div>
-          <h2 className={styles.stageTitle}>Expo Ecosystem & CLI</h2>
-          <p className={styles.stageDescription}>
-            Bypass heavy Xcode/Android Studio setups. Understand the Expo Go app matrix and deploy your first native sandbox utilizing absolute zero build configurations.
-          </p>
-          <div className={styles.resources}>
-            <div className={styles.resourceHeader}>Primary Resources</div>
-            <div className={styles.resourceItem}>
-              <div className={styles.resourceInfo}>
-                <span className={styles.resourceName}>Expo Quick Start</span>
-                <span className={styles.resourceType}>Official Docs</span>
+        {STAGES.map((stage, index) => (
+          <div 
+            key={stage.id} 
+            className={`${styles.stage} ${expandedStage === index ? styles.open : ''}`}
+            onClick={() => toggleStage(index)}
+          >
+            <div className={styles.stageNumber}>{stage.id}</div>
+            
+            <div className={styles.stageHeader}>
+              <div>
+                <h2 className={styles.stageTitle}>{stage.title}</h2>
+                <p className={styles.stageDescription}>{stage.description}</p>
               </div>
-              <a href="https://docs.expo.dev/" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
-                Init Project
+              <div className={styles.chevron}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
+            </div>
+
+            <div className={`${styles.stageDetails} ${expandedStage === index ? styles.open : ''}`}>
+              <div className={styles.detailsGrid}>
+                <div className={styles.detailBlock}>
+                  <div className={styles.detailTitle}>The "Why"</div>
+                  <p className={styles.detailText}>{stage.why}</p>
+                </div>
+
+                <div className={styles.detailBlock}>
+                  <div className={styles.detailTitle}>Core Topics</div>
+                  <ul className={styles.topicList}>
+                    {stage.topics.map((topic, tIdx) => (
+                      <li key={tIdx} className={styles.topicItem}>{topic}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className={styles.detailBlock}>
+                  <div className={styles.detailTitle}>Actionable Guide</div>
+                  <p className={styles.detailText}>{stage.guide}</p>
+                </div>
+              </div>
+
+              {index === 0 && (
+                <div className={styles.proTip} onClick={(e) => e.stopPropagation()}>
+                  <div className={styles.proTipHeader}>🧪 Lab Integration</div>
+                  <p className={styles.proTipText}>
+                    Applying web styles to mobile? Remember to escape your JSX tags. See our <Link href="/projects" className={styles.proTipLink}>Mobile Blueprints</Link> for ready-made examples.
+                  </p>
+                </div>
+              )}
+
+              <a 
+                href={stage.resource} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.deepDiveBtn}
+                onClick={(e) => e.stopPropagation()}
+              >
+                Deep Dive Resources
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             </div>
           </div>
-        </div>
-
-        {/* Stage 2 */}
-        <div className={styles.stage}>
-          <div className={styles.stageNumber}>02</div>
-          <h2 className={styles.stageTitle}>React Native Core</h2>
-          <p className={styles.stageDescription}>
-            Transition away from DOM elements (`div`, `span`). Master primitive iOS/Android mapping utilizing `&lt;View&gt;`, `&lt;Text&gt;`, and massive optimized `&lt;FlatList&gt;` arrays.
-          </p>
-
-          <div className={styles.proTip}>
-            <div className={styles.proTipHeader}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-              Antigravity Pro Tip
-            </div>
-            <div className={styles.proTipText}>
-              Need heavy state data to test your `&lt;FlatList&gt;` infinity scroll? Inject absolute fake payloads routing directly from the Testing section in the <Link href="/apilab" className={styles.proTipLink}>API Lab</Link>.
-            </div>
-          </div>
-
-          <div className={styles.resources}>
-            <div className={styles.resourceHeader}>Primary Resources</div>
-            <div className={styles.resourceItem}>
-              <div className={styles.resourceInfo}>
-                <span className={styles.resourceName}>React Native Components</span>
-                <span className={styles.resourceType}>Native Mapping</span>
-              </div>
-              <a href="https://reactnative.dev/docs/components-and-apis" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
-                Read Specs
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Stage 3 */}
-        <div className={styles.stage}>
-          <div className={styles.stageNumber}>03</div>
-          <h2 className={styles.stageTitle}>Device Native APIs</h2>
-          <p className={styles.stageDescription}>
-            Connect physics to code. Invoke the core operating system layers mapping the Camera, Geolocation tracking, Push Notifications, and Secure Storage logic.
-          </p>
-          <div className={styles.resources}>
-            <div className={styles.resourceHeader}>Primary Resources</div>
-            <div className={styles.resourceItem}>
-              <div className={styles.resourceInfo}>
-                <span className={styles.resourceName}>Expo SDK Modules</span>
-                <span className={styles.resourceType}>Architecture Reference</span>
-              </div>
-              <a href="https://docs.expo.dev/versions/latest/" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
-                Explore APIs
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Stage 4 */}
-        <div className={styles.stage}>
-          <div className={styles.stageNumber}>04</div>
-          <h2 className={styles.stageTitle}>Store Deployment & CI/CD</h2>
-          <p className={styles.stageDescription}>
-            Compile the final native binary arrays (AAB/IPA). Utilize EAS (Expo Application Services) to construct internal testing channels and finally deploy your code to the Apple App Store and Google Play Store frameworks.
-          </p>
-          <div className={styles.resources}>
-            <div className={styles.resourceHeader}>Primary Resources</div>
-            <div className={styles.resourceItem}>
-              <div className={styles.resourceInfo}>
-                <span className={styles.resourceName}>EAS Build Pipeline</span>
-                <span className={styles.resourceType}>DevOps</span>
-              </div>
-              <a href="https://docs.expo.dev/build/introduction/" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
-                Launch Build
-              </a>
-            </div>
-            <div className={styles.resourceItem}>
-              <div className={styles.resourceInfo}>
-                <span className={styles.resourceName}>App Store Guidelines</span>
-                <span className={styles.resourceType}>Legal & Review</span>
-              </div>
-              <a href="https://developer.apple.com/app-store/review/guidelines/" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
-                Check Apple Rules
-              </a>
-            </div>
-          </div>
-        </div>
+        ))}
 
         <div className={styles.completion}>
-          <div className={styles.completionIcon}>📱</div>
-          <h3 className={styles.completionTitle}>Native Architect</h3>
-          <p className={styles.completionText}>You can ship code natively to billions of supercomputers worldwide.</p>
+          <div className={styles.completionIcon}>🏆</div>
+          <h3 className={styles.completionTitle}>Mobile Mastered</h3>
+          <p className={styles.completionText}>You can now build and ship native apps to millions of devices.</p>
         </div>
-
       </div>
     </div>
   );

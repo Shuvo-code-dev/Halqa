@@ -1,7 +1,73 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from './page.module.css';
 
+const STAGES = [
+  {
+    id: '01',
+    title: 'HTML Foundations',
+    description: 'HyperText Markup Language is the backbone of every website. Master semantic structure for SEO and accessibility.',
+    why: 'Without proper HTML, search engines and assistive technology are blind. It is the structural integrity of your application.',
+    topics: ['Semantic Elements', 'ARIA Roles', 'Forms & Tables', 'Meta Tags'],
+    guide: 'Start by building a pure HTML skeletal layout of a complex dashboard. Focus strictly on using correct tags (<main>, <section>, <article>) before adding any CSS.',
+    resource: 'https://developer.mozilla.org/en-US/docs/Web/HTML'
+  },
+  {
+    id: '02',
+    title: 'Modern CSS',
+    description: 'Cascading Style Sheets turn documents into professional layouts. Master Flexbox and CSS Grid.',
+    why: 'Pixel-perfect precision and responsiveness are the hallmarks of a pro. Modern CSS allows for complex layouts without heavy JS.',
+    topics: ['Flexbox & Grid', 'Custom Properties', 'Media Queries', 'CSS Transitions'],
+    guide: 'Apply a "Mobile First" approach. Define your base styles for smaller screens and layer in Grid complexities as you move to desktop breakpoints.',
+    resource: 'https://developer.mozilla.org/en-US/docs/Learn/CSS'
+  },
+  {
+    id: '03',
+    title: 'JavaScript Logic',
+    description: 'The engine of the web. Master data types, async operations, and the Event Loop.',
+    why: 'Logic is the difference between a static page and a functioning product. JavaScript handles every user interaction.',
+    topics: ['ES6+ Syntax', 'Async/Await', 'DOM API', 'Closures & Scope'],
+    guide: 'Avoid using libraries early on. Build a task manager using only vanilla JS and LocalStorage to understand state persistence and DOM updates.',
+    resource: 'https://javascript.info/'
+  },
+  {
+    id: '04',
+    title: 'Version Control',
+    description: 'Learn how to manage code, track changes, and collaborate with teams effectively using Git.',
+    why: 'Collaborative engineering is impossible without Git. It provides a historical immutable record of your work.',
+    topics: ['Branching Strategies', 'Pull Requests', 'Merge Conflicts', 'Rebasing'],
+    guide: 'Use the CLI for Git. Mastering the command line commands (commit, push, rebase) is far faster and more reliable than any GUI.',
+    resource: 'https://git-scm.com/doc'
+  },
+  {
+    id: '05',
+    title: 'React Mastery',
+    description: 'Master state management, component composition, and hooks to build complex UIs.',
+    why: 'React is the industry standard for UI architecture. It allows for declarative, predictable, and reusable component systems.',
+    topics: ['Hooks API', 'Context Provider', 'Props Drilling', 'Memoization'],
+    guide: 'Focus on "Thinking in React". Break down your UI into a hierarchy of components and identify the minimal representation of state.',
+    resource: 'https://react.dev/learn'
+  },
+  {
+    id: '06',
+    title: 'Next.js & Deployment',
+    description: 'Build production-ready, SEO-optimized, full-stack React framework apps.',
+    why: 'Next.js bridges the gap between frontend and backend, providing absolute performance and developer experience.',
+    topics: ['App Router', 'Server Components', 'Edge Caching', 'API Routes'],
+    guide: 'Migrate your React apps to Next.js to leverage Server-Side Rendering (SSR). Deploy your result to Vercel for instant public access.',
+    resource: 'https://nextjs.org/learn'
+  }
+];
+
 export default function FrontendRoadmap() {
+  const [expandedStage, setExpandedStage] = useState<number | null>(0);
+
+  const toggleStage = (index: number) => {
+    setExpandedStage(expandedStage === index ? null : index);
+  };
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -10,144 +76,79 @@ export default function FrontendRoadmap() {
         </Link>
         <h1 className={styles.title}>Frontend <span className="text-gradient">Mastery</span></h1>
         <p className={styles.subtitle}>
-          The curated path to building interactive, beautiful user interfaces that run in the browser. Start from zero and go to full React competency.
+          The curated path to building interactive, beautiful user interfaces. Start from zero and go to full React competency.
         </p>
       </header>
       
       <div className={styles.timeline}>
-        {/* Stage 1 */}
-        <div className={styles.stage}>
-          <div className={styles.stageNumber}>01</div>
-          <h2 className={styles.stageTitle}>HTML Foundations</h2>
-          <p className={styles.stageDescription}>
-            HyperText Markup Language is the backbone of every website. You need to understand semantic structure, accessibility, and forms to build solid web applications.
-          </p>
-          <div className={styles.resources}>
-            <div className={styles.resourceHeader}>Primary Resources</div>
-            <div className={styles.resourceItem}>
-              <div className={styles.resourceInfo}>
-                <span className={styles.resourceName}>MDN HTML Documentation</span>
-                <span className={styles.resourceType}>Official Specs & Guides</span>
+        {STAGES.map((stage, index) => (
+          <div 
+            key={stage.id} 
+            className={`${styles.stage} ${expandedStage === index ? styles.open : ''}`}
+            onClick={() => toggleStage(index)}
+          >
+            <div className={styles.stageNumber}>{stage.id}</div>
+            
+            <div className={styles.stageHeader}>
+              <div>
+                <h2 className={styles.stageTitle}>{stage.title}</h2>
+                <p className={styles.stageDescription}>{stage.description}</p>
               </div>
-              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
-                Read Guide
+              <div className={styles.chevron}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
+            </div>
+
+            <div className={`${styles.stageDetails} ${expandedStage === index ? styles.open : ''}`}>
+              <div className={styles.detailsGrid}>
+                <div className={styles.detailBlock}>
+                  <div className={styles.detailTitle}>The "Why"</div>
+                  <p className={styles.detailText}>{stage.why}</p>
+                </div>
+
+                <div className={styles.detailBlock}>
+                  <div className={styles.detailTitle}>Core Topics</div>
+                  <ul className={styles.topicList}>
+                    {stage.topics.map((topic, tIdx) => (
+                      <li key={tIdx} className={styles.topicItem}>{topic}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className={styles.detailBlock}>
+                  <div className={styles.detailTitle}>Actionable Guide</div>
+                  <p className={styles.detailText}>{stage.guide}</p>
+                </div>
+              </div>
+
+              {index === 4 && (
+                <div className={styles.proTip} onClick={(e) => e.stopPropagation()}>
+                  <div className={styles.proTipHeader}>🧪 Lab Integration</div>
+                  <p className={styles.proTipText}>
+                    Ready to practice global state? See a high-performance implementation in our <Link href="/codelab" className={styles.proTipLink}>Apple-Style Bento Grid</Link>.
+                  </p>
+                </div>
+              )}
+
+              <a 
+                href={stage.resource} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.deepDiveBtn}
+                onClick={(e) => e.stopPropagation()}
+              >
+                Deep Dive Resources
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             </div>
           </div>
-        </div>
+        ))}
 
-        {/* Stage 2 */}
-        <div className={styles.stage}>
-          <div className={styles.stageNumber}>02</div>
-          <h2 className={styles.stageTitle}>Modern CSS</h2>
-          <p className={styles.stageDescription}>
-            Cascading Style Sheets turn boring documents into beautiful layouts. Learn Flexbox, Grid, Custom Properties (Variables), and responsive design principles.
-          </p>
-          <div className={styles.resources}>
-            <div className={styles.resourceHeader}>Primary Resources</div>
-            <div className={styles.resourceItem}>
-              <div className={styles.resourceInfo}>
-                <span className={styles.resourceName}>MDN CSS Basics</span>
-                <span className={styles.resourceType}>Official Specs & Guides</span>
-              </div>
-              <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
-                Read Guide
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Stage 3 */}
-        <div className={styles.stage}>
-          <div className={styles.stageNumber}>03</div>
-          <h2 className={styles.stageTitle}>JavaScript Logic</h2>
-          <p className={styles.stageDescription}>
-            JavaScript is what makes the web interactive. You will learn data types, functions, DOM manipulation, asynchronous programming, so you can build dynamic apps.
-          </p>
-          <div className={styles.resources}>
-            <div className={styles.resourceHeader}>Primary Resources</div>
-            <div className={styles.resourceItem}>
-              <div className={styles.resourceInfo}>
-                <span className={styles.resourceName}>JavaScript.info</span>
-                <span className={styles.resourceType}>The Modern JavaScript Tutorial</span>
-              </div>
-              <a href="https://javascript.info/" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
-                Read Tutorial
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Stage 4 */}
-        <div className={styles.stage}>
-          <div className={styles.stageNumber}>04</div>
-          <h2 className={styles.stageTitle}>Version Control (Git & GitHub)</h2>
-          <p className={styles.stageDescription}>
-            Learn how to manage code, track changes, and collaborate with teams effectively. Essential for any professional developer.
-          </p>
-          <div className={styles.resources}>
-            <div className={styles.resourceHeader}>Primary Resources</div>
-            <div className={styles.resourceItem}>
-              <div className={styles.resourceInfo}>
-                <span className={styles.resourceName}>Git & GitHub for Beginners</span>
-                <span className={styles.resourceType}>freeCodeCamp Course</span>
-              </div>
-              <a href="https://www.freecodecamp.org/news/git-and-github-crash-course/" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
-                Watch Course
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Stage 5 */}
-        <div className={styles.stage}>
-          <div className={styles.stageNumber}>05</div>
-          <h2 className={styles.stageTitle}>React Mastery</h2>
-          <p className={styles.stageDescription}>
-            Master state management, components, hooks, and lifecycle events to build complex user interfaces using the foremost frontend library.
-          </p>
-          <div className={styles.resources}>
-            <div className={styles.resourceHeader}>Primary Resources</div>
-            <div className={styles.resourceItem}>
-              <div className={styles.resourceInfo}>
-                <span className={styles.resourceName}>React.dev</span>
-                <span className={styles.resourceType}>Official Interactive Docs</span>
-              </div>
-              <a href="https://react.dev/learn" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
-                Start Learning
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Stage 6 */}
-        <div className={styles.stage}>
-          <div className={styles.stageNumber}>06</div>
-          <h2 className={styles.stageTitle}>Next.js & Deployment</h2>
-          <p className={styles.stageDescription}>
-            Build production-ready, SEO-optimized, full-stack React framework apps and deploy them seamlessly to Vercel.
-          </p>
-          <div className={styles.resources}>
-            <div className={styles.resourceHeader}>Primary Resources</div>
-            <div className={styles.resourceItem}>
-              <div className={styles.resourceInfo}>
-                <span className={styles.resourceName}>Next.js Learn Dashboard</span>
-                <span className={styles.resourceType}>Official Next.js Tutorial</span>
-              </div>
-              <a href="https://nextjs.org/learn" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
-                Build Dashboard
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Completion */}
         <div className={styles.completion}>
           <div className={styles.completionIcon}>🏆</div>
           <h3 className={styles.completionTitle}>Frontend Mastered</h3>
-          <p className={styles.completionText}>You now have the skills to build and deploy production-grade frontend applications.</p>
+          <p className={styles.completionText}>You now have the skills to build production-grade interfaces.</p>
         </div>
-
       </div>
     </div>
   );

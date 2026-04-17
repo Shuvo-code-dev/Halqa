@@ -1,0 +1,47 @@
+.bentoContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 100px);
+  gap: 12px;
+  width: 90%;
+  height: min-content;
+}
+
+.item {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.item:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+  background: var(--bg-glass-hover);
+}
+
+.wide {
+  grid-column: span 2;
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), transparent);
+}
+
+.tall {
+  grid-row: span 2;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.item:hover .label {
+  color: var(--accent);
+}

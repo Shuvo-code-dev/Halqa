@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import styles from './layout.module.css';
 
+import LanguageSwitcher from './LanguageSwitcher';
+
 export default function Navbar() {
   return (
     <header className={`${styles.navbar} glass-panel`}>
@@ -15,6 +17,8 @@ export default function Navbar() {
           <Link href="/apilab" className={styles.navLink}>API Lab</Link>
           <Link href="/projects" className={styles.navLink}>Projects</Link>
           <Link href="/resources" className={styles.navLink}>Resources</Link>
+          <div className={styles.navDivider}></div>
+          <LanguageSwitcher />
           <a href="https://github.com/Shuvo-code-dev/Halqa" target="_blank" rel="noopener noreferrer" className={styles.navBtn}>
             GitHub
           </a>

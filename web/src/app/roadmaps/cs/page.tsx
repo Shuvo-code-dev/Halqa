@@ -1,7 +1,46 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from '../frontend/page.module.css';
 
+const STAGES = [
+  {
+    id: '01',
+    title: 'Data Structures & Big O',
+    description: 'Master the DNA of computer science. Understand how data is stored and retrieved.',
+    why: 'Efficiency is the hallmark of a senior engineer. Big O analysis allows you to predict performance before a single line of code is run.',
+    topics: ['Big O Notation', 'Arrays & Linked Lists', 'Stacks & Queues', 'Hash Tables'],
+    guide: 'Implement a custom Hash Table in JavaScript. Focus on resolving collisions and understanding why O(1) lookup is the golden standard.',
+    resource: 'https://www.bigocheatsheet.com/'
+  },
+  {
+    id: '02',
+    title: 'Algorithms & Sorting',
+    description: 'Learn how to solve complex problems with logical precision.',
+    why: 'Algorithmic thinking is the core of problem solving. Mastering sorting and searching allows you to handle massive datasets with minimal latency.',
+    topics: ['QuickSort & MergeSort', 'Binary Search', 'Recursion Mastery', 'Tree Traversals (BFS/DFS)'],
+    guide: 'Visualize the QuickSort algorithm. Write a recursive function that searches a Binary Search Tree (BST) for a specific node in O(log n) time.',
+    resource: 'https://visualgo.net/en'
+  },
+  {
+    id: '03',
+    title: 'Memory Management',
+    description: 'Understand the physical limits of hardware—Heap, Stack, and Pointers.',
+    why: 'Software doesn\'t exist in a vacuum. Understanding memory allows you to prevent leaks and build high-performance systems.',
+    topics: ['Heap vs Stack', 'Pointers & References', 'Garbage Collection', 'Thread Concurrency'],
+    guide: 'Learn the difference between "Pass by Value" and "Pass by Reference". Sketch out a memory diagram of how a recursive function consumes the stack.',
+    resource: 'https://cs50.harvard.edu/x/'
+  }
+];
+
 export default function CSRoadmap() {
+  const [expandedStage, setExpandedStage] = useState<number | null>(0);
+
+  const toggleStage = (index: number) => {
+    setExpandedStage(expandedStage === index ? null : index);
+  };
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -10,74 +49,70 @@ export default function CSRoadmap() {
         </Link>
         <h1 className={styles.title}>CS <span className="text-gradient">Fundamentals</span></h1>
         <p className={styles.subtitle}>
-          The DNA of software engineering. Master data structures, algorithms, and low-level system design.
+          The foundation of computer science. Understand the logical and physical layers that power modern software.
         </p>
       </header>
       
       <div className={styles.timeline}>
-        {/* Stage 1 */}
-        <div className={styles.stage}>
-          <div className={styles.stageNumber}>01</div>
-          <h2 className={styles.stageTitle}>Data Structures & Complexity</h2>
-          <p className={styles.stageDescription}>
-            Understand Big O notation, Arrays, Linked Lists, Stacks, and Queues. Learn how to choose the right structure for optimal time and space efficiency.
-          </p>
-          <div className={styles.resources}>
-            <div className={styles.resourceHeader}>Primary Resources</div>
-            <div className={styles.resourceItem}>
-              <div className={styles.resourceInfo}>
-                <span className={styles.resourceName}>Big O Cheat Sheet</span>
-                <span className={styles.resourceType}>Visual Reference</span>
+        {STAGES.map((stage, index) => (
+          <div 
+            key={stage.id} 
+            className={`${styles.stage} ${expandedStage === index ? styles.open : ''}`}
+            onClick={() => toggleStage(index)}
+          >
+            <div className={styles.stageNumber}>{stage.id}</div>
+            
+            <div className={styles.stageHeader}>
+              <div>
+                <h2 className={styles.stageTitle}>{stage.title}</h2>
+                <p className={styles.stageDescription}>{stage.description}</p>
               </div>
-              <a href="https://www.bigocheatsheet.com/" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
-                View Charts
+              <div className={styles.chevron}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
+            </div>
+
+            <div className={`${styles.stageDetails} ${expandedStage === index ? styles.open : ''}`}>
+              <div className={styles.detailsGrid}>
+                <div className={styles.detailBlock}>
+                  <div className={styles.detailTitle}>The "Why"</div>
+                  <p className={styles.detailText}>{stage.why}</p>
+                </div>
+
+                <div className={styles.detailBlock}>
+                  <div className={styles.detailTitle}>Core Topics</div>
+                  <ul className={styles.topicList}>
+                    {stage.topics.map((topic, tIdx) => (
+                      <li key={tIdx} className={styles.topicItem}>{topic}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className={styles.detailBlock}>
+                  <div className={styles.detailTitle}>Actionable Guide</div>
+                  <p className={styles.detailText}>{stage.guide}</p>
+                </div>
+              </div>
+
+              <a 
+                href={stage.resource} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.deepDiveBtn}
+                onClick={(e) => e.stopPropagation()}
+              >
+                Deep Dive Resources
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             </div>
           </div>
-        </div>
+        ))}
 
-        {/* Stage 2 */}
-        <div className={styles.stage}>
-          <div className={styles.stageNumber}>02</div>
-          <h2 className={styles.stageTitle}>Algorithms & Trees</h2>
-          <p className={styles.stageDescription}>
-            Master Sorting (QuickSort, MergeSort), Searching (Binary Search), and Tree traversals (DFS, BFS). Build the logical intuition to solve complex problems.
-          </p>
-          <div className={styles.resources}>
-            <div className={styles.resourceHeader}>Primary Resources</div>
-            <div className={styles.resourceItem}>
-              <div className={styles.resourceInfo}>
-                <span className={styles.resourceName}>VisuAlgo</span>
-                <span className={styles.resourceType}>Visualizer</span>
-              </div>
-              <a href="https://visualgo.net/en" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
-                Watch Algorithms
-              </a>
-            </div>
-          </div>
+        <div className={styles.completion}>
+          <div className={styles.completionIcon}>🧬</div>
+          <h3 className={styles.completionTitle}>Computer Scientist</h3>
+          <p className={styles.completionText}>You have mastered the logical foundations of engineering.</p>
         </div>
-
-        {/* Stage 3 */}
-        <div className={styles.stage}>
-          <div className={styles.stageNumber}>03</div>
-          <h2 className={styles.stageTitle}>Memory & Threads</h2>
-          <p className={styles.stageDescription}>
-            Dive deep into Heap vs Stack memory, Pointers, and Multithreading. Understand how software interacts with the physical CPU and RAM.
-          </p>
-          <div className={styles.resources}>
-            <div className={styles.resourceHeader}>Primary Resources</div>
-            <div className={styles.resourceItem}>
-              <div className={styles.resourceInfo}>
-                <span className={styles.resourceName}>CS50 Introduction</span>
-                <span className={styles.resourceType}>Course</span>
-              </div>
-              <a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener noreferrer" className={styles.resourceBtn}>
-                Take Course
-              </a>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   );

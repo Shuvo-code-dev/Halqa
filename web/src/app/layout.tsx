@@ -16,6 +16,8 @@ export const metadata: Metadata = {
   description: "A minimalist, community-driven platform for A-Z free coding resources and structured roadmaps.",
 };
 
+import { LanguageProvider } from "@/context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,13 +26,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`}>
       <body>
-        <div className={styles.mainLayout}>
-          <Navbar />
-          <main className={styles.mainContent}>
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <LanguageProvider>
+          <div className={styles.mainLayout}>
+            <Navbar />
+            <main className={styles.mainContent}>
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -47,6 +47,42 @@
   color: var(--text-primary);
 }
 
+.navDivider {
+  width: 1px;
+  height: 18px;
+  background: var(--border-glass);
+  margin: 0 0.5rem;
+}
+
+.langSwitcher {
+  display: flex;
+  align-items: center;
+}
+
+.langBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.langBtn:hover {
+  color: var(--accent);
+  border-color: rgba(45, 212, 191, 0.3);
+  background: rgba(45, 212, 191, 0.05);
+}
+
+.langLabel {
+  min-width: 20px;
+}
+
 .navBtn {
   font-size: 0.95rem;
   color: var(--bg-primary);
