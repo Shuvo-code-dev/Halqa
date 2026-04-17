@@ -1,18 +1,9 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Report a bug to help us improve Halqa
 title: ''
 labels: ''
 assignees: ''
-
----
-
----
-name: "🐛 Bug Report"
-about: "Report a bug to help us improve the circle"
-title: "[BUG] : Short description of the issue"
-labels: "bug"
-assignees: ""
 
 ---
 
