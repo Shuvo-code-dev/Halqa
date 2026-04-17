@@ -2,20 +2,20 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+We currently provide security updates for the following versions of **Halqa**:
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| 1.0.x   | :white_check_mark: |
+| < 1.0   | :x:                |
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+If you discover a security vulnerability within this project, please help us by reporting it responsibly. 
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+**How to report:**
+- Please **do not** create a public GitHub issue for security vulnerabilities.
+- Send a detailed report to our team via email at: **shuv.error2011@gmail.com**
+- Include as much information as possible, such as steps to reproduce the issue and the potential impact.
+
+We aim to acknowledge all reports within 48–72 hours and provide a fix as quickly as possible. Thank you for helping keep the **Halqa** community safe!

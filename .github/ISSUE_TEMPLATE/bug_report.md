@@ -1,38 +1,40 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Report a bug to help us improve Halqa
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+## ◌ Problem Description
+> A clear and concise description of what the bug is. 
 
-**To Reproduce**
-Steps to reproduce the behavior:
+## ✦ Steps to Reproduce
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
-4. See error
+4. See error: `[Insert Error Message or Code if any]`
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+## ⚡ Expected Behavior
+What did you expect to happen? (e.g., "The roadmap should load immediately").
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+## 🌑 Environment Details
+**Desktop:**
+- OS: [e.g. Windows, macOS]
+- Browser: [e.g. Chrome, Firefox]
+- Version: [e.g. 124.0]
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+**Smartphone (if applicable):**
+- Device: [e.g. iPhone 15]
+- OS: [e.g. iOS 17]
+- Browser: [e.g. Safari]
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+## 📸 Visual Evidence
+If possible, drag and drop screenshots or GIFs here to help us visualize the issue.
 
-**Additional context**
-Add any other context about the problem here.
+## 📌 Additional Context
+Add any other context or logs about the problem here.
+
+---
+**Thank you for helping us keep the circle clean. 🪶**
