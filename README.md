@@ -1,6 +1,6 @@
 <div align="center">
 
-# Halqa (হালকা) 🪶
+# Halqa 🪶
 **"Navigate the Noise, Master the Code."**
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](LICENSE)
