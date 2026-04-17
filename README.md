@@ -190,7 +190,7 @@ Crafted with ❤️ by the **Halqa Community** &nbsp;·&nbsp; Powered by **Oi Ap
 <br />
 <br />
 
-*"The circle is open. Step in."*
+*"The circle is open. Let's build!"*
 
 <br />
 
