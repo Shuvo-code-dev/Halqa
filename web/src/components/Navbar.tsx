@@ -11,7 +11,7 @@ export default function Navbar() {
         <nav className={styles.navLinks}>
           <Link href="/roadmaps" className={styles.navLink}>Roadmaps</Link>
           <Link href="/resources" className={styles.navLink}>Resources</Link>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.navBtn}>
+          <a href="https://github.com/Shuvo-code-dev/Halqa" target="_blank" rel="noopener noreferrer" className={styles.navBtn}>
             Contribute
           </a>
         </nav>
