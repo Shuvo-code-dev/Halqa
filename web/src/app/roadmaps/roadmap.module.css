@@ -6,10 +6,31 @@
 
 .stage {
   position: relative;
-  padding-left: 2rem;
+  padding-left: 3rem;
   border-left: 2px solid var(--border-glass);
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-bottom: 4rem;
+}
+
+.progressContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--border-glass);
+}
+
+.progressLine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 0;
+  background: var(--accent);
+  box-shadow: 0 0 15px var(--accent-glow);
+  z-index: 2;
 }
 
 .stage.open {

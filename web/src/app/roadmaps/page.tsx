@@ -4,9 +4,11 @@ import { gsap } from '@lib/gsap';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import styles from './page.module.css';
+import { ROADMAP_REGISTRY } from '@lib/roadmap-registry';
 
 export default function Roadmaps() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const roadmaps = Object.values(ROADMAP_REGISTRY);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -43,109 +45,22 @@ export default function Roadmaps() {
       </header>
       
       <div className={styles.grid}>
-        <Link href="/roadmaps/frontend" className={`${styles.card} halqa-card`}>
-          <div className={styles.cardHeader}>
-            <h2 className={styles.domain}>Frontend</h2>
-            <span className={`${styles.status} ${styles.active}`}>Active</span>
-          </div>
-          <p className={styles.description}>
-            Master HTML, CSS, JavaScript, and React. Build beautiful user interfaces and responsive web applications.
-          </p>
-          <div className={styles.steps}>
-            <span className={styles.step}>HTML & CSS</span>
-            <span className={styles.step}>JavaScript</span>
-            <span className={styles.step}>React</span>
-          </div>
-        </Link>
-
-        <Link href="/roadmaps/backend" className={`${styles.card} halqa-card`}>
-          <div className={styles.cardHeader}>
-            <h2 className={styles.domain}>Backend</h2>
-            <span className={`${styles.status} ${styles.active}`}>Partial</span>
-          </div>
-          <p className={styles.description}>
-            Focus on server-side logic, databases, APIs, and system architecture using Node.js or Python.
-          </p>
-          <div className={styles.steps}>
-            <span className={styles.step}>Node.js / Python</span>
-            <span className={styles.step}>Databases</span>
-            <span className={styles.step}>APIs</span>
-          </div>
-        </Link>
-
-        <Link href="/roadmaps/fullstack" className={`${styles.card} halqa-card`}>
-          <div className={styles.cardHeader}>
-            <h2 className={styles.domain}>Full-Stack</h2>
-            <span className={`${styles.status} ${styles.active}`}>Active</span>
-          </div>
-          <p className={styles.description}>
-            The ultimate path to building complete web applications from the browser interface down to the database schema.
-          </p>
-          <div className={styles.steps}>
-            <span className={styles.step}>Frontend</span>
-            <span className={styles.step}>Backend</span>
-            <span className={styles.step}>DevOps</span>
-          </div>
-        </Link>
-
-        <Link href="/roadmaps/mobile" className={`${styles.card} halqa-card`}>
-          <div className={styles.cardHeader}>
-            <h2 className={styles.domain}>Mobile</h2>
-            <span className={`${styles.status} ${styles.active}`}>Active</span>
-          </div>
-          <p className={styles.description}>
-            Build cross-platform mobile applications using modern frameworks like React Native or Flutter.
-          </p>
-          <div className={styles.steps}>
-            <span className={styles.step}>Dart / JS</span>
-            <span className={styles.step}>Flutter / React Native</span>
-          </div>
-        </Link>
-
-        <Link href="/roadmaps/linux" className={`${styles.card} halqa-card`}>
-          <div className={styles.cardHeader}>
-            <h2 className={styles.domain}>Linux & DevOps</h2>
-            <span className={`${styles.status} ${styles.active}`}>Active</span>
-          </div>
-          <p className={styles.description}>
-            The engine room. Master the command line, server security, containers, and deployment automation.
-          </p>
-          <div className={styles.steps}>
-            <span className={styles.step}>Linux Terminal</span>
-            <span className={styles.step}>Docker</span>
-            <span className={styles.step}>CI/CD</span>
-          </div>
-        </Link>
-
-        <Link href="/roadmaps/apple" className={`${styles.card} halqa-card`}>
-          <div className={styles.cardHeader}>
-            <h2 className={styles.domain}>Apple Ecosystem</h2>
-            <span className={`${styles.status} ${styles.active}`}>Active</span>
-          </div>
-          <p className={styles.description}>
-            Design and build high-performance native apps for iOS and macOS using Swift and SwiftUI.
-          </p>
-          <div className={styles.steps}>
-            <span className={styles.step}>Swift</span>
-            <span className={styles.step}>SwiftUI</span>
-            <span className={styles.step}>App Store</span>
-          </div>
-        </Link>
-
-        <Link href="/roadmaps/cs" className={`${styles.card} halqa-card`}>
-          <div className={styles.cardHeader}>
-            <h2 className={styles.domain}>CS Fundamentals</h2>
-            <span className={`${styles.status} ${styles.active}`}>Active</span>
-          </div>
-          <p className={styles.description}>
-            The foundation of computer science. Understand data structures, algorithms, and binary logic.
-          </p>
-          <div className={styles.steps}>
-            <span className={styles.step}>Algorithms</span>
-            <span className={styles.step}>Data Structures</span>
-            <span className={styles.step}>OS Basics</span>
-          </div>
-        </Link>
+        {roadmaps.map((roadmap) => (
+          <Link key={roadmap.id} href={`/roadmaps/${roadmap.id}`} className={`${styles.card} halqa-card`}>
+            <div className={styles.cardHeader}>
+              <h2 className={styles.domain}>{roadmap.id.toUpperCase()}</h2>
+              <span className={`${styles.status} ${styles.active}`}>Active</span>
+            </div>
+            <p className={styles.description}>
+              {roadmap.subtitle}
+            </p>
+            <div className={styles.steps}>
+              {roadmap.stages.slice(0, 3).map(stage => (
+                <span key={stage.id} className={styles.step}>{stage.title}</span>
+              ))}
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   );

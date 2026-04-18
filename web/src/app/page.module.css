@@ -1,101 +1,284 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  padding-bottom: 8rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: var(--nav-height);
+}
+
+/* --- Hero Section --- */
 .hero {
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 70vh;
-  gap: 2rem;
-  padding: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroBadge {
+  background: var(--accent-muted);
+  border: 1px solid var(--border-glass-bright);
+  color: var(--accent);
+  padding: 0.5rem 1.2rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .title {
-  font-size: clamp(3rem, 8vw, 5rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.04em;
-  max-width: 800px;
+  font-size: clamp(3.5rem, 10vw, 6rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .subtitle {
   font-size: 1.25rem;
   color: var(--text-secondary);
   max-width: 600px;
+  margin: 0 auto 3rem;
   line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .actions {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 1.5rem;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .primaryBtn {
-  background-color: var(--accent);
-  color: var(--bg-primary);
-  padding: 0.8rem 2rem;
-  border-radius: 100px;
-  font-weight: 600;
+  background: var(--accent);
+  color: #000;
+  padding: 1rem 2.5rem;
+  border-radius: var(--radius-button);
+  font-weight: 700;
   font-size: 1.1rem;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 20px var(--accent-glow);
+  box-shadow: 0 0 30px var(--accent-glow);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .primaryBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(45, 212, 191, 0.4);
+  transform: scale(1.05);
+  box-shadow: 0 0 50px var(--accent-glow);
 }
 
 .secondaryBtn {
-  background-color: transparent;
+  background: transparent;
   color: var(--text-primary);
-  padding: 0.8rem 2rem;
-  border-radius: 100px;
-  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: var(--radius-button);
+  border: 1px solid var(--border-glass-bright);
+  font-weight: 700;
   font-size: 1.1rem;
-  border: 1px solid var(--border-glass);
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .secondaryBtn:hover {
-  background-color: var(--bg-glass);
+  background: var(--bg-glass);
+  border-color: var(--text-primary);
 }
 
-/* Features Section */
-.features {
+/* --- Section Headers --- */
+.sectionHeader {
+  margin-bottom: 4rem;
+  text-align: left;
+}
+
+.sectionLabel {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* --- Featured Labs --- */
+.labsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 2rem;
-  margin: 4rem 0 6rem 0;
 }
 
-.featureCard {
-  padding: 2rem;
+.labCard {
+  padding: 0;
+  overflow: hidden;
+  height: 480px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.featureCard:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.15);
+.previewArea {
+  height: 280px;
+  background: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-glass);
 }
 
-.featureIcon {
-  font-size: 2rem;
-  color: var(--accent);
+.labMeta {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.labName {
+  font-size: 1.5rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
-.featureTitle {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.featureDesc {
+.labDesc {
   color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.5;
+}
+
+.exploreLink {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+/* --- Roadmaps Section --- */
+.roadmapsWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.roadmapFeatured {
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), transparent);
+}
+
+.pathLine {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid var(--border-glass-bright);
+  margin: 3rem 0;
+}
+
+.pathStep {
+  position: relative;
+}
+
+.stepDot {
+  position: absolute;
+  left: -2.4rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 15px var(--accent);
+}
+
+.stepTitle {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.stepDesc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* --- Bento Philosophy --- */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 280px);
+  gap: 1.5rem;
+}
+
+.bentoItem {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.bentoItem.large {
+  grid-column: span 2;
+  background: linear-gradient(135deg, var(--bg-secondary), #000);
+}
+
+.bentoItem.tall {
+  grid-row: span 2;
+  justify-content: flex-end;
+}
+
+.bentoIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.bentoTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.bentoDesc {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 1024px) {
+  .roadmapsWrapper {
+    grid-template-columns: 1fr;
+  }
+  .bentoGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .bentoItem.large {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .homeContainer {
+    gap: 5rem;
+  }
+  .title {
+    font-size: 3rem;
+  }
 }
