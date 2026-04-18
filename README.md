@@ -322,6 +322,16 @@ git commit -m "feat: add physics hover to CodeLab card grid"
 git push origin feat/your-feature-name
 ```
 
+We'd love your help! Check the [open issues](https://github.com/Shuvo-code-dev/Halqa/issues) or submit ideas via the [feature request template](https://github.com/Shuvo-code-dev/Halqa/issues/new?template=2-feature-request.yml).
+
+Please read the [contribution guide](https://github.com/Shuvo-code-dev/Halqa/CONTRIBUTING.md) first — thanks for making Halqa better!
+
+## 🙌 Contributors
+
+<a href="https://github.com/Shuvo-code-dev/Halqa/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Shuvo-code-dev/Halqa" />
+</a>
+
 <br />
 
 **Before opening a PR:**
