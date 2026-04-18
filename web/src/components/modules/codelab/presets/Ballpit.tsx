@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import styles from './Ballpit.module.css';
 
 class Ball {
   x: number;
@@ -62,8 +63,8 @@ export default function Ballpit({ paused = false }) {
     if (!ctx) return;
 
     let animationFrameId: number;
-    let width = canvas.width = canvas.offsetWidth;
-    let height = canvas.height = canvas.offsetHeight;
+    const width = canvas.width = canvas.offsetWidth;
+    const height = canvas.height = canvas.offsetHeight;
 
     const balls: Ball[] = [];
     const colors = ['#2dd4bf', '#a855f7', '#3b82f6', '#f43f5e'];
@@ -107,7 +108,7 @@ export default function Ballpit({ paused = false }) {
   return (
     <canvas 
       ref={canvasRef} 
-      style={{ width: '100%', height: '100%', cursor: 'none' }} 
+      className={styles.canvas}
     />
   );
 }

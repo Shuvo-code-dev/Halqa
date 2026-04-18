@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import styles from './GlitchText.module.css';
 
 export default function GlitchText({ text = "HALQA GLITCH", paused = false }) {
   const textRef = useRef<HTMLDivElement>(null);
@@ -36,13 +37,7 @@ export default function GlitchText({ text = "HALQA GLITCH", paused = false }) {
   return (
     <div 
       ref={textRef} 
-      style={{ 
-        fontSize: '2.5rem', 
-        fontWeight: 900, 
-        color: 'white', 
-        fontFamily: 'monospace',
-        letterSpacing: '0.1em'
-      }}
+      className={styles.glitchText}
     >
       {text}
     </div>

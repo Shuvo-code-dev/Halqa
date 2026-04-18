@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import styles from './LiquidChrome.module.css';
 
 const FRAGMENT_SHADER = `
   uniform float uTime;
@@ -50,6 +51,7 @@ export default function LiquidChrome({ paused = false }) {
     const width = containerRef.current.offsetWidth;
     const height = containerRef.current.offsetHeight;
     renderer.setSize(width, height);
+    renderer.domElement.className = styles.canvas;
     containerRef.current.appendChild(renderer.domElement);
 
     const geometry = new THREE.PlaneGeometry(2, 2);
@@ -98,5 +100,5 @@ export default function LiquidChrome({ paused = false }) {
     };
   }, [paused]);
 
-  return <div ref={containerRef} style={{ width: '100%', height: '100%' }} />;
+  return <div ref={containerRef} className={styles.container} />;
 }

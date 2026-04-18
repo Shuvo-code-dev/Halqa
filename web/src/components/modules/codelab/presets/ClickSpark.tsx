@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import styles from './ClickSpark.module.css';
 
 class Particle {
   x: number;
@@ -83,15 +84,15 @@ export default function ClickSpark({ paused = false }) {
   }, [paused]);
 
   return (
-    <div style={{ width: '100%', height: '100%', position: 'relative', cursor: 'pointer' }}>
+    <div className={styles.container}>
       <canvas 
         ref={canvasRef} 
         width={400} 
         height={240} 
-        style={{ width: '100%', height: '100%' }} 
+        className={styles.canvas}
       />
-      <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-         <span style={{ color: 'rgba(255,255,255,0.3)', fontWeight: 700, fontSize: '0.8rem' }}>CLICK ANYWHERE</span>
+      <div className={styles.overlay}>
+         <span className={styles.hint}>CLICK ANYWHERE</span>
       </div>
     </div>
   );

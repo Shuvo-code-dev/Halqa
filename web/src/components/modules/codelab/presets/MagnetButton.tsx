@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import styles from './MagnetButton.module.css';
 
 export default function MagnetButton({ text = "Magnetize", paused = false }) {
   const ref = useRef<HTMLButtonElement>(null);
@@ -28,17 +29,7 @@ export default function MagnetButton({ text = "Magnetize", paused = false }) {
       onMouseLeave={reset}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-      style={{
-        padding: '1rem 2rem',
-        background: 'var(--accent)',
-        color: 'var(--bg-primary)',
-        border: 'none',
-        borderRadius: '8px',
-        fontWeight: 700,
-        fontSize: '1.2rem',
-        cursor: 'pointer',
-        boxShadow: '0 0 20px var(--accent-glow)'
-      }}
+      className={styles.magnetBtn}
     >
       {text}
     </motion.button>

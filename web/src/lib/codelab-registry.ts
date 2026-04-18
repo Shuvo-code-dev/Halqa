@@ -203,6 +203,7 @@ export default function HalqaQr() {
 
 
 import { useEffect, useRef } from 'react';
+import styles from './Ballpit.module.css';
 
 class Ball {
   x: number;
@@ -236,6 +237,7 @@ class Ball {
     this.x += this.dx;
     this.y += this.dy;
 
+    // Mouse Interaction
     const dist = Math.sqrt((this.x - mouse.x) ** 2 + (this.y - mouse.y) ** 2);
     if (dist < 100) {
       const angle = Math.atan2(this.y - mouse.y, this.x - mouse.x);
@@ -244,6 +246,7 @@ class Ball {
       this.dy += Math.sin(angle) * force * 1.5;
     }
 
+    // Velocity Friction
     this.dx *= 0.99;
     this.dy *= 0.99;
 
@@ -262,8 +265,8 @@ export default function Ballpit({ paused = false }) {
     if (!ctx) return;
 
     let animationFrameId: number;
-    let width = canvas.width = canvas.offsetWidth;
-    let height = canvas.height = canvas.offsetHeight;
+    const width = canvas.width = canvas.offsetWidth;
+    const height = canvas.height = canvas.offsetHeight;
 
     const balls: Ball[] = [];
     const colors = ['#2dd4bf', '#a855f7', '#3b82f6', '#f43f5e'];
@@ -307,14 +310,16 @@ export default function Ballpit({ paused = false }) {
   return (
     <canvas 
       ref={canvasRef} 
-      style={{ width: '100%', height: '100%', cursor: 'none' }} 
+      className={styles.canvas}
     />
   );
 }`.replace(/\r/g, ''),
-    cssCode: `canvas {
+    cssCode: `.canvas {
   width: 100%;
   height: 100%;
+  display: block;
   background: #000;
+  cursor: crosshair;
 }`.replace(/\r/g, '')
   },
   {
@@ -333,6 +338,7 @@ export default function Ballpit({ paused = false }) {
 
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import styles from './LiquidChrome.module.css';
 
 const FRAGMENT_SHADER = \`
   uniform float uTime;
@@ -352,6 +358,7 @@ const FRAGMENT_SHADER = \`
     vec3 col = 0.5 + 0.5 * cos(uTime + p.xyx + vec3(0, 2, 4));
     col *= 0.5 + 0.5 * sin(p.x + p.y);
     
+    // Metallic chrome feel
     float brightness = 0.8 + 0.2 * sin(p.x * 10.0 + uTime);
     col = mix(vec3(0.1, 0.1, 0.15), vec3(brightness), col.r);
 
@@ -380,6 +387,7 @@ export default function LiquidChrome({ paused = false }) {
     const width = containerRef.current.offsetWidth;
     const height = containerRef.current.offsetHeight;
     renderer.setSize(width, height);
+    renderer.domElement.className = styles.canvas;
     containerRef.current.appendChild(renderer.domElement);
 
     const geometry = new THREE.PlaneGeometry(2, 2);
@@ -428,12 +436,20 @@ export default function LiquidChrome({ paused = false }) {
     };
   }, [paused]);
 
-  return <div ref={containerRef} style={{ width: '100%', height: '100%' }} />;
+  return <div ref={containerRef} className={styles.container} />;
 }`.replace(/\r/g, ''),
-    cssCode: `div {
+    cssCode: `.container {
   width: 100%;
   height: 100%;
   position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
 }`.replace(/\r/g, '')
   },
   {
@@ -451,6 +467,7 @@ export default function LiquidChrome({ paused = false }) {
 
 
 import { useEffect, useRef } from 'react';
+import styles from './ClickSpark.module.css';
 
 class Particle {
   x: number;
@@ -533,22 +550,48 @@ export default function ClickSpark({ paused = false }) {
   }, [paused]);
 
   return (
-    <div style={{ width: '100%', height: '100%', position: 'relative', cursor: 'pointer' }}>
+    <div className={styles.container}>
       <canvas 
         ref={canvasRef} 
         width={400} 
         height={240} 
-        style={{ width: '100%', height: '100%' }} 
+        className={styles.canvas}
       />
-      <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-         <span style={{ color: 'rgba(255,255,255,0.3)', fontWeight: 700, fontSize: '0.8rem' }}>CLICK ANYWHERE</span>
+      <div className={styles.overlay}>
+         <span className={styles.hint}>CLICK ANYWHERE</span>
       </div>
     </div>
   );
 }`.replace(/\r/g, ''),
-    cssCode: `canvas {
+    cssCode: `.container {
   width: 100%;
   height: 100%;
+  position: relative;
+  cursor: pointer;
+  background: #000;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hint {
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
 }`.replace(/\r/g, '')
   },
   {
@@ -565,59 +608,85 @@ export default function ClickSpark({ paused = false }) {
     tsxCode: `'use client';
 
 
-import { useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
+import styles from './GlitchText.module.css';
 
-export default function GlitchText({ text = "HALQA GLITCH", paused = false }) {
-  const textRef = useRef<HTMLDivElement>(null);
+export default function GlitchText({ text = "Halqa Lab", paused = false }) {
+  const [isGlitching, setIsGlitching] = useState(false);
 
   useEffect(() => {
-    if (!textRef.current || paused) return;
-
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
-    const originalText = text;
-    let iteration = 0;
-    
+    if (paused) return;
     const interval = setInterval(() => {
-      if (textRef.current) {
-        textRef.current.innerText = originalText
-          .split("")
-          .map((char, index) => {
-            if (index < iteration) return originalText[index];
-            return chars[Math.floor(Math.random() * chars.length)];
-          })
-          .join("");
-
-        if (iteration >= originalText.length) {
-            iteration = 0;
-        }
-        iteration += 1 / 3;
-      }
-    }, 50);
-
+      setIsGlitching(true);
+      setTimeout(() => setIsGlitching(false), 200);
+    }, 3000);
     return () => clearInterval(interval);
-  }, [text, paused]);
+  }, [paused]);
 
   return (
-    <div 
-      ref={textRef} 
-      style={{ 
-        fontSize: '2.5rem', 
-        fontWeight: 900, 
-        color: 'white', 
-        fontFamily: 'monospace',
-        letterSpacing: '0.1em'
-      }}
-    >
-      {text}
+    <div className={styles.glitchWrapper}>
+      <h1 className={\`\${styles.glitch} \${isGlitching ? styles.active : ''}\`}>
+        <span aria-hidden="true" className={styles.span}>{text}</span>
+        {text}
+        <span aria-hidden="true" className={styles.span}>{text}</span>
+      </h1>
     </div>
   );
 }`.replace(/\r/g, ''),
-    cssCode: `div {
-        fontSize: '2.5rem', 
-        fontWeight: 900, 
-        color: 'white', 
-        fontFamily: 'monospace',
-        letterSpacing: '0.1em'
+    cssCode: `.glitchWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glitch {
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  position: relative;
+  color: #fff;
+}
+
+.span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch.active .span:first-child {
+  animation: glitch-anim 0.2s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-5px);
+  color: #2dd4bf;
+  z-index: -1;
+}
+
+.glitch.active .span:last-child {
+  animation: glitch-anim2 0.2s infinite;
+  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  transform: translate(5px);
+  color: #a855f7;
+  z-index: -1;
+}
+
+@keyframes glitch-anim {
+  0% { transform: translate(0); }
+  20% { transform: translate(-5px, 5px); }
+  40% { transform: translate(-5px, -5px); }
+  60% { transform: translate(5px, 5px); }
+  80% { transform: translate(5px, -5px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitch-anim2 {
+  0% { transform: translate(0); }
+  20% { transform: translate(5px, -5px); }
+  40% { transform: translate(5px, 5px); }
+  60% { transform: translate(-5px, -5px); }
+  80% { transform: translate(-5px, 5px); }
+  100% { transform: translate(0); }
 }`.replace(/\r/g, '')
   },
   {
@@ -635,19 +704,20 @@ export default function GlitchText({ text = "HALQA GLITCH", paused = false }) {
 
 
 import { motion } from 'framer-motion';
+import styles from './BlurText.module.css';
 
 export default function BlurText({ text = "Halqa Lab", paused = false }) {
   const words = text.split(" ");
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'center' }}>
+    <div className={styles.container}>
       {words.map((word, i) => (
         <motion.span
           key={i}
           initial={{ filter: 'blur(10px)', opacity: 0, y: 10 }}
           animate={paused ? { filter: 'blur(10px)', opacity: 0 } : { filter: 'blur(0px)', opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: i * 0.1, ease: "easeOut" }}
-          style={{ fontSize: '2.5rem', fontWeight: 800, color: 'white' }}
+          className={styles.word}
         >
           {word}
         </motion.span>
@@ -655,7 +725,19 @@ export default function BlurText({ text = "Halqa Lab", paused = false }) {
     </div>
   );
 }`.replace(/\r/g, ''),
-    cssCode: `/* Pure Framer Motion animations */`.replace(/\r/g, '')
+    cssCode: `.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.word {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  display: inline-block;
+}`.replace(/\r/g, '')
   },
   {
     id: "shiny-text",
@@ -783,8 +865,9 @@ export default function AuroraBg({ paused = false }) {
 
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import styles from './MagnetButton.module.css';
 
-export default function MagnetButton({ text = "Magnetize", paused = false }) {
+export default function MagnetButton({ text = "Halqa Lab", paused = false }) {
   const ref = useRef<HTMLButtonElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -816,19 +899,17 @@ export default function MagnetButton({ text = "Magnetize", paused = false }) {
   );
 }`.replace(/\r/g, ''),
     cssCode: `.magnetBtn {
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  font-weight: 700;
-  background: var(--accent);
+  background: #2dd4bf;
   color: #000;
+  padding: 1.5rem 3rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  border-radius: 99px;
   border: none;
-  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.magnetBtn:hover {
-  background: #fff;
+  box-shadow: 0 10px 30px rgba(45, 212, 191, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }`.replace(/\r/g, '')
   },
   {
