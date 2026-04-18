@@ -91,17 +91,28 @@ export default function Ballpit({ paused = false }) {
       mouse.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      if (paused) return;
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      mouse.current = { x: touch.clientX - rect.left, y: touch.clientY - rect.top };
+    };
+
     const handleMouseLeave = () => {
       mouse.current = { x: -1000, y: -1000 };
     };
 
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
     canvas.addEventListener('mouseleave', handleMouseLeave);
+    canvas.addEventListener('touchend', handleMouseLeave);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
+      canvas.removeEventListener('touchend', handleMouseLeave);
     };
   }, [paused]);
 

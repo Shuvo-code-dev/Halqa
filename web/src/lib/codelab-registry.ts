@@ -293,17 +293,28 @@ export default function Ballpit({ paused = false }) {
       mouse.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      if (paused) return;
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      mouse.current = { x: touch.clientX - rect.left, y: touch.clientY - rect.top };
+    };
+
     const handleMouseLeave = () => {
       mouse.current = { x: -1000, y: -1000 };
     };
 
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
     canvas.addEventListener('mouseleave', handleMouseLeave);
+    canvas.addEventListener('touchend', handleMouseLeave);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
+      canvas.removeEventListener('touchend', handleMouseLeave);
     };
   }, [paused]);
 
@@ -541,11 +552,24 @@ export default function ClickSpark({ paused = false }) {
       }
     };
 
+    const handleTouch = (e: TouchEvent) => {
+      if (paused) return;
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      const x = touch.clientX - rect.left;
+      const y = touch.clientY - rect.top;
+      for (let i = 0; i < 15; i++) {
+        particles.current.push(new Particle(x, y, colors[Math.floor(Math.random() * colors.length)]));
+      }
+    };
+
     canvas.addEventListener('mousedown', handleClick);
+    canvas.addEventListener('touchstart', handleTouch, { passive: true });
 
     return () => {
       cancelAnimationFrame(animationFrameId);
       canvas.removeEventListener('mousedown', handleClick);
+      canvas.removeEventListener('touchstart', handleTouch);
     };
   }, [paused]);
 
@@ -883,6 +907,19 @@ export default function MagnetButton({ text = "Halqa Lab", paused = false }) {
     setPosition({ x: distanceX * 0.4, y: distanceY * 0.4 });
   };
 
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (paused || !ref.current) return;
+    const touch = e.touches[0];
+    const { clientX, clientY } = touch;
+    const { left, top, width, height } = ref.current.getBoundingClientRect();
+    const centerX = left + width / 2;
+    const centerY = top + height / 2;
+    const distanceX = clientX - centerX;
+    const distanceY = clientY - centerY;
+
+    setPosition({ x: distanceX * 0.4, y: distanceY * 0.4 });
+  };
+
   const reset = () => setPosition({ x: 0, y: 0 });
 
   return (
@@ -890,6 +927,8 @@ export default function MagnetButton({ text = "Halqa Lab", paused = false }) {
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={reset}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={reset}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
       className={styles.magnetBtn}

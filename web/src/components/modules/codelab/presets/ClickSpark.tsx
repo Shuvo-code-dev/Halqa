@@ -75,11 +75,24 @@ export default function ClickSpark({ paused = false }) {
       }
     };
 
+    const handleTouch = (e: TouchEvent) => {
+      if (paused) return;
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      const x = touch.clientX - rect.left;
+      const y = touch.clientY - rect.top;
+      for (let i = 0; i < 15; i++) {
+        particles.current.push(new Particle(x, y, colors[Math.floor(Math.random() * colors.length)]));
+      }
+    };
+
     canvas.addEventListener('mousedown', handleClick);
+    canvas.addEventListener('touchstart', handleTouch, { passive: true });
 
     return () => {
       cancelAnimationFrame(animationFrameId);
       canvas.removeEventListener('mousedown', handleClick);
+      canvas.removeEventListener('touchstart', handleTouch);
     };
   }, [paused]);
 
