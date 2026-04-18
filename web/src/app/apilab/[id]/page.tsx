@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { API_REGISTRY } from '@lib/apilab-registry';
+import { getApiById } from '@/lib/api-service';
 import TesterClient from './TesterClient';
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
-  const api = API_REGISTRY.find(a => a.id === id);
+  const api = getApiById(id);
 
   if (!api) {
     return {
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ApiTesterPage({ params }: Props) {
   const { id } = await params;
-  const api = API_REGISTRY.find(a => a.id === id);
+  const api = getApiById(id);
 
   if (!api) notFound();
 

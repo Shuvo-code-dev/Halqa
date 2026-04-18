@@ -7,6 +7,7 @@
   
   /* Accent - Liquid Teal */
   --accent: #2dd4bf;
+  --accent-rgb: 45, 212, 191;
   --accent-glow: rgba(45, 212, 191, 0.2);
   --accent-muted: rgba(45, 212, 191, 0.1);
   

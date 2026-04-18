@@ -1,5 +1,3 @@
-import type React from 'react';
-
 export type ComponentCategory = 'All' | 'Text' | 'Animations' | 'Backgrounds' | 'UI';
 
 export interface ComponentMetadata {

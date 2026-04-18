@@ -1,100 +1,61 @@
 'use client';
 
 import { useState, useEffect, useRef, useMemo } from 'react';
-import Link from 'next/link';
-import { gsap } from '@lib/gsap';
-import { API_REGISTRY, API_CATEGORIES } from '@lib/apilab-registry';
-import SharedSidebar from '@shared/SharedSidebar';
 import { useSearchParams } from 'next/navigation';
-import styles from './page.module.css';
+import { gsap } from '@lib/gsap';
+import { Search, Filter, Layers, Database, Sparkles } from 'lucide-react';
+import { 
+  getFlattenedApis, 
+  getApiCategories, 
+  filterApis 
+} from '@/lib/api-service';
+import ApiCard from '@/components/modules/apilab/ApiCard';
 
-const ITEMS_PER_PAGE = 12;
+const ITEMS_PER_PAGE = 24;
 
 export default function ApiLabClient() {
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
-  const [prevId, setPrevId] = useState<string | null>(null);
-
-  // Sync with URL ID without cascading effect warnings
-  const currentId = searchParams.get('id');
-  if (currentId !== prevId) {
-    setPrevId(currentId);
-    if (currentId) {
-      const api = API_REGISTRY.find(a => a.id === currentId);
-      if (api) {
-        setSearchTerm(api.name);
-      }
-    }
-  }
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+  const [prevId, setPrevId] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const loadMoreRef = useRef<HTMLDivElement>(null);
 
-  // Filter Logic
-  const filteredAPIs = useMemo(() => {
-    return API_REGISTRY.filter(api => {
-      const matchCat = activeCategory === 'All' || api.category === activeCategory;
-      const matchSearch = api.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          api.description.toLowerCase().includes(searchTerm.toLowerCase());
-      return matchCat && matchSearch;
-    });
-  }, [activeCategory, searchTerm]);
+  // Sync with URL ID during render to prevent cascading renders
+  const currentId = searchParams.get('id');
+  const allApis = useMemo(() => getFlattenedApis(), []);
+  const categories = useMemo(() => getApiCategories(), []);
 
-  const visibleAPIs = filteredAPIs.slice(0, visibleCount);
+  if (currentId !== prevId) {
+    setPrevId(currentId);
+    if (currentId) {
+      const api = allApis.find(a => a.id === currentId);
+      if (api) {
+        setSearchTerm(api.name);
+        setActiveCategory(api.category);
+      }
+    }
+  }
 
-  // GSAP Animations & Parallax
+  // Filtering Logic
+  const filteredApis = useMemo(() => {
+    return filterApis(allApis, searchTerm, activeCategory);
+  }, [allApis, searchTerm, activeCategory]);
+
+  const visibleApis = filteredApis.slice(0, visibleCount);
+
+  // GSAP Entrance Animations
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Grid entrance
-      gsap.from(`.${styles.card}`, {
+      gsap.from(".api-card-wrapper", {
         y: 40,
         opacity: 0,
-        stagger: 0.1,
+        stagger: 0.05,
         duration: 0.8,
         ease: "expo.out",
-        delay: 0.2
+        clearProps: "all"
       });
-
-      // 3D Parallax Persistence
-      const cards = gsap.utils.toArray(`.${styles.card}`) as HTMLElement[];
-      const cleanupFns: (() => void)[] = [];
-
-      cards.forEach((card) => {
-        const setTilt = (e: MouseEvent) => {
-          const { left, top, width, height } = card.getBoundingClientRect();
-          const x = (e.clientX - left) / width - 0.5;
-          const y = (e.clientY - top) / height - 0.5;
-
-          gsap.to(card, {
-            rotationY: x * 12,
-            rotationX: -y * 12,
-            transformPerspective: 1000,
-            duration: 0.4,
-            ease: "power2.out"
-          });
-        };
-
-        const resetTilt = () => {
-          gsap.to(card, {
-            rotationY: 0,
-            rotationX: 0,
-            duration: 1.2,
-            ease: "elastic.out(1, 0.3)"
-          });
-        };
-
-        card.addEventListener('mousemove', setTilt);
-        card.addEventListener('mouseleave', resetTilt);
-        cleanupFns.push(() => {
-          card.removeEventListener('mousemove', setTilt);
-          card.removeEventListener('mouseleave', resetTilt);
-        });
-      });
-
-      return () => {
-        cleanupFns.forEach(fn => fn());
-      };
     }, containerRef);
     return () => ctx.revert();
   }, [activeCategory, searchTerm, visibleCount]);
@@ -102,68 +63,121 @@ export default function ApiLabClient() {
   // Infinite Scroll
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && visibleCount < filteredAPIs.length) {
+      if (entries[0].isIntersecting && visibleCount < filteredApis.length) {
         setVisibleCount(prev => prev + ITEMS_PER_PAGE);
       }
     }, { threshold: 0.1 });
 
     if (loadMoreRef.current) observer.observe(loadMoreRef.current);
     return () => observer.disconnect();
-  }, [filteredAPIs, visibleCount]);
-
-  const sidebarItems = useMemo(() => {
-    return API_CATEGORIES.map(cat => ({ id: cat, label: cat }));
-  }, []);
+  }, [filteredApis, visibleCount]);
 
   return (
-    <div className="module-layout" ref={containerRef}>
-      <SharedSidebar 
-        title="API <span class='text-gradient'>Lab</span>"
-        subtitle="Master public data streams."
-        searchTerm={searchTerm}
-        onSearchChange={setSearchTerm}
-        items={sidebarItems}
-        activeItemId={activeCategory}
-        onItemClick={setActiveCategory}
-      />
+    <div className="min-h-screen bg-transparent pt-32 pb-20 px-4 md:px-8 lg:px-12" ref={containerRef}>
+      {/* Header Section */}
+      <section className="max-w-7xl mx-auto mb-16 text-center">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-bold uppercase tracking-widest mb-6 animate-pulse-slow">
+          <Sparkles className="w-4 h-4" />
+          API Lab Engine v2.0
+        </div>
+        <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
+          Infinite <span className="text-gradient">Data Streams</span>
+        </h1>
+        <p className="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl leading-relaxed">
+          The most comprehensive collection of public APIs for modern engineering. 
+          Dynamic discovery, real-time filtering, and ready-to-use schemas.
+        </p>
+      </section>
 
-      <main className="module-content">
-        <section className={styles.gridSection}>
-          <div className={styles.resultMeta}>
-            Found {filteredAPIs.length} APIs in {activeCategory}
+      {/* Search & Filter Controls */}
+      <section className="max-w-5xl mx-auto mb-16">
+        <div className="flex flex-col gap-6">
+          {/* Search Bar */}
+          <div className="relative group">
+            <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
+              <Search className="w-5 h-5 text-gray-500 group-focus-within:text-accent transition-colors" />
+            </div>
+            <input 
+              type="text"
+              placeholder="Search across 260+ production APIs..."
+              className="w-full bg-white/5 border border-white/10 rounded-2xl py-6 pl-16 pr-8 text-white text-lg focus:outline-none focus:border-accent/50 focus:ring-4 focus:ring-accent/10 transition-all placeholder:text-gray-600"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
           </div>
-          
-          <div className={styles.grid}>
-            {visibleAPIs.map((api) => (
-              <Link href={`/apilab/${api.id}`} key={api.id} className={`${styles.card} halqa-card`}>
-                <div className={styles.cardHeader}>
-                  <div className={styles.catRow}>
-                     <span className={styles.catBadge}>{api.category}</span>
-                     <span className={`${styles.methodBadge} ${styles[api.method.toLowerCase()]}`}>
-                        {api.method}
-                     </span>
-                  </div>
-                  <h3 className={styles.cardTitle}>{api.name}</h3>
-                </div>
-                
-                <p className={styles.cardDesc}>{api.description}</p>
-                
-                <div className={styles.cardFooter}>
-                  <div className={styles.endpointPreview}>
-                     <code>{api.endpoint.substring(0, 30)}...</code>
-                  </div>
-                  <span className={styles.testBtn}>Test Live &rarr;</span>
-                </div>
-              </Link>
+
+          {/* Categories Pills */}
+          <div className="flex items-center gap-4 overflow-x-auto pb-4 no-scrollbar">
+            <button 
+              onClick={() => setActiveCategory('All')}
+              className={`flex items-center gap-2 px-6 py-3 rounded-xl border text-sm font-bold whitespace-nowrap transition-all ${
+                activeCategory === 'All' 
+                ? 'bg-accent text-black border-accent' 
+                : 'bg-white/5 text-gray-400 border-white/10 hover:border-white/30'
+              }`}
+            >
+              <Layers className="w-4 h-4" />
+              All Streams
+            </button>
+            {categories.map((cat) => (
+              <button 
+                key={cat.name}
+                onClick={() => setActiveCategory(cat.name)}
+                className={`flex items-center gap-2 px-6 py-3 rounded-xl border text-sm font-bold whitespace-nowrap transition-all ${
+                  activeCategory === cat.name 
+                  ? 'bg-accent text-black border-accent shadow-[0_0_20px_rgba(var(--accent-rgb),0.4)]' 
+                  : 'bg-white/5 text-gray-400 border-white/10 hover:border-white/30'
+                }`}
+              >
+                {cat.name}
+                <span className={`text-[10px] px-2 py-0.5 rounded-full ${activeCategory === cat.name ? 'bg-black/20' : 'bg-white/10'}`}>
+                  {cat.count}
+                </span>
+              </button>
             ))}
           </div>
+        </div>
+      </section>
 
-          {visibleCount < filteredAPIs.length && (
-            <div ref={loadMoreRef} className={styles.loader}>
-              <div className={styles.spinner}></div>
-            </div>
+      {/* Results Meta */}
+      <section className="max-w-7xl mx-auto mb-8 flex items-center justify-between">
+        <div className="flex items-center gap-4 text-gray-500 text-sm font-medium">
+          <Database className="w-4 h-4" />
+          <span>Showing {filteredApis.length} results</span>
+          {activeCategory !== 'All' && (
+            <span className="flex items-center gap-2">
+              in <span className="text-white px-2 py-0.5 bg-white/10 rounded-lg">{activeCategory}</span>
+            </span>
           )}
-        </section>
+        </div>
+      </section>
+
+      {/* API Grid */}
+      <main className="max-w-7xl mx-auto">
+        {visibleApis.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {visibleApis.map((api) => (
+              <ApiCard key={api.id} api={api} />
+            ))}
+          </div>
+        ) : (
+          <div className="py-20 text-center border border-dashed border-white/10 rounded-3xl bg-white/5">
+            <Filter className="w-12 h-12 text-gray-700 mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-gray-400">No match found</h3>
+            <p className="text-gray-600 mt-2">Try adjusting your filters or search terms.</p>
+          </div>
+        )}
+
+        {/* Infinite Scroll Trigger */}
+        {visibleCount < filteredApis.length && (
+          <div ref={loadMoreRef} className="py-20 flex justify-center">
+            <div className="flex gap-2">
+              <div className="w-2 h-2 bg-accent rounded-full animate-bounce" />
+              <div className="w-2 h-2 bg-accent rounded-full animate-bounce [animation-delay:0.2s]" />
+              <div className="w-2 h-2 bg-accent rounded-full animate-bounce [animation-delay:0.4s]" />
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
