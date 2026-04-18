@@ -107,6 +107,7 @@ export default function ApiLab() {
       />
 
       <main className="module-content">
+
         <section className={styles.gridSection}>
           <div className={styles.resultMeta}>
             Found {filteredAPIs.length} APIs in {activeCategory}

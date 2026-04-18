@@ -1,15 +1,16 @@
 .sidebar {
   width: 280px;
   flex-shrink: 0;
-  height: calc(100vh - 12rem);
+  height: calc(100vh - var(--nav-height) - 4rem);
   position: sticky;
-  top: 9rem;
+  top: calc(var(--nav-height) + 2rem);
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding-right: 1rem;
   border-right: 1px solid var(--border-glass);
 }
+
 
 .header {
   display: flex;

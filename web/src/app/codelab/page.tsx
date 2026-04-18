@@ -130,10 +130,10 @@ export default function CodeLab() {
   }, [bookmarks.length]);
 
   return (
-    <div className={styles.dashboardContainer} ref={containerRef}>
+    <div className="module-layout" ref={containerRef}>
       <SharedSidebar 
         title={t('codelab.title') || 'Code <span class="text-gradient">Lab</span>'}
-        subtitle={t('codelab.subtitle')}
+        subtitle={t('codelab.subtitle') || 'High-fidelity UI blocks.'}
         searchTerm={searchQuery}
         onSearchChange={setSearchQuery}
         items={sidebarItems}
@@ -141,11 +141,8 @@ export default function CodeLab() {
         onItemClick={setActiveCategory}
       />
 
-      <main className={styles.mainContent}>
-        <header className={styles.header}>
-          <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: t('codelab.title') || 'Code <span class="text-gradient">Lab</span>' }} />
-          <p className={styles.subtitle}>{t('codelab.subtitle') || 'A world-class UI repository of high-fidelity React + CSS blocks.'}</p>
-        </header>
+      <main className="module-content">
+
 
 
         <div className={styles.grid}>

@@ -60,12 +60,26 @@ a:hover {
   gap: 3rem;
   max-width: var(--max-width);
   margin: 0 auto;
+  padding-top: var(--nav-height); /* Vital for Navbar offset */
+  min-height: calc(100vh - var(--nav-height));
+  padding-bottom: 4rem;
 }
 
 .module-content {
   flex: 1;
   min-width: 0; /* Prevent flex box overflow */
 }
+
+@media (max-width: 1024px) {
+  .module-layout {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: calc(var(--nav-height) + 1rem);
+  }
+}
+
 
 .text-gradient {
   background: linear-gradient(135deg, var(--text-primary), var(--text-muted));

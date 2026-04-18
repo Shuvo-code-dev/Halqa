@@ -12,16 +12,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Halqa | The Global Developer Ecosystem",
-  description: "A world-class, high-density educational ecosystem for modern developers. 16+ Roadmaps, Visual FX Code Lab, and Multi-language support.",
+  title: "Halqa | The Developer Ecosystem",
+  description: "Master the code with high-performance roadmaps and UI components.",
   openGraph: {
-    title: "Halqa | Navigate the Noise, Master the Code",
-    description: "Navigate the complex world of software engineering with high-fidelity roadmaps and an elite UI repository.",
+    title: "Halqa | The Developer Ecosystem",
+    description: "Master the code with high-performance roadmaps and UI components.",
     url: "https://halqa.dev",
     siteName: "Halqa",
     images: [
       {
-        url: "/og-image.png", // We'll assume this exists or create it
+        url: "/og-image.png",
         width: 1200,
         height: 630,
       },
@@ -31,11 +31,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Halqa | The Global Developer Ecosystem",
-    description: "16+ Curated Roadmaps and an Elite UI Lab for the modern developer.",
+    title: "Halqa | The Developer Ecosystem",
+    description: "Master the code with high-performance roadmaps and UI components.",
     images: ["/og-image.png"],
   },
 };
+
 
 import { LanguageProvider } from "@/context/LanguageContext";
 import { UserProvider } from "@/context/UserContext";

@@ -22,28 +22,28 @@
         "name": "Physics Ballpit",
         "desc": "A high-performance interactive physics playground using elastic circle collision.",
         "why": "Understanding gravity and collision logic is fundamental for game development and advanced UI interactions.",
-        "topics": ["Elastic Collisions", "Velocity & Friction", "Canvas Optimization"],
+        "topics": "Elastic Collisions, Velocity & Friction, Canvas Optimization",
         "guide": "Interact with the balls using your mouse to observe force distribution and friction decay."
       },
       "liquid-chrome": {
         "name": "Liquid Chrome",
         "desc": "An elite metallic shader effect using Three.js and custom GLSL noise displacement.",
         "why": "Advanced shaders elevate the aesthetic quality of a site, providing a premium, high-end feel.",
-        "topics": ["GLSL Shaders", "Noise Functions", "Vertex/Fragment Logic"],
+        "topics": "GLSL Shaders, Noise Functions, Vertex/Fragment Logic",
         "guide": "Use this as a background for hero sections. It scales perfectly to any resolution via WebGL."
       },
       "click-spark": {
         "name": "Click Spark",
         "desc": "A vibrant particle emitter that responds to user interaction with physics-based gravity.",
         "why": "Micro-interactions keep users engaged and provide immediate feedback for their actions.",
-        "topics": ["Particle Systems", "Emitter Logic", "Life-cycle Management"],
+        "topics": "Particle Systems, Emitter Logic, Life-cycle Management",
         "guide": "Click anywhere in the area to spawn particles. Observe how they fade out over their lifecycle."
       },
       "glitch-text": {
         "name": "Glitch Text",
         "desc": "A high-speed character scrambling effect using randomized ASCII iteration.",
         "why": "Cyberpunk and tech-heavy aesthetics rely on glitch effects to communicate a high-velocity digital feel.",
-        "topics": ["String Manipulation", "Timing Functions", "Randomization Logic"],
+        "topics": "String Manipulation, Timing Functions, Randomization Logic",
         "guide": "Best used for titles and core headings. Adjustable speed via the timing interval."
       },
       "blur-text": {
@@ -91,4 +91,3 @@
     }
   }
 }
-
