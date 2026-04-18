@@ -364,6 +364,8 @@ Halqa uses a **dual-license model** to protect both engineering labor and educat
 
 <img src="assets/banner.png" width="100%" height="100%" />
 
+<br/>
+
 _Built with precision. Designed for engineers who care._
 
 <br />
