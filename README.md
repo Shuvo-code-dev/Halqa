@@ -386,4 +386,8 @@ Halqa uses a **dual-license model** to protect both engineering labor and educat
 
 <br />
 
+---
+
+🇵🇸 **We stand with Palestine. Free Palestine. Support Palestine.**
+
 </div>
