@@ -38,8 +38,8 @@ export const metadata: Metadata = {
 };
 
 
-import { LanguageProvider } from "@/context/LanguageContext";
 import { UserProvider } from "@/context/UserContext";
+
 import { AIProvider } from "@/context/AIContext";
 import AIAgent from "@shared/AIAgent";
 import MeshBackground from "@shared/MeshBackground";
@@ -55,25 +55,24 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`}>
       <body>
-        <LanguageProvider>
-          <UserProvider>
-            <AIProvider>
-              <div className={styles.mainLayout}>
-                <StatusBar />
-                <Navbar />
-                <main className={styles.mainContent}>
-                  {children}
-                </main>
-                <Footer />
-                <AIAgent />
-                <MeshBackground />
-                <QuickAccess />
-                <NoiseOverlay />
-              </div>
-            </AIProvider>
-          </UserProvider>
-        </LanguageProvider>
+        <UserProvider>
+          <AIProvider>
+            <div className={styles.mainLayout}>
+              <StatusBar />
+              <Navbar />
+              <main className={styles.mainContent}>
+                {children}
+              </main>
+              <Footer />
+              <AIAgent />
+              <MeshBackground />
+              <QuickAccess />
+              <NoiseOverlay />
+            </div>
+          </AIProvider>
+        </UserProvider>
       </body>
+
     </html>
   );
 }

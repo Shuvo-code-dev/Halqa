@@ -1,6 +1,5 @@
 'use client';
 
-import { useLanguage } from '@/context/LanguageContext';
 import styles from './SharedSidebar.module.css';
 
 interface SidebarItem {
@@ -31,8 +30,6 @@ export default function SharedSidebar({
   onItemClick,
   itemTypeLabel = "Categories"
 }: SharedSidebarProps) {
-  const { t } = useLanguage();
-
   return (
     <aside className={styles.sidebar}>
       <div className={styles.header}>
@@ -45,7 +42,7 @@ export default function SharedSidebar({
           <svg className={styles.searchIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
           <input 
             type="text" 
-            placeholder={t('codelab.searchPlaceholder') || "Search..."} 
+            placeholder="Search Lab..."
             className={styles.searchInput}
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
@@ -76,3 +73,4 @@ export default function SharedSidebar({
     </aside>
   );
 }
+

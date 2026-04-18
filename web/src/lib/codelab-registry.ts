@@ -11,7 +11,11 @@ export interface ComponentMetadata {
   tsxCode: string;
   cssCode: string;
   componentName: string; 
+  why?: string;
+  topics?: string;
+  guide?: string;
 }
+
 
 export const CODELAB_REGISTRY: ComponentMetadata[] = [
   // --- BATCH 3: ECOSYSTEM EXPANSION ---
@@ -22,7 +26,11 @@ export const CODELAB_REGISTRY: ComponentMetadata[] = [
     description: 'Functional, high-fidelity QR generator with custom accent mapping and mobile conversion CTA.',
     hasAnimation: false,
     componentName: 'HalqaQr',
+    why: 'QR codes are essential for bridging the gap between physical and digital experiences in modern apps.',
+    topics: 'SVG Generation, State Management, Branding',
+    guide: 'Input your URL and select a brand-matching color. The generated SVG is export-ready.',
     tsxCode: `'use client';
+
 
 import { useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
@@ -186,7 +194,11 @@ export default function HalqaQr() {
     description: 'High-performance interactive physics playground using elastic circle collision.',
     hasAnimation: true,
     componentName: 'Ballpit',
+    why: 'Understanding gravity and collision logic is fundamental for game development and advanced UI interactions.',
+    topics: 'Elastic Collisions, Velocity & Friction, Canvas Optimization',
+    guide: 'Interact with the balls using your mouse to observe force distribution and friction decay.',
     tsxCode: `'use client';
+
 
 import { useEffect, useRef } from 'react';
 
@@ -310,7 +322,11 @@ export default function Ballpit({ paused = false }) {
     description: 'Elite metallic shader effect using Three.js and custom GLSL noise displacement.',
     hasAnimation: true,
     componentName: 'LiquidChrome',
+    why: 'Advanced shaders elevate the aesthetic quality of a site, providing a premium, high-end feel.',
+    topics: 'GLSL Shaders, Noise Functions, Vertex/Fragment Logic',
+    guide: 'Use this as a background for hero sections. It scales perfectly to any resolution via WebGL.',
     tsxCode: `'use client';
+
 
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
@@ -424,7 +440,11 @@ export default function LiquidChrome({ paused = false }) {
     description: 'Vibrant particle emitter responding to user interaction.',
     hasAnimation: true,
     componentName: 'ClickSpark',
+    why: 'Micro-interactions keep users engaged and provide immediate feedback for their actions.',
+    topics: 'Particle Systems, Emitter Logic, Life-cycle Management',
+    guide: 'Click anywhere in the area to spawn particles. Observe how they fade out over their lifecycle.',
     tsxCode: `'use client';
+
 
 import { useEffect, useRef } from 'react';
 
@@ -534,7 +554,11 @@ export default function ClickSpark({ paused = false }) {
     description: 'High-speed character scrambling effect using randomized iteration.',
     hasAnimation: true,
     componentName: 'GlitchText',
+    why: 'Cyberpunk and tech-heavy aesthetics rely on glitch effects to communicate a high-velocity digital feel.',
+    topics: 'String Manipulation, Timing Functions, Randomization Logic',
+    guide: 'Best used for titles and core headings. Adjustable speed via the timing interval.',
     tsxCode: `'use client';
+
 
 import { useEffect, useRef } from 'react';
 
@@ -598,7 +622,11 @@ export default function GlitchText({ text = "HALQA GLITCH", paused = false }) {
     description: 'A staggered, smooth Gaussian blur reveal effect.',
     hasAnimation: true,
     componentName: 'BlurText',
+    why: 'Staggered reveals focus the user's attention on specific words, improving retention.',
+    topics: 'Framer Motion, Staggered Delays, Opacity Transitions',
+    guide: 'Change the split logic from words to characters for a more granular 'typing' feel.',
     tsxCode: `'use client';
+
 
 import { motion } from 'framer-motion';
 
@@ -630,7 +658,11 @@ export default function BlurText({ text = "Halqa Lab", paused = false }) {
     description: 'A liquid metallic shimmer effect.',
     hasAnimation: true,
     componentName: 'ShinyText',
+    why: 'Glossy effects create a premium, apple-like aesthetic that feels polished and state-of-the-art.',
+    topics: 'CSS Background Clip, Keyframe Animations, Gradients',
+    guide: 'Works best on heavy, bold fonts. Adjust the gradient stops to change the sheen sharpness.',
     tsxCode: `'use client';
+
 
 import styles from './ShinyText.module.css';
 
@@ -680,7 +712,11 @@ export default function ShinyText({ text = "Shiny Glow", paused = false }) {
     description: 'Northern lights simulation.',
     hasAnimation: true,
     componentName: 'AuroraBg',
+    why: 'Abstract, slow-moving backgrounds reduce cognitive load while maintaining visual interest.',
+    topics: 'Radial Gradients, CSS Filters, Spatial Math',
+    guide: 'Set this as a fixed background. Use with high-contrast text for maximum readability.',
     tsxCode: `'use client';
+
 
 import styles from './AuroraBg.module.css';
 
@@ -730,7 +766,11 @@ export default function AuroraBg({ paused = false }) {
     description: 'Organically pulls toward the cursor.',
     hasAnimation: false,
     componentName: 'MagnetButton',
+    why: 'Magnetic interactions increase the clickability of CTAs by providing tactile-like visual feedback.',
+    topics: 'Proximity Detection, Spring Physics, Framer Motion',
+    guide: 'Wrap any button in the magnet container to instantly upgrade its UX feel.',
     tsxCode: `'use client';
+
 
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
@@ -789,7 +829,11 @@ export default function MagnetButton({ text = "Magnetize", paused = false }) {
     description: 'Sophisticated asymmetrical feature grid.',
     hasAnimation: false,
     componentName: 'AdaptiveBento',
+    why: 'Bento grids are the gold standard for presenting complex feature sets in a clean, logical hierarchy.',
+    topics: 'CSS Grid, Fractional Units, Responsive Layouts',
+    guide: 'Add new items by defining their span values in the grid container.',
     tsxCode: `'use client';
+
 
 import styles from './AdaptiveBento.module.css';
 
