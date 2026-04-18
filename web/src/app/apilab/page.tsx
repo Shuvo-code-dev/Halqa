@@ -4,13 +4,11 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 import styles from './page.module.css';
 import { API_REGISTRY, API_CATEGORIES } from '@lib/apilab-registry';
 import { gsap } from '@lib/gsap';
-import { useLanguage } from '@/context/LanguageContext';
 import SharedSidebar from '@shared/SharedSidebar';
 
 const ITEMS_PER_PAGE = 12;
 
 export default function ApiLab() {
-  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
@@ -97,7 +95,7 @@ export default function ApiLab() {
   return (
     <div className="module-layout" ref={containerRef}>
       <SharedSidebar 
-        title={t('apilab.title') || 'API <span class="text-gradient">Lab</span>'}
+        title="API <span class='text-gradient'>Lab</span>"
         subtitle="Master public data streams."
         searchTerm={searchTerm}
         onSearchChange={setSearchTerm}
@@ -159,3 +157,4 @@ export default function ApiLab() {
     </div>
   );
 }
+

@@ -4,7 +4,6 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import styles from './page.module.css';
 import { CODELAB_REGISTRY } from '@lib/codelab-registry';
-import { useLanguage } from '@/context/LanguageContext';
 import { useUser } from '@/context/UserContext';
 import { gsap } from '@lib/gsap';
 import SharedSidebar from '@shared/SharedSidebar';
@@ -21,7 +20,6 @@ const DynamicPreview = ({ componentName, paused }: { componentName: string, paus
 const CATEGORIES = ['All', 'Bookmarks', 'Text', 'Animations', 'Backgrounds', 'UI'];
 
 export default function CodeLab() {
-  const { t } = useLanguage();
   const { toggleBookmark, isBookmarked, bookmarks } = useUser();
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -45,26 +43,6 @@ export default function CodeLab() {
         ease: "expo.out",
         delay: 0.2,
       });
-      // Search Bar Animation
-      const searchInput = containerRef.current?.querySelector(`.${styles.searchInput}`);
-      if (searchInput) {
-        searchInput.addEventListener('focus', () => {
-          gsap.to(searchInput, { 
-            scale: 1.02, 
-            borderColor: "rgba(255,255,255,0.4)", 
-            duration: 0.4, 
-            ease: "expo.out" 
-          });
-        });
-        searchInput.addEventListener('blur', () => {
-          gsap.to(searchInput, { 
-            scale: 1, 
-            borderColor: "rgba(255,255,255,0.1)", 
-            duration: 0.4, 
-            ease: "expo.out" 
-          });
-        });
-      }
     }, containerRef);
 
     return () => ctx.revert();
@@ -132,8 +110,8 @@ export default function CodeLab() {
   return (
     <div className="module-layout" ref={containerRef}>
       <SharedSidebar 
-        title={t('codelab.title') || 'Code <span class="text-gradient">Lab</span>'}
-        subtitle={t('codelab.subtitle') || 'High-fidelity UI blocks.'}
+        title="Code <span class='text-gradient'>Lab</span>"
+        subtitle="High-fidelity UI blocks."
         searchTerm={searchQuery}
         onSearchChange={setSearchQuery}
         items={sidebarItems}
@@ -142,9 +120,6 @@ export default function CodeLab() {
       />
 
       <main className="module-content">
-
-
-
         <div className={styles.grid}>
           {filteredComps.length > 0 ? filteredComps.map((item) => {
              const activeTab = openPanels[item.id] || '';
@@ -167,10 +142,10 @@ export default function CodeLab() {
                 
                 <div className={styles.cardBody}>
                   <div className={styles.cardHeader}>
-                    <h3 className={styles.cardTitle}>{t(`codelab.components.${item.id}.name`) || item.name}</h3>
+                    <h3 className={styles.cardTitle}>{item.name}</h3>
                     <span className={styles.catBadge}>{item.category}</span>
                   </div>
-                  <p className={styles.cardDesc}>{t(`codelab.components.${item.id}.desc`) || item.description}</p>
+                  <p className={styles.cardDesc}>{item.description}</p>
                   
                   <div className={styles.actions}>
                     <button onClick={() => togglePanel(item.id)} className={styles.actionBtn}>
@@ -180,8 +155,8 @@ export default function CodeLab() {
                     <button onClick={() => toggleDetails(item.id)} className={styles.actionBtn}>
                       {isDetailsOpen ? 'Hide Info' : 'Details'}
                     </button>
-                    <a href="https://playroomjs.com" target="_blank" rel="noopener noreferrer" className={styles.actionBtn} title="Open in Playground">
-                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    <a href="https://github.com/Shuvo-code-dev/Halqa" target="_blank" rel="noopener noreferrer" className={styles.actionBtn} title="Open Source">
+                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                     </a>
                     {item.hasAnimation && (
                       <button onClick={() => toggleAnimation(item.id)} className={styles.actionBtn}>
@@ -194,14 +169,12 @@ export default function CodeLab() {
                     <div className={styles.detailsContent}>
                         <div className={styles.detailBlock}>
                           <div className={styles.detailLabel}>The &quot;Why&quot;</div>
-                          <p className={styles.detailVal}>{t(`codelab.components.${item.id}.why`) !== `codelab.components.${item.id}.why` ? t(`codelab.components.${item.id}.why`) : item.description}</p>
+                          <p className={styles.detailVal}>{item.why || item.description}</p>
                         </div>
                        <div className={styles.detailBlock}>
                          <div className={styles.detailLabel}>Core Topics</div>
                           <div className={styles.topicsCloud}>
-                             { (t(`codelab.components.${item.id}.topics`) !== `codelab.components.${item.id}.topics` 
-                                ? (t(`codelab.components.${item.id}.topics`) as string) 
-                                : "React, CSS, Animation").split(',').map((topic: string) => (
+                             {(item.topics || "React, CSS, Animation").split(',').map((topic: string) => (
                                <span key={topic} className={styles.topicTag}>{topic.trim()}</span>
                              ))}
                           </div>
@@ -242,8 +215,8 @@ export default function CodeLab() {
             );
           }) : (
             <div className={styles.emptyResults}>
-               <h3 className={styles.emptyTitle}>{t('codelab.noResults.title')}</h3>
-               <p className={styles.emptyText}>{t('codelab.noResults.text')}</p>
+               <h3 className={styles.emptyTitle}>No components found</h3>
+               <p className={styles.emptyText}>Try searching for something else like &apos;Text&apos; or &apos;Bento&apos;.</p>
             </div>
           )}
         </div>
@@ -253,3 +226,4 @@ export default function CodeLab() {
     </div>
   );
 }
+

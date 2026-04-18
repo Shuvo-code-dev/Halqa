@@ -18,17 +18,16 @@ export interface ComponentMetadata {
 
 
 export const CODELAB_REGISTRY: ComponentMetadata[] = [
-  // --- BATCH 3: ECOSYSTEM EXPANSION ---
   {
-    id: 'halqa-qr',
-    name: 'Halqa QR Generator',
-    category: 'UI',
-    description: 'Functional, high-fidelity QR generator with custom accent mapping and mobile conversion CTA.',
+    id: "halqa-qr",
+    name: "Halqa QR Generator",
+    category: "UI",
+    description: "Functional, high-fidelity QR generator with custom accent mapping and mobile conversion CTA.",
     hasAnimation: false,
-    componentName: 'HalqaQr',
-    why: 'QR codes are essential for bridging the gap between physical and digital experiences in modern apps.',
-    topics: 'SVG Generation, State Management, Branding',
-    guide: 'Input your URL and select a brand-matching color. The generated SVG is export-ready.',
+    componentName: "HalqaQr",
+    why: "QR codes are essential for bridging the gap between physical and digital experiences in modern apps.",
+    topics: "SVG Generation, State Management, Branding",
+    guide: "Input your URL and select a brand-matching color. The generated SVG is export-ready.",
     tsxCode: `'use client';
 
 
@@ -188,15 +187,15 @@ export default function HalqaQr() {
 }`.replace(/\r/g, '')
   },
   {
-    id: 'ballpit',
-    name: 'Physics Ballpit',
-    category: 'Animations',
-    description: 'High-performance interactive physics playground using elastic circle collision.',
+    id: "ballpit",
+    name: "Physics Ballpit",
+    category: "Animations",
+    description: "High-performance interactive physics playground using elastic circle collision.",
     hasAnimation: true,
-    componentName: 'Ballpit',
-    why: 'Understanding gravity and collision logic is fundamental for game development and advanced UI interactions.',
-    topics: 'Elastic Collisions, Velocity & Friction, Canvas Optimization',
-    guide: 'Interact with the balls using your mouse to observe force distribution and friction decay.',
+    componentName: "Ballpit",
+    why: "Understanding gravity and collision logic is fundamental for game development and advanced UI interactions.",
+    topics: "Elastic Collisions, Velocity & Friction, Canvas Optimization",
+    guide: "Interact with the balls using your mouse to observe force distribution and friction decay.",
     tsxCode: `'use client';
 
 
@@ -316,15 +315,15 @@ export default function Ballpit({ paused = false }) {
 }`.replace(/\r/g, '')
   },
   {
-    id: 'liquid-chrome',
-    name: 'Liquid Chrome',
-    category: 'Backgrounds',
-    description: 'Elite metallic shader effect using Three.js and custom GLSL noise displacement.',
+    id: "liquid-chrome",
+    name: "Liquid Chrome",
+    category: "Backgrounds",
+    description: "Elite metallic shader effect using Three.js and custom GLSL noise displacement.",
     hasAnimation: true,
-    componentName: 'LiquidChrome',
-    why: 'Advanced shaders elevate the aesthetic quality of a site, providing a premium, high-end feel.',
-    topics: 'GLSL Shaders, Noise Functions, Vertex/Fragment Logic',
-    guide: 'Use this as a background for hero sections. It scales perfectly to any resolution via WebGL.',
+    componentName: "LiquidChrome",
+    why: "Advanced shaders elevate the aesthetic quality of a site, providing a premium, high-end feel.",
+    topics: "GLSL Shaders, Noise Functions, Vertex/Fragment Logic",
+    guide: "Use this as a background for hero sections. It scales perfectly to any resolution via WebGL.",
     tsxCode: `'use client';
 
 
@@ -434,15 +433,15 @@ export default function LiquidChrome({ paused = false }) {
 }`.replace(/\r/g, '')
   },
   {
-    id: 'click-spark',
-    name: 'Click Spark',
-    category: 'Animations',
-    description: 'Vibrant particle emitter responding to user interaction.',
+    id: "click-spark",
+    name: "Click Spark",
+    category: "Animations",
+    description: "Vibrant particle emitter responding to user interaction.",
     hasAnimation: true,
-    componentName: 'ClickSpark',
-    why: 'Micro-interactions keep users engaged and provide immediate feedback for their actions.',
-    topics: 'Particle Systems, Emitter Logic, Life-cycle Management',
-    guide: 'Click anywhere in the area to spawn particles. Observe how they fade out over their lifecycle.',
+    componentName: "ClickSpark",
+    why: "Micro-interactions keep users engaged and provide immediate feedback for their actions.",
+    topics: "Particle Systems, Emitter Logic, Life-cycle Management",
+    guide: "Click anywhere in the area to spawn particles. Observe how they fade out over their lifecycle.",
     tsxCode: `'use client';
 
 
@@ -548,15 +547,15 @@ export default function ClickSpark({ paused = false }) {
 }`.replace(/\r/g, '')
   },
   {
-    id: 'glitch-text',
-    name: 'Glitch Text',
-    category: 'Text',
-    description: 'High-speed character scrambling effect using randomized iteration.',
+    id: "glitch-text",
+    name: "Glitch Text",
+    category: "Text",
+    description: "High-speed character scrambling effect using randomized iteration.",
     hasAnimation: true,
-    componentName: 'GlitchText',
-    why: 'Cyberpunk and tech-heavy aesthetics rely on glitch effects to communicate a high-velocity digital feel.',
-    topics: 'String Manipulation, Timing Functions, Randomization Logic',
-    guide: 'Best used for titles and core headings. Adjustable speed via the timing interval.',
+    componentName: "GlitchText",
+    why: "Cyberpunk and tech-heavy aesthetics rely on glitch effects to communicate a high-velocity digital feel.",
+    topics: "String Manipulation, Timing Functions, Randomization Logic",
+    guide: "Best used for titles and core headings. Adjustable speed via the timing interval.",
     tsxCode: `'use client';
 
 
@@ -616,15 +615,15 @@ export default function GlitchText({ text = "HALQA GLITCH", paused = false }) {
 }`.replace(/\r/g, '')
   },
   {
-    id: 'blur-text',
-    name: 'Blur Text',
-    category: 'Text',
-    description: 'A staggered, smooth Gaussian blur reveal effect.',
+    id: "blur-text",
+    name: "Blur Text",
+    category: "Text",
+    description: "A staggered, smooth Gaussian blur reveal effect.",
     hasAnimation: true,
-    componentName: 'BlurText',
-    why: 'Staggered reveals focus the user's attention on specific words, improving retention.',
-    topics: 'Framer Motion, Staggered Delays, Opacity Transitions',
-    guide: 'Change the split logic from words to characters for a more granular 'typing' feel.',
+    componentName: "BlurText",
+    why: "Staggered reveals focus the user's attention on specific words, improving retention.",
+    topics: "Framer Motion, Staggered Delays, Opacity Transitions",
+    guide: "Change the split logic from words to characters for a more granular 'typing' feel.",
     tsxCode: `'use client';
 
 
@@ -652,15 +651,15 @@ export default function BlurText({ text = "Halqa Lab", paused = false }) {
     cssCode: `/* Pure Framer Motion animations */`.replace(/\r/g, '')
   },
   {
-    id: 'shiny-text',
-    name: 'Shiny Text',
-    category: 'Text',
-    description: 'A liquid metallic shimmer effect.',
+    id: "shiny-text",
+    name: "Shiny Text",
+    category: "Text",
+    description: "A liquid metallic shimmer effect.",
     hasAnimation: true,
-    componentName: 'ShinyText',
-    why: 'Glossy effects create a premium, apple-like aesthetic that feels polished and state-of-the-art.',
-    topics: 'CSS Background Clip, Keyframe Animations, Gradients',
-    guide: 'Works best on heavy, bold fonts. Adjust the gradient stops to change the sheen sharpness.',
+    componentName: "ShinyText",
+    why: "Glossy effects create a premium, apple-like aesthetic that feels polished and state-of-the-art.",
+    topics: "CSS Background Clip, Keyframe Animations, Gradients",
+    guide: "Works best on heavy, bold fonts. Adjust the gradient stops to change the sheen sharpness.",
     tsxCode: `'use client';
 
 
@@ -706,15 +705,15 @@ export default function ShinyText({ text = "Shiny Glow", paused = false }) {
 }`.replace(/\r/g, '')
   },
   {
-    id: 'aurora-bg',
-    name: 'Aurora Background',
-    category: 'Backgrounds',
-    description: 'Northern lights simulation.',
+    id: "aurora-bg",
+    name: "Aurora Background",
+    category: "Backgrounds",
+    description: "Northern lights simulation.",
     hasAnimation: true,
-    componentName: 'AuroraBg',
-    why: 'Abstract, slow-moving backgrounds reduce cognitive load while maintaining visual interest.',
-    topics: 'Radial Gradients, CSS Filters, Spatial Math',
-    guide: 'Set this as a fixed background. Use with high-contrast text for maximum readability.',
+    componentName: "AuroraBg",
+    why: "Abstract, slow-moving backgrounds reduce cognitive load while maintaining visual interest.",
+    topics: "Radial Gradients, CSS Filters, Spatial Math",
+    guide: "Set this as a fixed background. Use with high-contrast text for maximum readability.",
     tsxCode: `'use client';
 
 
@@ -760,15 +759,15 @@ export default function AuroraBg({ paused = false }) {
 }`.replace(/\r/g, '')
   },
   {
-    id: 'magnet-btn',
-    name: 'Magnet Button',
-    category: 'Animations',
-    description: 'Organically pulls toward the cursor.',
+    id: "magnet-btn",
+    name: "Magnet Button",
+    category: "Animations",
+    description: "Organically pulls toward the cursor.",
     hasAnimation: false,
-    componentName: 'MagnetButton',
-    why: 'Magnetic interactions increase the clickability of CTAs by providing tactile-like visual feedback.',
-    topics: 'Proximity Detection, Spring Physics, Framer Motion',
-    guide: 'Wrap any button in the magnet container to instantly upgrade its UX feel.',
+    componentName: "MagnetButton",
+    why: "Magnetic interactions increase the clickability of CTAs by providing tactile-like visual feedback.",
+    topics: "Proximity Detection, Spring Physics, Framer Motion",
+    guide: "Wrap any button in the magnet container to instantly upgrade its UX feel.",
     tsxCode: `'use client';
 
 
@@ -800,105 +799,125 @@ export default function MagnetButton({ text = "Magnetize", paused = false }) {
       onMouseLeave={reset}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-      style={{
-        padding: '1rem 2rem',
-        background: 'var(--accent)',
-        color: 'var(--bg-primary)',
-        border: 'none',
-        borderRadius: '8px',
-        fontWeight: 700,
-        fontSize: '1.2rem',
-        cursor: 'pointer',
-        boxShadow: '0 0 20px var(--accent-glow)'
-      }}
+      className={styles.magnetBtn}
     >
       {text}
     </motion.button>
   );
 }`.replace(/\r/g, ''),
-    cssCode: `button {
+    cssCode: `.magnetBtn {
   padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
   background: var(--accent);
-  border-radius: 8px;
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.magnetBtn:hover {
+  background: #fff;
 }`.replace(/\r/g, '')
   },
   {
-    id: 'apple-bento',
-    name: 'Adaptive Bento',
-    category: 'UI',
-    description: 'Sophisticated asymmetrical feature grid.',
+    id: "apple-bento",
+    name: "Adaptive Bento",
+    category: "UI",
+    description: "Sophisticated asymmetrical feature grid inspired by premium design languages.",
     hasAnimation: false,
-    componentName: 'AdaptiveBento',
-    why: 'Bento grids are the gold standard for presenting complex feature sets in a clean, logical hierarchy.',
-    topics: 'CSS Grid, Fractional Units, Responsive Layouts',
-    guide: 'Add new items by defining their span values in the grid container.',
+    componentName: "AdaptiveBento",
+    why: "Bento grids are the gold standard for presenting complex feature sets in a clean, logical hierarchy.",
+    topics: "CSS Grid, Fractional Units, Responsive Layouts",
+    guide: "Add new items by defining their span values in the grid container.",
     tsxCode: `'use client';
 
 
 import styles from './AdaptiveBento.module.css';
 
 export default function AdaptiveBento() {
+  const items = [
+    { id: 1, title: 'Neural Engine', desc: '16-core architecture', size: 'large', color: '#a855f7' },
+    { id: 2, title: 'Fluid UI', desc: '120Hz response', size: 'small', color: '#2dd4bf' },
+    { id: 3, title: 'Optic Link', desc: 'Zero latency', size: 'small', color: '#3b82f6' },
+    { id: 4, title: 'Secure Enclave', desc: 'End-to-end encryption', size: 'medium', color: '#f43f5e' },
+  ];
+
   return (
-    <div className={styles.bentoContainer}>
-      <div className={\`\${styles.item} \${styles.wide}\`}>
-        <span className={styles.label}>Feature Grid</span>
-      </div>
-      <div className={\`\${styles.item} \${styles.tall}\`}>
-         <span className={styles.label}>Analytics</span>
-      </div>
-      <div className={styles.item}>
-         <span className={styles.label}>Cloud</span>
-      </div>
-      <div className={styles.item}>
-         <span className={styles.label}>Security</span>
-      </div>
+    <div className={styles.bentoGrid}>
+      {items.map(item => (
+        <div 
+          key={item.id} 
+          className={\`\${styles.bentoItem} \${styles[item.size]}\`}
+          style={{ '--accent-color': item.color } as React.CSSProperties}
+        >
+          <div className={styles.content}>
+            <h4 className={styles.itemTitle}>{item.title}</h4>
+            <p className={styles.itemDesc}>{item.desc}</p>
+          </div>
+          <div className={styles.glow} />
+        </div>
+      ))}
     </div>
   );
 }`.replace(/\r/g, ''),
-    cssCode: `.bentoContainer {
+    cssCode: `.bentoGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 100px);
-  gap: 12px;
-  width: 90%;
-  height: min-content;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 160px);
+  gap: 1rem;
+  width: 100%;
+  max-width: 800px;
 }
 
-.item {
-  background: var(--bg-glass);
-  border: 1px solid var(--border-glass);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.bentoItem {
   position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+  padding: 1.5rem;
   overflow: hidden;
-  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.item:hover {
-  border-color: var(--accent);
+.bentoItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-color);
   transform: translateY(-5px);
-  background: var(--bg-glass-hover);
 }
 
-.wide {
-  grid-column: span 2;
+.large { grid-column: span 2; grid-row: span 2; }
+.medium { grid-column: span 2; }
+.small { grid-column: span 1; }
+
+.itemTitle {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 0;
+  color: #fff;
 }
 
-.tall {
-  grid-row: span 2;
-}
-
-.label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
+.itemDesc {
+  font-size: 0.85rem;
   color: var(--text-muted);
-  letter-spacing: 0.05em;
+  margin: 0.25rem 0 0;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 120%, var(--accent-color), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.bentoItem:hover .glow {
+  opacity: 0.2;
 }`.replace(/\r/g, '')
   }
 ];
-
-
-
