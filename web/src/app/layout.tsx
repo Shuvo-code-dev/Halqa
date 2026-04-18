@@ -4,6 +4,13 @@ import "@styles/globals.css";
 import Navbar from "@shared/Navbar";
 import Footer from "@shared/Footer";
 import styles from "@shared/layout.module.css";
+import { UserProvider } from "@/context/UserContext";
+import { AIProvider } from "@/context/AIContext";
+import AIAgent from "@shared/AIAgent";
+import MeshBackground from "@shared/MeshBackground";
+import QuickAccess from "@shared/QuickAccess";
+import StatusBar from "@shared/StatusBar";
+import NoiseOverlay from "@shared/NoiseOverlay";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -11,8 +18,10 @@ const inter = Inter({
   display: "swap",
 });
 
+const CANONICAL_URL = "https://halqa.dev";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://halqa.vercel.app"),
+  metadataBase: new URL(CANONICAL_URL),
   title: {
     default: "Halqa | The Developer Sanctuary",
     template: "%s | Halqa"
@@ -21,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Halqa | The Developer Sanctuary",
     description: "The minimalist developer ecosystem. Zero distraction, ultra-high performance.",
-    url: "https://halqa.dev",
+    url: CANONICAL_URL,
     siteName: "Halqa",
     images: [
       {
@@ -43,16 +52,6 @@ export const metadata: Metadata = {
   },
 };
 
-
-import { UserProvider } from "@/context/UserContext";
-
-import { AIProvider } from "@/context/AIContext";
-import AIAgent from "@shared/AIAgent";
-import MeshBackground from "@shared/MeshBackground";
-import QuickAccess from "@shared/QuickAccess";
-import StatusBar from "@shared/StatusBar";
-import NoiseOverlay from "@shared/NoiseOverlay";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -60,7 +59,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable}`}>
-      <body>
+      <body className="antialiased">
         <UserProvider>
           <AIProvider>
             <div className={styles.mainLayout}>
@@ -78,7 +77,6 @@ export default function RootLayout({
           </AIProvider>
         </UserProvider>
       </body>
-
     </html>
   );
 }

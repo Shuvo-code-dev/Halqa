@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
 import Link from 'next/link';
 import styles from './page.module.css';
-import { gsap, ScrollTrigger } from '@lib/gsap';
-import { CODELAB_REGISTRY } from '@lib/codelab-registry';
+import { gsap } from '@lib/gsap';
+import { REGISTRY_GROUPS } from '@lib/registry-service';
 import dynamic from 'next/dynamic';
 
 // Dynamic imports for the featured components to keep initial load light
@@ -15,8 +15,10 @@ const GlitchText = dynamic(() => import('@modules/codelab/presets/GlitchText'), 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // Featured Components for the showcase
-  const featuredLabs = CODELAB_REGISTRY.slice(0, 3);
+  // Featured Components (Dynamic selection from new registry)
+  const featuredLabs = useMemo(() => {
+    return REGISTRY_GROUPS.slice(0, 3);
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -28,8 +30,8 @@ export default function Home() {
         .to(`.${styles.actions}`, { opacity: 1, y: 0, duration: 0.8, ease: "expo.out" }, "-=0.7");
 
       // Scroll Reveals
-      const sections = gsap.utils.toArray('section');
-      sections.forEach((section: any) => {
+      const sections = gsap.utils.toArray<HTMLElement>('section');
+      sections.forEach((section) => {
         gsap.from(section, {
           scrollTrigger: {
             trigger: section,
@@ -77,21 +79,20 @@ export default function Home() {
         </div>
         <div className={styles.labsGrid}>
           {featuredLabs.map((lab) => (
-            <div key={lab.id} className={`${styles.labCard} halqa-card`}>
+            <div key={lab.title} className={`${styles.labCard} halqa-card`}>
               <div className={styles.previewArea}>
-                {/* Static Preview: Rendered but non-interactive for performance */}
                 <div style={{ pointerEvents: 'none', transform: 'scale(0.8)', opacity: 0.7 }}>
-                  {lab.id === 'halqa-qr' && <HalqaQr />}
-                  {lab.id === 'ballpit' && <Ballpit paused />}
-                  {lab.id === 'glitch-text' && <GlitchText text="HALQA" />}
+                  {lab.title === 'HalqaQr' && <HalqaQr />}
+                  {lab.title === 'Ballpit' && <Ballpit paused />}
+                  {lab.title === 'GlitchText' && <GlitchText text="HALQA" />}
                 </div>
               </div>
               <div className={styles.labMeta}>
                 <div>
-                    <h3 className={styles.labName}>{lab.name}</h3>
-                    <p className={styles.labDesc}>{lab.description}</p>
+                    <h3 className={styles.labName}>{lab.title}</h3>
+                    <p className={styles.labDesc}>Premium Variants Available</p>
                 </div>
-                <Link href="/codelab" className={styles.exploreLink}>
+                <Link href={`/codelab?id=${lab.title}`} className={styles.exploreLink}>
                   Explore Source &rarr;
                 </Link>
               </div>
@@ -141,11 +142,11 @@ export default function Home() {
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
                     <span style={{ color: 'var(--text-muted)' }}>Lab Components</span>
-                    <span style={{ fontWeight: 800 }}>10+</span>
+                    <span style={{ fontWeight: 800 }}>500+</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span style={{ color: 'var(--text-muted)' }}>Free Resources</span>
-                    <span style={{ fontWeight: 800 }}>500+</span>
+                    <span style={{ fontWeight: 800 }}>1000+</span>
                 </div>
              </div>
           </div>

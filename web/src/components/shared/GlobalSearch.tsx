@@ -4,9 +4,9 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { gsap } from '@lib/gsap';
 
-// Registries
-import { API_REGISTRY } from '@lib/apilab-registry';
-import { CODELAB_REGISTRY } from '@lib/codelab-registry';
+// Registries & Services
+import { getFlattenedApis } from '@lib/api-service';
+import { REGISTRY_GROUPS } from '@lib/registry-service';
 import { ROADMAP_REGISTRY } from '@lib/roadmap-registry';
 import { PROJECT_REGISTRY } from '@lib/project-registry';
 import { RESOURCE_REGISTRY } from '@lib/resource-registry';
@@ -47,20 +47,21 @@ export default function GlobalSearch() {
       });
     });
 
-    // Components (Code Lab)
-    CODELAB_REGISTRY.forEach(c => {
+    // Components (Code Lab - New Industrial Registry)
+    REGISTRY_GROUPS.forEach(group => {
       items.push({
-        id: c.id,
-        title: c.name,
-        description: c.description,
-        category: c.category,
+        id: group.title,
+        title: group.title,
+        description: group.description,
+        category: 'UI Components',
         type: 'Component',
-        link: `/codelab?id=${c.id}` 
+        link: `/codelab?id=${group.title}` 
       });
     });
 
-    // APIs
-    API_REGISTRY.forEach(a => {
+    // APIs (New Consolidated Service)
+    const apis = getFlattenedApis();
+    apis.forEach(a => {
       items.push({
         id: a.id,
         title: a.name,
@@ -127,39 +128,40 @@ export default function GlobalSearch() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Sync results for empty query during render to avoid effect warnings
-  if (!query.trim() && results.length > 0) {
-    setResults([]);
-  }
-
-  // Filter Logic
+  // Filter Logic (Industrial Grade Optimization)
   useEffect(() => {
-    if (!query.trim()) {
-      return;
-    }
+    const trimmedQuery = query.trim();
+    
+    // Deterministic Update: We only fetch if there's a query.
+    // We DON'T setResults([]) here to avoid synchronous setState warnings (cascading renders).
+    if (!trimmedQuery) return;
 
     const timer = setTimeout(() => {
+      const lowerQuery = trimmedQuery.toLowerCase();
       const filtered = searchIndex.filter(item => 
-        item.title.toLowerCase().includes(query.toLowerCase()) ||
-        item.description.toLowerCase().includes(query.toLowerCase()) ||
-        item.category.toLowerCase().includes(query.toLowerCase())
-      ).slice(0, 8); // Limit results for performance
+        item.title.toLowerCase().includes(lowerQuery) ||
+        item.description.toLowerCase().includes(lowerQuery) ||
+        item.category.toLowerCase().includes(lowerQuery)
+      ).slice(0, 8);
       
       setResults(filtered);
-    }, 150); // Debounce
+    }, 150);
 
     return () => clearTimeout(timer);
   }, [query, searchIndex]);
 
+  // Deterministic View State: Calculate results to display during rendering
+  const displayResults = query.trim() ? results : [];
+
   // Entrance Animation for Results
   useEffect(() => {
-    if (results.length > 0 && isOpen) {
-       gsap.fromTo(resultsRef.current!, 
+    if (displayResults.length > 0 && isOpen && resultsRef.current) {
+       gsap.fromTo(resultsRef.current, 
          { opacity: 0, y: 10, scale: 0.98 },
          { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: 'power3.out' }
        );
     }
-  }, [results, isOpen]);
+  }, [displayResults.length, isOpen]);
 
   const handleItemClick = (link: string) => {
     setIsOpen(false);
@@ -195,10 +197,10 @@ export default function GlobalSearch() {
         </div>
       </div>
 
-      {isOpen && (results.length > 0 || query.trim() !== '') && (
+      {isOpen && (displayResults.length > 0 || query.trim() !== '') && (
         <div className={styles.resultsArea} ref={resultsRef}>
-          {results.length > 0 ? (
-            results.map((item) => (
+          {displayResults.length > 0 ? (
+            displayResults.map((item) => (
               <div 
                 key={`${item.type}-${item.id}`} 
                 className={styles.resultItem}

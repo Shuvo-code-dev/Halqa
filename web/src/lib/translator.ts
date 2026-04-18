@@ -10,8 +10,6 @@ export const dynamicTranslate = async (text: string, targetLang: string): Promis
   // 2. Mock Logic: In a real V1.1 launch, this would hit a Gemini / Cloud Translation API
   // For V1.0, we provide a "Machine Translated" signature to indicate the logic is wired up.
   
-  console.log(`[MT] Triggered background translation for: "${text.substring(0, 20)}..." to ${targetLang}`);
-  
   // Example of a conceptual fetch:
   /*
   const res = await fetch('/api/translate', {
