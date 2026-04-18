@@ -2,7 +2,7 @@
 
 <br />
 
-<img src="assets/banner.png" width="100%" height="100%" />
+<img src="web\public\og-image.png" width="100%" height="100%" />
 
 ### `[ ⬡ Navigate the Noise. Master the Code. ]`
 
@@ -49,6 +49,8 @@
 </table>
 
 <br />
+
+<img src="assets/banner.png" width="100%" height="100%" />
 
 ---
 
