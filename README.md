@@ -11,9 +11,9 @@
 
 [![Next.js](https://img.shields.io/badge/Next.js-15.0-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.2-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-11.0-FF4154?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
 [![License-GPL3](https://img.shields.io/badge/License-GPL--3.0-blue?style=for-the-badge&logo=gnu&logoColor=white)](https://www.gnu.org/licenses/gpl-3.0)
 [![License-CC-BY-NC](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey?style=for-the-badge&logo=creativecommons&logoColor=white)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![Sponsor](https://img.shields.io/badge/Sponsor-Halqa-ff69b4?style=for-the-badge&logo=github-sponsors)](https://github.com/sponsors/Shuvo-code-dev)
 
 <br />
 
