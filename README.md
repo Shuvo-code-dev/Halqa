@@ -1,177 +1,341 @@
 <div align="center">
 
-<img src="./assets/halqa_banner.png" alt="Halqa Brand Banner" width="100%" />
+<br />
+
+```
+██╗  ██╗ █████╗ ██╗      ██████╗  █████╗
+██║  ██║██╔══██╗██║     ██╔═══██╗██╔══██╗
+███████║███████║██║     ██║   ██║███████║
+██╔══██║██╔══██║██║     ██║▄▄ ██║██╔══██║
+██║  ██║██║  ██║███████╗╚██████╔╝██║  ██║
+╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚══▀▀═╝ ╚═╝  ╚═╝
+```
+
+### `[ ⬡ Navigate the Noise. Master the Code. ]`
+
+> A high-fidelity, unified ecosystem for the modern developer —  
+> where theory, components, and live data converge into one nexus.
 
 <br />
 
-**Navigate the Noise. Master the Code.**  
-_A high-fidelity, unified ecosystem for the modern developer._
-
-<br />
-
-[![Next.js](https://img.shields.io/badge/Next.js-15.0-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.2-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![License-GPL3](https://img.shields.io/badge/License-GPL--3.0-blue?style=for-the-badge&logo=gnu&logoColor=white)](https://www.gnu.org/licenses/gpl-3.0)
-[![License-CC-BY-NC](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey?style=for-the-badge&logo=creativecommons&logoColor=white)](https://creativecommons.org/licenses/by-nc/4.0/)
-[![Sponsor](https://img.shields.io/badge/Sponsor-Halqa-ff69b4?style=for-the-badge&logo=github-sponsors)](https://github.com/sponsors/Shuvo-code-dev)
+<table>
+<tr>
+  <td align="center">
+    <a href="https://nextjs.org/">
+      <img src="https://img.shields.io/badge/Next.js-15.0-000000?style=for-the-badge&logo=next.js&logoColor=white" />
+    </a>
+  </td>
+  <td align="center">
+    <a href="https://www.typescriptlang.org/">
+      <img src="https://img.shields.io/badge/TypeScript-5.2-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+    </a>
+  </td>
+  <td align="center">
+    <a href="https://www.framer.com/motion/">
+      <img src="https://img.shields.io/badge/Framer_Motion-latest-FF4154?style=for-the-badge&logo=framer&logoColor=white" />
+    </a>
+  </td>
+</tr>
+<tr>
+  <td align="center">
+    <a href="https://www.gnu.org/licenses/gpl-3.0">
+      <img src="https://img.shields.io/badge/License-GPL--3.0-blue?style=for-the-badge&logo=gnu&logoColor=white" />
+    </a>
+  </td>
+  <td align="center">
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/">
+      <img src="https://img.shields.io/badge/Content-CC%20BY--NC%204.0-lightgrey?style=for-the-badge&logo=creativecommons&logoColor=white" />
+    </a>
+  </td>
+  <td align="center">
+    <a href="https://github.com/sponsors/Shuvo-code-dev">
+      <img src="https://img.shields.io/badge/Sponsor-❤️_Support_Halqa-ff69b4?style=for-the-badge&logo=github-sponsors" />
+    </a>
+  </td>
+</tr>
+</table>
 
 <br />
 
 ---
 
-### [ ⬡ ] Quick Navigation
+### Quick Navigation
 
-**[ 🛰️ Overview ](#-ecosystem-architecture)** &nbsp; • &nbsp; **[ 🏗️ Architecture ](#-visual-logic-flow)** &nbsp; • &nbsp; **[ 💎 Why Halqa ](#-why-halqa)** &nbsp; • &nbsp; **[ ⚙️ Engineering ](#-engineering-deep-dives)** &nbsp; • &nbsp; **[ 📦 Setup ](#-installation-architecture)**
+[🛰️ Overview](#-ecosystem-overview) &nbsp;·&nbsp; [🏗️ Architecture](#-system-architecture) &nbsp;·&nbsp; [💎 Why Halqa](#-why-halqa) &nbsp;·&nbsp; [⚙️ Engineering](#-engineering-deep-dives) &nbsp;·&nbsp; [📦 Setup](#-installation) &nbsp;·&nbsp; [🗺️ Roadmap](#-roadmap)
 
 ---
 
 </div>
 
-## ⬡ Ecosystem Architecture
+<br />
 
-Halqa dismantles the traditional, fragmented learning cycle. By unifying documentation, UI components, and live data sources into a single logical nexus, we provide a friction-free transition from rookie concepts to production-grade deployments.
+## ⬡ Ecosystem Overview
 
-### 🧩 The Four Pillars
+Most developers waste hours jumping between disconnected tools — documentation tabs, UI snippet sites, API testers, and tutorial platforms. **Halqa ends that fragmentation.**
 
-| **🗺️ ROADMAPS**                                                                                                                                                                               | **🧪 CODE LAB**                                                                                                                                                               |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **The Theory Matrix**. Curated learning paths covering Frontend, Backend, and Mobile disciplines. Designed to build career-grade foundations mapping stage-by-stage engineering requirements. | **The Physics Engine**. A massive library of glassmorphic, fluid UI components. Built with Framer Motion to ensure high-end aesthetics meet zero-runtime overhead.            |
-| **🔌 API LAB**                                                                                                                                                                                | **🚀 PROJECT HUB**                                                                                                                                                            |
-| **The Data Vault**. A stable directory of public endpoints featuring local, regex-parsed schema visualizations. Test your apps on curated mock data without network instability.              | **The Integration Nexus**. Real-world blueprints that link theoretical stages to specific code components and API feeds. The ultimate "Connect the Dots" application builder. |
+It is a **unified developer platform** built on four interconnected pillars: structured learning paths, a physics-driven component library, a live API sandbox, and a project builder that ties everything together. Whether you are starting your first project or deploying production-grade systems, Halqa provides a single, coherent workspace.
+
+<br />
+
+<div align="center">
+
+| Pillar | Name | Description |
+|:------:|:-----|:------------|
+| 🗺️ | **Roadmaps** | Curated, career-grade learning paths for Frontend, Backend, and Mobile — built stage by stage, like leveling up a skill tree. |
+| 🧪 | **Code Lab** | A massive library of glassmorphic, physics-animated UI components. Built with Framer Motion for a premium, zero-compromise feel. |
+| 🔌 | **API Lab** | A stable sandbox of public endpoints with inline, regex-parsed schema visualizations. No flaky third-party calls, no instability. |
+| 🚀 | **Project Hub** | The synthesis layer. Mounts real-world blueprints that link roadmap stages → UI components → API data into one living project. |
+
+</div>
+
+<br />
 
 ---
 
-## ⬡ Visual Logic Flow
+## ⬡ System Architecture
 
-The Halqa journey is a continuous cycle of discovery, experimentation, and construction.
+The Halqa journey is a **continuous feedback loop** — theory feeds construction, construction feeds data integration, and integration produces deployable applications.
 
 ```mermaid
 graph TD
-    A[🗺️ Roadmaps] -- Theory --> E{Theory Base}
-    B[🧪 Code Lab] -- Construction --> F{UI Layouts}
-    E --> G[🚀 Project Hub]
-    F --> G
-    C[🔌 API Lab] -- Data Feed --> G
-    G --> H[📦 Production-Ready App]
+    A["🗺️ Roadmaps\nTheory Matrix"]
+    B["🧪 Code Lab\nPhysics Engine"]
+    C["🔌 API Lab\nData Vault"]
+    G["🚀 Project Hub\nIntegration Nexus"]
+    H["📦 Production-Ready App"]
+
+    A -- "Conceptual Foundation" --> G
+    B -- "UI Construction Blocks" --> G
+    C -- "Live Data Feeds" --> G
+    G -- "Synthesized Blueprint" --> H
 
     style A fill:#0D1117,stroke:#2DD4BF,stroke-width:2px,color:#fff
     style B fill:#0D1117,stroke:#2DD4BF,stroke-width:2px,color:#fff
     style C fill:#0D1117,stroke:#2DD4BF,stroke-width:2px,color:#fff
-    style G fill:#0D1117,stroke:#2DD4BF,stroke-width:4px,color:#fff
+    style G fill:#0D1117,stroke:#2DD4BF,stroke-width:4px,color:#2DD4BF
     style H fill:#2DD4BF,stroke:#fff,stroke-width:2px,color:#0D1117
 ```
+
+<br />
+
+> **The four pillars are not independent features.** They are nodes in a deliberate architecture — designed so that knowledge flows upward from theory into deployable, real-world software.
+
+<br />
 
 ---
 
 ## ⬡ Why Halqa?
 
-Halqa is engineered for those who value speed, precision, and visual excellence.
+<div align="center">
 
-```mermaid
-graph LR
-    Next[Next.js 15] --- React[React 19]
-    React --- Framer[Framer Motion]
-    React --- TS[TypeScript]
-    Framer --- UI[Physics UI]
-    TS --- API[Type-Safe API]
-    Next --- App[App Router]
+```
+The problem isn't a lack of resources.
+It's that resources are everywhere — and connected to nothing.
+```
 
-    style Next fill:#000,stroke:#fff,color:#fff
-    style React fill:#23272F,stroke:#149ECA,color:#149ECA
-    style Framer fill:#000,stroke:#FF4154,color:#FF4154
-    style TS fill:#3178C6,stroke:#fff,color:#fff
+</div>
+
+<br />
+
+Halqa was built on a single conviction: **learning tools should connect, not fragment.** Here is what that looks like in practice:
+
+<br />
+
+```
+⚡  Zero-Runtime Overhead
+    Next.js 15 static generation. Near-instant loads.
+    Measured build speed: 1793ms. No compromises.
+
+🛡️  Type-Safe Across Every Layer
+    Strict TypeScript across all API mocks, component props,
+    and data interfaces. Zero runtime type surprises.
+
+💎  Physics-Driven Micro-interactions
+    Components that respond to the user — not just react to clicks.
+    Vector-calculated hover physics. Fluid layout transitions.
+
+🔭  Unified Discovery
+    One dashboard. Every tool, roadmap, component, and endpoint.
+    Stop context-switching. Start building.
 ```
 
 <br />
 
-- **⚡ Zero-Runtime Overhead**: Optimized Next.js 15 static generation ensures near-instantaneous load times (1793ms build speed).
-- **🛡️ Type-Safe Schemas**: Native TypeScript integration across all API mocks and component props ensures absolute build-time stability.
-- **💎 Fluid Micro-interactions**: Physics-based animations that react to the user, creating a professional "premium" software feel.
-- **🔭 Unified Discovery**: Stop switching tabs. Every resource, tool, and endpoint is accessible from a single, high-contrast dashboard.
+### Technology Constellation
+
+```mermaid
+graph LR
+    Next["Next.js 15\nApp Router"]
+    React["React 19\nServer Components"]
+    Framer["Framer Motion\nPhysics UI"]
+    TS["TypeScript\nStrict Mode"]
+    GSAP["GSAP\nComplex Timelines"]
+    Tailwind["Tailwind CSS\nUtility Layer"]
+
+    Next --- React
+    React --- Framer
+    React --- TS
+    Framer --- GSAP
+    TS --- Tailwind
+
+    style Next fill:#000,stroke:#fff,color:#fff
+    style React fill:#23272F,stroke:#149ECA,color:#149ECA
+    style Framer fill:#111,stroke:#FF4154,color:#FF4154
+    style TS fill:#3178C6,stroke:#fff,color:#fff
+    style GSAP fill:#0D1117,stroke:#88CE02,color:#88CE02
+    style Tailwind fill:#0F172A,stroke:#38BDF8,color:#38BDF8
+```
+
+<br />
 
 ---
 
 ## ⬡ Engineering Deep Dives
 
-### I. Mathematical Micro-Interactions
+### I. · Mathematical Micro-Interactions
 
-In the **Code Lab**, we don't just use transitions; we use physics. Elements calculate vector distances between the cursor and the DOM center to drive dynamic scaling and levitation effects. Our **Isolated Play/Pause state logic** ensures that complex layout mutations never conflict with viewport resizing.
+The **Code Lab** treats animation as physics, not timers. Each interactive component calculates the **vector distance** between the cursor and the element's DOM center in real time — using that delta to drive dynamic scaling, levitation depth, and directional shadow casting.
 
-### II. Regex-Parsed Data Visualization
+An **Isolated Play/Pause state machine** ensures that complex layout mutations (grid reflow, panel expansion, tab transitions) never race against viewport resize events. Every state transition is queued and resolved sequentially.
 
-The **API Lab** implements a custom syntax-highlighting engine. By recursively parsing stringified JSON objects through specific regular expression matrices, we inject scoped CSS styling layers into the rendering tree, providing native code-editor fidelity without the overhead of external libraries.
+```
+cursor (x, y) → Δ vector to DOM center → scale factor + shadow depth + levitation offset
+```
 
-### III. Tri-Node Blueprint Mapping
+<br />
 
-The **Project Hub** acts as the architect. It effectively "mounts" a development environment by fetching metadata from three separate Halqa silos and presenting them as a cohesive 3-step checklist for building specialized applications like AI-powered chat systems or real-time crypto dashboards.
+### II. · Regex-Parsed Data Visualization
+
+The **API Lab** contains a custom, zero-dependency syntax-highlighting engine. Rather than shipping a full library like Prism or Highlight.js, Halqa implements a **recursive JSON traversal system** that:
+
+1. Stringifies the raw API response object
+2. Passes each token through a targeted regex matrix
+3. Injects scoped CSS class tokens into the render tree
+4. Produces native code-editor fidelity at near-zero overhead cost
+
+The result: a visual schema inspector that loads instantly and requires no external runtime.
+
+<br />
+
+### III. · Tri-Node Blueprint Mapping
+
+The **Project Hub** is the architect's layer. When you open a project blueprint, it simultaneously fetches metadata from **three independent Halqa data nodes**:
+
+| Node | Source | Purpose |
+|------|--------|---------|
+| Theoretical | Roadmaps API | Which knowledge stages are prerequisite |
+| Compositional | Code Lab registry | Which UI components to assemble |
+| Data | API Lab directory | Which endpoints to wire in |
+
+These three streams merge into a **3-step checklist** — a living scaffold for building production systems like AI-powered chat apps or real-time crypto dashboards.
+
+<br />
 
 ---
 
 ## ⬡ Technical Specifications
 
-| Layer          | Implementation          | Purpose                                                           |
-| :------------- | :---------------------- | :---------------------------------------------------------------- |
-| **Core**       | Next.js 15 (App Router) | High-performance topological routing and static payload delivery. |
-| **Motions**    | Framer Motion & GSAP    | Physics-driven layout transitions and spatial animations.         |
-| **Styling**    | Vanilla CSS & Tailwind  | High-contrast, minimalist aesthetics with scoped modularity.      |
-| **Type Logic** | TypeScript (Strict)     | Cross-module safety for API interfaces and component definitions. |
+<div align="center">
+
+| Layer | Implementation | Purpose |
+|:------|:---------------|:--------|
+| **Core Framework** | Next.js 15 (App Router) | Topological routing, static payload delivery, RSC support |
+| **UI Runtime** | React 19 | Server Components, concurrent rendering, streaming SSR |
+| **Motion Engine** | Framer Motion + GSAP | Physics-driven layout transitions and complex timeline animations |
+| **Styling System** | Vanilla CSS + Tailwind | High-contrast minimalist aesthetics with scoped module isolation |
+| **Type System** | TypeScript (Strict) | Cross-module safety for API interfaces and component definitions |
+| **Build Tooling** | Turbopack | Incremental bundling, sub-second HMR, optimized dev cycles |
+
+</div>
+
+<br />
 
 ---
 
-## ⬡ Installation Architecture
+## ⬡ Installation
 
-Bootstrap your local development environment with these precise commands.
+Get Halqa running locally in four precise steps.
 
-#### Step 01: Core Inception
+<br />
+
+**① Clone the repository**
 
 ```bash
-# Clone the Halqa repository architecture
 git clone https://github.com/Shuvo-code-dev/Halqa.git
 ```
 
-#### Step 02: Environment Sync
+**② Navigate to the web application**
 
 ```bash
-# Enter the application root directory
 cd Halqa/web
 ```
 
-#### Step 03: Dependency Resolution
+**③ Install dependencies**
 
 ```bash
-# Install the Node product ecosystem
 npm install
 ```
 
-#### Step 04: Local Activation
+**④ Start the development server**
 
 ```bash
-# Initiate the Turbopack development server
 npm run dev
+# Powered by Turbopack — expect <500ms HMR
 ```
+
+<br />
+
+> Open [http://localhost:3000](http://localhost:3000) to enter the Halqa ecosystem.
+
+<br />
 
 ---
 
-## ⬡ Roadmap: The Evolution
+## ⬡ Roadmap
 
-- [x] **Phase 1: Inception** `[██████████] 100%` - Core Roadmaps and Architecture.
-- [x] **Phase 2: UI Mastery** `[██████████] 100%` - Code Lab expansion.
-- [x] **Phase 3: Data Integrity** `[██████████] 100%` - API Lab stable mock engine.
-- [x] **Phase 4: Global Universe** `[██████████] 100%` - Mobile/Fullstack expansion.
-- [x] **Phase 5: Synthesis** `[██████████] 100%` - Project Hub 'Connect the Dots'.
-- [ ] **Phase 6: Intelligence** `[░░░░░░░░░░] 0%` - AI-Powered Global Search.
-- [ ] **Phase 7: Ecosystem** `[░░░░░░░░░░] 0%` - Community Template Systems.
+```
+Phase 1 · Inception          [██████████] 100% — Core Roadmaps and Architecture
+Phase 2 · UI Mastery         [██████████] 100% — Code Lab component expansion
+Phase 3 · Data Integrity     [██████████] 100% — API Lab stable mock engine
+Phase 4 · Global Universe    [██████████] 100% — Mobile and Fullstack expansion
+Phase 5 · Synthesis          [██████████] 100% — Project Hub "Connect the Dots"
+──────────────────────────────────────────────────────────────────────────────
+Phase 6 · Intelligence       [░░░░░░░░░░]   0% — AI-Powered Global Search
+Phase 7 · Ecosystem          [░░░░░░░░░░]   0% — Community Template Systems
+```
+
+<br />
+
+Phases 6 and 7 are where Halqa becomes **community-driven**. If you want to accelerate these — contribute, sponsor, or open a discussion.
+
+<br />
 
 ---
 
 ## ⬡ Contributing
 
-We welcome the engineering elite. If you find a bug, have a component suggestion, or want to add an API source:
+We welcome engineers who care about craft. Here is how to contribute the right way:
 
-1.  **Fork** the repository.
-2.  **Create** an engineering branch (`git checkout -b feat/YourFeature`).
-3.  **Commit** with precision.
-4.  **Push** and open a PR.
+```bash
+# 1. Fork the repository on GitHub
+
+# 2. Create a scoped feature branch
+git checkout -b feat/your-feature-name
+
+# 3. Commit with intent — describe the why, not just the what
+git commit -m "feat: add physics hover to CodeLab card grid"
+
+# 4. Push and open a Pull Request
+git push origin feat/your-feature-name
+```
+
+<br />
+
+**Before opening a PR:**
+- [ ] Ensure TypeScript strict mode passes with zero errors
+- [ ] Test responsive behavior at 375px, 768px, and 1440px
+- [ ] Components should match Halqa's visual language — high-contrast, physics-aware
+- [ ] Include a brief description of *what problem your change solves*
 
 <br />
 
@@ -179,9 +343,47 @@ We welcome the engineering elite. If you find a bug, have a component suggestion
 
 ## ⬡ License
 
-Halqa is a dual-licensed project designed to protect both our engineering labor and educational integrity.
-
-- **Source Code**: Protected under the **[GPL-3.0 License](https://www.gnu.org/licenses/gpl-3.0)**. You are free to copy, modify, and distribute the code, provided all derivative works remain open-source under the same terms.
-- **Content & Roadmaps**: Protected under **[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)**. This covers all curriculum, roadmap stages, and educational logic. This content is for non-commercial use only.
+Halqa uses a **dual-license model** to protect both engineering labor and educational integrity.
 
 <br />
+
+<div align="center">
+
+| Asset Type | License | Terms |
+|:-----------|:--------|:------|
+| **Source Code** | [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0) | Free to copy, modify, and distribute — all derivatives must remain open-source under the same terms. |
+| **Content & Roadmaps** | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) | All curriculum, roadmap stages, and educational logic. Non-commercial use only. Attribution required. |
+
+</div>
+
+<br />
+
+> TL;DR — **Use the code freely. Don't monetize the curriculum.**
+
+<br />
+
+---
+
+<div align="center">
+
+<br />
+
+**[ ⬡ HALQA ]**
+
+*Built with precision. Designed for engineers who care.*
+
+<br />
+
+[![GitHub Stars](https://img.shields.io/github/stars/Shuvo-code-dev/Halqa?style=social)](https://github.com/Shuvo-code-dev/Halqa)
+&nbsp;&nbsp;
+[![GitHub Forks](https://img.shields.io/github/forks/Shuvo-code-dev/Halqa?style=social)](https://github.com/Shuvo-code-dev/Halqa/fork)
+&nbsp;&nbsp;
+[![Sponsor](https://img.shields.io/badge/Sponsor-Halqa-ff69b4?style=flat&logo=github-sponsors)](https://github.com/sponsors/Shuvo-code-dev)
+
+<br />
+
+*If Halqa helped you build something — give it a ⭐ and tell a fellow developer.*
+
+<br />
+
+</div>
