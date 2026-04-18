@@ -78,7 +78,64 @@ export const API_REGISTRY: ApiEntry[] = [
 
   // --- GEOCODING --- //
   { id: 'nominatim', category: 'Geocoding', name: 'Nominatim', method: 'GET', description: 'OpenStreetMap geocoding service.', auth: 'No Key', https: 'Yes', cors: 'Yes', endpoint: 'https://nominatim.openstreetmap.org/search?q=London&format=json' },
+  { id: 'openstreetmap', category: 'Geocoding', name: 'OpenStreetMap API', method: 'GET', description: 'Access global map data and routing services.', auth: 'No Key', https: 'Yes', cors: 'Yes', endpoint: 'https://www.openstreetmap.org/api/0.6/map?bbox=left,bottom,right,top', schema: 'interface OSMData { version: string; generator: string; copyright: string; }' },
   { id: 'ipapi', category: 'Geocoding', name: 'ipapi', method: 'GET', description: 'IP Address Location API for any IP address.', auth: 'No Key', https: 'Yes', cors: 'Yes', endpoint: 'https://ipapi.co/json/' },
+  
+  // --- AI --- //
+  { 
+    id: 'groq', 
+    category: 'AI', 
+    name: 'Groq Cloud API', 
+    method: 'POST', 
+    description: 'High-speed AI inference for LLMs using LPU architecture.', 
+    auth: 'API Key', 
+    https: 'Yes', 
+    cors: 'No', 
+    endpoint: 'https://api.groq.com/openai/v1/chat/completions',
+    schema: 'interface GroqResponse { id: string; choices: { message: { content: string } }[] }',
+    docsUrl: 'https://console.groq.com/docs/quickstart'
+  },
+  { 
+    id: 'openai-gpt4', 
+    category: 'AI', 
+    name: 'OpenAI GPT-4o', 
+    method: 'POST', 
+    description: 'The industry-standard LLM for text, vision, and logic.', 
+    auth: 'API Key', 
+    https: 'Yes', 
+    cors: 'No', 
+    endpoint: 'https://api.openai.com/v1/chat/completions',
+    schema: 'interface OpenAIResponse { id: string; usage: { total_tokens: number }; choices: any[]; }',
+    docsUrl: 'https://platform.openai.com/docs/'
+  },
+
+  // --- BUSINESS --- //
+  { 
+    id: 'stripe', 
+    category: 'Business', 
+    name: 'Stripe API', 
+    method: 'POST', 
+    description: 'Global payment infrastructure for internet business.', 
+    auth: 'API Key', 
+    https: 'Yes', 
+    cors: 'No', 
+    endpoint: 'https://api.stripe.com/v1/checkout/sessions',
+    schema: 'interface StripeSession { id: string; url: string; success_url: string; }',
+    docsUrl: 'https://docs.stripe.com/api'
+  },
+  { 
+    id: 'resend', 
+    category: 'Business', 
+    name: 'Resend Email API', 
+    method: 'POST', 
+    description: 'Premium email delivery platform for developers.', 
+    auth: 'API Key', 
+    https: 'Yes', 
+    cors: 'No', 
+    endpoint: 'https://api.resend.com/emails',
+    schema: 'interface ResendEmail { id: string; from: string; to: string[]; subject: string; }',
+    docsUrl: 'https://resend.com/docs/api-reference/'
+  },
 ];
 
 export const API_CATEGORIES = [

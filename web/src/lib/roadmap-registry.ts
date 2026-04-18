@@ -245,5 +245,53 @@ export const ROADMAP_REGISTRY: Record<string, RoadmapData> = {
         ]
       }
     ]
+  },
+  devops: {
+    id: 'devops',
+    title: 'DevOps & <span class="text-gradient">Cloud Engineering</span>',
+    subtitle: 'Automate, scale, and orchestrate industrial-grade infrastructure.',
+    icon: '☁️',
+    completionTitle: 'Cloud Architect Status',
+    completionText: 'You now possess the skills to manage and scale global software infrastructure.',
+    stages: [
+      {
+        id: '01',
+        title: 'Docker & Containerization',
+        description: 'Master the art of package everything into portable, isolated containers.',
+        why: 'Containers ensure environment consistency from development to production, eliminating "it works on my machine" issues.',
+        topics: ['Dockerfiles', 'Image Layers', 'Docker Compose', 'Container Networking'],
+        guide: 'Containerize a complex microservices application and orchestrate it using Docker Compose.',
+        resources: [
+          { name: 'Docker 101 Guide', url: 'https://www.docker.com/101-tutorial/' },
+          { name: 'Fireship - Docker in 100 Seconds', url: 'https://www.youtube.com/watch?v=gAkwW2tuIqE' },
+          { name: 'Docker - Official Curriculum', url: 'https://docs.docker.com/get-started/' }
+        ]
+      },
+      {
+        id: '02',
+        title: 'CI/CD with GitHub Actions',
+        description: 'Automate your workflow from the first commit to the final deployment.',
+        why: 'Automated pipelines reduce human error and ensure every release meets your quality standards.',
+        topics: ['Workflow Syntax', 'Secrets Management', 'Self-hosted Runners', 'Automated Testing'],
+        guide: 'Implement a zero-downtime deployment pipeline that runs vitest, lints code, and deploys to Vercel.',
+        resources: [
+          { name: 'GitHub Actions - Quickstart', url: 'https://docs.github.com/en/actions/quickstart' },
+          { name: 'Fireship - CI/CD Explained', url: 'https://www.youtube.com/watch?v=scEDHsr3APg' }
+        ]
+      },
+      {
+        id: '03',
+        title: 'Cloud Infrastructure & IaC',
+        description: 'Provision and manage global server infrastructure using code.',
+        why: 'Infrastructure as Code allows for repeatable, version-controlled cloud environments.',
+        topics: ['Vercel & Edge Functions', 'AWS Fundamentals', 'Terraform Basics', 'Serverless Paradigms'],
+        guide: 'Deploy a globally distributed serverless function that handles real-time data processing.',
+        resources: [
+          { name: 'AWS Cloud Practitioner', url: 'https://aws.amazon.com/certification/certified-cloud-practitioner/' },
+          { name: 'Vercel Mastery Guide', url: 'https://vercel.com/docs' },
+          { name: 'Fireship - Terraform in 100 Seconds', url: 'https://www.youtube.com/watch?v=7xndcEf6_8w' }
+        ]
+      }
+    ]
   }
 };
