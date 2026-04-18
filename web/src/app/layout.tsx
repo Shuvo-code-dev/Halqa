@@ -12,6 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://halqa.vercel.app"),
   title: {
     default: "Halqa | The Developer Sanctuary",
     template: "%s | Halqa"

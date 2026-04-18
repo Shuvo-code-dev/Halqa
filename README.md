@@ -79,12 +79,12 @@ It is a **unified developer platform** built on four interconnected pillars: str
 
 <div align="center">
 
-| Pillar | Name | Description |
-|:------:|:-----|:------------|
-| 🗺️ | **Roadmaps** | Curated, career-grade learning paths for Frontend, Backend, and Mobile — built stage by stage, like leveling up a skill tree. |
-| 🧪 | **Code Lab** | A massive library of glassmorphic, physics-animated UI components. Built with Framer Motion for a premium, zero-compromise feel. |
-| 🔌 | **API Lab** | A stable sandbox of public endpoints with inline, regex-parsed schema visualizations. No flaky third-party calls, no instability. |
-| 🚀 | **Project Hub** | The synthesis layer. Mounts real-world blueprints that link roadmap stages → UI components → API data into one living project. |
+| Pillar | Name            | Description                                                                                                                       |
+| :----: | :-------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
+|   🗺️   | **Roadmaps**    | Curated, career-grade learning paths for Frontend, Backend, and Mobile — built stage by stage, like leveling up a skill tree.     |
+|   🧪   | **Code Lab**    | A massive library of glassmorphic, physics-animated UI components. Built with Framer Motion for a premium, zero-compromise feel.  |
+|   🔌   | **API Lab**     | A stable sandbox of public endpoints with inline, regex-parsed schema visualizations. No flaky third-party calls, no instability. |
+|   🚀   | **Project Hub** | The synthesis layer. Mounts real-world blueprints that link roadmap stages → UI components → API data into one living project.    |
 
 </div>
 
@@ -221,11 +221,11 @@ The result: a visual schema inspector that loads instantly and requires no exter
 
 The **Project Hub** is the architect's layer. When you open a project blueprint, it simultaneously fetches metadata from **three independent Halqa data nodes**:
 
-| Node | Source | Purpose |
-|------|--------|---------|
-| Theoretical | Roadmaps API | Which knowledge stages are prerequisite |
-| Compositional | Code Lab registry | Which UI components to assemble |
-| Data | API Lab directory | Which endpoints to wire in |
+| Node          | Source            | Purpose                                 |
+| ------------- | ----------------- | --------------------------------------- |
+| Theoretical   | Roadmaps API      | Which knowledge stages are prerequisite |
+| Compositional | Code Lab registry | Which UI components to assemble         |
+| Data          | API Lab directory | Which endpoints to wire in              |
 
 These three streams merge into a **3-step checklist** — a living scaffold for building production systems like AI-powered chat apps or real-time crypto dashboards.
 
@@ -237,14 +237,14 @@ These three streams merge into a **3-step checklist** — a living scaffold for 
 
 <div align="center">
 
-| Layer | Implementation | Purpose |
-|:------|:---------------|:--------|
-| **Core Framework** | Next.js 15 (App Router) | Topological routing, static payload delivery, RSC support |
-| **UI Runtime** | React 19 | Server Components, concurrent rendering, streaming SSR |
-| **Motion Engine** | Framer Motion + GSAP | Physics-driven layout transitions and complex timeline animations |
-| **Styling System** | Vanilla CSS + Tailwind | High-contrast minimalist aesthetics with scoped module isolation |
-| **Type System** | TypeScript (Strict) | Cross-module safety for API interfaces and component definitions |
-| **Build Tooling** | Turbopack | Incremental bundling, sub-second HMR, optimized dev cycles |
+| Layer              | Implementation          | Purpose                                                           |
+| :----------------- | :---------------------- | :---------------------------------------------------------------- |
+| **Core Framework** | Next.js 15 (App Router) | Topological routing, static payload delivery, RSC support         |
+| **UI Runtime**     | React 19                | Server Components, concurrent rendering, streaming SSR            |
+| **Motion Engine**  | Framer Motion + GSAP    | Physics-driven layout transitions and complex timeline animations |
+| **Styling System** | Vanilla CSS + Tailwind  | High-contrast minimalist aesthetics with scoped module isolation  |
+| **Type System**    | TypeScript (Strict)     | Cross-module safety for API interfaces and component definitions  |
+| **Build Tooling**  | Turbopack               | Incremental bundling, sub-second HMR, optimized dev cycles        |
 
 </div>
 
@@ -332,10 +332,11 @@ git push origin feat/your-feature-name
 <br />
 
 **Before opening a PR:**
+
 - [ ] Ensure TypeScript strict mode passes with zero errors
 - [ ] Test responsive behavior at 375px, 768px, and 1440px
 - [ ] Components should match Halqa's visual language — high-contrast, physics-aware
-- [ ] Include a brief description of *what problem your change solves*
+- [ ] Include a brief description of _what problem your change solves_
 
 <br />
 
@@ -349,9 +350,9 @@ Halqa uses a **dual-license model** to protect both engineering labor and educat
 
 <div align="center">
 
-| Asset Type | License | Terms |
-|:-----------|:--------|:------|
-| **Source Code** | [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0) | Free to copy, modify, and distribute — all derivatives must remain open-source under the same terms. |
+| Asset Type             | License                                                         | Terms                                                                                                 |
+| :--------------------- | :-------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------- |
+| **Source Code**        | [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0)                 | Free to copy, modify, and distribute — all derivatives must remain open-source under the same terms.  |
 | **Content & Roadmaps** | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) | All curriculum, roadmap stages, and educational logic. Non-commercial use only. Attribution required. |
 
 </div>
@@ -370,7 +371,7 @@ Halqa uses a **dual-license model** to protect both engineering labor and educat
 
 **[ ⬡ HALQA ]**
 
-*Built with precision. Designed for engineers who care.*
+_Built with precision. Designed for engineers who care._
 
 <br />
 
@@ -382,7 +383,7 @@ Halqa uses a **dual-license model** to protect both engineering labor and educat
 
 <br />
 
-*If Halqa helped you build something — give it a ⭐ and tell a fellow developer.*
+_If Halqa helped you build something — give it a ⭐ and tell a fellow developer._
 
 <br />
 
