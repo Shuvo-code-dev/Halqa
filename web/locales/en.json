@@ -50,9 +50,45 @@
         "name": "Blur Text",
         "desc": "A staggered, smooth Gaussian blur reveal effect for focus-driven titles.",
         "why": "Staggered reveals focus the user's attention on specific words, improving retention.",
-        "topics": ["Framer Motion", "Staggered Delays", "Opacity Transitions"],
+        "topics": "Framer Motion, Staggered Delays, Opacity Transitions",
         "guide": "Change the split logic from words to characters for a more granular 'typing' feel."
+      },
+      "halqa-qr": {
+        "name": "Halqa QR Generator",
+        "desc": "Functional, high-fidelity QR generator with custom accent mapping and mobile conversion CTA.",
+        "why": "QR codes are essential for bridging the gap between physical and digital experiences in modern apps.",
+        "topics": "SVG Generation, State Management, Branding",
+        "guide": "Input your URL and select a brand-matching color. The generated SVG is export-ready."
+      },
+      "shiny-text": {
+        "name": "Shiny Text",
+        "desc": "A liquid metallic shimmer effect that glides over your text.",
+        "why": "Glossy effects create a premium, apple-like aesthetic that feels polished and state-of-the-art.",
+        "topics": "CSS Background Clip, Keyframe Animations, Gradients",
+        "guide": "Works best on heavy, bold fonts. Adjust the gradient stops to change the 'sheen' sharpness."
+      },
+      "aurora-bg": {
+        "name": "Aurora Background",
+        "desc": "A living, breathing northern lights simulation for immersive hero sections.",
+        "why": "Abstract, slow-moving backgrounds reduce cognitive load while maintaining visual interest.",
+        "topics": "Radial Gradients, CSS Filters, Spatial Math",
+        "guide": "Set this as a fixed background. Use with high-contrast text for maximum readability."
+      },
+      "magnet-btn": {
+        "name": "Magnet Button",
+        "desc": "An organic interaction that pulls toward the user's cursor.",
+        "why": "Magnetic interactions increase the 'clickability' of CTAs by providing tactile-like visual feedback.",
+        "topics": "Proximity Detection, Spring Physics, Framer Motion",
+        "guide": "Wrap any button in the magnet container to instantly upgrade its UX feel."
+      },
+      "apple-bento": {
+        "name": "Adaptive Bento",
+        "desc": "A sophisticated asymmetrical feature grid inspired by premium design languages.",
+        "why": "Bento grids are the gold standard for presenting complex feature sets in a clean, logical hierarchy.",
+        "topics": "CSS Grid, Fractional Units, Responsive Layouts",
+        "guide": "Add new items by defining their span values in the grid container."
       }
     }
   }
 }
+

@@ -130,7 +130,7 @@ export default function CodeLab() {
   }, [bookmarks.length]);
 
   return (
-    <div className="module-layout" ref={containerRef}>
+    <div className={styles.dashboardContainer} ref={containerRef}>
       <SharedSidebar 
         title={t('codelab.title') || 'Code <span class="text-gradient">Lab</span>'}
         subtitle={t('codelab.subtitle')}
@@ -141,11 +141,12 @@ export default function CodeLab() {
         onItemClick={setActiveCategory}
       />
 
-      <main className="module-content">
+      <main className={styles.mainContent}>
         <header className={styles.header}>
-          <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: t('codelab.title') }} />
-          <p className={styles.subtitle}>{t('codelab.subtitle')}</p>
+          <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: t('codelab.title') || 'Code <span class="text-gradient">Lab</span>' }} />
+          <p className={styles.subtitle}>{t('codelab.subtitle') || 'A world-class UI repository of high-fidelity React + CSS blocks.'}</p>
         </header>
+
 
         <div className={styles.grid}>
           {filteredComps.length > 0 ? filteredComps.map((item) => {
@@ -196,18 +197,21 @@ export default function CodeLab() {
                     <div className={styles.detailsContent}>
                         <div className={styles.detailBlock}>
                           <div className={styles.detailLabel}>The &quot;Why&quot;</div>
-                          <p className={styles.detailVal}>{t(`codelab.components.${item.id}.why`)}</p>
+                          <p className={styles.detailVal}>{t(`codelab.components.${item.id}.why`) !== `codelab.components.${item.id}.why` ? t(`codelab.components.${item.id}.why`) : item.description}</p>
                         </div>
                        <div className={styles.detailBlock}>
                          <div className={styles.detailLabel}>Core Topics</div>
                           <div className={styles.topicsCloud}>
-                             {(t(`codelab.components.${item.id}.topics`) as string || '').split(',').map((topic: string) => (
-                               <span key={topic} className={styles.topicTag}>{topic}</span>
+                             { (t(`codelab.components.${item.id}.topics`) !== `codelab.components.${item.id}.topics` 
+                                ? (t(`codelab.components.${item.id}.topics`) as string) 
+                                : "React, CSS, Animation").split(',').map((topic: string) => (
+                               <span key={topic} className={styles.topicTag}>{topic.trim()}</span>
                              ))}
                           </div>
                        </div>
                     </div>
                   </div>
+
                 </div>
 
                 <div className={styles.viewContainer + ' ' + (activeTab ? styles.open : '')}>
