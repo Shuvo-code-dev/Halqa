@@ -13,7 +13,7 @@ export default function TermsPage() {
       
       <div style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1.1rem' }}>
         <p style={{ marginBottom: '2rem' }}>
-          By using Halqa, you agree to join a community of builders. Halqa is provided "as is" under the 
+          By using Halqa, you agree to join a community of builders. Halqa is provided &quot;as is&quot; under the 
           GPL-3.0 License.
         </p>
 

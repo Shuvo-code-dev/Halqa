@@ -1,6 +1,4 @@
-"use client";
-
-import { useState, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import styles from './page.module.css';
 import { CODELAB_REGISTRY } from '@lib/codelab-registry';
@@ -8,14 +6,17 @@ import { useUser } from '@/context/UserContext';
 import { gsap } from '@lib/gsap';
 import SharedSidebar from '@shared/SharedSidebar';
 
-const DynamicPreview = ({ componentName, paused }: { componentName: string, paused: boolean }) => {
+// Performance Optimization: React.memo for high-fidelity component previews
+const DynamicPreview = React.memo(({ componentName, paused }: { componentName: string, paused: boolean }) => {
   const Component = useMemo(() => dynamic<{ paused: boolean }>(() => import(`@modules/codelab/presets/${componentName}`), {
     ssr: false,
     loading: () => <div className={styles.loader}>Loading Lab...</div>
   }), [componentName]);
 
   return <Component paused={paused} />;
-};
+});
+
+DynamicPreview.displayName = 'DynamicPreview';
 
 const CATEGORIES = ['All', 'Bookmarks', 'Text', 'Animations', 'Backgrounds', 'UI'];
 
@@ -25,15 +26,6 @@ export default function CodeLab() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Header Animation
-      gsap.from(`.${styles.header} > *`, {
-        y: 30,
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.8,
-        ease: "expo.out",
-      });
-
       // Grid Animation
       gsap.from(`.${styles.card}`, {
         y: 40,
@@ -56,7 +48,6 @@ export default function CodeLab() {
   const [copyStatus, setCopyStatus] = useState<Record<string, string>>({});
   const [showToast, setShowToast] = useState(false);
 
-  
   const filteredComps = useMemo(() => {
     return CODELAB_REGISTRY.filter(comp => {
       const matchesCategory = activeCategory === 'All' 
@@ -66,7 +57,7 @@ export default function CodeLab() {
           : comp.category === activeCategory;
       
       const matchesSearch = comp.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          comp.description.toLowerCase().includes(searchQuery.toLowerCase());
+                           comp.description.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
   }, [activeCategory, searchQuery, isBookmarked]);
@@ -81,10 +72,13 @@ export default function CodeLab() {
       await navigator.clipboard.writeText(code);
       const key = `${id}-${type}`;
       setCopyStatus(prev => ({ ...prev, [key]: 'Copied!' }));
+      
+      // Teal Pulse Toast Trigger
       setShowToast(true);
+      setTimeout(() => setShowToast(false), 2000);
+
       setTimeout(() => {
         setCopyStatus(prev => ({ ...prev, [key]: '' }));
-        setShowToast(false);
       }, 2000);
     } catch {
       // Error handled silently
@@ -150,17 +144,18 @@ export default function CodeLab() {
                   <div className={styles.actions}>
                     <button onClick={() => togglePanel(item.id)} className={styles.actionBtn}>
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                      {activeTab ? 'Hide' : 'Code'}
+                      {activeTab ? 'Hide Code' : 'View Code'}
                     </button>
                     <button onClick={() => toggleDetails(item.id)} className={styles.actionBtn}>
-                      {isDetailsOpen ? 'Hide Info' : 'Details'}
+                      {isDetailsOpen ? 'Basic Info' : 'Deep Details'}
                     </button>
-                    <a href="https://github.com/Shuvo-code-dev/Halqa" target="_blank" rel="noopener noreferrer" className={styles.actionBtn} title="Open Source">
+                    <a href={item.githubUrl} target="_blank" rel="noopener noreferrer" className={styles.actionBtn} title="View Source on GitHub">
                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                       Source
                     </a>
                     {item.hasAnimation && (
                       <button onClick={() => toggleAnimation(item.id)} className={styles.actionBtn}>
-                        {isPaused ? '▶' : '⏸'}
+                        {isPaused ? '▶ Play' : '⏸ Pause'}
                       </button>
                     )}
                   </div>
@@ -172,7 +167,7 @@ export default function CodeLab() {
                           <p className={styles.detailVal}>{item.why || item.description}</p>
                         </div>
                        <div className={styles.detailBlock}>
-                         <div className={styles.detailLabel}>Core Topics</div>
+                         <div className={styles.detailLabel}>Architectural Topics</div>
                           <div className={styles.topicsCloud}>
                              {(item.topics || "React, CSS, Animation").split(',').map((topic: string) => (
                                <span key={topic} className={styles.topicTag}>{topic.trim()}</span>
@@ -186,13 +181,13 @@ export default function CodeLab() {
 
                 <div className={styles.viewContainer + ' ' + (activeTab ? styles.open : '')}>
                   <div className={styles.tabs}>
-                    <button className={styles.tab + ' ' + (activeTab === 'react' ? styles.active : '')} onClick={() => switchTab(item.id, 'react')}>React</button>
-                    <button className={styles.tab + ' ' + (activeTab === 'css' ? styles.active : '')} onClick={() => switchTab(item.id, 'css')}>CSS</button>
+                    <button className={styles.tab + ' ' + (activeTab === 'react' ? styles.active : '')} onClick={() => switchTab(item.id, 'react')}>React (TSX)</button>
+                    <button className={styles.tab + ' ' + (activeTab === 'css' ? styles.active : '')} onClick={() => switchTab(item.id, 'css')}>Vanilla CSS</button>
                   </div>
                   <div className={styles.pane + ' ' + (activeTab === 'react' ? styles.active : '')}>
                     <div className={styles.copyHeader}>
                        <button onClick={() => copyToClipboard(item.id, item.tsxCode, 'react')} className={styles.copyBtn}>
-                          {copyStatus[`${item.id}-react`] || 'Copy TSX'}
+                          {copyStatus[`${item.id}-react`] || 'Copy TSX Source'}
                        </button>
                     </div>
                     <pre className={styles.pre} dangerouslySetInnerHTML={highlightCode(item.tsxCode)} />
@@ -200,14 +195,14 @@ export default function CodeLab() {
                   <div className={styles.pane + ' ' + (activeTab === 'css' ? styles.active : '')}>
                     <div className={styles.copyHeader}>
                        <button onClick={() => copyToClipboard(item.id, item.cssCode, 'css')} className={styles.copyBtn}>
-                          {copyStatus[`${item.id}-css`] || 'Copy CSS'}
+                          {copyStatus[`${item.id}-css`] || 'Copy CSS Module'}
                        </button>
                     </div>
                     <pre className={styles.pre} dangerouslySetInnerHTML={highlightCode(item.cssCode)} />
                   </div>
                   <div className={styles.viewFooter}>
                     <button onClick={() => togglePanel(item.id)} className={styles.backToLabBtn}>
-                        &larr; Back to Component List
+                        &larr; Return to Workspace
                     </button>
                   </div>
                 </div>
@@ -215,13 +210,16 @@ export default function CodeLab() {
             );
           }) : (
             <div className={styles.emptyResults}>
-               <h3 className={styles.emptyTitle}>No components found</h3>
-               <p className={styles.emptyText}>Try searching for something else like &apos;Text&apos; or &apos;Bento&apos;.</p>
+               <h3 className={styles.emptyTitle}>No components detected</h3>
+               <p className={styles.emptyText}>Try searching for different keywords like &apos;Bento&apos; or &apos;Background&apos;.</p>
             </div>
           )}
         </div>
 
-        <div className={styles.toast + ' ' + (showToast ? styles.show : '')}>Done! 🚀</div>
+        <div className={styles.toast + ' ' + (showToast ? styles.show : '')}>
+           <span className={styles.toastIcon}>✓</span>
+           Code Copied to Clipboard
+        </div>
       </main>
     </div>
   );

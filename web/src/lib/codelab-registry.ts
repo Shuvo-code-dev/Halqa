@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 export type ComponentCategory = 'All' | 'Text' | 'Animations' | 'Backgrounds' | 'UI';
 
@@ -11,6 +11,7 @@ export interface ComponentMetadata {
   tsxCode: string;
   cssCode: string;
   componentName: string; 
+  githubUrl: string;
   why?: string;
   topics?: string;
   guide?: string;
@@ -25,6 +26,7 @@ export const CODELAB_REGISTRY: ComponentMetadata[] = [
     description: "Functional, high-fidelity QR generator with custom accent mapping and mobile conversion CTA.",
     hasAnimation: false,
     componentName: "HalqaQr",
+    githubUrl: "https://github.com/Shuvo-code-dev/Halqa/blob/main/web/src/components/modules/codelab/presets/HalqaQr.tsx",
     why: "QR codes are essential for bridging the gap between physical and digital experiences in modern apps.",
     topics: "SVG Generation, State Management, Branding",
     guide: "Input your URL and select a brand-matching color. The generated SVG is export-ready.",
@@ -193,6 +195,7 @@ export default function HalqaQr() {
     description: "High-performance interactive physics playground using elastic circle collision.",
     hasAnimation: true,
     componentName: "Ballpit",
+    githubUrl: "https://github.com/Shuvo-code-dev/Halqa/blob/main/web/src/components/modules/codelab/presets/Ballpit.tsx",
     why: "Understanding gravity and collision logic is fundamental for game development and advanced UI interactions.",
     topics: "Elastic Collisions, Velocity & Friction, Canvas Optimization",
     guide: "Interact with the balls using your mouse to observe force distribution and friction decay.",
@@ -321,6 +324,7 @@ export default function Ballpit({ paused = false }) {
     description: "Elite metallic shader effect using Three.js and custom GLSL noise displacement.",
     hasAnimation: true,
     componentName: "LiquidChrome",
+    githubUrl: "https://github.com/Shuvo-code-dev/Halqa/blob/main/web/src/components/modules/codelab/presets/LiquidChrome.tsx",
     why: "Advanced shaders elevate the aesthetic quality of a site, providing a premium, high-end feel.",
     topics: "GLSL Shaders, Noise Functions, Vertex/Fragment Logic",
     guide: "Use this as a background for hero sections. It scales perfectly to any resolution via WebGL.",
@@ -439,6 +443,7 @@ export default function LiquidChrome({ paused = false }) {
     description: "Vibrant particle emitter responding to user interaction.",
     hasAnimation: true,
     componentName: "ClickSpark",
+    githubUrl: "https://github.com/Shuvo-code-dev/Halqa/blob/main/web/src/components/modules/codelab/presets/ClickSpark.tsx",
     why: "Micro-interactions keep users engaged and provide immediate feedback for their actions.",
     topics: "Particle Systems, Emitter Logic, Life-cycle Management",
     guide: "Click anywhere in the area to spawn particles. Observe how they fade out over their lifecycle.",
@@ -553,6 +558,7 @@ export default function ClickSpark({ paused = false }) {
     description: "High-speed character scrambling effect using randomized iteration.",
     hasAnimation: true,
     componentName: "GlitchText",
+    githubUrl: "https://github.com/Shuvo-code-dev/Halqa/blob/main/web/src/components/modules/codelab/presets/GlitchText.tsx",
     why: "Cyberpunk and tech-heavy aesthetics rely on glitch effects to communicate a high-velocity digital feel.",
     topics: "String Manipulation, Timing Functions, Randomization Logic",
     guide: "Best used for titles and core headings. Adjustable speed via the timing interval.",
@@ -621,6 +627,7 @@ export default function GlitchText({ text = "HALQA GLITCH", paused = false }) {
     description: "A staggered, smooth Gaussian blur reveal effect.",
     hasAnimation: true,
     componentName: "BlurText",
+    githubUrl: "https://github.com/Shuvo-code-dev/Halqa/blob/main/web/src/components/modules/codelab/presets/BlurText.tsx",
     why: "Staggered reveals focus the user's attention on specific words, improving retention.",
     topics: "Framer Motion, Staggered Delays, Opacity Transitions",
     guide: "Change the split logic from words to characters for a more granular 'typing' feel.",
@@ -657,6 +664,7 @@ export default function BlurText({ text = "Halqa Lab", paused = false }) {
     description: "A liquid metallic shimmer effect.",
     hasAnimation: true,
     componentName: "ShinyText",
+    githubUrl: "https://github.com/Shuvo-code-dev/Halqa/blob/main/web/src/components/modules/codelab/presets/ShinyText.tsx",
     why: "Glossy effects create a premium, apple-like aesthetic that feels polished and state-of-the-art.",
     topics: "CSS Background Clip, Keyframe Animations, Gradients",
     guide: "Works best on heavy, bold fonts. Adjust the gradient stops to change the sheen sharpness.",
@@ -711,6 +719,7 @@ export default function ShinyText({ text = "Shiny Glow", paused = false }) {
     description: "Northern lights simulation.",
     hasAnimation: true,
     componentName: "AuroraBg",
+    githubUrl: "https://github.com/Shuvo-code-dev/Halqa/blob/main/web/src/components/modules/codelab/presets/AuroraBg.tsx",
     why: "Abstract, slow-moving backgrounds reduce cognitive load while maintaining visual interest.",
     topics: "Radial Gradients, CSS Filters, Spatial Math",
     guide: "Set this as a fixed background. Use with high-contrast text for maximum readability.",
@@ -765,6 +774,7 @@ export default function AuroraBg({ paused = false }) {
     description: "Organically pulls toward the cursor.",
     hasAnimation: false,
     componentName: "MagnetButton",
+    githubUrl: "https://github.com/Shuvo-code-dev/Halqa/blob/main/web/src/components/modules/codelab/presets/MagnetButton.tsx",
     why: "Magnetic interactions increase the clickability of CTAs by providing tactile-like visual feedback.",
     topics: "Proximity Detection, Spring Physics, Framer Motion",
     guide: "Wrap any button in the magnet container to instantly upgrade its UX feel.",
@@ -828,6 +838,7 @@ export default function MagnetButton({ text = "Magnetize", paused = false }) {
     description: "Sophisticated asymmetrical feature grid inspired by premium design languages.",
     hasAnimation: false,
     componentName: "AdaptiveBento",
+    githubUrl: "https://github.com/Shuvo-code-dev/Halqa/blob/main/web/src/components/modules/codelab/presets/AdaptiveBento.tsx",
     why: "Bento grids are the gold standard for presenting complex feature sets in a clean, logical hierarchy.",
     topics: "CSS Grid, Fractional Units, Responsive Layouts",
     guide: "Add new items by defining their span values in the grid container.",
