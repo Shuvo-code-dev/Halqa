@@ -7,6 +7,7 @@ import { CODELAB_REGISTRY } from '@lib/codelab-registry';
 import { useUser } from '@/context/UserContext';
 import { gsap } from '@lib/gsap';
 import SharedSidebar from '@shared/SharedSidebar';
+import { useSearchParams } from 'next/navigation';
 
 // Performance Optimization: React.memo for high-fidelity component previews
 const DynamicPreview = React.memo(({ componentName, paused }: { componentName: string, paused: boolean }) => {
@@ -25,6 +26,23 @@ const CATEGORIES = ['All', 'Bookmarks', 'Text', 'Animations', 'Backgrounds', 'UI
 export default function CodeLabClient() {
   const { toggleBookmark, isBookmarked, bookmarks } = useUser();
   const containerRef = useRef<HTMLDivElement>(null);
+  const searchParams = useSearchParams();
+
+  const [activeCategory, setActiveCategory] = useState<string>('All');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [prevId, setPrevId] = useState<string | null>(null);
+
+  // Sync with URL ID without cascading effect warnings
+  const currentId = searchParams.get('id');
+  if (currentId !== prevId) {
+    setPrevId(currentId);
+    if (currentId) {
+      const comp = CODELAB_REGISTRY.find(c => c.id === currentId);
+      if (comp) {
+        setSearchQuery(comp.name);
+      }
+    }
+  }
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -42,8 +60,6 @@ export default function CodeLabClient() {
     return () => ctx.revert();
   }, []);
 
-  const [activeCategory, setActiveCategory] = useState<string>('All');
-  const [searchQuery, setSearchQuery] = useState('');
   const [openPanels, setOpenPanels] = useState<Record<string, string>>({});
   const [openDetails, setOpenDetails] = useState<Record<string, boolean>>({});
   const [pausedStates, setPausedStates] = useState<Record<string, boolean>>({});

@@ -5,13 +5,28 @@ import Link from 'next/link';
 import { gsap } from '@lib/gsap';
 import { API_REGISTRY, API_CATEGORIES } from '@lib/apilab-registry';
 import SharedSidebar from '@shared/SharedSidebar';
+import { useSearchParams } from 'next/navigation';
 import styles from './page.module.css';
 
 const ITEMS_PER_PAGE = 12;
 
 export default function ApiLabClient() {
+  const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
+  const [prevId, setPrevId] = useState<string | null>(null);
+
+  // Sync with URL ID without cascading effect warnings
+  const currentId = searchParams.get('id');
+  if (currentId !== prevId) {
+    setPrevId(currentId);
+    if (currentId) {
+      const api = API_REGISTRY.find(a => a.id === currentId);
+      if (api) {
+        setSearchTerm(api.name);
+      }
+    }
+  }
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
   const containerRef = useRef<HTMLDivElement>(null);
   const loadMoreRef = useRef<HTMLDivElement>(null);

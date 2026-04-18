@@ -4,11 +4,12 @@ import { gsap } from '@lib/gsap';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import styles from './layout.module.css';
+import GlobalSearch from './GlobalSearch';
 
 
 export default function Navbar() {
   const navRef = useRef<HTMLElement>(null);
-
+  
   useEffect(() => {
     const ctx = gsap.context(() => {
       const links = gsap.utils.toArray(`.${styles.navLink}`) as HTMLElement[];
@@ -30,6 +31,9 @@ export default function Navbar() {
         <Link href="/" className={styles.logo}>
           Halqa<span className={styles.accent}>.</span>
         </Link>
+        
+        <GlobalSearch />
+
         <nav className={styles.navLinks}>
           <Link href="/" className={styles.navLink}>Home</Link>
           <Link href="/roadmaps" className={styles.navLink}>Roadmaps</Link>
@@ -38,7 +42,6 @@ export default function Navbar() {
           <Link href="/projects" className={styles.navLink}>Projects</Link>
           <Link href="/resources" className={styles.navLink}>Resources</Link>
           <a href="https://github.com/Shuvo-code-dev/Halqa" target="_blank" rel="noopener noreferrer" className={styles.navBtn}>
-
             GitHub
           </a>
         </nav>

@@ -211,5 +211,39 @@ export const ROADMAP_REGISTRY: Record<string, RoadmapData> = {
         ]
       }
     ]
+  },
+  fullstack: {
+    id: 'fullstack',
+    title: 'Full-Stack <span class="text-gradient">Systems</span>',
+    subtitle: 'Bridge the gap between client and server with cohesive, end-to-end architectures.',
+    icon: '⚡',
+    completionTitle: 'Architect Status Achieved',
+    completionText: 'You can now design, build, and deploy entire digital ecosystems solo.',
+    stages: [
+      {
+        id: '01',
+        title: 'Monolithic vs Microservices',
+        description: 'Understand the pros and cons of different architectural patterns.',
+        why: 'Choosing the right architecture is the first step in building a scalable product.',
+        topics: ['Docker & Containers', 'CI/CD Pipelines', 'System Design Basics'],
+        guide: 'Containerize a Node/React application and deploy it to a private cloud instance.',
+        resources: [
+          { name: 'Docker Core Docs', url: 'https://docs.docker.com/get-started/' },
+          { name: 'System Design Primer', url: 'https://github.com/donnemartin/system-design-primer' }
+        ]
+      },
+      {
+        id: '02',
+        title: 'Authentication & Security',
+        description: 'Master JWT, OAuth2, and secure session management.',
+        why: 'Security is paramount. A single vulnerability can compromise your entire ecosystem.',
+        topics: ['JWT Patterns', 'OAuth2 Flow', 'PBKDF2 Hashing', 'CORS & CSP'],
+        guide: 'Implement a zero-trust authentication layer for an AI-integrated dashboard.',
+        resources: [
+          { name: 'Auth0 Blog - JWT Guide', url: 'https://auth0.com/blog/beginner-s-guide-to-jwt/' },
+          { name: 'OWASP Top 10', url: 'https://owasp.org/www-project-top-ten/' }
+        ]
+      }
+    ]
   }
 };
