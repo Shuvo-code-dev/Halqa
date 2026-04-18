@@ -42,7 +42,7 @@
   </td>
   <td align="center">
     <a href="https://github.com/sponsors/Shuvo-code-dev">
-      <img src="https://img.shields.io/badge/Sponsor-❤️_Support_Halqa-ff69b4?style=for-the-badge&logo=github-sponsors" />
+      <img src="https://img.shields.io/badge/Sponsor-❤️_Support_Us-ff69b4?style=for-the-badge&logo=github-sponsors" />
     </a>
   </td>
 </tr>
