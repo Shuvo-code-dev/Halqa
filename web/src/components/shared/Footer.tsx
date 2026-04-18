@@ -58,6 +58,11 @@ export default function Footer() {
               © 2026 Halqa Ecosystem
             </p>
             <p className={styles.footerTagline}>Powered by Oi Applications</p>
+            <div className={styles.legalLinks}>
+              <Link href="/privacy">Privacy</Link>
+              <Link href="/terms">Terms</Link>
+              <a href="https://github.com/Shuvo-code-dev/Halqa/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0 License</a>
+            </div>
           </div>
 
           <div className={styles.socialLinks}>

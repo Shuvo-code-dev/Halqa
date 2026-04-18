@@ -155,6 +155,23 @@
   box-shadow: 0 10px 40px var(--accent-glow);
 }
 
+.legalLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.legalLinks a {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.legalLinks a:hover {
+  color: var(--text-primary);
+}
+
 .footerBottom {
   border-top: 1px solid var(--border-glass);
   padding: 4rem 0;
