@@ -101,14 +101,6 @@
   margin-top: 2px;
 }
 
-.bookmarkBadge {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #ffcc00;
-  box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
-}
-
 /* MAIN CONTENT */
 .mainContainer {
   flex: 1;
@@ -152,26 +144,6 @@
   font-weight: 900;
   letter-spacing: -0.04em;
   line-height: 1;
-}
-
-.bookmarkAction {
-  padding: 10px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-glass);
-  color: var(--text-muted);
-  transition: all 0.2s ease;
-}
-
-.bookmarkAction:hover {
-  border-color: #ffcc00;
-  color: #ffcc00;
-}
-
-.bookmarkAction.isBookmarked {
-  background: rgba(255, 204, 0, 0.1);
-  color: #ffcc00;
-  border-color: rgba(255, 204, 0, 0.4);
 }
 
 .componentDescription {

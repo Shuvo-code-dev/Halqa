@@ -11,10 +11,9 @@ interface TouchScaleProps {
 }
 
 /**
- * TouchScale Wrapper
- * ------------------
- * Provides a tactile scale-down effect (Haptic Feel) for interactive components.
- * Strictly applied to Large items as per Phase 34 UX directives.
+ * High-fidelity tactile feedback wrapper.
+ * Provides a 'liquid' scale-down effect (0.95 by default) when tapped.
+ * Optimized for large interactive elements like Cards, Lab entries, and Primary Buttons.
  */
 export default function TouchScale({ 
   children, 
@@ -22,15 +21,23 @@ export default function TouchScale({
   className = "", 
   isLarge = true 
 }: TouchScaleProps) {
-  // Only apply scale effect if it's a large item or explicitly requested
-  if (!isLarge) return <div className={className}>{children}</div>;
+  
+  // Standard tactile parameters
+  const tapScale = isLarge ? scale : (scale + 0.02); // Slightly less aggressive for small items
 
   return (
     <motion.div
-      whileTap={{ scale: scale }}
-      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      whileTap={{ scale: tapScale }}
+      transition={{ 
+        type: "spring", 
+        stiffness: 400, 
+        damping: 17,
+        mass: 0.8
+      }}
       className={className}
-      style={{ width: '100%' }} // Ensure it doesn't break layout flow
+      style={{ 
+        display: 'contents' // Crucial: Allows children to respect the parent flex/grid layout directly
+      }}
     >
       {children}
     </motion.div>

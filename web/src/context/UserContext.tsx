@@ -3,9 +3,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 interface UserContextType {
-  bookmarks: string[];
-  toggleBookmark: (id: string) => void;
-  isBookmarked: (id: string) => boolean;
   completedStages: Record<string, string[]>; // roadmapPath -> stageIds[]
   toggleStageCompletion: (roadmapPath: string, stageId: string) => void;
   isStageCompleted: (roadmapPath: string, stageId: string) => boolean;
@@ -14,27 +11,24 @@ interface UserContextType {
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
-  const [bookmarks, setBookmarks] = useState<string[]>([]);
   const [completedStages, setCompletedStages] = useState<Record<string, string[]>>({});
 
-  // Sync with LocalStorage
+  /**
+   * HYDRATION EFFECT
+   * Loads user progress from LocalStorage after the initial commit.
+   * This decoupled approach prevents the "cascading renders" warning.
+   */
   useEffect(() => {
-    const savedBookmarks = localStorage.getItem('halqa-bookmarks');
     const savedProgress = localStorage.getItem('halqa-progress');
-    
-    if (savedBookmarks) setBookmarks(JSON.parse(savedBookmarks));
-    if (savedProgress) setCompletedStages(JSON.parse(savedProgress));
+    if (savedProgress) {
+      try {
+        const parsed = JSON.parse(savedProgress);
+        setCompletedStages(parsed);
+      } catch (e) {
+        console.error("Halqa Registry: Failed to restore local progress data.", e);
+      }
+    }
   }, []);
-
-  const toggleBookmark = (id: string) => {
-    setBookmarks(prev => {
-      const next = prev.includes(id) ? prev.filter(b => b !== id) : [...prev, id];
-      localStorage.setItem('halqa-bookmarks', JSON.stringify(next));
-      return next;
-    });
-  };
-
-  const isBookmarked = (id: string) => bookmarks.includes(id);
 
   const toggleStageCompletion = (roadmapPath: string, stageId: string) => {
     setCompletedStages(prev => {
@@ -55,7 +49,6 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <UserContext.Provider value={{ 
-      bookmarks, toggleBookmark, isBookmarked, 
       completedStages, toggleStageCompletion, isStageCompleted 
     }}>
       {children}

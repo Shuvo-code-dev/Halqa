@@ -182,7 +182,7 @@ export default function GlobalSearch() {
         <input 
           ref={inputRef}
           type="text" 
-          placeholder="Search ecosystem... (⌘K)" 
+          placeholder="Search.." 
           className={styles.searchInput}
           value={query}
           onChange={(e) => {

@@ -4,7 +4,6 @@ import React, { useState, useMemo, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import styles from './page.module.css';
 import { REGISTRY_GROUPS, ComponentGroup, getComponentVariantData, RegistryItem } from '@lib/registry-service';
-import { useUser } from '@/context/UserContext';
 import { gsap } from '@lib/gsap';
 import { useSearchParams, useRouter } from 'next/navigation';
 
@@ -34,7 +33,6 @@ const highlightCode = (code: string) => {
 };
 
 export default function CodeLabClient() {
-  const { toggleBookmark, isBookmarked } = useUser();
   const searchParams = useSearchParams();
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
@@ -132,7 +130,6 @@ export default function CodeLabClient() {
             >
               <div className={styles.navItemMain}>
                 <span className={styles.navTitle}>{group.title}</span>
-                {isBookmarked(group.title) && <div className={styles.bookmarkBadge} />}
               </div>
               <span className={styles.navSubtext}>{group.variants.length} variations</span>
             </button>
@@ -154,12 +151,6 @@ export default function CodeLabClient() {
                 <header className={styles.contentHeader}>
                   <div className={styles.headerTitleRow}>
                     <h1 className={styles.componentTitle}>{selectedGroup.title}</h1>
-                    <button 
-                      onClick={() => toggleBookmark(selectedGroup.title)}
-                      className={`${styles.bookmarkAction} ${isBookmarked(selectedGroup.title) ? styles.isBookmarked : ''}`}
-                    >
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-                    </button>
                   </div>
                   <p className={styles.componentDescription}>{selectedGroup.description}</p>
                 </header>

@@ -21,7 +21,7 @@ export default function EmptyState({
     <motion.div 
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="py-24 px-8 text-center border-2 border-dashed border-white/5 rounded-[2rem] bg-white/[0.02] backdrop-blur-sm"
+      className="py-24 px-8 text-center border-2 border-dashed border-white/5 rounded-4xl bg-white/2 backdrop-blur-sm"
     >
       <div className="relative inline-flex mb-8">
         <motion.div 
