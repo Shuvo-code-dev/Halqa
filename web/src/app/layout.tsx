@@ -11,6 +11,7 @@ import MeshBackground from "@shared/MeshBackground";
 import QuickAccess from "@shared/QuickAccess";
 import StatusBar from "@shared/StatusBar";
 import NoiseOverlay from "@shared/NoiseOverlay";
+import NextTopLoader from 'nextjs-toploader';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -60,6 +61,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`}>
       <body className="antialiased">
+        {/* Navigation Progress Loader - Industrial Teal with Glow */}
+        <NextTopLoader 
+            color="var(--accent)"
+            initialPosition={0.08}
+            crawlSpeed={200}
+            height={3}
+            crawl={true}
+            showSpinner={false}
+            easing="ease"
+            speed={200}
+            shadow="0 0 10px var(--accent), 0 0 5px var(--accent)"
+        />
         <UserProvider>
           <AIProvider>
             <div className={styles.mainLayout}>

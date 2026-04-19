@@ -14,6 +14,8 @@ html, body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Prevent blue highlight on tap for mobile */
+  -webkit-tap-highlight-color: transparent;
 }
 
 * {
@@ -25,7 +27,7 @@ html, body {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 a:hover {
@@ -107,10 +109,27 @@ a:hover {
   }
 }
 
-/* Mobile Touch Optimization */
+/* Industrial Touch Optimization */
 @media (hover: none) {
-  .halqa-card:active {
-    transform: scale(0.98);
-    border-color: var(--accent);
+  /* Generic buttons and interactive elements scale down on tap */
+  button:active, 
+  .halqa-card:active,
+  .primary-btn:active {
+    transform: scale(0.96) !important;
+    transition: transform 0.1s ease;
   }
+
+  /* Simple interaction feedback for small links */
+  a:active {
+    opacity: 0.6;
+  }
+}
+
+/* Global Transition Fade */
+.route-transition-enter {
+  opacity: 0;
+}
+.route-transition-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-out;
 }

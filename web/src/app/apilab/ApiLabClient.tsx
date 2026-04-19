@@ -10,6 +10,7 @@ import {
   filterApis 
 } from '@/lib/api-service';
 import ApiCard from '@/components/modules/apilab/ApiCard';
+import EmptyState from '@/components/shared/EmptyState';
 
 const ITEMS_PER_PAGE = 24;
 
@@ -161,11 +162,11 @@ export default function ApiLabClient() {
             ))}
           </div>
         ) : (
-          <div className="py-20 text-center border border-dashed border-white/10 rounded-3xl bg-white/5">
-            <Filter className="w-12 h-12 text-gray-700 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-gray-400">No match found</h3>
-            <p className="text-gray-600 mt-2">Try adjusting your filters or search terms.</p>
-          </div>
+          <EmptyState 
+            title="Data Stream Empty" 
+            message={`We couldn't find any APIs matching "${searchTerm}" in the ${activeCategory} category.`}
+            icon="filter"
+          />
         )}
 
         {/* Infinite Scroll Trigger */}

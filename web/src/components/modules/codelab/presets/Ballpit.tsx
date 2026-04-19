@@ -35,7 +35,7 @@ class Ball {
     this.x += this.dx;
     this.y += this.dy;
 
-    // Mouse Interaction
+    // Interaction Force Calculation
     const dist = Math.sqrt((this.x - mouse.x) ** 2 + (this.y - mouse.y) ** 2);
     if (dist < 100) {
       const angle = Math.atan2(this.y - mouse.y, this.x - mouse.x);
@@ -44,7 +44,7 @@ class Ball {
       this.dy += Math.sin(angle) * force * 1.5;
     }
 
-    // Velocity Friction
+    // Velocity Friction (Liquid Feel)
     this.dx *= 0.99;
     this.dy *= 0.99;
 
@@ -91,6 +91,13 @@ export default function Ballpit({ paused = false }) {
       mouse.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
     };
 
+    const handleTouchStart = (e: TouchEvent) => {
+      if (paused) return;
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      mouse.current = { x: touch.clientX - rect.left, y: touch.clientY - rect.top };
+    };
+
     const handleTouchMove = (e: TouchEvent) => {
       if (paused) return;
       const rect = canvas.getBoundingClientRect();
@@ -98,21 +105,26 @@ export default function Ballpit({ paused = false }) {
       mouse.current = { x: touch.clientX - rect.left, y: touch.clientY - rect.top };
     };
 
-    const handleMouseLeave = () => {
+    const handleInteractionEnd = () => {
       mouse.current = { x: -1000, y: -1000 };
     };
 
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
     window.addEventListener('touchmove', handleTouchMove, { passive: true });
-    canvas.addEventListener('mouseleave', handleMouseLeave);
-    canvas.addEventListener('touchend', handleMouseLeave);
+    
+    canvas.addEventListener('mouseleave', handleInteractionEnd);
+    canvas.addEventListener('touchend', handleInteractionEnd);
+    canvas.addEventListener('touchcancel', handleInteractionEnd);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchmove', handleTouchMove);
-      canvas.removeEventListener('mouseleave', handleMouseLeave);
-      canvas.removeEventListener('touchend', handleMouseLeave);
+      canvas.removeEventListener('mouseleave', handleInteractionEnd);
+      canvas.removeEventListener('touchend', handleInteractionEnd);
+      canvas.removeEventListener('touchcancel', handleInteractionEnd);
     };
   }, [paused]);
 
