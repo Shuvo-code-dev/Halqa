@@ -113,7 +113,7 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.heroBadge}>
           <Sparkles className="w-3 h-3 inline-block mr-2" />
-          V2.0 ECOSYSTEM NOW LIVE
+          YOUR ULTIMATE DEVELOPMENT RESOURCE PLATFORM
         </div>
         <h1 className={styles.title}>
           Master Coding, <br />
@@ -125,13 +125,13 @@ export default function Home() {
         <div className={styles.actions}>
           <TouchScale isLarge={false} scale={0.96}>
             <Link href="/roadmaps" className={styles.primaryBtn}>
-              Explore Roadmaps
+              Start with Roadmaps
               <ArrowRight className="w-4 h-4 ml-1" />
             </Link>
           </TouchScale>
           <TouchScale isLarge={false} scale={0.96}>
             <Link href="/codelab" className={styles.secondaryBtn}>
-              Enter the Lab
+              Explore Code Lab
             </Link>
           </TouchScale>
         </div>
@@ -269,7 +269,7 @@ export default function Home() {
           <TouchScale isLarge={true}>
             <div className={`${styles.bentoItem} glass-panel`}>
               <span className={styles.bentoIcon}>🌎</span>
-              <h3 className={styles.bentoTitle}>Open Ecosystem</h3>
+              <h3 className={styles.bentoTitle}>Open Source</h3>
               <p className={styles.bentoDesc}>
                 Free forever. Community contribution driven.
               </p>
@@ -282,7 +282,7 @@ export default function Home() {
       <section className={styles.ctaSection}>
          <h2 className={styles.ctaTitle}>Ready to <br/><span className="text-gradient">Elevate?</span></h2>
          <TouchScale isLarge={true}>
-           <Link href="/roadmaps" className={styles.primaryBtn} style={{ display: 'inline-flex', padding: '1.5rem 4rem', fontSize: '1.4rem' }}>
+           <Link href="https://github.com/Shuvo-code-dev/Halqa/" className={styles.primaryBtn} style={{ display: 'inline-flex', padding: '1.5rem 4rem', fontSize: '1.4rem' }}>
               Join the Halqa Network
            </Link>
          </TouchScale>
