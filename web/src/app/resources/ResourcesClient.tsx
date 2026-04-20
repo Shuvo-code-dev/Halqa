@@ -75,7 +75,7 @@ export default function ResourcesClient() {
            </div>
            <input 
              type="text" 
-             placeholder="Search tools or insights..." 
+             placeholder="Search tools.." 
              className={styles.searchInput}
              value={searchTerm}
              onChange={(e) => setSearchTerm(e.target.value)}
