@@ -112,11 +112,11 @@ const PREMIUM_TOOLS: Resource[] = [
 ];
 
 // Deduplicate and Combine
-const globalItems = (globalRegistry as any[]).map((item, index) => ({
+const globalItems = (globalRegistry as Resource[]).map((item, index) => ({
   ...item,
   id: `global-${index}`,
   // Ensure category is one of the allowed types
-  category: item.category as any,
+  category: item.category as Resource['category'],
   recommendation: item.recommendation || 'Community-Vetted Resource'
 }));
 

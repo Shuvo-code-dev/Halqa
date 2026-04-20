@@ -3,7 +3,6 @@ import fs from 'fs';
 import path from 'path';
 
 const FREE_FOR_DEV_URL = 'https://raw.githubusercontent.com/ripienaar/free-for-dev/master/README.md';
-const AWESOME_URL = 'https://raw.githubusercontent.com/sindresorhus/awesome/main/README.md';
 
 interface Resource {
   id: string;

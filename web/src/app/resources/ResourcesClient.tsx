@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useMemo } from 'react';
-import { gsap, ScrollTrigger } from '@lib/gsap';
+import { gsap } from '@lib/gsap';
 import { RESOURCE_REGISTRY, Resource } from '@lib/resource-registry';
 import Fuse from 'fuse.js';
 import styles from './page.module.css';
@@ -110,7 +110,7 @@ export default function ResourcesClient() {
       <header className={styles.header}>
         <h1 className={styles.title}>Developer <span className="text-gradient">Vault</span></h1>
         <p className={styles.subtitle}>
-          The ultimate "Swiss Army Knife" for high-performance engineers. Ingesting Thousands of curated tools, elite recommendations, and rapid utilities.
+          The ultimate &quot;Swiss Army Knife&quot; for high-performance engineers. Ingesting Thousands of curated tools, elite recommendations, and rapid utilities.
         </p>
       </header>
 
