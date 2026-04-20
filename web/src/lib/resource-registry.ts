@@ -1,14 +1,16 @@
+import globalRegistry from './global-tools-registry.json';
+
 export interface Resource {
   id: string;
   name: string;
   url: string;
-  category: 'Design Tools' | 'Dev Utilities' | 'Icons & Assets' | 'Learning Hubs';
+  category: 'Design Tools' | 'Dev Utilities' | 'Icons & Assets' | 'Learning Hubs' | 'General Resources';
   recommendation: string;
-  quickCopy?: string;
+  quickCopy?: string; // Optional local field
   tier: 'Free' | 'Freemium' | 'Paid';
 }
 
-export const RESOURCE_REGISTRY: Resource[] = [
+const PREMIUM_TOOLS: Resource[] = [
   {
     id: 'figma',
     name: 'Figma',
@@ -107,4 +109,23 @@ export const RESOURCE_REGISTRY: Resource[] = [
     recommendation: 'Learn modern software design patterns and component architectures for scalable web applications.',
     tier: 'Free'
   }
+];
+
+// Deduplicate and Combine
+const globalItems = (globalRegistry as any[]).map((item, index) => ({
+  ...item,
+  id: `global-${index}`,
+  // Ensure category is one of the allowed types
+  category: item.category as any,
+  recommendation: item.recommendation || 'Community-Vetted Resource'
+}));
+
+// Filter out premium from global if they coexist by name
+const filteredGlobal = globalItems.filter(g => 
+  !PREMIUM_TOOLS.some(p => p.name.toLowerCase() === g.name.toLowerCase())
+);
+
+export const RESOURCE_REGISTRY: Resource[] = [
+  ...PREMIUM_TOOLS,
+  ...filteredGlobal
 ];

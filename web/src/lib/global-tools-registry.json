@@ -1,0 +1,4002 @@
+[
+  {
+    "id": "ffd-0",
+    "name": "Google Colab",
+    "url": "https://colab.research.google.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Free Jupyter Notebooks development environment.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-1",
+    "name": "CloudFront",
+    "url": "https://aws.amazon.com/cloudfront/",
+    "category": "Dev Utilities",
+    "recommendation": "1TB egress per month and 2M Function invocations per month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-2",
+    "name": "CloudWatch",
+    "url": "https://aws.amazon.com/cloudwatch/",
+    "category": "Dev Utilities",
+    "recommendation": "10 custom metrics and ten alarms",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-3",
+    "name": "CodeBuild",
+    "url": "https://aws.amazon.com/codebuild/",
+    "category": "Dev Utilities",
+    "recommendation": "100min of build time per month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-4",
+    "name": "CodeCommit",
+    "url": "https://aws.amazon.com/codecommit/",
+    "category": "Dev Utilities",
+    "recommendation": "5 active users,50GB storage, and 10000 requests per month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-5",
+    "name": "CodePipeline",
+    "url": "https://aws.amazon.com/codepipeline/",
+    "category": "Dev Utilities",
+    "recommendation": "1 active pipeline per month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-6",
+    "name": "DynamoDB",
+    "url": "https://aws.amazon.com/dynamodb/",
+    "category": "Dev Utilities",
+    "recommendation": "25GB NoSQL DB",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-7",
+    "name": "EC2",
+    "url": "https://aws.amazon.com/ec2/",
+    "category": "Dev Utilities",
+    "recommendation": "750 hours per month of t2.micro or t3.micro(12mo). 100GB egress per month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-8",
+    "name": "EBS",
+    "url": "https://aws.amazon.com/ebs/",
+    "category": "Dev Utilities",
+    "recommendation": "30GB per month of General Purpose (SSD) or Magnetic(12mo)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-9",
+    "name": "Elastic Load Balancing",
+    "url": "https://aws.amazon.com/elasticloadbalancing/",
+    "category": "Dev Utilities",
+    "recommendation": "750 hours per month(12mo)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-10",
+    "name": "RDS",
+    "url": "https://aws.amazon.com/rds/",
+    "category": "Dev Utilities",
+    "recommendation": "750 hours per month of db.t2.micro, db.t3.micro, or db.t4g.micro, 20GB of General Purpose (SSD) storage, 20GB of storage backups(12 mo)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-11",
+    "name": "S3",
+    "url": "https://aws.amazon.com/s3/",
+    "category": "Dev Utilities",
+    "recommendation": "5GB Standard object storage, 20K Get requests and 2K Put requests(12 mo)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-12",
+    "name": "Glacier",
+    "url": "https://aws.amazon.com/glacier/",
+    "category": "Dev Utilities",
+    "recommendation": "10GB long-term object storage",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-13",
+    "name": "Lambda",
+    "url": "https://aws.amazon.com/lambda/",
+    "category": "Dev Utilities",
+    "recommendation": "1 million requests per month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-14",
+    "name": "SNS",
+    "url": "https://aws.amazon.com/sns/",
+    "category": "Dev Utilities",
+    "recommendation": "1 million publishes per month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-15",
+    "name": "SES",
+    "url": "https://aws.amazon.com/ses/",
+    "category": "Dev Utilities",
+    "recommendation": "3.000 messages per month (12mo)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-16",
+    "name": "SQS",
+    "url": "https://aws.amazon.com/sqs/",
+    "category": "Dev Utilities",
+    "recommendation": "1 million messaging queue requests",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-17",
+    "name": "Virtual Machines",
+    "url": "https://azure.microsoft.com/services/virtual-machines/",
+    "category": "Dev Utilities",
+    "recommendation": "1 B1S Linux VM, 1 B1S Windows VM (12mo)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-18",
+    "name": "App Service",
+    "url": "https://azure.microsoft.com/services/app-service/",
+    "category": "Dev Utilities",
+    "recommendation": "10 web, mobile, or API apps (60 CPU minutes/day)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-19",
+    "name": "Functions",
+    "url": "https://azure.microsoft.com/services/functions/",
+    "category": "Dev Utilities",
+    "recommendation": "1 million requests per month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-20",
+    "name": "DevTest Labs",
+    "url": "https://azure.microsoft.com/services/devtest-lab/",
+    "category": "Dev Utilities",
+    "recommendation": "Enable fast, easy, and lean dev-test environments",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-21",
+    "name": "Active Directory",
+    "url": "https://azure.microsoft.com/services/active-directory/",
+    "category": "Dev Utilities",
+    "recommendation": "500,000 objects",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-22",
+    "name": "Active Directory B2C",
+    "url": "https://azure.microsoft.com/services/active-directory/external-identities/b2c/",
+    "category": "Dev Utilities",
+    "recommendation": "50,000 monthly stored users",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-23",
+    "name": "Azure DevOps",
+    "url": "https://azure.microsoft.com/services/devops/",
+    "category": "Dev Utilities",
+    "recommendation": "5 active users, unlimited private Git repos",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-24",
+    "name": "Azure Pipelines",
+    "url": "https://azure.microsoft.com/services/devops/pipelines/",
+    "category": "Dev Utilities",
+    "recommendation": "10 free parallel jobs with unlimited minutes for open source for Linux, macOS, and Windows",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-25",
+    "name": "Microsoft IoT Hub",
+    "url": "https://azure.microsoft.com/services/iot-hub/",
+    "category": "Dev Utilities",
+    "recommendation": "8,000 messages per day",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-26",
+    "name": "Load Balancer",
+    "url": "https://azure.microsoft.com/services/load-balancer/",
+    "category": "Dev Utilities",
+    "recommendation": "1 free public load-balanced IP (VIP)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-27",
+    "name": "Notification Hubs",
+    "url": "https://azure.microsoft.com/services/notification-hubs/",
+    "category": "Dev Utilities",
+    "recommendation": "1 million push notifications",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-28",
+    "name": "Bandwidth",
+    "url": "https://azure.microsoft.com/pricing/details/bandwidth/",
+    "category": "Dev Utilities",
+    "recommendation": "15GB Inbound(12mo) & 5GB egress per month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-29",
+    "name": "Cosmos DB",
+    "url": "https://azure.microsoft.com/services/cosmos-db/",
+    "category": "Dev Utilities",
+    "recommendation": "25GB storage and 1000 RUs of provisioned throughput",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-30",
+    "name": "Static Web Apps",
+    "url": "https://azure.microsoft.com/pricing/details/app-service/static/",
+    "category": "Dev Utilities",
+    "recommendation": "Build, deploy, and host static apps and serverless functions with free SSL, Authentication/Authorization, and custom domains",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-31",
+    "name": "Storage",
+    "url": "https://azure.microsoft.com/services/storage/",
+    "category": "Dev Utilities",
+    "recommendation": "5GB LRS File or Blob storage (12mo)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-32",
+    "name": "Cognitive Services",
+    "url": "https://azure.microsoft.com/services/cognitive-services/",
+    "category": "Dev Utilities",
+    "recommendation": "AI/ML APIs (Computer Vision, Translator, Face detection, Bots, etc) with free tier including limited transactions",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-33",
+    "name": "Cognitive Search",
+    "url": "https://azure.microsoft.com/services/search/#features",
+    "category": "Dev Utilities",
+    "recommendation": "AI-based search and indexation service, free for 10,000 documents",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-34",
+    "name": "Azure Kubernetes Service",
+    "url": "https://azure.microsoft.com/services/kubernetes-service/",
+    "category": "Dev Utilities",
+    "recommendation": "Managed Kubernetes service, free cluster management",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-35",
+    "name": "Event Grid",
+    "url": "https://azure.microsoft.com/services/event-grid/",
+    "category": "Dev Utilities",
+    "recommendation": "100K ops/month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-36",
+    "name": "Application Services",
+    "url": "https://www.cloudflare.com/plans/",
+    "category": "Dev Utilities",
+    "recommendation": "Free DNS for an unlimited number of domains, DDoS Protection, CDN along with free SSL, Firewall rules and page rules,  WAF, Bot Mitigation, Free Unmetered Rate Limiting - 1 rule per domain, Analytics, Email forwarding",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-37",
+    "name": "Zero Trust & SASE",
+    "url": "https://www.cloudflare.com/plans/zero-trust-services/",
+    "category": "Dev Utilities",
+    "recommendation": "Up to 50 Users, 24 hours of activity logging, three network locations",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-38",
+    "name": "Cloudflare Tunnel",
+    "url": "https://www.cloudflare.com/products/tunnel/",
+    "category": "Dev Utilities",
+    "recommendation": "You can expose locally running HTTP port over a tunnel to a random subdomain on trycloudflare.com use [Quick Tunnels](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/do-more-with-tunnels/trycloudflare/), No account required. More features (TCP tunnel, Load balancing, VPN) in [Zero Trust](https://www.cloudflare.com/products/zero-trust/) Free Plan.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-39",
+    "name": "Workers",
+    "url": "https://developers.cloudflare.com/workers/",
+    "category": "Dev Utilities",
+    "recommendation": "Deploy serverless code for free on Cloudflare's global network-100k daily requests.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-40",
+    "name": "Workers KV",
+    "url": "https://developers.cloudflare.com/kv",
+    "category": "Dev Utilities",
+    "recommendation": "100k read requests per day, 1000 write requests per day, 1000 delete requests per day, 1000 list requests per day, 1 GB stored data",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-41",
+    "name": "R2",
+    "url": "https://developers.cloudflare.com/r2/",
+    "category": "Dev Utilities",
+    "recommendation": "10 GB per month, 1 million Class A operations per month, 10 million Class B operations per month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-42",
+    "name": "D1",
+    "url": "https://developers.cloudflare.com/d1/",
+    "category": "Dev Utilities",
+    "recommendation": "5 million rows read per day, 100k rows written per day, 1 GB storage",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-43",
+    "name": "Pages",
+    "url": "https://developers.cloudflare.com/pages/",
+    "category": "Dev Utilities",
+    "recommendation": "Develop and deploy your web apps on Cloudflare's fast, secure global network. Five hundred monthly builds, 100 custom domains, Integrated SSL, unlimited accessible seats, unlimited preview deployments, and full-stack capability via Cloudflare Workers integration.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-44",
+    "name": "Queues",
+    "url": "https://developers.cloudflare.com/queues/",
+    "category": "Dev Utilities",
+    "recommendation": "1 million operations per month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-45",
+    "name": "TURN",
+    "url": "https://developers.cloudflare.com/calls/turn/",
+    "category": "Dev Utilities",
+    "recommendation": "1TB of free (outgoing) traffic per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-46",
+    "name": "Zoho",
+    "url": "https://www.zoho.com",
+    "category": "Dev Utilities",
+    "recommendation": "Started as an e-mail provider but now provides a suite of services, some of which have free plans. List of services having free plans :",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-47",
+    "name": "Catalyst by Zoho",
+    "url": "https://catalyst.zoho.com",
+    "category": "Dev Utilities",
+    "recommendation": "PaaS/full-stack cloud platform with a generous [free tier](https://catalyst.zoho.com/free-tier.html)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-48",
+    "name": "Zoho Assist",
+    "url": "https://www.zoho.com/assist",
+    "category": "Dev Utilities",
+    "recommendation": "Zoho Assist's forever free plan includes one concurrent remote support license and Access to 5 unattended computer licenses for unlimited duration available for both professional and personnel use.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-49",
+    "name": "Docs",
+    "url": "https://zoho.com/docs",
+    "category": "Dev Utilities",
+    "recommendation": "Free for 5 users with 1 GB upload limit & 5GB storage. Zoho Office Suite (Writer, Sheets & Show) comes bundled.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-50",
+    "name": "Projects",
+    "url": "https://zoho.com/projects",
+    "category": "Dev Utilities",
+    "recommendation": "Free for 3 users, 2 projects & 10 MB attachment limit. The same plan applies to [Bugtracker](https://zoho.com/bugtracker).",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-51",
+    "name": "Connect",
+    "url": "https://zoho.com/connect",
+    "category": "Dev Utilities",
+    "recommendation": "Team Collaboration free for 25 users with three groups, three custom apps, 3 Boards, 3 Manuals, and 10 Integrations along with channels, events & forums.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-52",
+    "name": "Meeting",
+    "url": "https://zoho.com/meeting",
+    "category": "Dev Utilities",
+    "recommendation": "Meetings with upto 3 meeting participants & 10 Webinar attendees.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-53",
+    "name": "Vault",
+    "url": "https://zoho.com/vault",
+    "category": "Dev Utilities",
+    "recommendation": "Password Management is accessible for Individuals.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-54",
+    "name": "Showtime",
+    "url": "https://zoho.com/showtime",
+    "category": "Dev Utilities",
+    "recommendation": "Yet another Meeting software for training for a remote session of up to 5 attendees.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-55",
+    "name": "Notebook",
+    "url": "https://zoho.com/notebook",
+    "category": "Dev Utilities",
+    "recommendation": "A free alternative to Evernote.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-56",
+    "name": "Wiki",
+    "url": "https://zoho.com/wiki",
+    "category": "Dev Utilities",
+    "recommendation": "Free for three users with 50 MB storage, unlimited pages, zip backups, RSS & Atom feed, access controls & customizable CSS.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-57",
+    "name": "Subscriptions",
+    "url": "https://zoho.com/subscriptions",
+    "category": "Dev Utilities",
+    "recommendation": "Recurring Billing management free for 20 customers/subscriptions & 1 user with all the payment hosting done by Zoho. The last 40 subscription metrics are stored",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-58",
+    "name": "Checkout",
+    "url": "https://zoho.com/checkout",
+    "category": "Dev Utilities",
+    "recommendation": "Product Billing management with 3 pages & up to 50 payments.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-59",
+    "name": "Desk",
+    "url": "https://zoho.com/desk",
+    "category": "Dev Utilities",
+    "recommendation": "Customer Support management with three agents, private knowledge base, and email tickets. Integrates with [Assist](https://zoho.com/assist) for one remote technician & 5 unattended computers.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-60",
+    "name": "Cliq",
+    "url": "https://zoho.com/cliq",
+    "category": "Dev Utilities",
+    "recommendation": "Team chat software with 100 GB storage, unlimited users, 100 users per channel & SSO.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-61",
+    "name": "Campaigns",
+    "url": "https://zoho.com/campaigns",
+    "category": "Dev Utilities",
+    "recommendation": "Email Marketing",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-62",
+    "name": "Forms",
+    "url": "https://zoho.com/forms",
+    "category": "Dev Utilities",
+    "recommendation": "Form Creator",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-63",
+    "name": "Sign",
+    "url": "https://zoho.com/sign",
+    "category": "Dev Utilities",
+    "recommendation": "Paperless Signatures",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-64",
+    "name": "Surveys",
+    "url": "https://zoho.com/surveys",
+    "category": "Dev Utilities",
+    "recommendation": "Online Surveys",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-65",
+    "name": "Bookings",
+    "url": "https://zoho.com/bookings",
+    "category": "Dev Utilities",
+    "recommendation": "Appointment Scheduling",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-66",
+    "name": "Brainboard",
+    "url": "https://www.brainboard.co",
+    "category": "Dev Utilities",
+    "recommendation": "Collaborative solution to visually build and manage cloud infrastructures from end-to-end.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-67",
+    "name": "Cloud 66",
+    "url": "https://www.cloud66.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Free for personal projects (includes one deployment server, one static site), Cloud 66 gives you everything you need to build, deploy, and grow your applications on any cloud without the headache of the “server stuff.”.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-68",
+    "name": "deployment.io",
+    "url": "https://deployment.io",
+    "category": "Dev Utilities",
+    "recommendation": "Deployment.io helps developers automate deployments on AWS. On our free tier, a developer (single user) can deploy unlimited static sites, web services, and environments. We provide 10 job executions free per month with previews and auto-deploys included in the free tier.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-69",
+    "name": "Pulumi",
+    "url": "https://www.pulumi.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Modern infrastructure as a code platform that allows you to use familiar programming languages and tools to build, deploy, and manage cloud infrastructure.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-70",
+    "name": "scalr.com",
+    "url": "https://scalr.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Scalr is a Terraform Automation and COllaboration (TACO) product used to better collaboration and automation on infrastructure and configurations managed by Terraform. Full Terraform CLI support, OPA integration, and a hierarchical configuration model. No SSO tax. All features are included. Use up to 50 runs/month for free.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-71",
+    "name": "Bitbucket",
+    "url": "https://bitbucket.org/",
+    "category": "General Resources",
+    "recommendation": "Unlimited public and private Git repos for up to 5 users with Pipelines for CI/CD",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-72",
+    "name": "Codeberg",
+    "url": "https://codeberg.org/",
+    "category": "General Resources",
+    "recommendation": "Unlimited public and private Git repos for free and open-source projects (with unlimited collaborators). Powered by [Forgejo](https://forgejo.org/). Static website hosting with [Codeberg Pages](https://codeberg.page/). CI/CD hosting with [Codeberg's CI](https://docs.codeberg.org/ci/). Translating hosting with [Codeberg Translate](https://translate.codeberg.org/). Includes Package and Container hosting, Project management, and Issue Tracking",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-73",
+    "name": "framagit.org",
+    "url": "https://framagit.org/",
+    "category": "General Resources",
+    "recommendation": "Framagit is the software forge of Framasoft based on the Gitlab software includes CI, Static Pages, Project pages and Issue tracking.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-74",
+    "name": "GitGud",
+    "url": "https://gitgud.io",
+    "category": "General Resources",
+    "recommendation": "Unlimited private and public repositories. Free forever. Powered by GitLab & Sapphire. Includes CI/CD, Static Hosting, Container Registry, Project Management and Issue Tracking.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-75",
+    "name": "GitHub",
+    "url": "https://github.com/",
+    "category": "General Resources",
+    "recommendation": "Unlimited public repositories and unlimited private repositories (with unlimited collaborators). Includes CI/CD, Development Environment, Static Hosting, Package and Container hosting, Project management and AI Copilot",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-76",
+    "name": "gitlab.com",
+    "url": "https://about.gitlab.com/",
+    "category": "General Resources",
+    "recommendation": "Unlimited public and private Git repos with up to 5 collaborators. Includes CI/CD, Static Hosting, Container Registry, Project Management and Issue Tracking",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-77",
+    "name": "heptapod.net",
+    "url": "https://foss.heptapod.net/",
+    "category": "General Resources",
+    "recommendation": "Heptapod is a friendly fork of GitLab Community Edition providing support for Mercurial",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-78",
+    "name": "Pagure.io",
+    "url": "https://pagure.io",
+    "category": "General Resources",
+    "recommendation": "Pagure.io is a free and open source software code collaboration platform for FOSS-licensed projects, Git-based",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-79",
+    "name": "pijul.com",
+    "url": "https://pijul.com/",
+    "category": "General Resources",
+    "recommendation": "Unlimited free and open source distributed version control system. Its distinctive feature is based on a sound theory of patches, which makes it easy to learn, use, and distribute. Solves many problems of git/hg/svn/darcs.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-80",
+    "name": "projectlocker.com",
+    "url": "https://projectlocker.com",
+    "category": "General Resources",
+    "recommendation": "One free private project (Git and Subversion) with 50 MB of space",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-81",
+    "name": "RocketGit",
+    "url": "https://rocketgit.com",
+    "category": "General Resources",
+    "recommendation": "Repository Hosting based on Git. Unlimited Public and private repositories.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-82",
+    "name": "savannah.gnu.org",
+    "url": "https://savannah.gnu.org/",
+    "category": "General Resources",
+    "recommendation": "Serves as a collaborative software development management system for free Software projects (for GNU Projects)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-83",
+    "name": "savannah.nongnu.org",
+    "url": "https://savannah.nongnu.org/",
+    "category": "General Resources",
+    "recommendation": "Serves as a collaborative software development management system for free Software projects (for non-GNU projects)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-84",
+    "name": "Abstract API",
+    "url": "https://www.abstractapi.com",
+    "category": "Dev Utilities",
+    "recommendation": "API suite for various use cases, including IP geolocation, phone number validation, or email validation.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-85",
+    "name": "Apify",
+    "url": "https://www.apify.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Web scraping and automation platform to create an API for any website and extract data. Ready-made scrapers, integrated proxies, and custom solutions. Free plan with $5 platform credits included every month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-86",
+    "name": "APITemplate.io",
+    "url": "https://apitemplate.io",
+    "category": "Dev Utilities",
+    "recommendation": "Auto-generate images and PDF documents with a simple API or automation tools like Zapier & Airtable. No CSS/HTML is required. The free plan comes with 50 images/month and three templates.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-87",
+    "name": "APIVerve",
+    "url": "https://apiverve.com",
+    "category": "Dev Utilities",
+    "recommendation": "Get instant access to over 120+ APIs for free, built with quality, consistency, and reliability in mind. The free plan covers up to 50 API Tokens per month. (Possibly taken down, 2025-06-25)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-88",
+    "name": "Arize AI",
+    "url": "https://arize.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Machine learning observability for model monitoring and root-causing issues such as data quality and performance drift. Free up to two models.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-89",
+    "name": "Beeceptor",
+    "url": "https://beeceptor.com",
+    "category": "Dev Utilities",
+    "recommendation": "No-code, cloud-based platform for mocking and debugging multi-protocol APIs (REST, SOAP, gRPC & GraphQL), providing instant servers with rules-based logic, CRUD & stateful mocking, proxying, and CORS management for faster integration and testing. The free plan includes 50 requests per day and provides a public dashboard/endpoint where anyone with the dashboard URL can view submitted requests and responses.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-90",
+    "name": "BigDataCloud",
+    "url": "https://www.bigdatacloud.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Provides fast, accurate, and free (Unlimited or up to 10K-50K/month) APIs for modern web like IP Geolocation, Reverse Geocoding, Networking Insights, Email and Phone Validation, Client Info and more.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-91",
+    "name": "Browse AI",
+    "url": "https://www.browse.ai",
+    "category": "Dev Utilities",
+    "recommendation": "Extracting and monitoring data on the web. 1k credits per month for free, equals 1k concurrent requests.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-92",
+    "name": "BrowserCat",
+    "url": "https://www.browsercat.com",
+    "category": "Dev Utilities",
+    "recommendation": "Headless browser API for automation, scraping, AI agent web access, image/pdf generation, and more. Free plan with 1k requests per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-93",
+    "name": "Calendarific",
+    "url": "https://calendarific.com",
+    "category": "Dev Utilities",
+    "recommendation": "Enterprise-grade Public holiday API service for over 200 countries. The free plan includes 500 calls per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-94",
+    "name": "Canopy",
+    "url": "https://www.canopyapi.co/",
+    "category": "Dev Utilities",
+    "recommendation": "GraphQL API for Amazon.com product, search, and category data. The free plan includes 100 calls per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-95",
+    "name": "CarAPI.dev",
+    "url": "https://carapi.dev",
+    "category": "Dev Utilities",
+    "recommendation": "Comprehensive automotive data API with VIN decoding, stolen vehicle checks, vehicle valuation, inspection data, and more. Free tier includes 100 requests/month across all 9 endpoints.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-96",
+    "name": "Cloudmersive",
+    "url": "https://cloudmersive.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Utility API platform with full access to expansive API Library including Document Conversion, Virus Scanning, and more with 600 calls/month, North America AZ only, 2.5MB maximum file size.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-97",
+    "name": "Colaboratory",
+    "url": "https://colab.research.google.com",
+    "category": "Dev Utilities",
+    "recommendation": "Free web-based Python notebook environment with Nvidia Tesla K80 GPU.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-98",
+    "name": "CometML",
+    "url": "https://www.comet.com/site/",
+    "category": "Dev Utilities",
+    "recommendation": "The MLOps platform for experiment tracking, model production management, model registry, and complete data lineage, covering your workflow from training to production. Free for individuals and academics.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-99",
+    "name": "Commerce Layer",
+    "url": "https://commercelayer.io",
+    "category": "Dev Utilities",
+    "recommendation": "Composable commerce API that can build, place, and manage orders from any front end. The developer plan allows 100 orders per month and up to 1,000 SKUs for free.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-100",
+    "name": "Composio",
+    "url": "https://composio.dev/",
+    "category": "Dev Utilities",
+    "recommendation": "Integration platform for AI Agents and LLMs. Integrate over 200+ tools across the agentic internet.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-101",
+    "name": "Conversion Tools",
+    "url": "https://conversiontools.io/",
+    "category": "Dev Utilities",
+    "recommendation": "Online File Converter for documents, images, video, audio, and eBooks. REST API is available. Libraries for Node.js, PHP, Python. Support files up to 50 GB (for paid plans). The free tier is limited by file size (20MB) and number of conversions (30/Day, 300/Month).",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-102",
+    "name": "Country-State-City Microservice API",
+    "url": "https://country-state-city.rebuscando.info/",
+    "category": "Dev Utilities",
+    "recommendation": "API and Microservice to provides a wide range of information including countries, regions, provinces, cities, postal codes, and much more. The free tier includes up to 100 requests per day.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-103",
+    "name": "Coupler",
+    "url": "https://www.coupler.io/",
+    "category": "Dev Utilities",
+    "recommendation": "Data integration tool that syncs between apps. It can create live dashboards and reports, transform and manipulate values, and collect and back up insights. The free plan is limited to one user, data connection, data source, and data destination. Also requires manual data refresh.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-104",
+    "name": "CraftMyPDF",
+    "url": "https://craftmypdf.com",
+    "category": "Dev Utilities",
+    "recommendation": "Auto-Generate PDF documents from reusable templates with a drop-and-drop editor and a simple API. The free plan comes with 100 PDFs/month and three templates.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-105",
+    "name": "Cube",
+    "url": "https://cube.dev/",
+    "category": "Dev Utilities",
+    "recommendation": "Cube helps data engineers and application developers access data from modern data stores, organize it into consistent definitions, and deliver it to every application. The fastest way to use Cube is with Cube Cloud, which has a free tier limited to 1,000 queries per day.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-106",
+    "name": "CurlHub",
+    "url": "https://curlhub.io",
+    "category": "Dev Utilities",
+    "recommendation": "Proxy service for inspecting and debugging API calls. The free plan includes 10,000 requests per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-107",
+    "name": "CurrencyScoop",
+    "url": "https://currencyscoop.com",
+    "category": "Dev Utilities",
+    "recommendation": "Realtime currency data API for fintech apps. The free plan includes 5,000 calls per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-108",
+    "name": "CustomJS",
+    "url": "https://www.customjs.io",
+    "category": "Dev Utilities",
+    "recommendation": "HTML to PDF or PDF to PNG/Text & PDF merging/extraction/merging APIs. Free tier has 600 calls a month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-109",
+    "name": "Data Fetcher",
+    "url": "https://datafetcher.com",
+    "category": "Dev Utilities",
+    "recommendation": "Connect Airtable to any application or API with no code. Postman-like interface for running API requests in Airtable. Pre-built integrations with dozens of apps. The free plan includes 100 runs per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-110",
+    "name": "Data Miner",
+    "url": "https://dataminer.io/",
+    "category": "Dev Utilities",
+    "recommendation": "A browser extension (Google Chrome, MS Edge) for data extraction from web pages CSV or Excel. The free plan gives you 500 pages/month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-111",
+    "name": "Dataimporter.io",
+    "url": "https://www.dataimporter.io",
+    "category": "Dev Utilities",
+    "recommendation": "Tool for connecting, cleaning, and importing data into Salesforce. Free Plan includes up to 20,000 records per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-112",
+    "name": "Datalore",
+    "url": "https://datalore.jetbrains.com",
+    "category": "Dev Utilities",
+    "recommendation": "Python notebooks by Jetbrains. Includes 10 GB of storage and 120 hours of runtime each month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-113",
+    "name": "DB Designer",
+    "url": "https://www.dbdesigner.net/",
+    "category": "Dev Utilities",
+    "recommendation": "Cloud-based Database schema design and modeling tool with a free starter plan of 2 Database models and ten tables per model.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-114",
+    "name": "DB-IP",
+    "url": "https://db-ip.com/api/free",
+    "category": "Dev Utilities",
+    "recommendation": "Free IP geolocation API with 1k request per IP per day.lite database under the CC-BY 4.0 License is free too.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-115",
+    "name": "DeepAR",
+    "url": "https://developer.deepar.ai",
+    "category": "Dev Utilities",
+    "recommendation": "Augmented reality face filters for any platform with one SDK. The free plan provides up to 10 monthly active users (MAU) and tracks up to 4 faces",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-116",
+    "name": "Deepnote",
+    "url": "https://deepnote.com",
+    "category": "Dev Utilities",
+    "recommendation": "A new data science notebook. Jupyter is compatible with real-time collaboration and running in the cloud. The free tier includes unlimited personal projects, unlimited basic machines with 5GB RAM and 2vCPU, and teams with up to 3 editors.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-117",
+    "name": "Compare JSON",
+    "url": "https://comparejson.com",
+    "category": "Dev Utilities",
+    "recommendation": "An online tool for comparing differences between two JSON data structures, helping you quickly locate the differences in JSON data.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-118",
+    "name": "Disease.sh",
+    "url": "https://disease.sh/",
+    "category": "Dev Utilities",
+    "recommendation": "A free API providing accurate data for building the Covid-19 related useful Apps.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-119",
+    "name": "Doczilla",
+    "url": "https://www.doczilla.app/",
+    "category": "Dev Utilities",
+    "recommendation": "SaaS API empowering the generation of screenshots or PDFs directly from HTML/CSS/JS code. The free plan allows 250 documents month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-120",
+    "name": "Doppio",
+    "url": "https://doppio.sh/",
+    "category": "Dev Utilities",
+    "recommendation": "Managed API to generate and privately store PDFs and Screenshots using top rendering technology. The free plan allows 400 PDFs and Screenshots per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-121",
+    "name": "drawDB",
+    "url": "https://drawdb.app/",
+    "category": "Dev Utilities",
+    "recommendation": "Free and open-source online database diagram editor with no signup required.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-122",
+    "name": "DynamicDocs",
+    "url": "https://advicement.io",
+    "category": "Dev Utilities",
+    "recommendation": "Generate PDF documents with JSON to PDF API based on LaTeX templates. The free plan allows 50 API calls per month and access to a library of templates.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-123",
+    "name": "Earnings Feed",
+    "url": "https://earningsfeed.com/api",
+    "category": "Dev Utilities",
+    "recommendation": "Real-time SEC filings, insider trades, and institutional holdings API. Free tier includes 15 requests per minute.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-124",
+    "name": "Export SDK",
+    "url": "https://exportsdk.com",
+    "category": "Dev Utilities",
+    "recommendation": "PDF generator API with drag-and-drop template editor that provides an SDK and no-code integrations. The free plan has 250 monthly pages, unlimited users, and three templates.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-125",
+    "name": "ExtendsClass",
+    "url": "https://extendsclass.com/rest-client-online.html",
+    "category": "Dev Utilities",
+    "recommendation": "Free web-based HTTP client to send HTTP requests.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-126",
+    "name": "Financial Data",
+    "url": "https://financialdata.net/",
+    "category": "Dev Utilities",
+    "recommendation": "Stock market and financial data API. Free plan allows 300 requests per day.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-127",
+    "name": "FormatJSONOnline.com",
+    "url": "https://formatjsononline.com",
+    "category": "Dev Utilities",
+    "recommendation": "A free, browser-based tool to format, validate,compare and minify JSON data instantly.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-128",
+    "name": "FraudLabs Pro",
+    "url": "https://www.fraudlabspro.com",
+    "category": "Dev Utilities",
+    "recommendation": "Screen an order transaction for credit card payment fraud. This REST API will detect all possible fraud traits based on the input parameters of an order. The Free Micro plan has 500 transactions per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-129",
+    "name": "FreeIPAPI",
+    "url": "https://freeipapi.com",
+    "category": "Dev Utilities",
+    "recommendation": "Free, Fast and Reliable IP Geolocation API for commercial and non-commercial users available in JSON",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-130",
+    "name": "Geolocated.io",
+    "url": "https://geolocated.io",
+    "category": "Dev Utilities",
+    "recommendation": "IP Geolocation API with multi-continent servers, offering a free plan with 2,000 requests per day.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-131",
+    "name": "Hex",
+    "url": "https://hex.tech/",
+    "category": "Dev Utilities",
+    "recommendation": "a collaborative data platform for notebooks, data apps, and knowledge libraries. Free community tier with up to five projects.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-132",
+    "name": "Hook0",
+    "url": "https://www.hook0.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Hook0 is an open-source Webhooks-as-a-service (WaaS) that makes it easy for online products to provide webhooks. Dispatch up to 100 events/day with seven days of history retention for free.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-133",
+    "name": "Hoppscotch",
+    "url": "https://hoppscotch.io",
+    "category": "Dev Utilities",
+    "recommendation": "A free, fast, and beautiful API request builder.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-134",
+    "name": "HS Ping",
+    "url": "https://hsping.com",
+    "category": "Dev Utilities",
+    "recommendation": "A multi-country HS (Harmonized System) and HTS (Harmonized Tariff System) code lookup API, with a free plan offering 100 lookups/day.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-135",
+    "name": "huggingface.co",
+    "url": "https://huggingface.co",
+    "category": "Dev Utilities",
+    "recommendation": "Build, train, and deploy NLP models for Pytorch, TensorFlow, and JAX. Free up to 30k input characters/mo.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-136",
+    "name": "Insomnia",
+    "url": "https://insomnia.rest",
+    "category": "Dev Utilities",
+    "recommendation": "Open-source API client for designing and testing APIs, it supports REST and GraphQL",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-137",
+    "name": "Invantive Cloud",
+    "url": "https://cloud.invantive.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Access over 70 (cloud)platforms such as Exact Online, Twinfield, ActiveCampaign or Visma using Invantive SQL or OData4 (typically Power BI or Power Query). Includes data replication and exchange. Free plan for developers and implementation consultants. Free for specific platforms with limitations in data volumes.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-138",
+    "name": "IP Geolocation API by ipwho.org",
+    "url": "https://ipwho.org/",
+    "category": "Dev Utilities",
+    "recommendation": "2,000 free requests per day. Fast, enterprise grade API at non-enterprise prices. Trusted by developers, corporate, government and education clients. Servers in 12+ regions.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-139",
+    "name": "IP Geolocation API",
+    "url": "https://www.abstractapi.com/ip-geolocation-api",
+    "category": "Dev Utilities",
+    "recommendation": "IP Geolocation API from Abstract - Allows 1,000 free requests.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-140",
+    "name": "IP Geolocation",
+    "url": "https://ipgeolocation.io/",
+    "category": "Dev Utilities",
+    "recommendation": "IP Geolocation API - Forever free plan for developers with a 1,000 requests per day limit.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-141",
+    "name": "ip-api",
+    "url": "https://ip-api.com",
+    "category": "Dev Utilities",
+    "recommendation": "IP Geolocation API, Free for non-commercial use, no API key required, limited to 45 req/minute from the same IP address for the free plan.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-142",
+    "name": "IP.City",
+    "url": "https://ip.city",
+    "category": "Dev Utilities",
+    "recommendation": "100 Free IP geolocation requests per day",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-143",
+    "name": "IP2Location.io",
+    "url": "https://www.ip2location.io/",
+    "category": "Dev Utilities",
+    "recommendation": "Freemium, fast, and reliable IP geolocation API. Get data like city, coordinates, ISP, ASN, AS data and more. The free plan includes 50k credits per month. IP2Location.io also offers 500 free WHOIS and hosted domain lookups per month. See domain registration details and find domains hosted on a specific IP. Upgrade to a paid plan for more features.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-144",
+    "name": "ipaddress.sh",
+    "url": "https://ipaddress.sh",
+    "category": "Dev Utilities",
+    "recommendation": "Simple service to get a public IP address in different [formats](https://about.ipaddress.sh/).",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-145",
+    "name": "ipapi.is",
+    "url": "https://ipapi.is/",
+    "category": "Dev Utilities",
+    "recommendation": "A reliable IP Address API from Developers for Developers with the best Hosting Detection capabilities that exist. The free plan offers 1000 lookups without signup.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-146",
+    "name": "ipapi",
+    "url": "https://ipapi.co/",
+    "category": "Dev Utilities",
+    "recommendation": "IP Address Location API by Kloudend, Inc - A reliable geolocation API built on AWS, trusted by Fortune 500. The free tier offers 30k lookups/month (1k/day) without signup.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-147",
+    "name": "ipbase.com",
+    "url": "https://ipbase.com",
+    "category": "Dev Utilities",
+    "recommendation": "IP Geolocation API - Forever free plan that spans 150 monthly requests.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-148",
+    "name": "IPinfo",
+    "url": "https://ipinfo.io/",
+    "category": "Dev Utilities",
+    "recommendation": "Fast, accurate, and free (up to 50k/month) IP address data API. Offers APIs with details on geolocation, companies, carriers, IP ranges, domains, abuse contacts, and more. All paid APIs can be trialed for free.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-149",
+    "name": "IPLocate",
+    "url": "https://www.iplocate.io",
+    "category": "Dev Utilities",
+    "recommendation": "IP Geolocation API, free up to 1,000 requests/day. Includes proxy/VPN/hosting detection, ASN data, IP to Company, and more. IPLocate also offers free downloadable IP to Country and IP to ASN databases in CSV or GeoIP-compatible MMDB formats.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-150",
+    "name": "IPTrace",
+    "url": "https://iptrace.io",
+    "category": "Dev Utilities",
+    "recommendation": "An embarrassingly simple API that provides your business with reliable and helpful IP geolocation data with 50,000 free lookups per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-151",
+    "name": "JSON IP",
+    "url": "https://getjsonip.com",
+    "category": "Dev Utilities",
+    "recommendation": "Returns the Public IP address of the client it is requested from. No registration is required for the free tier. Using CORS, data can be requested using client-side JS directly from the browser. Useful for services monitoring change in client and server IPs. Unlimited Requests.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-152",
+    "name": "JSON to Table",
+    "url": "https://jsontotable.org",
+    "category": "Dev Utilities",
+    "recommendation": "Convert JSON into an interactive table for quick viewing, editing, and sharing online.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-153",
+    "name": "JSON2Video",
+    "url": "https://json2video.com",
+    "category": "Dev Utilities",
+    "recommendation": "A video editing API to automate video marketing and social media videos, programmatically or with no code.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-154",
+    "name": "JSONGrid",
+    "url": "https://jsongrid.com",
+    "category": "Dev Utilities",
+    "recommendation": "Free tool to Visualize, Edit, Filter complex JSON data into beautiful tabular Grid. Save and Share JSON data over link link.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-155",
+    "name": "JSONing",
+    "url": "https://jsoning.com/api/",
+    "category": "Dev Utilities",
+    "recommendation": "Create a fake REST API from a JSON object, and customize HTTP status codes, headers, and response bodies.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-156",
+    "name": "JSONSwiss",
+    "url": "https://www.jsonswiss.com/",
+    "category": "Dev Utilities",
+    "recommendation": "JSONSwiss is a powerful online JSON viewer, editor, and validator. Format, visualize, search, and manipulate JSON data with AI-powered repair, tree view, table view, code generation in 12+ programming languages, convert json to csv, xml, yaml, properties and more.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-157",
+    "name": "KillBait API",
+    "url": "https://killbait.com/api/doc",
+    "category": "Dev Utilities",
+    "recommendation": "KillBait API allows users to submit URLs for content evaluation, detecting potential clickbait and categorizing articles. The API is designed for moderate publishing frequency, with limits of 1 submission per hour and 10 per day. Media partners can request higher limits.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-158",
+    "name": "Kreya",
+    "url": "https://kreya.app",
+    "category": "Dev Utilities",
+    "recommendation": "Free gRPC GUI client to call and test gRPC APIs. Can import gRPC APIs via server reflection.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-159",
+    "name": "LoginLlama",
+    "url": "https://loginllama.app",
+    "category": "Dev Utilities",
+    "recommendation": "A login security API to detect fraudulent and suspicious logins and notify your customers. Free for 1,000 logins per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-160",
+    "name": "Market Data API",
+    "url": "https://www.marketdata.app",
+    "category": "Dev Utilities",
+    "recommendation": "Provides real-time and historical financial data for stocks, options, mutual funds, and more. The Free Forever API tier allows for 100 daily API requests at no charge.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-161",
+    "name": "Maxim AI",
+    "url": "https://getmaxim.ai/",
+    "category": "Dev Utilities",
+    "recommendation": "Simulate, evaluate, and observe your AI agents. Maxim is an end-to-end evaluation and observability platform, helping teams ship their AI agents reliably and >5x faster. Free forever for indie developers and small teams (3 seats).",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-162",
+    "name": "microlink.io",
+    "url": "https://microlink.io/",
+    "category": "Dev Utilities",
+    "recommendation": "It turns any website into data such as metatags normalization, beauty link previews, scraping capabilities, or screenshots as a service. 50 requests per day, every day free.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-163",
+    "name": "Mintlify",
+    "url": "https://mintlify.com",
+    "category": "Dev Utilities",
+    "recommendation": "Modern standard for API documentation. Beautiful and easy-to-maintain UI components, in-app search, and interactive playground. Free for 1 editor.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-164",
+    "name": "MockAPI",
+    "url": "https://www.mockapi.io/",
+    "category": "Dev Utilities",
+    "recommendation": "MockAPI is a simple tool that lets you quickly mock up APIs, generate custom data, and perform operations using a RESTful interface. MockAPI is meant to be a prototyping/testing/learning tool. One project/2 resources per project for free.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-165",
+    "name": "Mockerito",
+    "url": "https://mockerito.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Free mock REST API service providing realistic data across 9 domains (e-commerce, finance, healthcare, education, recruitment, social media, stock markets, weather, and aviation). No mandatory signup, no API keys, unlimited requests. Perfect for frontend prototyping, API testing, learning and teaching web development.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-166",
+    "name": "Mockfly",
+    "url": "https://www.mockfly.dev/",
+    "category": "Dev Utilities",
+    "recommendation": "Mockfly is a trusted development tool for API mocking and feature flag management. Quickly generate and control mock APIs with an intuitive interface. The free tier offers 500 requests per day.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-167",
+    "name": "Mocko.dev",
+    "url": "https://mocko.dev/",
+    "category": "Dev Utilities",
+    "recommendation": "Proxy your API, choose which endpoints to mock in the cloud and inspect traffic, for free. Speed up your development and integration tests.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-168",
+    "name": "Multi-Exit IP Address Checker",
+    "url": "https://ip.alstra.ca/",
+    "category": "Dev Utilities",
+    "recommendation": "A free and simple tool to check your exit IP address across multiple nodes and understand how your IP appears to different global regions and services. Useful for testing rule-based DNS splitting tools such as Control D.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-169",
+    "name": "News API",
+    "url": "https://newsapi.org",
+    "category": "Dev Utilities",
+    "recommendation": "Search news on the web with code, and get JSON results. Developers get 100 queries free each day. Articles have a 24 hour delay.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-170",
+    "name": "numlookupapi.com",
+    "url": "https://numlookupapi.com",
+    "category": "Dev Utilities",
+    "recommendation": "Free phone number validation API - 100 free requests / month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-171",
+    "name": "OCR.Space",
+    "url": "https://ocr.space/",
+    "category": "Dev Utilities",
+    "recommendation": "An OCR API parses image and pdf files that return the text results in JSON format. 25,000 requests per month are free and a 1MB file size limit.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-172",
+    "name": "OpenAPI3 Designer",
+    "url": "https://openapidesigner.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Visually create Open API 3 definitions for free.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-173",
+    "name": "Parseur",
+    "url": "https://parseur.com",
+    "category": "Dev Utilities",
+    "recommendation": "20 free pages/month: Extract data from PDFs, emails. AI powered. Full API access.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-174",
+    "name": "PDF-API.io",
+    "url": "https://pdf-api.io",
+    "category": "Dev Utilities",
+    "recommendation": "PDF Automation API, visual template editor or HTML to PDF, dynamic data integration, and PDF rendering with an API. The free plan comes with one template, 100 PDFs/month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-175",
+    "name": "PDFBolt",
+    "url": "https://pdfbolt.com",
+    "category": "Dev Utilities",
+    "recommendation": "Developer-focused PDF generation API designed with privacy in mind. It offers Stripe-inspired documentation and includes 500 free PDF conversions per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-176",
+    "name": "pdfEndpoint.com",
+    "url": "https://pdfendpoint.com",
+    "category": "Dev Utilities",
+    "recommendation": "Effortlessly convert HTML or URLs to PDF with a simple API. One hundred conversions per month for free.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-177",
+    "name": "Pixela",
+    "url": "https://pixe.la/",
+    "category": "Dev Utilities",
+    "recommendation": "Free daystream database service. All operations are performed by API. Visualization with heat maps and line graphs is also possible.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-178",
+    "name": "Posthook",
+    "url": "https://posthook.io",
+    "category": "Dev Utilities",
+    "recommendation": "Schedule webhooks to fire at a future time with automatic retries, delivery tracking, and failure alerting. Free plan includes 1,000 webhooks per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-179",
+    "name": "Postman",
+    "url": "https://postman.com",
+    "category": "Dev Utilities",
+    "recommendation": "Simplify workflows and create better APIs - faster - with Postman, a collaboration platform for API development. Use the Postman App for free forever. Postman cloud features are also free forever with certain limits.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-180",
+    "name": "PrefectCloud",
+    "url": "https://www.prefect.io/cloud/",
+    "category": "Dev Utilities",
+    "recommendation": "A complete platform for dataflow automation. Free plan includes 5 deployed workflows and 500 minutes of serverless compute credits per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-181",
+    "name": "Preset Cloud",
+    "url": "https://preset.io/",
+    "category": "Dev Utilities",
+    "recommendation": "A hosted Apache Superset service. Forever free for teams of up to 5 users, featuring unlimited dashboards and charts, a no-code chart builder, and a collaborative SQL editor.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-182",
+    "name": "ProxySentry",
+    "url": "https://proxysentry.io/",
+    "category": "Dev Utilities",
+    "recommendation": "IP API that detects residential proxies and VPNs. ProxySentry.io offers a free tier with 10k requests per month on rapidapi.com.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-183",
+    "name": "Reducto",
+    "url": "https://reducto.ai",
+    "category": "Dev Utilities",
+    "recommendation": "Turn any unstructured documents (PDF, XLSX, JPG, PPTX, etc.) into structured JSON data. Parse, extract data, and edit PDF forms. Free tier with 15k free credits and pay-as-you-go.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-184",
+    "name": "Rendi",
+    "url": "https://rendi.dev",
+    "category": "Dev Utilities",
+    "recommendation": "FFmpeg API - A REST API for FFmpeg, run FFmpeg online without handling the infrastructure. Free tier with monthly processing quota and 4 vCPUs available.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-185",
+    "name": "RequestBin.com",
+    "url": "https://requestbin.com",
+    "category": "Dev Utilities",
+    "recommendation": "Create a free endpoint to which you can send HTTP requests. Any HTTP requests sent to that endpoint will be recorded with the associated payload and headers so you can observe recommendations from webhooks and other services.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-186",
+    "name": "ROBOHASH",
+    "url": "https://robohash.org/",
+    "category": "Dev Utilities",
+    "recommendation": "Web service to generate unique and cool images from any text.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-187",
+    "name": "Scraper's Proxy",
+    "url": "https://scrapersproxy.com",
+    "category": "Dev Utilities",
+    "recommendation": "Simple HTTP proxy API for scraping. Scrape anonymously without having to worry about restrictions, blocks, or captchas. First 100 successful scrapes per month free including javascript rendering (more available if you contact support).",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-188",
+    "name": "ScrapingAnt",
+    "url": "https://scrapingant.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Headless Chrome scraping API and free checked proxies service. Javascript rendering, premium rotating proxies, CAPTCHAs avoiding. Free 10,000 API credits.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-189",
+    "name": "SerpApi",
+    "url": "https://serpapi.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Real-time search engine scraping API. Returns structured JSON results for Google, YouTube, Bing, Baidu, Walmart, and many other machines. The free plan includes 100 successful API calls per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-190",
+    "name": "Sheetson",
+    "url": "https://sheetson.com",
+    "category": "Dev Utilities",
+    "recommendation": "Instantly turn any Google Sheets into a RESTful API. Free plan available, including 1,000 free rows per sheet.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-191",
+    "name": "SikkerAPI",
+    "url": "https://sikkerapi.com",
+    "category": "Dev Utilities",
+    "recommendation": "Free IP Reputation & Threat Intelligence, powered by a globally distributed high interaction honeypot network and community reported abuse incidents. 1,000 free IP lookups, TAXII indicators & reports per day, pull 5,000 fresh IPs from our blacklists daily and monitor your own CIDR ranges (/16) free free.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-192",
+    "name": "Simplescraper",
+    "url": "https://simplescraper.io",
+    "category": "Dev Utilities",
+    "recommendation": "Trigger your webhook after each operation. The free plan includes 100 cloud scrape credits.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-193",
+    "name": "Geekflare API",
+    "url": "https://geekflare.com/api/",
+    "category": "Dev Utilities",
+    "recommendation": "Geekflare API lets you scrape websites into Markdown, take screenshots, perform TLS scans and DNS lookups, test load times, and more. The free plan offers 500 API credits per month (e.g., 500 DNS lookups, 250 web scrapes, or 100 screenshots). See [credit mapping](https://docs.geekflare.com/api/api-credit-mapping).",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-194",
+    "name": "SmartParse",
+    "url": "https://smartparse.io",
+    "category": "Dev Utilities",
+    "recommendation": "SmartParse is a data migration and CSV to API platform that offers time- and cost-saving developer tools. The Free tier includes 300 Processing Units per month, Browser uploads, Data quarantining, Circuit breakers, and Job Alerts.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-195",
+    "name": "Sofodata",
+    "url": "https://www.sofodata.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Create secure RESTful APIs from CSV files. Upload a CSV file and instantly access the data via its API allowing faster application development. The free plan includes 2 APIs and 2,500 API calls per month. You don't need a credit card.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-196",
+    "name": "Sqlable",
+    "url": "https://sqlable.com/",
+    "category": "Dev Utilities",
+    "recommendation": "A collection of free online SQL tools, including an SQL formatter and validator, SQL regex tester, fake data generator, and interactive database playgrounds.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-197",
+    "name": "Supportivekoala",
+    "url": "https://supportivekoala.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Allows you to autogenerate images by your input via templates. The free plan allows you to create up to 50 images per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-198",
+    "name": "Svix",
+    "url": "https://www.svix.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Webhooks as a Service. Send up to 50,000 messages/month for free.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-199",
+    "name": "Tavily AI",
+    "url": "https://tavily.com/",
+    "category": "Dev Utilities",
+    "recommendation": "API for online search and rapid insights and comprehensive research, with the capability of organization of research results. 1000 request/month for the Free tier with No credit card required.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-200",
+    "name": "TemplateFox",
+    "url": "https://pdftemplateapi.com",
+    "category": "Dev Utilities",
+    "recommendation": "PDF generation API with a visual template editor, dynamic data merging, and SDKs for 7 languages. Free plan includes 60 PDFs/month and 3 templates.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-201",
+    "name": "The IP API",
+    "url": "https://theipapi.com/",
+    "category": "Dev Utilities",
+    "recommendation": "IP Geolocation API with 1000 free requests / day. Provides information about the location of an IP address, including country, city, region, and more.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-202",
+    "name": "TinyMCE",
+    "url": "https://www.tiny.cloud",
+    "category": "Dev Utilities",
+    "recommendation": "rich text editing API. Core features are free for unlimited usage.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-203",
+    "name": "Tomorrow.io Weather API",
+    "url": "https://www.tomorrow.io/weather-api/",
+    "category": "Dev Utilities",
+    "recommendation": "Offers free plan of weather API. Provides accurate and up-to-date weather forecasting with global coverage, historical data and weather monitoring solutions.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-204",
+    "name": "Treblle",
+    "url": "https://www.treblle.com",
+    "category": "Dev Utilities",
+    "recommendation": "Treblle helps teams build, ship, and govern APIs. With advanced API log aggregation, observability, docs, and debugging. You get all features for free, but there is a limit of up to 250k requests per month on the free tier.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-205",
+    "name": "UniRateAPI",
+    "url": "https://unirateapi.com",
+    "category": "Dev Utilities",
+    "recommendation": "Real-time exchange rates for 590+ currencies and crypto. Unlimited API calls on the free plan, perfect for developers and finance apps.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-206",
+    "name": "vatcheckapi.com",
+    "url": "https://vatcheckapi.com",
+    "category": "Dev Utilities",
+    "recommendation": "Simple and free VAT number validation API. 150 free validations per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-207",
+    "name": "WeatherXu",
+    "url": "https://weatherxu.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Global weather data including current conditions, hourly and daily forecasts, and weather alerts via our API. Integrating AI models and ML systems to analyze and combine multiple weather models to deliver improved forecast accuracy. Free tier includes 10,000 API calls/month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-208",
+    "name": "WebScraping.AI",
+    "url": "https://webscraping.ai",
+    "category": "Dev Utilities",
+    "recommendation": "Simple Web Scraping API with built-in parsing, Chrome rendering, and proxies. Two thousand free API calls per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-209",
+    "name": "Weights & Biases",
+    "url": "https://wandb.ai",
+    "category": "Dev Utilities",
+    "recommendation": "The developer-first MLOps platform. Build better models faster with experiment tracking, dataset versioning, and model management. Free tier for personal projects only, with 100 GB of storage included.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-210",
+    "name": "What Is My IP",
+    "url": "https://whatismyip.help",
+    "category": "Dev Utilities",
+    "recommendation": "A free service to check your public IPv4 and IPv6 address and related request data through an API with different output formats for automation, scripts, and network troubleshooting.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-211",
+    "name": "What The Diff",
+    "url": "https://whatthediff.ai",
+    "category": "Dev Utilities",
+    "recommendation": "AI-powered code review assistant. The free plan has a limit of 25,000 monthly tokens (~10 PRs).",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-212",
+    "name": "wolfram.com",
+    "url": "https://wolfram.com/language/",
+    "category": "Dev Utilities",
+    "recommendation": "Built-in knowledge-based algorithms in the cloud.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-213",
+    "name": "wrapapi.com",
+    "url": "https://wrapapi.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Turn any website into a parameterized API. 30k API calls per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-214",
+    "name": "Zenscrape",
+    "url": "https://zenscrape.com/web-scraping-api",
+    "category": "Dev Utilities",
+    "recommendation": "Web scraping API with headless browsers, residentials IPs, and straightforward pricing. One thousand free API calls/month and extra credits for students and non-profits.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-215",
+    "name": "Zipcodebase",
+    "url": "https://zipcodebase.com",
+    "category": "Dev Utilities",
+    "recommendation": "Free Zip Code API, access to Worldwide Postal Code Data. 5,000 free requests/month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-216",
+    "name": "Zipcodestack",
+    "url": "https://zipcodestack.com",
+    "category": "Dev Utilities",
+    "recommendation": "Free Zip Code API and Postal Code Validation. Ten thousand free requests/month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-217",
+    "name": "Zuplo",
+    "url": "https://zuplo.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Free API Management platform to design, build, and deploy APIs to the Edge. Add API Key authentication, rate limiting, developer documentation and Monetization to any API in minutes. OpenAPI-native and fully-programmable with web standard apis & Typescript. The free plan offers up to 10 projects, unlimited production edge environments, 1M monthly requests, and 10GB egress.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-218",
+    "name": "Gemfury",
+    "url": "https://gemfury.com",
+    "category": "General Resources",
+    "recommendation": "Private and public artifact repos for Maven, PyPi, NPM, Go Module, Nuget, APT, and RPM repositories. Free for public projects.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-219",
+    "name": "jitpack.io",
+    "url": "https://jitpack.io/",
+    "category": "General Resources",
+    "recommendation": "Maven repository for JVM and Android projects on GitHub, free for public projects.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-220",
+    "name": "paperspace",
+    "url": "https://www.paperspace.com/",
+    "category": "General Resources",
+    "recommendation": "Build & scale AI models, Develop, train, and deploy AI applications, free plan: public projects, 5Gb storage, basic instances.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-221",
+    "name": "RepoFlow",
+    "url": "https://repoflow.io",
+    "category": "General Resources",
+    "recommendation": "RepoFlow Simplifies package management with support for npm, PyPI, Docker, Go, Helm, and more. Try it for free with 10GB storage, 10GB bandwidth, 100 packages, and unlimited users in the cloud, or self-hosted for personal use only.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-222",
+    "name": "RepoForge",
+    "url": "https://repoforge.io",
+    "category": "General Resources",
+    "recommendation": "Private cloud-hosted repository for Python, Debian, NPM packages and Docker registries. Free plan for open source/public projects.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-223",
+    "name": "repsy.io",
+    "url": "https://repsy.io",
+    "category": "General Resources",
+    "recommendation": "1 GB Free private/public Maven Repository.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-224",
+    "name": "3Cols",
+    "url": "https://3cols.com/",
+    "category": "Dev Utilities",
+    "recommendation": "A free cloud-based code snippet manager for personal and collaborative code.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-225",
+    "name": "BookmarkOS.com",
+    "url": "https://bookmarkos.com",
+    "category": "Dev Utilities",
+    "recommendation": "Free all-on-one bookmark manager, tab manager, and task manager in a customizable online desktop with folder collaboration.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-226",
+    "name": "Braid",
+    "url": "https://www.braidchat.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Chat app designed for teams. Free for public access group, unlimited users, history, and integrations. also, it provides a self-hostable open-source version.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-227",
+    "name": "Calendly",
+    "url": "https://calendly.com",
+    "category": "Dev Utilities",
+    "recommendation": "Calendly is the tool for connecting and scheduling meetings. The free plan provides 1 Calendar connection per user and Unlimited sessions. Desktop and Mobile apps are also offered.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-228",
+    "name": "cally.com",
+    "url": "https://cally.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Find the perfect time and date for a meeting. Simple to use, works great for small and large groups.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-229",
+    "name": "cDox",
+    "url": "https://cdox.ca",
+    "category": "Dev Utilities",
+    "recommendation": "Private document editor hosted in Canada. Write, format, collaborate, and publish documents with clean public links. Data is never used for AI training. Free plan includes 50 MB storage, up to 3 public links, and export to PDF, Word, and Markdown.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-230",
+    "name": "Chanty.com",
+    "url": "https://chanty.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Chanty is another alternative to Slack. It has a free forever plan for small teams (up to 10) with unlimited public and private conversations, searchable history, unlimited 1:1 audio calls, unlimited voice messages, ten integrations, and 20 GB storage per team.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-231",
+    "name": "DevToolLab",
+    "url": "https://devtoollab.com",
+    "category": "Dev Utilities",
+    "recommendation": "Online developer tools offering free access to all basic tools, with the ability to auto save one entry per tool, standard processing speed, and community support.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-232",
+    "name": "Discord",
+    "url": "https://discord.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Chat with public/private rooms. Markdown text, voice, video, and screen sharing capabilities. Free for unlimited users.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-233",
+    "name": "Dubble",
+    "url": "https://dubble.so/",
+    "category": "Dev Utilities",
+    "recommendation": "Free Step-by-Step Guide creator. Take screenshots, document processes and colloborate with your team. Also supports async screen recording.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-234",
+    "name": "Duckly",
+    "url": "https://duckly.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Talk and collaborate in real time with your team. Pair programming with IDE, terminal sharing, voice, video, and screen sharing. Free for small teams.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-235",
+    "name": "element.io",
+    "url": "https://element.io/",
+    "category": "Dev Utilities",
+    "recommendation": "A decentralized and open-source communication tool built on Matrix. Group chats, direct messaging, encrypted file transfers, voice and video chats, and easy integration with other services.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-236",
+    "name": "evernote.com",
+    "url": "https://evernote.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Tool for organizing information. Share your notes and work together with others",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-237",
+    "name": "Fibery",
+    "url": "https://fibery.io/",
+    "category": "Dev Utilities",
+    "recommendation": "Connected workspace platform. Free for single users, up to 2 GB disk space.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-238",
+    "name": "Fibo",
+    "url": "https://fibo.dev",
+    "category": "Dev Utilities",
+    "recommendation": "A free online realtime scrum poker tool for agile teams that lets unlimited members estimate story points for faster planning.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-239",
+    "name": "Fizzy",
+    "url": "https://www.fizzy.do/",
+    "category": "Dev Utilities",
+    "recommendation": "Kanban-based platform for project management and issue tracking. Create public boards, set up webhooks, use card stamping, and track unlimited users - free for up to 1000 items.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-240",
+    "name": "flat.social",
+    "url": "https://flat.social",
+    "category": "Dev Utilities",
+    "recommendation": "Interactive customizable spaces for team meetings & happy hours socials. Unlimited meetings, free up to 8 concurrent users.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-241",
+    "name": "flock.com",
+    "url": "https://flock.com",
+    "category": "Dev Utilities",
+    "recommendation": "A faster way for your team to communicate. Free Unlimited Messages, Channels, Users, Apps & Integrations",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-242",
+    "name": "GitBook",
+    "url": "https://www.gitbook.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Platform for capturing and documenting technical knowledge - from product docs to internal knowledge bases and APIs. Free plan for individual developers.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-243",
+    "name": "GitDailies",
+    "url": "https://gitdailies.com",
+    "category": "Dev Utilities",
+    "recommendation": "Daily reports of your team's Commit and Pull Request activity on GitHub. Includes Push visualizer, peer recognition system, and custom alert builder. The free tier has unlimited users, three repos, and 3 alert configs.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-244",
+    "name": "gitter.im",
+    "url": "https://gitter.im/",
+    "category": "Dev Utilities",
+    "recommendation": "Chat, for GitHub. Unlimited public and private rooms, free for teams of up to 25",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-245",
+    "name": "gokanban.io",
+    "url": "https://gokanban.io",
+    "category": "Dev Utilities",
+    "recommendation": "Syntax-based, no registration Kanban Board for fast use. Free with no limitations.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-246",
+    "name": "Hackmd.io",
+    "url": "https://hackmd.io/",
+    "category": "Dev Utilities",
+    "recommendation": "Real time collaboration & writing tool for markdown format docs/files. Like Google Docs but for markdown files. Free unlimited number of \"notes\", but the number of collaborators (invitee) for private notes & template [will be limited](https://hackmd.io/pricing).",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-247",
+    "name": "HeySpace",
+    "url": "https://hey.space",
+    "category": "Dev Utilities",
+    "recommendation": "Task management tool with chat, calendar, timeline and video calls. Free for up to 5 users.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-248",
+    "name": "Huly",
+    "url": "https://huly.io/",
+    "category": "Dev Utilities",
+    "recommendation": "All-in-One Project Management Platform (alternative to Linear, Jira, Slack, Notion, Motion) - unlimited users, 10GB storage per workspace, 10GB video(audio) traffic.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-249",
+    "name": "Keybase",
+    "url": "https://keybase.io/",
+    "category": "Dev Utilities",
+    "recommendation": "Keybase is a FOSS alternative to Slack; it keeps everyone's chats and files safe, from families to communities to companies.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-250",
+    "name": "Linkinize",
+    "url": "https://linkinize.com",
+    "category": "Dev Utilities",
+    "recommendation": "Bookmark manager for teams with tagging, multi-workspaces, and collaboration. Free plan includes 4 workspaces and 10 team members.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-251",
+    "name": "Lockitbot",
+    "url": "https://www.lockitbot.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Reserve and lock shared resources within Slack like Rooms, Dev environments , servers etc. Free for upto 2 resources",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-252",
+    "name": "meet.jit.si",
+    "url": "https://meet.jit.si/",
+    "category": "Dev Utilities",
+    "recommendation": "One-click video conversations, and screen sharing, for free",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-253",
+    "name": "Miro",
+    "url": "https://miro.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Scalable, secure, cross-device, and enterprise-ready collaboration whiteboard for distributed teams. With a freemium plan.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-254",
+    "name": "Notion",
+    "url": "https://www.notion.so/",
+    "category": "Dev Utilities",
+    "recommendation": "Notion is a note-taking and collaboration application with markdown support that integrates tasks, wikis, and databases. The company describes the app as an all-in-one workspace for note-taking, project management and task management. In addition to cross-platform apps, it can be accessed via most web browsers.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-255",
+    "name": "Nuclino",
+    "url": "https://www.nuclino.com",
+    "category": "Dev Utilities",
+    "recommendation": "A lightweight and collaborative wiki for all your team's knowledge, docs, and notes. Free plan with all essential features, up to 50 items, and 5GB storage.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-256",
+    "name": "OnlineInterview.io",
+    "url": "https://onlineinterview.io/",
+    "category": "Dev Utilities",
+    "recommendation": "Free code interview platform with embedded video chat, drawing board, and online code editor where you can compile and run your code on the browser. You can create a remote interview room with just one click.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-257",
+    "name": "paste.sh",
+    "url": "https://paste.sh/",
+    "category": "Dev Utilities",
+    "recommendation": "This is a JavaScript and the Crypto based simple paste site.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-258",
+    "name": "Pastefy",
+    "url": "https://pastefy.app/",
+    "category": "Dev Utilities",
+    "recommendation": "Beautiful and simple Pastebin with optional Client-Encryption, Multitab-Pastes, an API, a highlighted Editor and more.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-259",
+    "name": "Pendulums",
+    "url": "https://pendulums.io/",
+    "category": "Dev Utilities",
+    "recommendation": "Pendulums is a free time tracking tool that helps you manage your time in a better manner with an easy-to-use interface and valuable statistics.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-260",
+    "name": "Proton Pass",
+    "url": "https://proton.me/pass",
+    "category": "Dev Utilities",
+    "recommendation": "Password manager with built-in email aliases, 2FA authenticator, sharing and passkeys. Available on web, browser extension, and mobile app and desktop.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-261",
+    "name": "Pullflow",
+    "url": "https://pullflow.com",
+    "category": "Dev Utilities",
+    "recommendation": "Pullflow offers an AI-enhanced platform for code review collaboration across GitHub, Slack, and VS Code.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-262",
+    "name": "Pumble",
+    "url": "https://pumble.com",
+    "category": "Dev Utilities",
+    "recommendation": "Free team chat app. Unlimited users and message history, free forever.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-263",
+    "name": "Quidlo Timesheets",
+    "url": "https://www.quidlo.com/timesheets",
+    "category": "Dev Utilities",
+    "recommendation": "A simple timesheet and time tracking app for teams. The free plan has time tracking and generating reports features for up to 10 users.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-264",
+    "name": "Raindrop.io",
+    "url": "https://raindrop.io",
+    "category": "Dev Utilities",
+    "recommendation": "Private and secure bookmarking app for macOS, Windows, Android, iOS, and Web. Free Unlimited Bookmarks and Collaboration.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-265",
+    "name": "Revolt.chat",
+    "url": "https://revolt.chat/",
+    "category": "Dev Utilities",
+    "recommendation": "An OpenSource alternative for[Discord](https://discord.com/), that respects your privacy. It also have most proprietary features from discord for free. Revolt is a all in one application that is secure and fast, while being 100% free. every features are free. They also have (official & unofficial) plugins support unlike most main-stream chatting applications.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-266",
+    "name": "Rocket.Chat",
+    "url": "https://rocket.chat/",
+    "category": "Dev Utilities",
+    "recommendation": "Open-source communication platform with Omnichannel features, Matrix Federation, Bridge with others apps, Unlimited messaging, and Full messaging history.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-267",
+    "name": "ruttl.com",
+    "url": "https://ruttl.com/",
+    "category": "Dev Utilities",
+    "recommendation": "The best all-in-one feedback tool to collect digital feedback and review websites, PDFs, and images.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-268",
+    "name": "Screen Sharing via Browser",
+    "url": "https://screensharing.net",
+    "category": "Dev Utilities",
+    "recommendation": "Free screen sharing tool, share your screen with collabrators right from your browser, no download or registration needed. For free.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-269",
+    "name": "seafile.com",
+    "url": "https://www.seafile.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Private or cloud storage, file sharing, sync, discussions. The cloud version has just 1 GB",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-270",
+    "name": "SiteDots",
+    "url": "https://sitedots.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Share feedback for website projects directly on your website, no emulation, canvas or workarounds. Completely functional free tier.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-271",
+    "name": "Slab",
+    "url": "https://slab.com/",
+    "category": "Dev Utilities",
+    "recommendation": "A modern knowledge management service for teams. Free for up to 10 users.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-272",
+    "name": "slack.com",
+    "url": "https://slack.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Free for unlimited users with some feature limitations",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-273",
+    "name": "StatusPile",
+    "url": "https://www.statuspile.com/",
+    "category": "Dev Utilities",
+    "recommendation": "A status page of status pages. Could you track the status pages of your upstream providers?",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-274",
+    "name": "Stickies",
+    "url": "https://stickies.app/",
+    "category": "Dev Utilities",
+    "recommendation": "Visual collaboration app used for brainstorming, content curation, and notes. Free for up to 3 Walls, unlimited users, and 1 GB storage.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-275",
+    "name": "StreamBackdrops",
+    "url": "https://streambackdrops.com",
+    "category": "Dev Utilities",
+    "recommendation": "Free HD virtual backgrounds for video calls and team meetings. Professional backgrounds for Zoom, Teams, and Google Meet. No signup required, free for personal use.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-276",
+    "name": "talky.io",
+    "url": "https://talky.io/",
+    "category": "Dev Utilities",
+    "recommendation": "Free group video chat. Anonymous. Peer‑to‑peer. No plugins, signup, or payment required",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-277",
+    "name": "Teamcamp",
+    "url": "https://www.teamcamp.app",
+    "category": "Dev Utilities",
+    "recommendation": "All-in-one project management application for software development companies.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-278",
+    "name": "Teamhood",
+    "url": "https://teamhood.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Free Project, Task, and Issue-tracking software. Supports Kanban with Swimlanes and full Scrum implementation. Has integrated time tracking. Free for five users and three project portfolios.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-279",
+    "name": "Teamplify",
+    "url": "https://teamplify.com",
+    "category": "Dev Utilities",
+    "recommendation": "improve team development processes with Team Analytics and Smart Daily Standup. Includes full-featured Time Off management for remote-first teams. Free for small groups of up to 5 users.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-280",
+    "name": "Telegram",
+    "url": "https://telegram.org/",
+    "category": "Dev Utilities",
+    "recommendation": "Telegram is for everyone who wants fast, reliable messaging and calls. Business users and small teams may like the large groups, usernames, desktop apps, and powerful file-sharing options.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-281",
+    "name": "Tencent RTC",
+    "url": "https://trtc.io/",
+    "category": "Dev Utilities",
+    "recommendation": "Tencent Real-Time Communication (TRTC) offers solutions for group audio/video calls.10,000 free minutes/month for the first year.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-282",
+    "name": "TimeCamp",
+    "url": "https://www.timecamp.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Free time tracking software for unlimited users. Easily integrates with PM tools like Jira, Trello, Asana, etc.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-283",
+    "name": "tldraw.com",
+    "url": "https://tldraw.com",
+    "category": "Dev Utilities",
+    "recommendation": "Free open-source white-boarding and diagramming tool with intelligent arrows, snapping, sticky notes, and SVG export features. Multiplayer mode for collaborative editing. Free official VS Code extension available as well.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-284",
+    "name": "transfernow",
+    "url": "https://www.transfernow.net/",
+    "category": "Dev Utilities",
+    "recommendation": "simplest, fastest and safest interface to transfer and share files. Send photos, videos and other large files without a manditory subscription.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-285",
+    "name": "Tugboat",
+    "url": "https://tugboat.qa",
+    "category": "Dev Utilities",
+    "recommendation": "Preview every pull request, automated and on-demand. Free for all, complimentary Nano tier for non-profits.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-286",
+    "name": "twist.com",
+    "url": "https://twist.com",
+    "category": "Dev Utilities",
+    "recommendation": "An asynchronous-friendly team communication app where conversations stay organized and on-topic. Free and Unlimited plans are available. Discounts are provided for eligible teams.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-287",
+    "name": "userforge.com",
+    "url": "https://userforge.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Interconnected online personas, user stories and context mapping.  Helps keep design and dev in sync free for up to 3 personas and two collaborators.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-288",
+    "name": "Visual Debug",
+    "url": "https://visualdebug.com",
+    "category": "Dev Utilities",
+    "recommendation": "A Visual feedback tool for better client-dev communication",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-289",
+    "name": "Webex",
+    "url": "https://www.webex.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Video meetings with a free plan offering 40 minutes per meeting with 100 attendees.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-290",
+    "name": "Webvizio",
+    "url": "https://webvizio.com",
+    "category": "Dev Utilities",
+    "recommendation": "Website feedback tool, website review software, and bug reporting tool for streamlining web development collaboration on tasks directly on live websites and web apps, images, PDFs, and design files.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-291",
+    "name": "whereby.com",
+    "url": "https://whereby.com/",
+    "category": "Dev Utilities",
+    "recommendation": "One-click video conversations, for free (formerly known as appear.in)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-292",
+    "name": "windmill.dev",
+    "url": "https://windmill.dev/",
+    "category": "Dev Utilities",
+    "recommendation": "Windmill is an open-source developer platform to quickly build production-grade multi-step automation and internal apps from minimal Python and Typescript scripts. As a free user, you can create and be a member of at most three non-premium workspaces.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-293",
+    "name": "wistia.com",
+    "url": "https://wistia.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Video hosting with viewer analytics, HD video delivery, and marketing tools to help understand your visitors, 25 videos, and Wistia branded player",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-294",
+    "name": "wormhol.org",
+    "url": "https://www.wormhol.org/",
+    "category": "Dev Utilities",
+    "recommendation": "Straightforward file sharing service. Share unlimited files up to 5GB with as many peers as you want.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-295",
+    "name": "Wormhole",
+    "url": "https://wormhole.app/",
+    "category": "Dev Utilities",
+    "recommendation": "Share files up to 5GB with end-to-end encryption for up to 24hours. For files larger than 5 GB, it uses peer-to-peer transfer to send your files directly.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-296",
+    "name": "zoom.us",
+    "url": "https://zoom.us/",
+    "category": "Dev Utilities",
+    "recommendation": "Secure Video and Web conferencing add-ons available. The free plan is limited to 40 minutes.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-297",
+    "name": "Zulip",
+    "url": "https://zulip.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Real-time chat with a unique email-like threading model. The free plan includes 10,000 messages of search history and File storage up to 5 GB. also, it provides a self-hostable open-source version.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-298",
+    "name": "RightFeature",
+    "url": "https://rightfeature.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Easily collect feedback from your customers, turn customer feedback into your product roadmap. Collect, prioritize, and ship features that actually matter to your users.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-299",
+    "name": "Contentful",
+    "url": "https://www.contentful.com/",
+    "category": "General Resources",
+    "recommendation": "Headless CMS. Content management and delivery APIs in the cloud. Comes with one free Community space that includes five users, 25K records, 48 Content Types, 2 locales.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-300",
+    "name": "Cosmic",
+    "url": "https://www.cosmicjs.com/",
+    "category": "General Resources",
+    "recommendation": "Headless CMS and API toolkit. Free personal plans for developers.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-301",
+    "name": "Crystallize",
+    "url": "https://crystallize.com",
+    "category": "General Resources",
+    "recommendation": "Headless PIM with ecommerce support. Built-in GraphQL API. The free version includes unlimited users, 1000 catalog items, 5 GB/month bandwidth, and 25k/month API calls.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-302",
+    "name": "DatoCMS",
+    "url": "https://www.datocms.com/",
+    "category": "General Resources",
+    "recommendation": "Offers free tier for small projects. DatoCMS is a GraphQL-based CMS. On the lower tier, you have 100k/month calls.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-303",
+    "name": "Hygraph",
+    "url": "https://hygraph.com/",
+    "category": "General Resources",
+    "recommendation": "Offers free tier for small projects. GraphQL first API. Move away from legacy solutions to the GraphQL native Headless CMS - and deliver omnichannel content API first.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-304",
+    "name": "Prismic",
+    "url": "https://www.prismic.io/",
+    "category": "General Resources",
+    "recommendation": "Headless CMS. Content management interface with fully hosted and scalable API. The Community Plan provides unlimited API calls, documents, custom types, assets, and locales to one user. Everything that you need for your next project. Bigger free plans are available for Open Content/Open Source projects.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-305",
+    "name": "Sanity.io",
+    "url": "https://www.sanity.io/",
+    "category": "General Resources",
+    "recommendation": "Platform for structured content with an open-source editing environment and a real-time hosted data store. Unlimited projects. Unlimited admin users, three non-admin users, two datasets, 500K API CDN requests, 10GB bandwidth, and 5GB assets included for free per project.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-306",
+    "name": "Solo",
+    "url": "https://soloist.ai",
+    "category": "General Resources",
+    "recommendation": "Free AI website creator from Mozilla, create a beautiful website for your business from a few simple inputs. Free custom domain, no credit card needed.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-307",
+    "name": "Squidex",
+    "url": "https://squidex.io/",
+    "category": "General Resources",
+    "recommendation": "Offers free tier for small projects. API / GraphQL first. Open source and based on event sourcing (versing every change automatically).",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-308",
+    "name": "Storyblok",
+    "url": "https://www.storyblok.com",
+    "category": "General Resources",
+    "recommendation": "A Headless CMS for developers and marketers that works with all modern frameworks. The Community (free) tier offers Management API, Visual Editor, ten sources, Custom Field Types, Internationalization (unlimited languages/locales), Asset Manager (up to 2500 assets), Image Optimizing Service, Search Query, Webhook + 250GB Traffic/month included.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-309",
+    "name": "TinaCMS",
+    "url": "https://tina.io/",
+    "category": "General Resources",
+    "recommendation": "Replacing Forestry.io. Open source Git-backed headless CMS that supports Markdown, MDX, and JSON. The basic offer is free with two users available.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-310",
+    "name": "WPJack",
+    "url": "https://wpjack.com",
+    "category": "General Resources",
+    "recommendation": "Set up WordPress on any cloud in less than 5 minutes! The free tier includes 1 server, 2 sites, free SSL certificates, and unlimited cron jobs. No time limits or expirations-your website, your way.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-311",
+    "name": "Appinvento",
+    "url": "https://appinvento.io/",
+    "category": "General Resources",
+    "recommendation": "A free no-code app builder. It provides complete access to the automatically generated backend source code and allows for unlimited APIs and routes. The free plan includes three projects and five tables.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-312",
+    "name": "DhiWise",
+    "url": "https://www.dhiwise.com/",
+    "category": "General Resources",
+    "recommendation": "Converts Figma designs into dynamic Flutter and React applications. Its code generation technology is designed to optimize workflows for building production-ready mobile and web experiences.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-313",
+    "name": "Karbon Sites",
+    "url": "https://www.karbonsites.space",
+    "category": "General Resources",
+    "recommendation": "An AI-powered site builder and editor that generates production-ready frontend code from text prompts, sketches, or resumes. Features include native Android (APK) export and a free tier with 5 generations per month (unlimited via custom Gemini API key).",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-314",
+    "name": "Metalama",
+    "url": "https://www.postsharp.net/metalama",
+    "category": "General Resources",
+    "recommendation": "A C#-specific tool that generates boilerplate code on the fly during compilation to keep source code clean. It is free for open-source projects; its commercial-friendly free tier includes up to three aspects.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-315",
+    "name": "Supermaven",
+    "url": "https://www.supermaven.com/",
+    "category": "General Resources",
+    "recommendation": "A high-speed AI code completion plugin for VS Code, JetBrains, and Neovim. The free tier provides unlimited inline completions with a focus on ultra-low latency.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-316",
+    "name": "v0.dev",
+    "url": "https://v0.dev/",
+    "category": "General Resources",
+    "recommendation": "Created by Vercel, v0 generates copy-and-paste friendly React code using shadcn/ui and Tailwind CSS. It uses a credit system, providing 1,200 starting credits and 200 free credits monthly.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-317",
+    "name": "beanstalkapp.com",
+    "url": "https://beanstalkapp.com/",
+    "category": "General Resources",
+    "recommendation": "A complete workflow to write, review, and deploy code), a free account for one user, and one repository with 100 MB of storage",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-318",
+    "name": "codacy.com",
+    "url": "https://www.codacy.com/",
+    "category": "General Resources",
+    "recommendation": "Automated code reviews for PHP, Python, Ruby, Java, JavaScript, Scala, CSS, and CoffeeScript, free for unlimited public and private repositories",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-319",
+    "name": "Codeac.io",
+    "url": "https://www.codeac.io/infrastructure-as-code.html?ref=free-for-dev",
+    "category": "General Resources",
+    "recommendation": "Automated Infrastructure as Code review tool for DevOps integrates with GitHub, Bitbucket, and GitLab (even self-hosted). In addition to standard languages, it also analyzes Ansible, Terraform, CloudFormation, Kubernetes, and more. (open-source free)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-320",
+    "name": "codecov.io",
+    "url": "https://codecov.io/",
+    "category": "General Resources",
+    "recommendation": "Code coverage tool (SaaS), free for Open Source and one free private repo",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-321",
+    "name": "CodeFactor",
+    "url": "https://www.codefactor.io",
+    "category": "General Resources",
+    "recommendation": "Automated Code Review for Git. The free version includes unlimited users, public repositories, and one private repo.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-322",
+    "name": "coderabbit.ai",
+    "url": "https://coderabbit.ai",
+    "category": "General Resources",
+    "recommendation": "AI-powered code review tool that integrates with GitHub/GitLab. Free tier includes 200 files/hour, 3 reviews per hour, and 50 conversations/hour. Free forever for open source projects.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-323",
+    "name": "CodSpeed",
+    "url": "https://codspeed.io",
+    "category": "General Resources",
+    "recommendation": "Automate performance tracking in your CI pipelines. Catch performance regressions before deployment, thanks to precise and consistent metrics. Free forever for Open Source projects.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-324",
+    "name": "coveralls.io",
+    "url": "https://coveralls.io/",
+    "category": "General Resources",
+    "recommendation": "Display test coverage reports, free for Open Source",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-325",
+    "name": "deepscan.io",
+    "url": "https://deepscan.io",
+    "category": "General Resources",
+    "recommendation": "Advanced static analysis for automatically finding runtime errors in JavaScript code, free for Open Source",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-326",
+    "name": "DeepSource",
+    "url": "https://deepsource.io/",
+    "category": "General Resources",
+    "recommendation": "DeepSource continuously analyzes source code changes, finding and fixing issues categorized under security, performance, anti-patterns, bug-risks, documentation, and style. Native integration with GitHub, GitLab, and Bitbucket.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-327",
+    "name": "DiffText",
+    "url": "https://difftext.com",
+    "category": "General Resources",
+    "recommendation": "Instantly find the differences between two blocks of code. Completely free to use.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-328",
+    "name": "eversql.com",
+    "url": "https://www.eversql.com/",
+    "category": "General Resources",
+    "recommendation": "EverSQL - The #1 platform for database optimization. Gain critical insights into your database and SQL queries automatically.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-329",
+    "name": "gerrithub.io",
+    "url": "https://review.gerrithub.io/",
+    "category": "General Resources",
+    "recommendation": "Gerrit code review for GitHub repositories for free",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-330",
+    "name": "goreportcard.com",
+    "url": "https://goreportcard.com/",
+    "category": "General Resources",
+    "recommendation": "Code Quality for Go projects, free for Open Source",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-331",
+    "name": "gtmetrix.com",
+    "url": "https://gtmetrix.com/",
+    "category": "General Resources",
+    "recommendation": "Reports and thorough recommendations to optimize websites",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-332",
+    "name": "holistic.dev",
+    "url": "https://holistic.dev/",
+    "category": "General Resources",
+    "recommendation": "The #1 static code analyzer for Postgresql optimization. Performance, security, and architect database issues automatic detection service",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-333",
+    "name": "houndci.com",
+    "url": "https://houndci.com/",
+    "category": "General Resources",
+    "recommendation": "Comments on GitHub commits about code quality, free for Open Source",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-334",
+    "name": "reviewable.io",
+    "url": "https://reviewable.io/",
+    "category": "General Resources",
+    "recommendation": "Code review for GitHub repositories, free for public or personal repos.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-335",
+    "name": "scan.coverity.com",
+    "url": "https://scan.coverity.com/",
+    "category": "General Resources",
+    "recommendation": "Static code analysis for Java, C/C++, C# and JavaScript, free for Open Source",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-336",
+    "name": "scrutinizer-ci.com",
+    "url": "https://scrutinizer-ci.com/",
+    "category": "General Resources",
+    "recommendation": "Continuous inspection platform, free for Open Source",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-337",
+    "name": "semanticdiff.com",
+    "url": "https://app.semanticdiff.com/",
+    "category": "General Resources",
+    "recommendation": "Programming language aware diff for GitHub pull requests and commits, free for public repositories",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-338",
+    "name": "shields.io",
+    "url": "https://shields.io",
+    "category": "General Resources",
+    "recommendation": "Quality metadata badges for open source projects",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-339",
+    "name": "sonarcloud.io",
+    "url": "https://sonarcloud.io",
+    "category": "General Resources",
+    "recommendation": "Automated source code analysis for Java, JavaScript, C/C++, C#, VB.NET, PHP, Objective-C, Swift, Python, Groovy and even more languages, free for Open Source",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-340",
+    "name": "CodeKeep",
+    "url": "https://codekeep.io",
+    "category": "General Resources",
+    "recommendation": "Google Keep for Code Snippets. Organize, Discover, and share code snippets, featuring a powerful code screenshot tool with preset templates and a linking feature.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-341",
+    "name": "libraries.io",
+    "url": "https://libraries.io/",
+    "category": "General Resources",
+    "recommendation": "Search and dependency update notifications for 32 different package managers, free for open source",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-342",
+    "name": "Namae",
+    "url": "https://namae.dev/",
+    "category": "General Resources",
+    "recommendation": "Search various websites like GitHub, Gitlab, Heroku, Netlify, and many more for the availability of your project name.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-343",
+    "name": "tickgit.com",
+    "url": "https://www.tickgit.com/",
+    "category": "General Resources",
+    "recommendation": "Surfaces `TODO` comments (and other markers) to identify areas of code worth returning to for improvement.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-344",
+    "name": "appcircle.io",
+    "url": "https://appcircle.io",
+    "category": "General Resources",
+    "recommendation": "An enterprise-grade mobile DevOps platform that automates the build, test, and publish store of mobile apps for faster, efficient release cycle. Free for 30 minutes max build time per build, 20 monthly builds and 1 concurrent build.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-345",
+    "name": "appveyor.com",
+    "url": "https://www.appveyor.com/",
+    "category": "General Resources",
+    "recommendation": "CD service for Windows, free for Open Source",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-346",
+    "name": "bitrise.io",
+    "url": "https://www.bitrise.io/",
+    "category": "General Resources",
+    "recommendation": "A CI/CD for mobile apps, native or hybrid. With 200 free builds/month 10 min build time and two team members. OSS projects get 45 min build time, +1 concurrency and unlimited team size.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-347",
+    "name": "buddy.works",
+    "url": "https://buddy.works/",
+    "category": "General Resources",
+    "recommendation": "A CI/CD with five free projects and one concurrent run (120 executions/month)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-348",
+    "name": "Buildkite",
+    "url": "https://buildkite.com",
+    "category": "General Resources",
+    "recommendation": "CI Pipelines free for 3 users and 5k job minutes/month. Test Analytics free",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-349",
+    "name": "bytebase.com",
+    "url": "https://www.bytebase.com/",
+    "category": "General Resources",
+    "recommendation": "Database CI/CD and DevOps. Free under 20 users and ten database instances",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-350",
+    "name": "CircleCI",
+    "url": "https://circleci.com/",
+    "category": "General Resources",
+    "recommendation": "Comprehensive free plan with all features included in a hosted CI/CD service for GitHub, GitLab, and BitBucket repositories. Multiple resource classes, Docker, Windows, Mac OS, ARM executors, local runners, test splitting, Docker Layer Caching, and other advanced CI/CD features. Free for up to 6000 minutes/month execution time, unlimited collaborators, 30 parallel jobs in private projects, and up to 80,000 free build minutes for Open Source projects.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-351",
+    "name": "cirrus-ci.org",
+    "url": "https://cirrus-ci.org",
+    "category": "General Resources",
+    "recommendation": "Free for public GitHub repositories",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-352",
+    "name": "cirun.io",
+    "url": "https://cirun.io",
+    "category": "General Resources",
+    "recommendation": "Free for public GitHub repositories",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-353",
+    "name": "codemagic.io",
+    "url": "https://codemagic.io/",
+    "category": "General Resources",
+    "recommendation": "Free 500 build minutes/month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-354",
+    "name": "deployhq.com",
+    "url": "https://www.deployhq.com/",
+    "category": "General Resources",
+    "recommendation": "1 project with ten daily deployments (30 build minutes/month)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-355",
+    "name": "LocalOps",
+    "url": "https://localops.co/",
+    "category": "General Resources",
+    "recommendation": "Deploy your app on AWS/GCP/Azure in under 30 minutes. Setup standardised app environments on any cloud, which come with in-built continuous deployment automation and advanced observability. The free plan allows 1 user and 1 app environment.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-356",
+    "name": "Make",
+    "url": "https://www.make.com/en",
+    "category": "General Resources",
+    "recommendation": "The workflow automation tool lets you connect apps and automate workflows using UI. It supports many apps and the most popular APIs. Free for public GitHub repositories, and free tier with 100 Mb, 1000 Operations, and 15 minutes of minimum interval.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-357",
+    "name": "Mergify",
+    "url": "https://mergify.com",
+    "category": "General Resources",
+    "recommendation": "workflow automation and merge queue for GitHub - Free for public GitHub repositories",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-358",
+    "name": "Nx Cloud",
+    "url": "https://nx.dev/ci",
+    "category": "General Resources",
+    "recommendation": "Nx Cloud speeds up your monorepos on CI with features such as remote caching, distribution of tasks across machines and even automated splitting of your e2e test runs. It comes with a free plan for up to 30 contributors with generous 150k credits included.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-359",
+    "name": "RunMyJob",
+    "url": "https://runmyjob.io",
+    "category": "General Resources",
+    "recommendation": "Run GitHub Actions and GitLab CI pipelines smarter with real-time scaling Spike Instances. Free tier includes 400 vCPU-minutes, 800 GB-minutes, and 10 concurrent jobs with high-performance runners (12 vCPU and 32 GB RAM per job).",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-360",
+    "name": "Shipfox",
+    "url": "https://www.shipfox.io/",
+    "category": "General Resources",
+    "recommendation": "Run your GitHub actions 2x faster, 3.000 build minutes free each month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-361",
+    "name": "Spacelift",
+    "url": "https://spacelift.io/",
+    "category": "General Resources",
+    "recommendation": "Management platform for Infrastructure as Code. Free plan features: IaC collaboration, Terraform module registry, ChatOps integration, Continuous resource compliance with Open Policy Agent, SSO with SAML 2.0, and access to public worker pools: up to 200 minutes/month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-362",
+    "name": "Squash Labs",
+    "url": "https://www.squash.io/",
+    "category": "General Resources",
+    "recommendation": "creates a VM for each branch and makes your app available from a unique URL, Unlimited public & private repos, Up to 2 GB VM Sizes.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-363",
+    "name": "Terramate",
+    "url": "https://terramate.io/",
+    "category": "General Resources",
+    "recommendation": "Terramate is an orchestration and management platform for Infrastructure as Code (IaC) tools such as Terraform, OpenTofu, and Terragrunt. Free up to 2 users including all features.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-364",
+    "name": "Terrateam",
+    "url": "https://terrateam.io",
+    "category": "General Resources",
+    "recommendation": "GitOps-first Terraform automation with pull request-driven workflows, project isolation via self-hosted runners, and layered runs for ordered operations. Free for up to 3 users.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-365",
+    "name": "Appetize",
+    "url": "https://appetize.io",
+    "category": "Dev Utilities",
+    "recommendation": "Test your Android & iOS apps on this Cloud Based Android Phone / Tablets emulator and iPhone/iPad simulators directly in your browser. The free tier includes two concurrent session with 30 minutes of usage per month. No limit on app size.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-366",
+    "name": "Argos",
+    "url": "https://argos-ci.com",
+    "category": "Dev Utilities",
+    "recommendation": "Open Source visual testing for developers. Unlimitedprojects, with 5,000 screenshots per month. Free for open-source projects.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-367",
+    "name": "Bencher",
+    "url": "https://bencher.dev/",
+    "category": "Dev Utilities",
+    "recommendation": "A continuous benchmarking tool suite to catch CI performance regressions. Free for all public projects.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-368",
+    "name": "BugBug",
+    "url": "https://bugbug.io/",
+    "category": "Dev Utilities",
+    "recommendation": "Lightweight test automation tool for web applications. It is easy to learn and doesn't require coding. You can run unlimited tests on your own computer for free. You also get cloud monitoring and CI/CD integration for an additional monthly fee.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-369",
+    "name": "checkbot.io",
+    "url": "https://www.checkbot.io/",
+    "category": "Dev Utilities",
+    "recommendation": "Browser extension that tests if your website follows 50+ SEO, speed and security best practices. Free tier for smaller websites.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-370",
+    "name": "Checkly",
+    "url": "https://checklyhq.com",
+    "category": "Dev Utilities",
+    "recommendation": "Code-first synthetic monitoring for modern DevOps. Monitor your APIs and apps at a fraction of the price of legacy providers. Powered by a Monitoring as Code workflow and Playwright. Generous free tier for devs.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-371",
+    "name": "CORS-Tester",
+    "url": "https://cors-error.dev/cors-tester/",
+    "category": "Dev Utilities",
+    "recommendation": "A free tool for developers and API testers to check if an API is CORS-enabled for a given domain and identify gaps. Get actionable insights.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-372",
+    "name": "cypress.io",
+    "url": "https://www.cypress.io/",
+    "category": "Dev Utilities",
+    "recommendation": "Fast, easy and reliable testing for anything that runs in a browser. Cypress Test Runner is always free and open-source with no restrictions and limitations. Cypress Dashboard is free for open-source projects for up to 5 users.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-373",
+    "name": "everystep-automation.com",
+    "url": "https://www.everystep-automation.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Records and replays all steps made in a web browser and creates scripts, free with fewer options",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-374",
+    "name": "gridlastic.com",
+    "url": "https://www.gridlastic.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Selenium Grid testing with a free plan of up to 4 simultaneous selenium nodes/10 grid starts/4,000 test minutes/month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-375",
+    "name": "katalon.com",
+    "url": "https://katalon.com",
+    "category": "Dev Utilities",
+    "recommendation": "Provides a testing platform that can help teams of all sizes at different levels of testing maturity, including  Katalon Studio, TestOps (+ Visual Testing free), TestCloud, and Katalon Recorder.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-376",
+    "name": "Keploy",
+    "url": "https://keploy.io/",
+    "category": "Dev Utilities",
+    "recommendation": "Keploy is a functional testing toolkit for developers. Recording API calls generates E2E tests for APIs (KTests) and mocks or stubs(KMocks). It is free for Open Source projects.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-377",
+    "name": "loadmill.com",
+    "url": "https://www.loadmill.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Automatically create API and load tests by analyzing network traffic. Simulate up to 50 concurrent users for up to 60 minutes for free monthly.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-378",
+    "name": "lost-pixel.com",
+    "url": "https://lost-pixel.com",
+    "category": "Dev Utilities",
+    "recommendation": "holistic visual regression testing for your Storybook, Ladle, Histoire stories and Web Apps. Unlimited team members, totally free for open-source, 7,000 snapshots/month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-379",
+    "name": "pagegym.com",
+    "url": "https://pagegym.com",
+    "category": "Dev Utilities",
+    "recommendation": "Load behvariour and page speed analysis and optimization tool. The free plan provides 10 tests per day, 5 experiments per week, and 15 GB of maximum ingested data per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-380",
+    "name": "percy.io",
+    "url": "https://percy.io",
+    "category": "Dev Utilities",
+    "recommendation": "Add visual testing to any web app, static site, style guide, or component library.  Unlimited team members, Demo app, and unlimited projects, 5,000 snapshots/month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-381",
+    "name": "qase.io",
+    "url": "https://qase.io",
+    "category": "Dev Utilities",
+    "recommendation": "Test management system for Dev and QA teams. Manage test cases, compose test runs, perform tests, track defects, and measure impact. The free tier includes all core features, with 500MB available for attachments and up to 3 users.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-382",
+    "name": "Repeato",
+    "url": "https://repeato.app/",
+    "category": "Dev Utilities",
+    "recommendation": "No-code mobile app test automation tool built on top of computer vision and AI.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-383",
+    "name": "Requestly",
+    "url": "https://requestly.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Open-source Chrome Extension to Intercept, Redirect and Mock HTTP Requests.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-384",
+    "name": "seotest.me",
+    "url": "https://seotest.me/",
+    "category": "Dev Utilities",
+    "recommendation": "Free on-page SEO website tester. 10 free website crawls per day. Useful SEO learning resources and recommendations on how to improve the on-page SEO results for any website regardless of technology.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-385",
+    "name": "snippets.uilicious.com",
+    "url": "https://snippets.uilicious.com",
+    "category": "Dev Utilities",
+    "recommendation": "It's like CodePen but for cross-browser testing. UI-licious lets you write tests like user stories and offers a free platform - UI-licious Snippets - that allows you to run unlimited tests on Chrome with no sign-up required for up to 3 minutes per test run. Found a bug? You can copy the unique URL to your test to show your devs exactly how to reproduce the bug.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-386",
+    "name": "SSR (Server-side Rendering) Checker",
+    "url": "https://www.crawlably.com/ssr-checker/",
+    "category": "Dev Utilities",
+    "recommendation": "Check SSR (server-side rendering) for any URL by visually comparing the server rendered version of the page with the regular version.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-387",
+    "name": "testingbot.com",
+    "url": "https://testingbot.com/",
+    "category": "Dev Utilities",
+    "recommendation": "Selenium Browser and Device Testing, [free for Open Source](https://testingbot.com/open-source)",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-388",
+    "name": "Testspace.com",
+    "url": "https://testspace.com/",
+    "category": "Dev Utilities",
+    "recommendation": "A Dashboard for publishing automated test results and a Framework for implementing manual tests as code using GitHub. The service is [free for Open Source](https://github.com/marketplace/testspace-com) and accounts for 450 monthly results.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-389",
+    "name": "tesults.com",
+    "url": "https://www.tesults.com",
+    "category": "Dev Utilities",
+    "recommendation": "Test results reporting and test case management. Integrates with popular test frameworks. Open Source software developers, individuals, educators, and small teams getting started can request discounted and free offerings beyond basic free projects.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-390",
+    "name": "UseWebhook.com",
+    "url": "https://usewebhook.com",
+    "category": "Dev Utilities",
+    "recommendation": "Capture and inspect webhooks from your browser. Forward to localhost, or replay from history. Free to use.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-391",
+    "name": "Vaadin",
+    "url": "https://vaadin.com",
+    "category": "Dev Utilities",
+    "recommendation": "Build scalable UIs in Java or TypeScript, and use the integrated tooling, components, and design system to iterate faster, design better, and simplify the development process. Unlimited Projects with five years of free maintenance.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-392",
+    "name": "webhook-test.com",
+    "url": "https://webhook-test.com",
+    "category": "Dev Utilities",
+    "recommendation": "Debug and inspect webhooks and HTTP requests with a unique URL during integration. Completely free, you can create unlimited URLs and receive recommendations.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-393",
+    "name": "webhook.site",
+    "url": "https://webhook.site",
+    "category": "Dev Utilities",
+    "recommendation": "Verify webhooks, outbound HTTP requests, or emails with a custom URL. A temporary URL and email address are always free.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-394",
+    "name": "websitepulse.com",
+    "url": "https://www.websitepulse.com/tools/",
+    "category": "Dev Utilities",
+    "recommendation": "Various free network and server tools.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-395",
+    "name": "kogiQA",
+    "url": "https://kogiqa.com",
+    "category": "Dev Utilities",
+    "recommendation": "A web UI automation tool that functions without the need for selectors. Every developer gets 500 actions per month for free.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-396",
+    "name": "aikido.dev",
+    "url": "https://www.aikido.dev",
+    "category": "General Resources",
+    "recommendation": "All-in-one appsec platform covering SCA, SAST, CSPM, DAST, Secrets, IaC, Malware, Container scanning, EOL,... Free plan includes two users, scanning of 10 repos, 1 cloud, 2 containers & 1 domain.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-397",
+    "name": "CertKit",
+    "url": "https://www.certkit.io/certificate-management",
+    "category": "General Resources",
+    "recommendation": "Manage SSL Certificate issuance, renewal, and monitoring. Search the Certificate Transparency Logs. Free for 3 certificates and 1 user after the beta.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-398",
+    "name": "Corgea",
+    "url": "https://corgea.com/",
+    "category": "General Resources",
+    "recommendation": "Free autonomous security platform that finds, validates and fixes insecure code and packages across +20 languages and frameworks. Free plan includes 1 user and 2 repos.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-399",
+    "name": "crypteron.com",
+    "url": "https://www.crypteron.com/",
+    "category": "General Resources",
+    "recommendation": "Cloud-first, developer-friendly security platform prevents data breaches in .NET and Java applications",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-400",
+    "name": "CyberChef",
+    "url": "https://gchq.github.io/CyberChef/",
+    "category": "General Resources",
+    "recommendation": "A simple, intuitive web app for analyzing and decoding/encoding data without dealing with complex tools or programming languages. Like a Swiss army knife of cryptography & encryption. All features are free to use, with no limit. Open source if you wish to self-host.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-401",
+    "name": "Datree",
+    "url": "https://www.datree.io/",
+    "category": "General Resources",
+    "recommendation": "Open Source CLI tool to prevent Kubernetes misconfigurations by ensuring that manifests and Helm charts follow best practices as well as your organization’s policies",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-402",
+    "name": "Dependabot",
+    "url": "https://dependabot.com/",
+    "category": "General Resources",
+    "recommendation": "Automated dependency updates for Ruby, JavaScript, Python, PHP, Elixir,",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-403",
+    "name": "DJ Checkup",
+    "url": "https://djcheckup.com",
+    "category": "General Resources",
+    "recommendation": "Scan your Django site for security flaws with this free, automated checkup tool. Forked from the Pony Checkup site.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-404",
+    "name": "Doppler",
+    "url": "https://doppler.com/",
+    "category": "General Resources",
+    "recommendation": "Universal Secrets Manager for application secrets and config, with support for syncing to various cloud providers. Free for five users with basic access controls.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-405",
+    "name": "Dotenv",
+    "url": "https://dotenv.org/",
+    "category": "General Resources",
+    "recommendation": "Sync your .env files, quickly & securely. Stop sharing your .env files over insecure channels like Slack and email, and never lose an important .env file again. Free for up to 3 teammates.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-406",
+    "name": "GitGuardian",
+    "url": "https://www.gitguardian.com",
+    "category": "General Resources",
+    "recommendation": "Keep secrets out of your source code with automated secrets detection and remediation. Scan your git repos for 350+ types of secrets and sensitive files - Free for individuals and teams of 25 developers or less.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-407",
+    "name": "HasMySecretLeaked",
+    "url": "https://gitguardian.com/hasmysecretleaked",
+    "category": "General Resources",
+    "recommendation": "Search across 20 million exposed secrets in public GitHub repositories, gists, issues,and comments for Free",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-408",
+    "name": "Have I been pwned?",
+    "url": "https://haveibeenpwned.com",
+    "category": "General Resources",
+    "recommendation": "REST API for fetching the information on the breaches.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-409",
+    "name": "hostedscan.com",
+    "url": "https://hostedscan.com",
+    "category": "General Resources",
+    "recommendation": "Online vulnerability scanner for web applications, servers, and networks. Ten free scans per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-410",
+    "name": "Infisical",
+    "url": "https://infisical.com/",
+    "category": "General Resources",
+    "recommendation": "Open source platform that lets you manage developer secrets across your team and infrastructure: everywhere from local development to staging/production 3rd-party services. Free for up to 5 developers.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-411",
+    "name": "Internet.nl",
+    "url": "https://internet.nl",
+    "category": "General Resources",
+    "recommendation": "Test for modern Internet Standards like IPv6, DNSSEC, HTTPS, DMARC, STARTTLS and DANE",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-412",
+    "name": "IntoDNS.ai",
+    "url": "https://intodns.ai",
+    "category": "General Resources",
+    "recommendation": "DNS and email security analyzer that checks SPF, DKIM, DMARC, DNSSEC, BIMI, MTA-STS, and 40+ blacklists with AI-powered explanations and fix suggestions. 100% free, no signup required.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-413",
+    "name": "letsencrypt.org",
+    "url": "https://letsencrypt.org/",
+    "category": "General Resources",
+    "recommendation": "Free SSL Certificate Authority with certs trusted by all major browsers",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-414",
+    "name": "meterian.io",
+    "url": "https://www.meterian.io/",
+    "category": "General Resources",
+    "recommendation": "Monitor Java, Javascript, .NET, Scala, Ruby, and NodeJS projects for security vulnerabilities in dependencies. Free for one private project, unlimited projects for open source.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-415",
+    "name": "Mozilla Observatory",
+    "url": "https://observatory.mozilla.org/",
+    "category": "General Resources",
+    "recommendation": "Find and fix security vulnerabilities in your site.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-416",
+    "name": "Project Gatekeeper",
+    "url": "https://gatekeeper.binarybiology.top/",
+    "category": "General Resources",
+    "recommendation": "An All-in-One SSL Toolkit Offering various features like Private Key & CSR Generator, SSL Certificate Decoder, Certificate Matcher and Order SSL Certificate. We offer the users to generate Free SSL Certificates from Let's Encrypt, Google Trust and BuyPass using CNAME Records rather than TXT Records.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-417",
+    "name": "Protectumus",
+    "url": "https://protectumus.com",
+    "category": "General Resources",
+    "recommendation": "Free website security check, site antivirus, and server firewall (WAF) for PHP. Email notifications for registered users in the free tier.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-418",
+    "name": "Public Cloud Threat Intelligence",
+    "url": "https://cloudintel.himanshuanand.com/",
+    "category": "General Resources",
+    "recommendation": "High confidence Indicator of Compromise(IOC) targeting public cloud infrastructure, A portion is available on github (https://github.com/unknownhad/AWSAttacks). Full list is available via API",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-419",
+    "name": "pyup.io",
+    "url": "https://pyup.io",
+    "category": "General Resources",
+    "recommendation": "Monitor Python dependencies for security vulnerabilities and update them automatically. Free for one private project, unlimited projects for open source.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-420",
+    "name": "qualys.com",
+    "url": "https://www.qualys.com/community-edition",
+    "category": "General Resources",
+    "recommendation": "Find web app vulnerabilities, audit for OWASP Risks",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-421",
+    "name": "SikkerKey",
+    "url": "https://sikkerkey.com",
+    "category": "General Resources",
+    "recommendation": "Machine authenticated secrets manager, includes 2 projects, 2 bootstrapped machines, 20 secrets and 7 days audit log retention for free.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-422",
+    "name": "Smart Grow Vault",
+    "url": "https://vault.smart-grow.app/",
+    "category": "General Resources",
+    "recommendation": "Secure Enterprise-grade platform for managing environment variables and secrets. Free tier includes up to 3 applications and 150 secrets per project.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-423",
+    "name": "Socket",
+    "url": "https://socket.dev",
+    "category": "General Resources",
+    "recommendation": "Free supply chain security for individual developers, small teams, and open source projects. Includes a free app and firewall CLI tool to protect your code from vulnerable and malicious dependencies. Detects 70+ indicators of supply chain risk.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-424",
+    "name": "SOOS",
+    "url": "https://soos.io",
+    "category": "General Resources",
+    "recommendation": "Free, unlimited SCA scans for open-source projects. Detect and fix security threats before release. Protect your projects with a simple and effective solution.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-425",
+    "name": "ssllabs.com",
+    "url": "https://www.ssllabs.com/ssltest/",
+    "category": "General Resources",
+    "recommendation": "Intense analysis of the configuration of any SSL web server",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-426",
+    "name": "Sucuri SiteCheck",
+    "url": "https://sitecheck.sucuri.net",
+    "category": "General Resources",
+    "recommendation": "Free website security check and malware scanner",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-427",
+    "name": "TestTLS.com",
+    "url": "https://testtls.com",
+    "category": "General Resources",
+    "recommendation": "Test an SSL/TLS service for secure server configuration, certificates, chains, etc. Not limited to HTTPS.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-428",
+    "name": "Virgil Security",
+    "url": "https://virgilsecurity.com/",
+    "category": "General Resources",
+    "recommendation": "Tools and services for implementing end-to-end encryption, database protection, IoT security, and more in your digital solution. Free for applications with up to 250 users.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-429",
+    "name": "360username",
+    "url": "https://360username.com/",
+    "category": "General Resources",
+    "recommendation": "A free tool to search a username across 90+ social platforms to find matching profiles.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-430",
+    "name": "Aserto",
+    "url": "https://www.aserto.com",
+    "category": "General Resources",
+    "recommendation": "Fine-grained authorization as a service for applications and APIs. Free up to 1000 MAUs and 100 authorizer instances.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-431",
+    "name": "asgardeo.io",
+    "url": "https://wso2.com/asgardeo",
+    "category": "General Resources",
+    "recommendation": "Seamless Integration of SSO, MFA, passwordless auth and more. Includes SDKs for frontend and backend apps. Free up to 1000 MAUs and five identity providers.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-432",
+    "name": "Auth0",
+    "url": "https://auth0.com/",
+    "category": "General Resources",
+    "recommendation": "Hosted SSO. The free plan includes 25,000 MAUs, unlimited Social Connections, a custom domain, and more.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-433",
+    "name": "Authgear",
+    "url": "https://www.authgear.com",
+    "category": "General Resources",
+    "recommendation": "Bring Passwordless, OTPs, 2FA, SSO to your apps in minutes. All Front-end included. Free up to 5000 MAUs.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-434",
+    "name": "Authress",
+    "url": "https://authress.io/",
+    "category": "General Resources",
+    "recommendation": "Authentication login and access control, unlimited identity providers for any project. Facebook, Google, Twitter and more. The first 1000 API calls are free.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-435",
+    "name": "Authy",
+    "url": "https://authy.com",
+    "category": "General Resources",
+    "recommendation": "Two-factor authentication (2FA) on multiple devices, with backups. Drop-in replacement for Google Authenticator. Free for up to 100 successful authentications.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-436",
+    "name": "Cerbos Hub",
+    "url": "https://www.cerbos.dev/product-cerbos-hub",
+    "category": "General Resources",
+    "recommendation": "A complete authorization management system for authoring, testing, and deploying access policies. Fine-grained authorization and access control, free up to 100 monthly active principals.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-437",
+    "name": "Clerk",
+    "url": "https://clerk.com",
+    "category": "General Resources",
+    "recommendation": "User management, authentication, 2FA/MFA, prebuilt UI components for sign-in, sign-up, user profiles, and more. Free plan includes unlimited applications, 50,000 MRU limit per app, 3 dashboard seats, and more.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-438",
+    "name": "Cloud-IAM",
+    "url": "https://www.cloud-iam.com/",
+    "category": "General Resources",
+    "recommendation": "Keycloak Identity and Access Management as a Service. Free up to 100 users and one realm.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-439",
+    "name": "Descope",
+    "url": "https://www.descope.com/",
+    "category": "General Resources",
+    "recommendation": "Highly customizable AuthN flows, has both a no-code and API/SDK approach, Free 7,500 active users/month, 50 tenants (up to 5 SAML/SSO tenants).",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-440",
+    "name": "duo.com",
+    "url": "https://duo.com/",
+    "category": "General Resources",
+    "recommendation": "Two-factor authentication (2FA) for website or app. Free for ten users, all authentication methods, unlimited, integrations, hardware tokens.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-441",
+    "name": "Kinde",
+    "url": "https://kinde.com/",
+    "category": "General Resources",
+    "recommendation": "Simple, robust authentication you can integrate with your product in minutes.  Everything you need to get started with 7,500 free MAU.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-442",
+    "name": "logintc.com",
+    "url": "https://www.logintc.com/",
+    "category": "General Resources",
+    "recommendation": "Two-factor authentication (2FA) by push notifications, free for ten users, VPN, Websites, and SSH",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-443",
+    "name": "Logto",
+    "url": "https://logto.io/",
+    "category": "General Resources",
+    "recommendation": "Develop, secure, and manage user identities of your product - for both authentication and authorization. Free for up to 5,000 MAUs with open-source self-hosted option available.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-444",
+    "name": "MojoAuth",
+    "url": "https://mojoauth.com/",
+    "category": "General Resources",
+    "recommendation": "MojoAuth makes it easy to implement Passwordless authentication on your web, mobile, or any application in minutes.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-445",
+    "name": "Okta",
+    "url": "https://developer.okta.com/signup/",
+    "category": "General Resources",
+    "recommendation": "User management, authentication and authorization. Free for up to 100 monthly active users.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-446",
+    "name": "Ory",
+    "url": "https://ory.sh/",
+    "category": "General Resources",
+    "recommendation": "AuthN/AuthZ/OAuth2.0/Zero Trust managed security platform. Forever free developer accounts with all security features, unlimited team members, 200 daily active users, and 25k/mo permission checks.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-447",
+    "name": "Permit.io",
+    "url": "https://permit.io",
+    "category": "General Resources",
+    "recommendation": "Auhtorization-as-a-service provider platform enabling RBAC, ABAC, and ReBAC for scalable microservices with real-time updates and a no-code policy UI. A 1000 Monthly Active User free tier.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-448",
+    "name": "Phase Two",
+    "url": "https://phasetwo.io",
+    "category": "General Resources",
+    "recommendation": "Keycloak Open Source Identity and Access Management. Free realm up to 1000 users, up to 10 SSO connections, leveraging Phase Two's Keycloak enhanced container which includes the [Organization](https://phasetwo.io/product/organizations/) extension.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-449",
+    "name": "PropelAuth",
+    "url": "https://propelauth.com",
+    "category": "General Resources",
+    "recommendation": "A Sell to companies of any size immediately with a few lines of code, free up to 200 users and 10k Transactional Emails (with a watermark branding: \"Powered by PropelAuth\").",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-450",
+    "name": "Scalekit",
+    "url": "https://scalekit.com",
+    "category": "General Resources",
+    "recommendation": "Enterprise SSO (SAML, OIDC), SCIM provisioning, and social logins for B2B SaaS. Free tier includes 1 million MAU, 100 organizations, 1 SSO connection, and 1 SCIM connection.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-451",
+    "name": "Stack Auth",
+    "url": "https://stack-auth.com",
+    "category": "General Resources",
+    "recommendation": "Open-source authentication that doesn't suck. The most developer-friendly solution, getting you started in just five minutes. Self-hostable for free, or offers a managed SaaS version with 10k free Monthly Active Users.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-452",
+    "name": "Stytch",
+    "url": "https://www.stytch.com/",
+    "category": "General Resources",
+    "recommendation": "An all-in-one platform that provides APIs and SDKs for authentication and fraud prevention. The free plan includes 10,000 monthly active users, unlimited organizations, 5 SSO or SCIM connections, and 1,000 M2M tokens.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-453",
+    "name": "SuperTokens",
+    "url": "https://supertokens.com/",
+    "category": "General Resources",
+    "recommendation": "Open source user authentication that natively integrates into your app - enabling you to get started quickly while controlling the user and developer experience. Free for up to 5000 MAUs.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-454",
+    "name": "WorkOS",
+    "url": "https://workos.com/",
+    "category": "General Resources",
+    "recommendation": "Free user management and authentication for up to 1 Million MAUs. Support email + password, social auth, Magic Auth, MFA, and more.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-455",
+    "name": "ZITADEL Cloud",
+    "url": "https://zitadel.com",
+    "category": "General Resources",
+    "recommendation": "A turnkey user and access management that works for you and supports multi-tenant (B2B) use cases. Free for up to 25,000 authenticated requests, with all security features (no paywall for OTP, Passwordless, Policies, and so on).",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-456",
+    "name": "Appho.st",
+    "url": "https://appho.st",
+    "category": "General Resources",
+    "recommendation": "Mobile app hosting platform. The free plan includes five apps, 50 monthly downloads, and a maximum file size of 100 MB.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-457",
+    "name": "Diawi",
+    "url": "https://www.diawi.com",
+    "category": "General Resources",
+    "recommendation": "Deploy iOS & Android apps directly to devices. Free plan: app uploads, password-protected links, 1-day expiration, ten installations.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-458",
+    "name": "GetUpdraft",
+    "url": "https://www.getupdraft.com",
+    "category": "General Resources",
+    "recommendation": "Distribute mobile apps for testing. The free plan includes one app project, three app versions, 500 MB storage, and 100 app installations per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-459",
+    "name": "InstallOnAir",
+    "url": "https://www.installonair.com",
+    "category": "General Resources",
+    "recommendation": "Distribute iOS & Android apps over the air. Free plan: unlimited uploads, private links, 2-day expiration for guests, 60 days for registered users.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-460",
+    "name": "Loadly",
+    "url": "https://loadly.io",
+    "category": "General Resources",
+    "recommendation": "iOS & Android beta apps distribution service offers completely free services with unlimited downloads, high-speed downloads, and unlimited uploads.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-461",
+    "name": "bitnami.com",
+    "url": "https://bitnami.com/",
+    "category": "General Resources",
+    "recommendation": "Deploy prepared apps on IaaS. Management of 1 AWS micro instance free",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-462",
+    "name": "Esper",
+    "url": "https://esper.io",
+    "category": "General Resources",
+    "recommendation": "MDM and MAM for Android Devices with DevOps. One hundred devices free with one user license and 25 MB Application Storage.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-463",
+    "name": "jamf.com",
+    "url": "https://www.jamf.com/",
+    "category": "General Resources",
+    "recommendation": "Device management for iPads, iPhones, and Macs, three devices free",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-464",
+    "name": "Miradore",
+    "url": "https://miradore.com",
+    "category": "General Resources",
+    "recommendation": "Device Management service. Stay up-to-date with your device fleet and secure unlimited devices for free. The free plan offers basic features.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-465",
+    "name": "moss.sh",
+    "url": "https://moss.sh",
+    "category": "General Resources",
+    "recommendation": "Help developers deploy and manage their web apps and servers. Free up to 25 git deployments per month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-466",
+    "name": "ploi.io",
+    "url": "https://ploi.io/",
+    "category": "General Resources",
+    "recommendation": "Server management tool to easily manage and deploy your servers & sites. Free for one server.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-467",
+    "name": "runcloud.io",
+    "url": "https://runcloud.io/",
+    "category": "General Resources",
+    "recommendation": "Server management focusing mainly on PHP projects. Free for up to 1 server.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-468",
+    "name": "serveravatar.com",
+    "url": "https://serveravatar.com",
+    "category": "General Resources",
+    "recommendation": "Manage and monitor PHP-based web servers with automated configurations. Free for one server.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-469",
+    "name": "xcloud.host",
+    "url": "https://xcloud.host",
+    "category": "General Resources",
+    "recommendation": "Server management and deployment platform with a user-friendly interface. Free tier available for one server.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-470",
+    "name": "Ably",
+    "url": "https://www.ably.com/",
+    "category": "General Resources",
+    "recommendation": "Realtime messaging service with presence, persistence and guaranteed delivery. The free plan includes 3m messages per month, 100 peak connections, and 100 peak channels.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-471",
+    "name": "cloudamqp.com",
+    "url": "https://www.cloudamqp.com/",
+    "category": "General Resources",
+    "recommendation": "RabbitMQ as a Service. Little Lemur plan: max 1 million messages/month, max 20 concurrent connections, max 100 queues, max 10,000 queued messages, multiple nodes in different AZ's",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-472",
+    "name": "courier.com",
+    "url": "https://www.courier.com/",
+    "category": "General Resources",
+    "recommendation": "Single API for push, in-app, email, chat, SMS, and other messaging channels with template management and other features. The free plan includes 10,000 messages/mo.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-473",
+    "name": "EMQX Serverless",
+    "url": "https://www.emqx.com/en/cloud/serverless-mqtt",
+    "category": "General Resources",
+    "recommendation": "Scalable and secure serverless MQTT broker you can get in seconds. 1M session minutes/month free forever (no credit card required).",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-474",
+    "name": "Engage",
+    "url": "https://engage.so/",
+    "category": "General Resources",
+    "recommendation": "All-in-one Customer Engagement and Automation Tool (email, push, SMS, product tours, banners and more) for SaaS. Free for up to 1,000 active users per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-475",
+    "name": "engagespot.co",
+    "url": "https://engagespot.co/",
+    "category": "General Resources",
+    "recommendation": "Multi-channel notification infrastructure for developers with a prebuilt in-app inbox and no-code template editor. Free plan includes 10,000 messages/mo.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-476",
+    "name": "HiveMQ",
+    "url": "https://www.hivemq.com/mqtt-cloud-broker/",
+    "category": "General Resources",
+    "recommendation": "Connect your MQTT devices to the Cloud Native IoT Messaging Broker.  Free to connect up to 100 devices (no credit card required) forever.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-477",
+    "name": "httpSMS",
+    "url": "https://httpsms.com",
+    "category": "General Resources",
+    "recommendation": "Send and receive text messages using your Android phone as an SMS Gateway. Free to send and receive up to 200 messages per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-478",
+    "name": "knock.app",
+    "url": "https://knock.app",
+    "category": "General Resources",
+    "recommendation": "Notifications infrastructure for developers. Send to multiple channels like in-app, email, SMS, Slack, and push with a single API call. The free plan includes 10,000 messages/mo.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-479",
+    "name": "Novu.co",
+    "url": "https://novu.co",
+    "category": "General Resources",
+    "recommendation": "The open-source notification infrastructure for developers. Simple components and APIs for managing all communication channels in one place: Email, SMS, Direct, In-App and Push. The free plan includes 30,000 notifications/month with 90 days of retention.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-480",
+    "name": "Pingram.io",
+    "url": "https://www.pingram.io/",
+    "category": "General Resources",
+    "recommendation": "Communication infrastructure in 5 minutes. Free tier includes: 100 SMS and calls, 3000 Emails, Push, Slack, MS Teams, WhatsApp, and more.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-481",
+    "name": "Pocket Alert",
+    "url": "https://pocketalert.app",
+    "category": "General Resources",
+    "recommendation": "Send push notifications to your iOS and Android devices. Effortlessly integrate via API or Webhooks and maintain full control over your alerts. Free plan: 50 messages per day to 1 device and 1 application.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-482",
+    "name": "pubnub.com",
+    "url": "https://www.pubnub.com/",
+    "category": "General Resources",
+    "recommendation": "Swift, Kotlin, and React messaging at 1 million transactions each month. Transactions may contain multiple messages.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-483",
+    "name": "pusher.com",
+    "url": "https://pusher.com/",
+    "category": "General Resources",
+    "recommendation": "Realtime messaging service. Free for up to 100 simultaneous connections and 200,000 messages/day",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-484",
+    "name": "scaledrone.com",
+    "url": "https://www.scaledrone.com/",
+    "category": "General Resources",
+    "recommendation": "Realtime messaging service. Free for up to 20 simultaneous connections and 100,000 events/day",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-485",
+    "name": "SMSGate",
+    "url": "https://sms-gate.app",
+    "category": "General Resources",
+    "recommendation": "SMS Gateway for Android™ enables sending and receiving SMS messages through your devices using cloud routing. Completely free cloud service (with recommended notification for usage above 10,000 messages/day to maintain quality for all users).",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-486",
+    "name": "SuprSend",
+    "url": "https://www.suprsend.com/",
+    "category": "General Resources",
+    "recommendation": "SuprSend is a notification infrastructure that streamlines your product notifications with an API-first approach. Create and deliver transactional, crons, and engagement notifications on multiple channels with a single notification API. In free plan you get 10,000 notifications per month, including different workflow nodes such as digests, batches, multi-channels, preferences, tenants, broadcasts and more.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-487",
+    "name": "synadia.com",
+    "url": "https://synadia.com/ngs",
+    "category": "General Resources",
+    "recommendation": "[NATS.io](https://nats.io) as a service. Global, AWS, GCP, and Azure. Free forever with 4k msg size, 50 active connections, and 5GB of data per month.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-488",
+    "name": "webpushr",
+    "url": "https://www.webpushr.com/",
+    "category": "General Resources",
+    "recommendation": "Web Push Notifications - Free for upto 10k subscribers, unlimited push notifications, in-browser messaging",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-489",
+    "name": "bugfender.com",
+    "url": "https://bugfender.com/",
+    "category": "General Resources",
+    "recommendation": "Free up to 100k log lines/day with 24 hours retention",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-490",
+    "name": "log.dog",
+    "url": "https://log.dog/",
+    "category": "General Resources",
+    "recommendation": "LogDog is a remote debugging/logging SDK (iOS and Android) with a web ui. Captures all logs, requests and events in real-time and allows to intercept them. Free for up to 100MB of logs every month",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-491",
+    "name": "logflare.app",
+    "url": "https://logflare.app/",
+    "category": "General Resources",
+    "recommendation": "Free for up to 12,960,000 entries per app per month, 3 days retention",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-492",
+    "name": "logtail.com",
+    "url": "https://logtail.com/",
+    "category": "General Resources",
+    "recommendation": "ClickHouse-based SQL-compatible log management. Free up to 1 GB per month, three days retention.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-493",
+    "name": "logzab.com",
+    "url": "https://logzab.com/",
+    "category": "General Resources",
+    "recommendation": "Audit trail management system. Free 1,000 user activity logs per month, 1-month retention, for up to 5 projects.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-494",
+    "name": "ManageEngine Log360 Cloud",
+    "url": "https://www.manageengine.com/cloud-siem/",
+    "category": "General Resources",
+    "recommendation": "Log Management service powered by Manage Engine. Free Plan offers 50 GB storage with 15 days Storage Retention and 7 days search.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-495",
+    "name": "openobserve.ai",
+    "url": "https://openobserve.ai/",
+    "category": "General Resources",
+    "recommendation": "200 GB Ingestion/month free, 15 Days Retention",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-496",
+    "name": "Smart Grow Logs",
+    "url": "https://logs.smart-grow.app/",
+    "category": "General Resources",
+    "recommendation": "Centralized log management platform with end-to-end encryption, real-time alerts, and multi-platform SDKs. Free tier includes up to 3.000 logs per day.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-497",
+    "name": "AutoLocalise.com",
+    "url": "https://www.autolocalise.com/",
+    "category": "General Resources",
+    "recommendation": "Instantly localize without managing translation files. Free for up to 10,000 characters/month, unlimited languages.",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-498",
+    "name": "crowdin.com",
+    "url": "https://crowdin.com/",
+    "category": "General Resources",
+    "recommendation": "Unlimited projects, unlimited strings, and collaborators for Open Source",
+    "tier": "Freemium"
+  },
+  {
+    "id": "ffd-499",
+    "name": "Free PO editor",
+    "url": "https://pofile.net/free-po-editor",
+    "category": "General Resources",
+    "recommendation": "Free for everybody",
+    "tier": "Freemium"
+  }
+]

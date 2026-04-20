@@ -2,31 +2,59 @@
 
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { gsap, ScrollTrigger } from '@lib/gsap';
-import { RESOURCE_REGISTRY } from '@lib/resource-registry';
+import { RESOURCE_REGISTRY, Resource } from '@lib/resource-registry';
+import Fuse from 'fuse.js';
 import styles from './page.module.css';
+
+const BATCH_SIZE = 24;
 
 export default function ResourcesClient() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
+  const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  const categories = ['All', 'Design Tools', 'Dev Utilities', 'Icons & Assets', 'Learning Hubs'];
+  const categories = ['All', 'Design Tools', 'Dev Utilities', 'Icons & Assets', 'Learning Hubs', 'General Resources'];
 
-  const filteredResources = useMemo(() => {
-    return RESOURCE_REGISTRY.filter(res => {
-      const matchesSearch = res.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            res.recommendation.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = activeCategory === 'All' || res.category === activeCategory;
-      return matchesSearch && matchesCategory;
+  // Initialize Fuse.js for high-fidelity fuzzy search
+  const fuse = useMemo(() => {
+    return new Fuse(RESOURCE_REGISTRY, {
+      keys: ['name', 'recommendation', 'category'],
+      threshold: 0.35, // Balanced: not too loose, not too strict
+      distance: 100,
+      ignoreLocation: true
     });
-  }, [searchTerm, activeCategory]);
+  }, []);
 
+  // Filtered & Searched Logic
+  const filteredResources = useMemo(() => {
+    let results: Resource[] = [];
+    
+    if (searchTerm.trim()) {
+      results = fuse.search(searchTerm).map(r => r.item);
+    } else {
+      results = RESOURCE_REGISTRY;
+    }
+
+    if (activeCategory !== 'All') {
+      results = results.filter(res => res.category === activeCategory);
+    }
+
+    return results;
+  }, [searchTerm, activeCategory, fuse]);
+
+  // Paginated Results
+  const displayedResources = useMemo(() => {
+    return filteredResources.slice(0, visibleCount);
+  }, [filteredResources, visibleCount]);
+
+  // Entrance Animations
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Entrance Animations
-      gsap.from(`header > *`, {
+      // Header and Toolbar stagger
+      gsap.from(`header > *, .${styles.toolbar} > *`, {
         y: 20,
         opacity: 0,
         stagger: 0.1,
@@ -34,7 +62,7 @@ export default function ResourcesClient() {
         ease: "expo.out"
       });
 
-      // Grid Scroll Reveal
+      // Grid Scroll Reveal for the initial batch
       if (gridRef.current) {
         gsap.from(`.${styles.card}`, {
           y: 40,
@@ -51,7 +79,21 @@ export default function ResourcesClient() {
     }, containerRef);
 
     return () => ctx.revert();
-  }, [filteredResources]);
+  }, []); // Only on mount
+
+  // Reveal animation for newly loaded items
+  useEffect(() => {
+    if (visibleCount > BATCH_SIZE) {
+       const newItems = document.querySelectorAll(`.${styles.card}:nth-child(n+${visibleCount - BATCH_SIZE + 1})`);
+       gsap.from(newItems, {
+         y: 30,
+         opacity: 0,
+         duration: 0.6,
+         stagger: 0.03,
+         ease: "power2.out"
+       });
+    }
+  }, [visibleCount]);
 
   const handleCopy = (id: string, text: string) => {
     navigator.clipboard.writeText(text);
@@ -59,12 +101,16 @@ export default function ResourcesClient() {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
+  const handleLoadMore = () => {
+    setVisibleCount(prev => prev + BATCH_SIZE);
+  };
+
   return (
     <div className={styles.container} ref={containerRef}>
       <header className={styles.header}>
         <h1 className={styles.title}>Developer <span className="text-gradient">Vault</span></h1>
         <p className={styles.subtitle}>
-          The ultimate "Swiss Army Knife" for high-performance engineers. Curated tools, elite recommendations, and rapid utilities.
+          The ultimate "Swiss Army Knife" for high-performance engineers. Ingesting Thousands of curated tools, elite recommendations, and rapid utilities.
         </p>
       </header>
 
@@ -75,10 +121,13 @@ export default function ResourcesClient() {
            </div>
            <input 
              type="text" 
-             placeholder="Search tools.." 
+             placeholder="Search 500+ elite tools..." 
              className={styles.searchInput}
              value={searchTerm}
-             onChange={(e) => setSearchTerm(e.target.value)}
+             onChange={(e) => {
+               setSearchTerm(e.target.value);
+               setVisibleCount(BATCH_SIZE); // Reset pagination on search
+             }}
            />
         </div>
 
@@ -87,7 +136,10 @@ export default function ResourcesClient() {
              <button 
                key={cat} 
                className={`${styles.categoryBtn} ${activeCategory === cat ? styles.active : ''}`}
-               onClick={() => setActiveCategory(cat)}
+               onClick={() => {
+                 setActiveCategory(cat);
+                 setVisibleCount(BATCH_SIZE); // Reset pagination on category change
+               }}
              >
                {cat}
              </button>
@@ -96,7 +148,7 @@ export default function ResourcesClient() {
       </div>
 
       <div className={styles.grid} ref={gridRef}>
-        {filteredResources.map((res) => (
+        {displayedResources.map((res) => (
           <div key={res.id} className={`${styles.card} halqa-card`}>
             <div className={styles.cardTop}>
                <span className={styles.categoryTag}>{res.category}</span>
@@ -132,7 +184,15 @@ export default function ResourcesClient() {
         ))}
       </div>
 
-      {filteredResources.length === 0 && (
+      {visibleCount < filteredResources.length && (
+        <div className={styles.loadMoreWrapper}>
+          <button className={styles.loadMoreBtn} onClick={handleLoadMore}>
+            Load More High-Performance Tools ({filteredResources.length - visibleCount} remaining)
+          </button>
+        </div>
+      )}
+
+      {displayedResources.length === 0 && (
          <div style={{ textAlign: 'center', padding: '4rem 0', color: 'var(--text-muted)' }}>
             No tools found matching your search. Try resetting the filters.
          </div>
