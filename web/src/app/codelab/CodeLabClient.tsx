@@ -2,10 +2,13 @@
 
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './page.module.css';
 import { REGISTRY_GROUPS, ComponentGroup, getComponentVariantData, RegistryItem } from '@lib/registry-service';
-import { gsap } from '@lib/gsap';
 import { useSearchParams, useRouter } from 'next/navigation';
+import Spotlight from '@shared/Spotlight';
+import TouchScale from '@shared/TouchScale';
+import CopyNotification from '@shared/CopyNotification';
 
 // Performance Optimization: React.memo for high-fidelity component previews
 const DynamicPreview = React.memo(({ componentName }: { componentName: string }) => {
@@ -33,13 +36,11 @@ const highlightCode = (code: string) => {
 };
 
 export default function CodeLabClient() {
-  const searchParams = useSearchParams();
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
 
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGroup, setSelectedGroup] = useState<ComponentGroup | null>(() => {
-    // Initial load from search params or first item
     if (typeof window === 'undefined') return null;
     const id = new URLSearchParams(window.location.search).get('component');
     return REGISTRY_GROUPS.find(g => g.title === id) || REGISTRY_GROUPS[0] || null;
@@ -49,7 +50,7 @@ export default function CodeLabClient() {
   const [activeStyle, setActiveStyle] = useState<'TW' | 'CSS'>('TW');
   const [currentVariantData, setCurrentVariantData] = useState<RegistryItem | null>(null);
   const [isLoadingCode, setIsLoadingCode] = useState(false);
-  const [copyStatus, setCopyStatus] = useState('');
+  const [isNotifyVisible, setIsNotifyVisible] = useState(false);
 
   // Handle Selection Change and State Sync
   useEffect(() => {
@@ -64,12 +65,6 @@ export default function CodeLabClient() {
     };
 
     loadData();
-    
-    // Animate content entrance
-    gsap.fromTo(`.${styles.contentWrapper}`, 
-      { opacity: 0, y: 10 },
-      { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }
-    );
   }, [selectedGroup, activeLang, activeStyle]);
 
   const filteredGroups = useMemo(() => {
@@ -92,10 +87,9 @@ export default function CodeLabClient() {
     if (!currentVariantData?.files?.[0]?.content) return;
     try {
       await navigator.clipboard.writeText(currentVariantData.files[0].content);
-      setCopyStatus('Copied!');
-      setTimeout(() => setCopyStatus(''), 2000);
-    } catch (e) {
-      // Slient fail
+      setIsNotifyVisible(true);
+    } catch {
+      // Silent fail
     }
   };
 
@@ -122,18 +116,32 @@ export default function CodeLabClient() {
         </div>
 
         <nav className={styles.sidebarNav}>
-          {filteredGroups.map((group) => (
-            <button 
-              key={group.title}
-              onClick={() => handleSelect(group)}
-              className={`${styles.navItem} ${selectedGroup?.title === group.title ? styles.active : ''}`}
-            >
-              <div className={styles.navItemMain}>
-                <span className={styles.navTitle}>{group.title}</span>
-              </div>
-              <span className={styles.navSubtext}>{group.variants.length} variations</span>
-            </button>
-          ))}
+          <AnimatePresence mode="popLayout">
+            {filteredGroups.map((group, index) => (
+              <motion.div
+                key={group.title}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ 
+                  type: "spring", 
+                  stiffness: 100, 
+                  damping: 20, 
+                  delay: index * 0.05 
+                }}
+              >
+                <button 
+                  onClick={() => handleSelect(group)}
+                  className={`${styles.navItem} ${selectedGroup?.title === group.title ? styles.active : ''}`}
+                >
+                  <div className={styles.navItemMain}>
+                    <span className={styles.navTitle}>{group.title}</span>
+                    {selectedGroup?.title === group.title && <motion.div layoutId="nav-active" className={styles.navActiveIndicator} />}
+                  </div>
+                  <span className={styles.navSubtext}>{group.variants.length} variations</span>
+                </button>
+              </motion.div>
+            ))}
+          </AnimatePresence>
           {filteredGroups.length === 0 && (
              <div className={styles.emptySidebar}>No components found</div>
           )}
@@ -142,86 +150,121 @@ export default function CodeLabClient() {
 
       {/* MAIN VIEW: Component Details */}
       <main className={styles.mainContainer}>
-        {selectedGroup ? (
-          <div className={styles.contentWrapper}>
-            <div className={styles.contentGrid}>
-              
-              {/* Left Column: Info & Preview */}
-              <div className={styles.infoCol}>
-                <header className={styles.contentHeader}>
-                  <div className={styles.headerTitleRow}>
+        <AnimatePresence mode="wait">
+          {selectedGroup ? (
+            <motion.div 
+              key={selectedGroup.title}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ ease: [0.19, 1, 0.22, 1], duration: 0.6 }}
+              className={styles.contentWrapper}
+            >
+              <div className={styles.contentGrid}>
+                
+                {/* Left Column: Info & Preview */}
+                <div className={styles.infoCol}>
+                  <header className={styles.contentHeader}>
                     <h1 className={styles.componentTitle}>{selectedGroup.title}</h1>
-                  </div>
-                  <p className={styles.componentDescription}>{selectedGroup.description}</p>
-                </header>
+                    <p className={styles.componentDescription}>{selectedGroup.description}</p>
+                  </header>
 
-                <div className={styles.configSection}>
-                   <div className={styles.configItem}>
-                      <span className={styles.configLabel}>Language</span>
-                      <div className={styles.tabGroup}>
-                        <button onClick={() => setActiveLang('TS')} className={`${styles.tabBtn} ${activeLang === 'TS' ? styles.active : ''}`}>TS</button>
-                        <button onClick={() => setActiveLang('JS')} className={`${styles.tabBtn} ${activeLang === 'JS' ? styles.active : ''}`}>JS</button>
+                  <div className={styles.configSection}>
+                     <div className={styles.configItem}>
+                        <span className={styles.configLabel}>Language</span>
+                        <div className={styles.tabGroup}>
+                          {['TS', 'JS'].map(lang => (
+                            <button 
+                              key={lang}
+                              onClick={() => setActiveLang(lang as 'TS' | 'JS')} 
+                              className={`${styles.tabBtn} ${activeLang === lang ? styles.active : ''}`}
+                            >
+                              {lang}
+                              {activeLang === lang && <motion.div layoutId="lang-tab" className={styles.tabActive} />}
+                            </button>
+                          ))}
+                        </div>
+                     </div>
+                     <div className={styles.configItem}>
+                        <span className={styles.configLabel}>Styles</span>
+                        <div className={styles.tabGroup}>
+                          {[
+                            { id: 'TW', label: 'Tailwind' },
+                            { id: 'CSS', label: 'CSS' }
+                          ].map(style => (
+                            <button 
+                              key={style.id}
+                              onClick={() => setActiveStyle(style.id as 'TW' | 'CSS')} 
+                              className={`${styles.tabBtn} ${activeStyle === style.id ? styles.active : ''}`}
+                            >
+                              {style.label}
+                              {activeStyle === style.id && <motion.div layoutId="style-tab" className={styles.tabActive} />}
+                            </button>
+                          ))}
+                        </div>
+                     </div>
+                  </div>
+
+                  {PRE_BUILT.includes(selectedGroup.title) && (
+                    <Spotlight className="rounded-2xl mt-8 overflow-hidden border border-border-glass shadow-2xl">
+                      <div className={styles.previewContainer}>
+                        <div className={styles.previewHeader}>Live Demo</div>
+                        <div className={styles.previewWindow}>
+                           <DynamicPreview componentName={selectedGroup.title} />
+                        </div>
                       </div>
-                   </div>
-                   <div className={styles.configItem}>
-                      <span className={styles.configLabel}>Styles</span>
-                      <div className={styles.tabGroup}>
-                        <button onClick={() => setActiveStyle('TW')} className={`${styles.tabBtn} ${activeStyle === 'TW' ? styles.active : ''}`}>Tailwind</button>
-                        <button onClick={() => setActiveStyle('CSS')} className={`${styles.tabBtn} ${activeStyle === 'CSS' ? styles.active : ''}`}>CSS</button>
-                      </div>
-                   </div>
+                    </Spotlight>
+                  )}
                 </div>
 
-                {PRE_BUILT.includes(selectedGroup.title) && (
-                  <div className={styles.previewContainer}>
-                    <div className={styles.previewHeader}>Live Demo</div>
-                    <div className={styles.previewWindow}>
-                       <DynamicPreview componentName={selectedGroup.title} />
+                {/* Right Column: Code Viewer */}
+                <div className={styles.codeCol}>
+                  <div className={styles.codeEditor}>
+                    <div className={styles.editorHeader}>
+                      <div className={styles.fileName}>
+                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                         {currentVariantData?.files?.[0]?.path || `${selectedGroup.title}.tsx`}
+                      </div>
+                      <TouchScale isLarge={false} scale={0.96}>
+                        <button onClick={copyCode} className={styles.copyAction}>
+                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                           Copy
+                        </button>
+                      </TouchScale>
                     </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Right Column: Code Viewer */}
-              <div className={styles.codeCol}>
-                <div className={styles.codeEditor}>
-                  <div className={styles.editorHeader}>
-                    <div className={styles.fileName}>
-                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                       {currentVariantData?.files?.[0]?.path || `${selectedGroup.title}.tsx`}
-                    </div>
-                    <button onClick={copyCode} className={styles.copyAction}>
-                      {copyStatus || (
-                        <>
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                          Copy
-                        </>
+                    <div className={styles.codeViewport}>
+                      {isLoadingCode ? (
+                        <div className={styles.viewerLoading}>
+                           <div className={styles.loaderSpinner} />
+                           <span>Syncing from registry...</span>
+                        </div>
+                      ) : (
+                        <pre className={styles.preContent} dangerouslySetInnerHTML={highlightCode(currentVariantData?.files?.[0]?.content || '/* Source not found in registry */')} />
                       )}
-                    </button>
-                  </div>
-                  <div className={styles.codeViewport}>
-                    {isLoadingCode ? (
-                      <div className={styles.viewerLoading}>
-                         <div className={styles.loaderSpinner} />
-                         <span>Syncing from registry...</span>
-                      </div>
-                    ) : (
-                      <pre className={styles.preContent} dangerouslySetInnerHTML={highlightCode(currentVariantData?.files?.[0]?.content || '/* Source not found in registry */')} />
-                    )}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-            </div>
-          </div>
-        ) : (
-          <div className={styles.emptyPrompt}>
-            <div className={styles.promptIcon}>🧬</div>
-            <h2>Registry Explorer</h2>
-            <p>Select an architectural pattern from the sidebar to inspect the source code.</p>
-          </div>
-        )}
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className={styles.emptyPrompt}
+            >
+              <div className={styles.promptIcon}>🧬</div>
+              <h2>Registry Explorer</h2>
+              <p>Select an architectural pattern from the sidebar to inspect the source code.</p>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </main>
+
+      <CopyNotification 
+        isVisible={isNotifyVisible} 
+        onClose={() => setIsNotifyVisible(false)} 
+      />
     </div>
   );
 }

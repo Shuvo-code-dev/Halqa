@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { REGISTRY_GROUPS } from '@lib/registry-service';
 import dynamic from 'next/dynamic';
 import TouchScale from '@/components/shared/TouchScale';
+import Magnetic from '@/components/shared/Magnetic';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 // Register GSAP plugins
@@ -22,15 +23,15 @@ const GlitchText = dynamic(() => import('@modules/codelab/presets/GlitchText'), 
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
   
-  // Featured Components (Case-Insensitive Target + Reliable Fallback)
+  // Featured Components
   const featuredLabs = useMemo(() => {
     const targets = ['ballpit', 'glitchtext', 'halqaqr'];
     const found = REGISTRY_GROUPS.filter(group => 
       targets.includes(group.title.toLowerCase())
     );
     
-    // Ensure we always have 3 items
     if (found.length < 3) {
       const remaining = REGISTRY_GROUPS.filter(group => 
         !targets.includes(group.title.toLowerCase())
@@ -49,6 +50,24 @@ export default function Home() {
         .to(`.${styles.title}`, { opacity: 1, y: 0, duration: 1, ease: "expo.out" }, "-=0.6")
         .to(`.${styles.subtitle}`, { opacity: 1, y: 0, duration: 0.8, ease: "expo.out" }, "-=0.7")
         .to(`.${styles.actions}`, { opacity: 1, y: 0, duration: 0.8, ease: "expo.out" }, "-=0.7");
+
+      // Continuous Ambient Motion for Hero
+      gsap.to(`.${styles.heroBadge}`, {
+        y: "+=10",
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      });
+
+      gsap.to(`.${styles.title}`, {
+        y: "+=8",
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: 0.5
+      });
 
       // Featured Labs Reveal
       gsap.from(`.${styles.labCard}`, {
@@ -110,25 +129,27 @@ export default function Home() {
   return (
     <div className={styles.homeContainer} ref={containerRef}>
       {/* --- HERO --- */}
-      <section className={styles.hero}>
+      <section className={styles.hero} ref={heroRef}>
         <div className={styles.heroBadge}>
           <Sparkles className="w-3 h-3 inline-block mr-2" />
-          YOUR ULTIMATE DEVELOPMENT RESOURCE PLATFORM
+          YOUR ULTIMATE DEVELOPMENT RESOURCE PROJECT
         </div>
         <h1 className={styles.title}>
           Master Coding, <br />
           <span className="text-gradient">Without the Noise.</span>
         </h1>
         <p className={styles.subtitle}>
-          The minimalist developer ecosystem. High-performance roadmaps, premium UI components, and curated resources for modern engineers.
+          The minimalist developer resource. High-performance roadmaps, premium UI components, and curated documentation for modern engineers.
         </p>
         <div className={styles.actions}>
-          <TouchScale isLarge={false} scale={0.96}>
-            <Link href="/roadmaps" className={styles.primaryBtn}>
-              Start with Roadmaps
-              <ArrowRight className="w-4 h-4 ml-1" />
-            </Link>
-          </TouchScale>
+          <Magnetic>
+            <TouchScale isLarge={false} scale={0.96}>
+              <Link href="/roadmaps" className={styles.primaryBtn}>
+                Start with Roadmaps
+                <ArrowRight className="w-4 h-4 ml-1" />
+              </Link>
+            </TouchScale>
+          </Magnetic>
           <TouchScale isLarge={false} scale={0.96}>
             <Link href="/codelab" className={styles.secondaryBtn}>
               Explore Code Lab
@@ -216,7 +237,7 @@ export default function Home() {
           <TouchScale isLarge={true}>
             <div className={`${styles.bentoItem} glass-panel`}>
                <span className={styles.bentoIcon}>📊</span>
-               <h3 className={styles.bentoTitle}>Ecosystem Stats</h3>
+               <h3 className={styles.bentoTitle}>Resource Stats</h3>
                <div style={{ marginTop: 'auto', width: '100%' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', borderBottom: '1px solid var(--border-glass)', paddingBottom: '0.5rem' }}>
                       <span style={{ color: 'var(--text-muted)' }}>Roadmaps</span>
@@ -227,8 +248,8 @@ export default function Home() {
                       <span style={{ fontWeight: 800 }}>500+</span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ color: 'var(--text-muted)' }}>Free Resources</span>
-                      <span style={{ fontWeight: 800 }}>1000+</span>
+                      <span style={{ color: 'var(--text-muted)' }}>Public APIs</span>
+                      <span style={{ fontWeight: 800 }}>260+</span>
                   </div>
                </div>
             </div>
@@ -282,9 +303,11 @@ export default function Home() {
       <section className={styles.ctaSection}>
          <h2 className={styles.ctaTitle}>Ready to <br/><span className="text-gradient">Elevate?</span></h2>
          <TouchScale isLarge={true}>
-           <Link href="https://github.com/Shuvo-code-dev/Halqa/" className={styles.primaryBtn} style={{ display: 'inline-flex', padding: '1.5rem 4rem', fontSize: '1.4rem' }}>
-              Join the Halqa Network
-           </Link>
+           <Magnetic>
+             <Link href="https://github.com/Shuvo-code-dev/Halqa/" className={styles.primaryBtn} style={{ display: 'inline-flex', padding: '1.5rem 4rem', fontSize: '1.4rem' }}>
+                Join the Halqa Network
+             </Link>
+           </Magnetic>
          </TouchScale>
       </section>
     </div>

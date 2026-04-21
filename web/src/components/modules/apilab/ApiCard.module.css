@@ -6,16 +6,19 @@
   border: 1px solid var(--border-glass);
   border-radius: 16px;
   height: 100%;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   position: relative;
   overflow: hidden;
 }
 
 .container:hover {
-  transform: translateY(-4px);
+  transform: translateY(-8px); /* Increased lift */
   border-color: rgba(45, 212, 191, 0.4);
   background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--accent-glow);
+  /* 3D Layering Shadow */
+  box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.7), 
+    0 0 20px -5px var(--accent-glow);
 }
 
 /* Industrial Reflection Effect */
@@ -80,6 +83,7 @@
   margin-bottom: 2rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   flex-grow: 1;

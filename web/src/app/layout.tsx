@@ -12,6 +12,8 @@ import QuickAccess from "@shared/QuickAccess";
 import StatusBar from "@shared/StatusBar";
 import NoiseOverlay from "@shared/NoiseOverlay";
 import NextTopLoader from 'nextjs-toploader';
+import ScrollProgress from "@shared/ScrollProgress";
+import PageTransition from "@/components/shared/PageTransition";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -73,14 +75,23 @@ export default function RootLayout({
             speed={200}
             shadow="0 0 10px var(--accent), 0 0 5px var(--accent)"
         />
+        
+        {/* Scroll Progress Indicator */}
+        <ScrollProgress />
+
         <UserProvider>
           <AIProvider>
             <div className={styles.mainLayout}>
               <StatusBar />
               <Navbar />
-              <main className={styles.mainContent}>
-                {children}
-              </main>
+              
+              {/* Premium Page Transitions */}
+              <PageTransition>
+                <main className={styles.mainContent}>
+                  {children}
+                </main>
+              </PageTransition>
+
               <Footer />
               <AIAgent />
               <MeshBackground />
