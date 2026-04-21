@@ -4,8 +4,8 @@ import { NextResponse } from "next/server";
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY || "");
 
 const SYSTEM_PROMPT = `
-You are the "Halqa Brain", the central artificial intelligence of the Halqa (حلقة) platform. 
-Halqa is a premium, high-density developer ecosystem designed to turn "noise into mastery".
+You are the "Halqa Brain", the central artificial intelligence of the Halqa (حلقة). 
+Halqa is a premium, high-density developer resource designed to turn "noise into mastery".
 
 Your Goal:
 Empower developers by providing expert guidance on roadmaps, code components, and public APIs. 

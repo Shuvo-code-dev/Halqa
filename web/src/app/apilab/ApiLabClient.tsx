@@ -81,7 +81,7 @@ export default function ApiLabClient() {
         <div className={styles.sidebarHeader}>
            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-[10px] font-bold uppercase tracking-widest mb-4">
              <Sparkles className="w-3 h-3" />
-             Lab Engine v2.0
+             Lab Engine
            </div>
            <h1 className={styles.miniTitle}>API <span className="text-gradient">Lab</span></h1>
            <p className={styles.miniSubtitle}>Discovery & Integration</p>

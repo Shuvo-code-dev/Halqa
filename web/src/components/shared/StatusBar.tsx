@@ -16,8 +16,8 @@ export default function StatusBar() {
         {/* Right section removed to strip redundancy (Bookmarks/Sync) */}
         <div className={styles.right}>
             <div className={styles.item}>
-                <span className={styles.label}>Platform:</span>
-                <span className={styles.value}>Halqa V2.0</span>
+                <span className={styles.label}>CORE</span>
+                <span className={styles.value}>Halqa</span>
             </div>
         </div>
       </div>
