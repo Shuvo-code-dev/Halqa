@@ -1,6 +1,4 @@
-import publicApisData from './public_apis.json';
 import curatedApisData from './apilab-registry.json';
-import { slugify } from './utils';
 
 export interface PublicApi {
   id: string; // Slug for deep linking
@@ -8,7 +6,7 @@ export interface PublicApi {
   description: string;
   link: string;
   auth: string;
-  https: boolean | string; // Handle both boolean from public and string from curated
+  https: string; 
   cors: string;
   category: string;
   endpoint?: string;
@@ -21,29 +19,6 @@ export interface ApiCategory {
   name: string;
   count: number;
 }
-
-interface RawApi {
-  name: string;
-  description: string;
-  link: string;
-  auth: string;
-  https: boolean;
-  cors: string;
-}
-
-interface RawCategory {
-  name: string;
-  count: number;
-  apis: RawApi[];
-}
-
-interface RawData {
-  total_categories: number;
-  total_apis: number;
-  categories: RawCategory[];
-}
-
-const data = publicApisData as unknown as RawData;
 
 /**
  * Interface representing the structure of curated registry items
@@ -71,41 +46,21 @@ const curatedApis: PublicApi[] = (curatedApisData as CuratedApiSource[]).map(api
 }));
 
 /**
- * Returns a flattened list of all APIs, including curated ones prioritized first.
+ * Returns a flattened list of all curated industrial APIs.
  */
 export const getFlattenedApis = (): PublicApi[] => {
-  const flattened: PublicApi[] = [...curatedApis];
-  const usedSlugs = new Set<string>(curatedApis.map(a => a.id));
-  
-  data.categories.forEach((category: RawCategory) => {
-    category.apis.forEach((api: RawApi) => {
-      const baseSlug = `${slugify(api.name)}-${slugify(category.name)}`;
-      
-      let finalSlug = baseSlug;
-      let counter = 1;
-      
-      while (usedSlugs.has(finalSlug)) {
-        finalSlug = `${baseSlug}-${counter}`;
-        counter++;
-      }
-      
-      usedSlugs.add(finalSlug);
-      
-      flattened.push({
-        ...api,
-        id: finalSlug,
-        category: category.name
-      });
-    });
-  });
-  
-  return flattened;
+  return [...curatedApis];
 };
 
 export const getApiCategories = (): ApiCategory[] => {
-  return data.categories.map((cat: RawCategory) => ({
-    name: cat.name,
-    count: cat.count
+  const categoriesMap = curatedApis.reduce((acc, api) => {
+    acc[api.category] = (acc[api.category] || 0) + 1;
+    return acc;
+  }, {} as Record<string, number>);
+
+  return Object.entries(categoriesMap).map(([name, count]) => ({
+    name,
+    count
   }));
 };
 
@@ -127,10 +82,5 @@ export const filterApis = (
 };
 
 export const getApiById = (id: string): PublicApi | undefined => {
-  // First check curated, then flattened
-  const curated = curatedApis.find(api => api.id === id);
-  if (curated) return curated;
-  
-  const all = getFlattenedApis();
-  return all.find(api => api.id === id);
+  return curatedApis.find(api => api.id === id);
 };
