@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { gsap } from '@lib/gsap';
-import { Search, Filter, Layers, Database, Sparkles } from 'lucide-react';
+import { Search, Layers, Database, Sparkles } from 'lucide-react';
 import { 
   getFlattenedApis, 
   getApiCategories, 
@@ -11,6 +11,8 @@ import {
 } from '@/lib/api-service';
 import ApiCard from '@/components/modules/apilab/ApiCard';
 import EmptyState from '@/components/shared/EmptyState';
+import TouchScale from '@/components/shared/TouchScale';
+import styles from './page.module.css';
 
 const ITEMS_PER_PAGE = 24;
 
@@ -23,11 +25,11 @@ export default function ApiLabClient() {
   const containerRef = useRef<HTMLDivElement>(null);
   const loadMoreRef = useRef<HTMLDivElement>(null);
 
-  // Sync with URL ID during render to prevent cascading renders
   const currentId = searchParams.get('id');
   const allApis = useMemo(() => getFlattenedApis(), []);
   const categories = useMemo(() => getApiCategories(), []);
 
+  // Sync with URL ID
   if (currentId !== prevId) {
     setPrevId(currentId);
     if (currentId) {
@@ -39,14 +41,13 @@ export default function ApiLabClient() {
     }
   }
 
-  // Filtering Logic
   const filteredApis = useMemo(() => {
     return filterApis(allApis, searchTerm, activeCategory);
   }, [allApis, searchTerm, activeCategory]);
 
   const visibleApis = filteredApis.slice(0, visibleCount);
 
-  // GSAP Entrance Animations
+  // GSAP Entrance
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(".api-card-wrapper", {
@@ -61,7 +62,7 @@ export default function ApiLabClient() {
     return () => ctx.revert();
   }, [activeCategory, searchTerm, visibleCount]);
 
-  // Infinite Scroll
+  // Infinite Scroll Observer
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting && visibleCount < filteredApis.length) {
@@ -71,92 +72,74 @@ export default function ApiLabClient() {
 
     if (loadMoreRef.current) observer.observe(loadMoreRef.current);
     return () => observer.disconnect();
-  }, [filteredApis, visibleCount]);
+  }, [filteredApis.length, visibleCount]);
 
   return (
-    <div className="min-h-screen bg-transparent pt-32 pb-20 px-4 md:px-8 lg:px-12" ref={containerRef}>
-      {/* Header Section */}
-      <section className="max-w-7xl mx-auto mb-16 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-bold uppercase tracking-widest mb-6 animate-pulse-slow">
-          <Sparkles className="w-4 h-4" />
-          API Lab Engine v2.0
+    <div className={styles.dashboardContainer} ref={containerRef} style={{ paddingTop: '8rem' }}>
+      {/* Sidebar Navigation */}
+      <aside className={styles.sidebar}>
+        <div className={styles.sidebarHeader}>
+           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-[10px] font-bold uppercase tracking-widest mb-4">
+             <Sparkles className="w-3 h-3" />
+             Lab Engine v2.0
+           </div>
+           <h1 className={styles.miniTitle}>API <span className="text-gradient">Lab</span></h1>
+           <p className={styles.miniSubtitle}>Discovery & Integration</p>
         </div>
-        <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
-          Infinite <span className="text-gradient">Data Streams</span>
-        </h1>
-        <p className="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl leading-relaxed">
-          The most comprehensive collection of public APIs for modern engineering. 
-          Dynamic discovery, real-time filtering, and ready-to-use schemas.
-        </p>
-      </section>
 
-      {/* Search & Filter Controls */}
-      <section className="max-w-5xl mx-auto mb-16">
-        <div className="flex flex-col gap-6">
-          {/* Search Bar */}
-          <div className="relative group">
-            <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
-              <Search className="w-5 h-5 text-gray-500 group-focus-within:text-accent transition-colors" />
-            </div>
-            <input 
-              type="text"
-              placeholder="Search across 260+ production APIs..."
-              className="w-full bg-white/5 border border-white/10 rounded-2xl py-6 pl-16 pr-8 text-white text-lg focus:outline-none focus:border-accent/50 focus:ring-4 focus:ring-accent/10 transition-all placeholder:text-gray-600"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-
-          {/* Categories Pills */}
-          <div className="flex items-center gap-4 overflow-x-auto pb-4 no-scrollbar">
-            <button 
-              onClick={() => setActiveCategory('All')}
-              className={`flex items-center gap-2 px-6 py-3 rounded-xl border text-sm font-bold whitespace-nowrap transition-all ${
-                activeCategory === 'All' 
-                ? 'bg-accent text-black border-accent' 
-                : 'bg-white/5 text-gray-400 border-white/10 hover:border-white/30'
-              }`}
-            >
-              <Layers className="w-4 h-4" />
-              All Streams
-            </button>
-            {categories.map((cat) => (
-              <button 
-                key={cat.name}
-                onClick={() => setActiveCategory(cat.name)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl border text-sm font-bold whitespace-nowrap transition-all ${
-                  activeCategory === cat.name 
-                  ? 'bg-accent text-black border-accent shadow-[0_0_20px_rgba(var(--accent-rgb),0.4)]' 
-                  : 'bg-white/5 text-gray-400 border-white/10 hover:border-white/30'
-                }`}
-              >
-                {cat.name}
-                <span className={`text-[10px] px-2 py-0.5 rounded-full ${activeCategory === cat.name ? 'bg-black/20' : 'bg-white/10'}`}>
-                  {cat.count}
-                </span>
-              </button>
-            ))}
-          </div>
+        <div className={styles.searchBox}>
+           <TouchScale scale={0.98}>
+              <div className="relative group">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 group-focus-within:text-accent transition-colors" />
+                <input 
+                  type="text"
+                  placeholder="Search streams..."
+                  className={styles.sidebarSearch}
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
+           </TouchScale>
         </div>
-      </section>
 
-      {/* Results Meta */}
-      <section className="max-w-7xl mx-auto mb-8 flex items-center justify-between">
-        <div className="flex items-center gap-4 text-gray-500 text-sm font-medium">
-          <Database className="w-4 h-4" />
-          <span>Showing {filteredApis.length} results</span>
-          {activeCategory !== 'All' && (
-            <span className="flex items-center gap-2">
-              in <span className="text-white px-2 py-0.5 bg-white/10 rounded-lg">{activeCategory}</span>
-            </span>
-          )}
+        <div className="mt-4">
+           <h3 className={styles.sidebarTitle}>Categories</h3>
+           <nav className={styles.categoryList}>
+             <TouchScale scale={0.98} className="w-full">
+               <button 
+                 onClick={() => setActiveCategory('All')}
+                 className={`${styles.filterBtn} ${activeCategory === 'All' ? styles.active : ''} w-full flex items-center gap-2`}
+               >
+                 <Layers className="w-4 h-4" />
+                 All Streams
+               </button>
+             </TouchScale>
+             {categories.map((cat) => (
+               <TouchScale key={cat.name} scale={0.98} className="w-full">
+                 <button 
+                   onClick={() => setActiveCategory(cat.name)}
+                   className={`${styles.filterBtn} ${activeCategory === cat.name ? styles.active : ''} w-full flex items-center justify-between`}
+                 >
+                   <span>{cat.name}</span>
+                   <span className="text-[10px] opacity-50">{cat.count}</span>
+                 </button>
+               </TouchScale>
+             ))}
+           </nav>
         </div>
-      </section>
+      </aside>
 
-      {/* API Grid */}
-      <main className="max-w-7xl mx-auto">
+      {/* Main Results Area */}
+      <main className={styles.mainContent}>
+        <div className={styles.resultMeta}>
+           <div className="flex items-center gap-4">
+             <Database className="w-4 h-4" />
+             <span>Showing {filteredApis.length} artifacts across {activeCategory}</span>
+           </div>
+        </div>
+
         {visibleApis.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className={styles.grid}>
             {visibleApis.map((api) => (
               <ApiCard key={api.id} api={api} />
             ))}
@@ -164,19 +147,15 @@ export default function ApiLabClient() {
         ) : (
           <EmptyState 
             title="Data Stream Empty" 
-            message={`We couldn't find any APIs matching "${searchTerm}" in the ${activeCategory} category.`}
+            message={`Zero results detected for "${searchTerm}" in the current matrix.`}
             icon="filter"
           />
         )}
 
-        {/* Infinite Scroll Trigger */}
+        {/* Load More Indicator */}
         {visibleCount < filteredApis.length && (
-          <div ref={loadMoreRef} className="py-20 flex justify-center">
-            <div className="flex gap-2">
-              <div className="w-2 h-2 bg-accent rounded-full animate-bounce" />
-              <div className="w-2 h-2 bg-accent rounded-full animate-bounce [animation-delay:0.2s]" />
-              <div className="w-2 h-2 bg-accent rounded-full animate-bounce [animation-delay:0.4s]" />
-            </div>
+          <div ref={loadMoreRef} className={styles.loader}>
+             <div className={styles.spinner} />
           </div>
         )}
       </main>
