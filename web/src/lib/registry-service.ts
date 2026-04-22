@@ -32,7 +32,7 @@ export interface ComponentGroup {
   }[];
 }
 
-const ITEMS = (registryData as any).items as RegistryItem[];
+const ITEMS = (registryData as unknown as { items: RegistryItem[] }).items;
 
 // Helper to extract variants from the flat registry
 const getGroupedRegistry = (): ComponentGroup[] => {

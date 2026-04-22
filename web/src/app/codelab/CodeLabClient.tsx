@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './page.module.css';
 import { REGISTRY_GROUPS, ComponentGroup, getComponentVariantData, RegistryItem } from '@lib/registry-service';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Spotlight from '@shared/Spotlight';
 import TouchScale from '@shared/TouchScale';
 import CopyNotification from '@shared/CopyNotification';

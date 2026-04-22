@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { gsap, ScrollTrigger } from '@lib/gsap';
+import { gsap } from '@lib/gsap';
 import { ROADMAP_REGISTRY } from '@lib/roadmap-registry';
 import styles from '../roadmap.module.css';
 
@@ -84,7 +84,7 @@ export default function RoadmapClient() {
            <div className={styles.progressLine} ref={progressLineRef} />
         </div>
 
-        {roadmap.stages.map((stage, index) => {
+        {roadmap.stages.map((stage) => {
           const isOpen = openStages.includes(stage.id);
           const isDone = completedStages.includes(stage.id);
 

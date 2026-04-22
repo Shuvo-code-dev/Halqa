@@ -42,10 +42,9 @@ export default function Spotlight({
       style={{ 
         // Define the variables locally
         '--mouse-x': '-500px',
-        '--mouse-y': '-500px',
         '--spotlight-color': color,
         '--spotlight-opacity': opacity
-      } as any}
+      } as React.CSSProperties}
     >
       {/* The Glow Layer */}
       <div 

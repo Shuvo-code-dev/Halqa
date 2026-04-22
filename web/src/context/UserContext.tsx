@@ -23,7 +23,8 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     if (savedProgress) {
       try {
         const parsed = JSON.parse(savedProgress);
-        setCompletedStages(parsed);
+        // Defer state update to avoid synchronous cascading renders during hydration
+        setTimeout(() => setCompletedStages(parsed), 0);
       } catch (e) {
         console.error("Halqa Registry: Failed to restore local progress data.", e);
       }

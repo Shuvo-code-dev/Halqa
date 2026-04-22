@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+
 import styles from './GlitchText.module.css';
 
 export default function GlitchText({ text = "HALQA GLITCH", paused = false }) {

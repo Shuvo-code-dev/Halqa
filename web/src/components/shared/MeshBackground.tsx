@@ -9,9 +9,7 @@ export default function MeshBackground() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const blobs = gsap.utils.toArray(`.${styles.blob}`);
-      
-      blobs.forEach((blob: any, i) => {
+      (gsap.utils.toArray(`.${styles.blob}`) as Element[]).forEach((blob, i) => {
         gsap.to(blob, {
           x: "random(-100, 100)",
           y: "random(-100, 100)",

@@ -53,7 +53,7 @@ export default function Magnetic({
       });
     };
 
-    window.addEventListener('mousemove', (e) => {
+    window.addEventListener('mousemove', () => {
       // Logic for proximity could be added here, 
       // but simple per-element mousemove is usually enough for cards/buttons.
     });

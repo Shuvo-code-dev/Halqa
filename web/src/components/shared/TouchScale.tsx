@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ReactNode, useState, MouseEvent, TouchEvent } from 'react';
+import { ReactNode, useState } from 'react';
 
 interface Ripple {
   x: number;
@@ -39,11 +39,11 @@ export default function TouchScale({
     }, 600);
   };
 
-  const handlePointerDown = (e: any) => {
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     // Calculate relative coordinates
     const rect = e.currentTarget.getBoundingClientRect();
-    const x = (e.clientX || e.touches?.[0].clientX) - rect.left;
-    const y = (e.clientY || e.touches?.[0].clientY) - rect.top;
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
     createRipple(x, y);
   };
 

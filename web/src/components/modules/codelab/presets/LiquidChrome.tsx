@@ -92,11 +92,13 @@ export default function LiquidChrome({ paused = false }) {
 
     window.addEventListener('resize', handleResize);
 
+    const container = containerRef.current;
+
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', handleResize);
       renderer.dispose();
-      if (containerRef.current) containerRef.current.removeChild(renderer.domElement);
+      if (container) container.removeChild(renderer.domElement);
     };
   }, [paused]);
 
