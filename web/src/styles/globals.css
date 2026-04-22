@@ -2,7 +2,6 @@
 
 
 html, body {
-  scroll-behavior: smooth;
   height: 100%;
   max-width: 100vw;
   overflow-x: hidden;
@@ -14,6 +13,17 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   /* Prevent blue highlight on tap for mobile */
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Global Teal Selection System */
+::selection {
+  background-color: var(--accent);
+  color: #000;
+}
+
+::-moz-selection {
+  background-color: var(--accent);
+  color: #000;
 }
 
 * {
@@ -119,4 +129,14 @@ a:hover {
 .route-transition-enter-active {
   opacity: 1;
   transition: opacity 300ms ease-out;
+}
+
+/* UI Primitives Selection Lock */
+button, 
+svg, 
+img, 
+a.no-select, 
+[data-ui-primitive] {
+  user-select: none;
+  -webkit-user-drag: none;
 }

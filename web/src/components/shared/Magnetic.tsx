@@ -68,7 +68,12 @@ export default function Magnetic({
   }, [strength]);
 
   return (
-    <div ref={magneticRef} className={`inline-block ${className}`}>
+    <div
+      ref={magneticRef}
+      className={`inline-block ${className}`}
+      data-ui-primitive="magnetic"
+      style={{ userSelect: 'none' }}
+    >
       {children}
     </div>
   );

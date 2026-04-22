@@ -57,9 +57,11 @@ export default function TouchScale({
         damping: 17,
         mass: 0.8
       }}
-      className={`relative overflow-hidden ${className}`}
+      className={`relative inline-block overflow-hidden ${className}`}
+      data-ui-primitive="touch-scale"
       style={{ 
-        display: 'contents',
+        userSelect: 'none',
+        touchAction: 'none',
         cursor: 'pointer',
         WebkitTapHighlightColor: 'transparent'
       }}
