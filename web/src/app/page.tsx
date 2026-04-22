@@ -45,7 +45,14 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add({
+      isDesktop: "(min-width: 768px)",
+      isMobile: "(max-width: 767px)"
+    }, (context) => {
+      const { isDesktop } = context.conditions as { isDesktop: boolean; isMobile: boolean };
+
       // Hero Entrance
       const tl = gsap.timeline();
       tl.to(`.${styles.heroBadge}`, { opacity: 1, y: 0, duration: 0.8, ease: "expo.out" })
@@ -63,18 +70,16 @@ export default function Home() {
         delay: 0.5
       });
 
-      // Featured Labs Reveal (Mobile-Optimized)
-      const isMobile = window.innerWidth < 768;
-      
+      // Featured Labs Reveal
       gsap.from(`.${styles.labCardWrapper}`, {
         scrollTrigger: {
           trigger: `.${styles.labsGrid}`,
-          start: isMobile ? "top 95%" : "top 85%",
+          start: isDesktop ? "top 85%" : "top 95%",
         },
-        y: isMobile ? 20 : 40,
+        y: isDesktop ? 40 : 20,
         opacity: 0,
-        stagger: isMobile ? 0.1 : 0.15,
-        duration: isMobile ? 0.6 : 1,
+        stagger: isDesktop ? 0.15 : 0.1,
+        duration: isDesktop ? 1 : 0.6,
         ease: "expo.out"
       });
 
@@ -92,16 +97,16 @@ export default function Home() {
         });
       });
 
-      // Bento Philosophy Reveal (Mobile-Optimized)
+      // Bento Philosophy Reveal
       gsap.from(`.${styles.bentoItemWrapper}`, {
         scrollTrigger: {
           trigger: `.${styles.bentoGrid}`,
-          start: isMobile ? "top 90%" : "top 80%",
+          start: isDesktop ? "top 80%" : "top 90%",
         },
-        scale: isMobile ? 0.95 : 0.9,
+        scale: isDesktop ? 0.9 : 0.95,
         opacity: 0,
-        stagger: isMobile ? 0.05 : 0.1,
-        duration: isMobile ? 0.5 : 0.8,
+        stagger: isDesktop ? 0.1 : 0.05,
+        duration: isDesktop ? 0.8 : 0.5,
         ease: "back.out(1.7)"
       });
 
@@ -116,10 +121,16 @@ export default function Home() {
         duration: 1,
         ease: "expo.out"
       });
+      
+      return () => {
+        // matchMedia automatically handles revert for us
+      };
+    });
 
-    }, containerRef);
+    // Final stability refresh
+    ScrollTrigger.refresh();
 
-    return () => ctx.revert();
+    return () => mm.revert();
   }, []);
 
   return (

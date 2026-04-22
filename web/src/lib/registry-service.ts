@@ -52,11 +52,11 @@ const getGroupedRegistry = (): ComponentGroup[] => {
     const stylingPart = parts[parts.length - 1]; // TW or CSS
     const langPart = parts[parts.length - 2];    // JS or TS
 
-    if ((langPart === 'JS' || langPart === 'TS') && (stylingPart === 'TW' || stylingPart === 'CSS')) {
+    if ((langPart === 'JS' || langPart === 'TS') && stylingPart === 'CSS') {
       groups[item.title].variants.push({
         id: item.name,
         language: langPart as 'JS' | 'TS',
-        styling: stylingPart === 'TW' ? 'TW' : 'CSS'
+        styling: 'CSS'
       });
     }
   });
