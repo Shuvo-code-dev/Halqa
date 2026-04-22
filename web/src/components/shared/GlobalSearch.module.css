@@ -91,6 +91,11 @@
 .resultItem:hover {
   background: rgba(255, 255, 255, 0.03);
   border-color: rgba(45, 212, 191, 0.3);
+  transform: translateX(4px);
+}
+
+.resultItem:active {
+  transform: translateX(2px) scale(0.98);
 }
 
 .itemHeader {
@@ -156,5 +161,36 @@
 @media (max-width: 768px) {
   .searchWrapper {
     max-width: none;
+    order: 2;
+  }
+  
+  .searchBar {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .searchInput {
+    font-size: 0.85rem;
+  }
+  
+  .kbd {
+    display: none;
+  }
+  
+  .resultsArea {
+    top: calc(100% + 8px);
+    max-height: 350px;
+    border-radius: 12px;
+  }
+  
+  .resultItem {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .itemTitle {
+    font-size: 0.9rem;
+  }
+  
+  .itemDescription {
+    font-size: 0.75rem;
   }
 }
