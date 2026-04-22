@@ -69,7 +69,7 @@ export default function Home() {
       gsap.from(`.${styles.labCardWrapper}`, {
         scrollTrigger: {
           trigger: `.${styles.labsGrid}`,
-          start: isMobile ? "top 95%" : "top 80%",
+          start: isMobile ? "top 95%" : "top 85%",
         },
         y: isMobile ? 20 : 40,
         opacity: 0,
@@ -96,7 +96,7 @@ export default function Home() {
       gsap.from(`.${styles.bentoItemWrapper}`, {
         scrollTrigger: {
           trigger: `.${styles.bentoGrid}`,
-          start: isMobile ? "top 90%" : "top 75%",
+          start: isMobile ? "top 90%" : "top 80%",
         },
         scale: isMobile ? 0.95 : 0.9,
         opacity: 0,

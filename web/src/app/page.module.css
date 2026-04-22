@@ -1,15 +1,15 @@
 .homeContainer {
   display: flex;
   flex-direction: column;
-  gap: 10rem;
-  padding-bottom: 10rem;
+  gap: 12rem; /* Expanded for more sanctuary breathing room */
+  padding-bottom: 12rem;
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
 /* --- Hero Section: Industrial Sanctuary --- */
 .hero {
-  min-height: 85vh;
+  min-height: 90vh; /* Increased for more authoritative scale */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,8 +17,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  padding-top: 4rem;
-  margin-bottom: 2rem;
+  padding-top: 0; /* Let justify-center handle vertical positioning */
+  margin-bottom: 0;
 }
 
 .heroBgWrapper {
@@ -140,6 +140,7 @@
 .sectionHeader {
   margin-bottom: 6rem;
   text-align: left;
+  padding-left: 1rem; /* Subtle offset for grid rhythm */
 }
 
 .sectionLabel {
@@ -355,9 +356,9 @@
 }
 
 .statValue {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 950;
-  color: var(--text-primary);
+  color: var(--accent); /* Highlight the value in Teal */
   letter-spacing: -0.02em;
 }
 
