@@ -134,8 +134,8 @@
   align-items: center;
   gap: 0.75rem;
   background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(20px);
+  border: var(--border-thin);
+  backdrop-filter: blur(var(--blur-standard));
   padding: 0.875rem 1.75rem;
   border-radius: 100px;
   font-size: var(--text-sm);
@@ -181,10 +181,10 @@
 .searchBar {
   display: flex;
   background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  border: var(--border-thin);
   border-radius: var(--border-radius-xl);
   overflow: hidden;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(var(--blur-standard));
   transition: all 0.3s var(--transition-smooth);
 }
 
@@ -288,8 +288,8 @@
 .magneticButtonSecondary {
   background: var(--glass-bg);
   color: var(--slate-50);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(20px);
+  border: var(--border-thin);
+  backdrop-filter: blur(var(--blur-standard));
 }
 
 .magneticButtonSecondary::before {
@@ -350,10 +350,10 @@
 
 .bentoItem {
   background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  border: var(--border-thin);
   border-radius: var(--border-radius-lg);
   padding: 3rem;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(var(--blur-standard));
   transition: all 0.4s var(--transition-smooth);
   position: relative;
   overflow: hidden;
@@ -410,7 +410,8 @@
 
 .bentoTitle {
   font-size: var(--text-3xl);
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   margin-bottom: 1rem;
   color: var(--slate-50);
   line-height: 1.2;
@@ -418,8 +419,9 @@
 
 .bentoDescription {
   font-size: var(--text-lg);
+  font-weight: 300;
   color: var(--slate-400);
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 2rem;
 }
 
@@ -455,10 +457,10 @@
 
 .pricingCard {
   background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  border: var(--border-thin);
   border-radius: var(--border-radius-xl);
   padding: 3rem;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(var(--blur-standard));
   transition: all 0.4s var(--transition-smooth);
   position: relative;
   overflow: hidden;

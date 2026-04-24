@@ -18,11 +18,12 @@
   --font-inter: 'Inter', system-ui, sans-serif;
   
   /* Borders & Blur */
-  --border-glass: rgba(255, 255, 255, 0.08);
-  --border-glass-bright: rgba(255, 255, 255, 0.15);
+  --border-glass: rgba(255, 255, 255, 0.05); /* Thinner, more subtle 1px line */
+  --border-glass-bright: rgba(255, 255, 255, 0.12);
+  --border-thin: 1px solid var(--border-glass);
   --radius-card: 16px;
   --radius-button: 100px;
-  --blur-standard: 12px;
+  --blur-standard: 24px; /* Deeper premium blur */
   
   /* Layout */
   --max-width: 1200px;

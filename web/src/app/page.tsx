@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Search, Zap, Code, Target, Sparkles, Rocket, Monitor } from 'lucide-react';
+import { motion } from 'framer-motion';
+import gsap from 'gsap';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -11,6 +13,16 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
+    // GSAP Hero Animation
+    if (heroRef.current) {
+      const q = gsap.utils.selector(heroRef);
+      const tl = gsap.timeline();
+      tl.fromTo(q(`.${styles.heroBadge}`), { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' })
+        .fromTo(q(`.${styles.heroTitle}`), { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, '-=0.6')
+        .fromTo(q(`.${styles.heroSubtitle}`), { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, '-=0.6')
+        .fromTo(q(`.${styles.searchContainer}`), { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, '-=0.6');
+    }
+
     // Mouse tracking for floating elements
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -72,7 +84,7 @@ export default function Home() {
       <section className={styles.hero} ref={heroRef}>
         <div className={styles.heroContent}>
           <div className={styles.heroBadge}>
-            <Sparkles className="w-4 h-4" />
+            <Sparkles className="w-4 h-4" strokeWidth={1.25} />
             <span>Completely Free Education Platform</span>
           </div>
           
@@ -97,7 +109,7 @@ export default function Home() {
                 className={styles.searchInput}
               />
               <button type="submit" className={styles.searchButton}>
-                <Search className="w-5 h-5" />
+                <Search className="w-5 h-5" strokeWidth={1.25} />
                 Explore Paths
               </button>
             </form>
@@ -106,7 +118,7 @@ export default function Home() {
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/roadmaps" className={styles.magneticButton}>
               Start Learning Free
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5" strokeWidth={1.25} />
             </Link>
             <Link href="/codelab" className={`${styles.magneticButton} ${styles.magneticButtonSecondary}`}>
               Explore Code Lab
@@ -127,9 +139,15 @@ export default function Home() {
           
           <div className={styles.bentoGrid}>
             {/* Large Feature Card - Roadmaps */}
-            <div className={`${styles.bentoItem} ${styles.bentoItemLarge}`}>
+            <motion.div 
+              className={`${styles.bentoItem} ${styles.bentoItemLarge}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6 }}
+            >
               <div className={styles.bentoIcon}>
-                <Target className="w-8 h-8" />
+                <Target className="w-8 h-8" strokeWidth={1.25} />
               </div>
               <h3 className={styles.bentoTitle}>Expert Roadmaps</h3>
               <p className={styles.bentoDescription}>
@@ -138,12 +156,18 @@ export default function Home() {
               <div className={styles.bentoFeature}>12+ Comprehensive Paths</div>
               <div className={styles.bentoFeature}>Industry-Validated Curriculum</div>
               <div className={styles.bentoFeature}>Progress Tracking</div>
-            </div>
+            </motion.div>
             
             {/* Medium Feature Cards */}
-            <div className={`${styles.bentoItem} ${styles.bentoItemMedium}`}>
+            <motion.div 
+              className={`${styles.bentoItem} ${styles.bentoItemMedium}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
               <div className={styles.bentoIcon}>
-                <Code className="w-8 h-8" />
+                <Code className="w-8 h-8" strokeWidth={1.25} />
               </div>
               <h3 className={styles.bentoTitle}>Code Lab</h3>
               <p className={styles.bentoDescription}>
@@ -151,11 +175,17 @@ export default function Home() {
               </p>
               <div className={styles.bentoFeature}>500+ Interactive Components</div>
               <div className={styles.bentoFeature}>Live Code Editor</div>
-            </div>
+            </motion.div>
             
-            <div className={`${styles.bentoItem} ${styles.bentoItemMedium}`}>
+            <motion.div 
+              className={`${styles.bentoItem} ${styles.bentoItemMedium}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <div className={styles.bentoIcon}>
-                <Rocket className="w-8 h-8" />
+                <Rocket className="w-8 h-8" strokeWidth={1.25} />
               </div>
               <h3 className={styles.bentoTitle}>Real Projects</h3>
               <p className={styles.bentoDescription}>
@@ -163,11 +193,17 @@ export default function Home() {
               </p>
               <div className={styles.bentoFeature}>20+ Project Templates</div>
               <div className={styles.bentoFeature}>Step-by-Step Guides</div>
-            </div>
+            </motion.div>
             
-            <div className={`${styles.bentoItem} ${styles.bentoItemMedium}`}>
+            <motion.div 
+              className={`${styles.bentoItem} ${styles.bentoItemMedium}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
               <div className={styles.bentoIcon}>
-                <Zap className="w-8 h-8" />
+                <Zap className="w-8 h-8" strokeWidth={1.25} />
               </div>
               <h3 className={styles.bentoTitle}>API Lab</h3>
               <p className={styles.bentoDescription}>
@@ -175,11 +211,17 @@ export default function Home() {
               </p>
               <div className={styles.bentoFeature}>REST & GraphQL</div>
               <div className={styles.bentoFeature}>Live Testing Tools</div>
-            </div>
+            </motion.div>
             
-            <div className={`${styles.bentoItem} ${styles.bentoItemMedium}`}>
+            <motion.div 
+              className={`${styles.bentoItem} ${styles.bentoItemMedium}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               <div className={styles.bentoIcon}>
-                <Monitor className="w-8 h-8" />
+                <Monitor className="w-8 h-8" strokeWidth={1.25} />
               </div>
               <h3 className={styles.bentoTitle}>AI Assistant</h3>
               <p className={styles.bentoDescription}>
@@ -187,7 +229,7 @@ export default function Home() {
               </p>
               <div className={styles.bentoFeature}>24/7 Available</div>
               <div className={styles.bentoFeature}>Code Review & Debugging</div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -204,7 +246,13 @@ export default function Home() {
           
           <div className={styles.pricingGrid}>
             {/* Learners Card */}
-            <div className={styles.pricingCard}>
+            <motion.div 
+              className={styles.pricingCard}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6 }}
+            >
               <div className={styles.pricingTier}>LEARNERS</div>
               <div className={styles.pricingPrice}>
                 50K+<span>Active</span>
@@ -221,12 +269,18 @@ export default function Home() {
               </ul>
               <button className={styles.magneticButton}>
                 Join Community
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" strokeWidth={1.25} />
               </button>
-            </div>
+            </motion.div>
             
             {/* Contributors Card */}
-            <div className={`${styles.pricingCard} ${styles.pricingCardPopular}`}>
+            <motion.div 
+              className={`${styles.pricingCard} ${styles.pricingCardPopular}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <div className={styles.pricingTier}>CONTRIBUTORS</div>
               <div className={styles.pricingPrice}>
                 100%<span>Open Source</span>
@@ -245,12 +299,18 @@ export default function Home() {
               </ul>
               <button className={styles.magneticButton}>
                 Contribute on GitHub
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" strokeWidth={1.25} />
               </button>
-            </div>
+            </motion.div>
             
             {/* Impact Card */}
-            <div className={styles.pricingCard}>
+            <motion.div 
+              className={styles.pricingCard}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               <div className={styles.pricingTier}>IMPACT</div>
               <div className={styles.pricingPrice}>
                 Global<span>Reach</span>
@@ -270,7 +330,7 @@ export default function Home() {
               <button className={`${styles.magneticButton} ${styles.magneticButtonSecondary}`}>
                 Share the Mission
               </button>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

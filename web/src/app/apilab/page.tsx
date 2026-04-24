@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 import ApiLabClient from './ApiLabClient';
+import { getFlattenedApis } from '@/lib/api-service';
 
 export const metadata: Metadata = {
   title: 'Halqa | API Lab',
@@ -17,7 +18,7 @@ export default function ApiLab() {
         </span>
       </div>
     }>
-      <ApiLabClient />
+      <ApiLabClient initialApis={getFlattenedApis()} />
     </Suspense>
   );
 }
