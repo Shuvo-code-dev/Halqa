@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-We currently provide security updates for the following versions of **Halqa**:
+We currently provide security updates for the following versions of **Bulz**:
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -18,4 +18,4 @@ If you discover a security vulnerability within this project, please help us by 
 - Send a detailed report to our team via email at: **shuv.error2011@gmail.com**
 - Include as much information as possible, such as steps to reproduce the issue and the potential impact.
 
-We aim to acknowledge all reports within 48–72 hours and provide a fix as quickly as possible. Thank you for helping keep the **Halqa** community safe!
+We aim to acknowledge all reports within 48–72 hours and provide a fix as quickly as possible. Thank you for helping keep the **Bulz** community safe!

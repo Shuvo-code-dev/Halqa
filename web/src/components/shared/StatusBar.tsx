@@ -17,7 +17,7 @@ export default function StatusBar() {
         <div className={styles.right}>
             <div className={styles.item}>
                 <span className={styles.label}>CORE</span>
-                <span className={styles.value}>Halqa</span>
+                <span className={styles.value}>Bulz</span>
             </div>
         </div>
       </div>

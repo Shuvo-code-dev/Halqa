@@ -102,7 +102,7 @@ export default function CodeLabClient() {
       <aside className={styles.sidebar}>
         <div className={styles.sidebarHeader}>
           <div className={styles.sidebarLogo}>
-             <span className="text-gradient font-black">HALQA</span> LAB
+             <span className="text-gradient font-black">BULZ</span> LAB
           </div>
           <div className={styles.searchContainer}>
             <input 

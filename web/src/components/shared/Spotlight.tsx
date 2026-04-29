@@ -13,7 +13,7 @@ interface SpotlightProps {
 /**
  * Spotlight Wrapper (Industrial Grade)
  * Adds a soft, cursor-following glow effect using GSAP expo.out easing.
- * Perfect for Lab and Resource cards in the Halqa Sanctuary.
+ * Perfect for Lab and Resource cards in the Bulz Sanctuary.
  */
 export default function Spotlight({ 
   children, 

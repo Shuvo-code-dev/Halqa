@@ -51,7 +51,7 @@ a:hover {
   border-radius: 12px;
 }
 
-.halqa-card {
+.bulz-card {
   background: rgba(15, 15, 20, 0.4);
   backdrop-filter: blur(var(--blur-standard));
   -webkit-backdrop-filter: blur(var(--blur-standard));
@@ -62,7 +62,7 @@ a:hover {
   overflow: hidden;
 }
 
-.halqa-card::before {
+.bulz-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -74,13 +74,13 @@ a:hover {
   transition: opacity 0.3s ease;
 }
 
-.halqa-card:hover {
+.bulz-card:hover {
   transform: translateY(-5px);
   border-color: var(--accent);
   box-shadow: 0 0 30px var(--accent-glow);
 }
 
-.halqa-card:hover::before {
+.bulz-card:hover::before {
   opacity: 0.6;
 }
 
@@ -128,7 +128,7 @@ a:hover {
 @media (hover: none) {
   /* Generic buttons and interactive elements scale down on tap */
   button:active, 
-  .halqa-card:active,
+  .bulz-card:active,
   .primary-btn:active {
     transform: scale(0.96) !important;
     transition: transform 0.1s ease;
@@ -143,7 +143,7 @@ a:hover {
 /* Enhanced Focus States */
 button:focus-visible,
 a:focus-visible,
-.halqa-card:focus-visible {
+.bulz-card:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }

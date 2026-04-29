@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import CodeLabClient from './CodeLabClient';
 
 export const metadata: Metadata = {
-  title: 'Halqa | Code Lab',
+  title: 'Bulz | Code Lab',
   description: 'A premium library of glassmorphic, physics-animated UI components. Master modern design with direct source-code access.',
 };
 

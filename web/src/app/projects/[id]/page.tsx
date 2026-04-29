@@ -12,15 +12,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!project) {
     return {
-      title: 'Project Not Found | Halqa',
+      title: 'Project Not Found | Bulz',
     };
   }
 
   return {
-    title: `Halqa | Build ${project.title}`,
+    title: `Bulz | Build ${project.title}`,
     description: project.description,
     openGraph: {
-      title: `Build Guide: ${project.title} | Halqa`,
+      title: `Build Guide: ${project.title} | Bulz`,
       description: project.description,
     }
   };

@@ -102,7 +102,7 @@ export default function RoadmapsClient() {
               className={styles.labCardWrapper}
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
-              <div className={`${styles.labCard} halqa-card`} style={{ padding: '2rem', height: '100%' }}>
+              <div className={`${styles.labCard} bulz-card`} style={{ padding: '2rem', height: '100%' }}>
                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1.5rem' }}>
                   <div style={{ 
                     width: '56px', 

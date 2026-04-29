@@ -54,7 +54,7 @@
 
 ### Quick Navigation
 
-[🛰️ Overview](#-ecosystem-overview) &nbsp;·&nbsp; [🏗️ Architecture](#-system-architecture) &nbsp;·&nbsp; [💎 Why Halqa](#-why-halqa) &nbsp;·&nbsp; [⚙️ Engineering](#-engineering-deep-dives) &nbsp;·&nbsp; [📦 Setup](#-installation) &nbsp;·&nbsp; [🗺️ Roadmap](#-roadmap)
+[🛰️ Overview](#-ecosystem-overview) &nbsp;·&nbsp; [🏗️ Architecture](#-system-architecture) &nbsp;·&nbsp; [💎 Why Bulz](#-why-bulz) &nbsp;·&nbsp; [⚙️ Engineering](#-engineering-deep-dives) &nbsp;·&nbsp; [📦 Setup](#-installation) &nbsp;·&nbsp; [🗺️ Roadmap](#-roadmap)
 
 ---
 
@@ -64,9 +64,9 @@
 
 ## ⬡ Ecosystem Overview
 
-Most developers waste hours jumping between disconnected tools — documentation tabs, UI snippet sites, API testers, and tutorial platforms. **Halqa ends that fragmentation.**
+Most developers waste hours jumping between disconnected tools — documentation tabs, UI snippet sites, API testers, and tutorial platforms. **Bulz ends that fragmentation.**
 
-It is a **unified developer platform** built on four interconnected pillars: structured learning paths, a physics-driven component library, a live API sandbox, and a project builder that ties everything together. Whether you are starting your first project or deploying production-grade systems, Halqa provides a single, coherent workspace.
+It is a **unified developer platform** built on four interconnected pillars: structured learning paths, a physics-driven component library, a live API sandbox, and a project builder that ties everything together. Whether you are starting your first project or deploying production-grade systems, Bulz provides a single, coherent workspace.
 
 <br />
 
@@ -87,7 +87,7 @@ It is a **unified developer platform** built on four interconnected pillars: str
 
 ## ⬡ System Architecture
 
-The Halqa journey is a **continuous feedback loop** — theory feeds construction, construction feeds data integration, and integration produces deployable applications.
+The Bulz journey is a **continuous feedback loop** — theory feeds construction, construction feeds data integration, and integration produces deployable applications.
 
 ```mermaid
 graph TD
@@ -117,7 +117,7 @@ graph TD
 
 ---
 
-## ⬡ Why Halqa?
+## ⬡ Why Bulz?
 
 <div align="center">
 
@@ -130,7 +130,7 @@ It's that resources are everywhere — and connected to nothing.
 
 <br />
 
-Halqa was built on a single conviction: **learning tools should connect, not fragment.** Here is what that looks like in practice:
+Bulz was built on a single conviction: **learning tools should connect, not fragment.** Here is what that looks like in practice:
 
 <br />
 
@@ -199,7 +199,7 @@ cursor (x, y) → Δ vector to DOM center → scale factor + shadow depth + levi
 
 ### II. · Regex-Parsed Data Visualization
 
-The **API Lab** contains a custom, zero-dependency syntax-highlighting engine. Rather than shipping a full library like Prism or Highlight.js, Halqa implements a **recursive JSON traversal system** that:
+The **API Lab** contains a custom, zero-dependency syntax-highlighting engine. Rather than shipping a full library like Prism or Highlight.js, Bulz implements a **recursive JSON traversal system** that:
 
 1. Stringifies the raw API response object
 2. Passes each token through a targeted regex matrix
@@ -212,7 +212,7 @@ The result: a visual schema inspector that loads instantly and requires no exter
 
 ### III. · Tri-Node Blueprint Mapping
 
-The **Project Hub** is the architect's layer. When you open a project blueprint, it simultaneously fetches metadata from **three independent Halqa data nodes**:
+The **Project Hub** is the architect's layer. When you open a project blueprint, it simultaneously fetches metadata from **three independent Bulz data nodes**:
 
 | Node          | Source            | Purpose                                 |
 | ------------- | ----------------- | --------------------------------------- |
@@ -247,20 +247,20 @@ These three streams merge into a **3-step checklist** — a living scaffold for 
 
 ## ⬡ Installation
 
-Get Halqa running locally in four precise steps.
+Get Bulz running locally in four precise steps.
 
 <br />
 
 **① Clone the repository**
 
 ```bash
-git clone https://github.com/Shuvo-code-dev/Halqa.git
+git clone https://github.com/Shuvo-code-dev/Bulz.git
 ```
 
 **② Navigate to the web application**
 
 ```bash
-cd Halqa/web
+cd Bulz/web
 ```
 
 **③ Install dependencies**
@@ -278,7 +278,7 @@ npm run dev
 
 <br />
 
-> Open [http://localhost:3000](http://localhost:3000) to enter the Halqa ecosystem.
+> Open [http://localhost:3000](http://localhost:3000) to enter the Bulz ecosystem.
 
 <br />
 
@@ -299,7 +299,7 @@ Phase 7 · Ecosystem          [░░░░░░░░░░]   0% — Communit
 
 <br />
 
-Phases 6 and 7 are where Halqa becomes **community-driven**. If you want to accelerate these — contribute, sponsor, or open a discussion.
+Phases 6 and 7 are where Bulz becomes **community-driven**. If you want to accelerate these — contribute, sponsor, or open a discussion.
 
 <br />
 
@@ -322,14 +322,14 @@ git commit -m "feat: add physics hover to CodeLab card grid"
 git push origin feat/your-feature-name
 ```
 
-We'd love your help! Check the [open issues](https://github.com/Shuvo-code-dev/Halqa/issues) or submit ideas via the [feature request template](https://github.com/Shuvo-code-dev/Halqa/issues/new?template=2-feature-request.yml).
+We'd love your help! Check the [open issues](https://github.com/Shuvo-code-dev/Bulz/issues) or submit ideas via the [feature request template](https://github.com/Shuvo-code-dev/Bulz/issues/new?template=2-feature-request.yml).
 
-Please read the [contribution guide](https://github.com/Shuvo-code-dev/Halqa/CONTRIBUTING.md) first — thanks for making Halqa better!
+Please read the [contribution guide](https://github.com/Shuvo-code-dev/Bulz/CONTRIBUTING.md) first — thanks for making Bulz better!
 
 ## 🙌 Contributors
 
-<a href="https://github.com/Shuvo-code-dev/Halqa/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Shuvo-code-dev/Halqa" />
+<a href="https://github.com/Shuvo-code-dev/Bulz/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Shuvo-code-dev/Bulz" />
 </a>
 
 <br />
@@ -338,7 +338,7 @@ Please read the [contribution guide](https://github.com/Shuvo-code-dev/Halqa/CON
 
 - [ ] Ensure TypeScript strict mode passes with zero errors
 - [ ] Test responsive behavior at 375px, 768px, and 1440px
-- [ ] Components should match Halqa's visual language — high-contrast, physics-aware
+- [ ] Components should match Bulz's visual language — high-contrast, physics-aware
 - [ ] Include a brief description of _what problem your change solves_
 
 <br />
@@ -347,7 +347,7 @@ Please read the [contribution guide](https://github.com/Shuvo-code-dev/Halqa/CON
 
 ## ⬡ License
 
-Halqa uses a **dual-license model** to protect both engineering labor and educational integrity.
+Bulz uses a **dual-license model** to protect both engineering labor and educational integrity.
 
 <br />
 
@@ -380,15 +380,15 @@ _Built with precision. Designed for engineers who care._
 
 <br />
 
-[![GitHub Stars](https://img.shields.io/github/stars/Shuvo-code-dev/Halqa?style=social)](https://github.com/Shuvo-code-dev/Halqa)
+[![GitHub Stars](https://img.shields.io/github/stars/Shuvo-code-dev/Bulz?style=social)](https://github.com/Shuvo-code-dev/Bulz)
 &nbsp;&nbsp;
-[![GitHub Forks](https://img.shields.io/github/forks/Shuvo-code-dev/Halqa?style=social)](https://github.com/Shuvo-code-dev/Halqa/fork)
+[![GitHub Forks](https://img.shields.io/github/forks/Shuvo-code-dev/Bulz?style=social)](https://github.com/Shuvo-code-dev/Bulz/fork)
 &nbsp;&nbsp;
-[![Sponsor](https://img.shields.io/badge/Sponsor-Halqa-ff69b4?style=flat&logo=github-sponsors)](https://github.com/sponsors/Shuvo-code-dev)
+[![Sponsor](https://img.shields.io/badge/Sponsor-Bulz-ff69b4?style=flat&logo=github-sponsors)](https://github.com/sponsors/Shuvo-code-dev)
 
 <br />
 
-_If Halqa helped you build something — give it a ⭐ and tell a fellow developer._
+_If Bulz helped you build something — give it a ⭐ and tell a fellow developer._
 
 <br />
 

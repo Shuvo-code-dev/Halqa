@@ -46,7 +46,7 @@ export const PROJECT_REGISTRY: Record<string, ProjectData> = {
         description: 'Implement a continuous frame-buffer scanning loop using Zxing for instant QR data extraction.'
       },
       {
-        title: 'Halqa Visual Overlay',
+        title: 'Bulz Visual Overlay',
         description: 'Design the scanning-line and border-glow animations using high-performance CSS and GSAP for 60fps movement.'
       },
       {
@@ -57,11 +57,11 @@ export const PROJECT_REGISTRY: Record<string, ProjectData> = {
   },
   'ai-chat': {
     id: 'ai-chat',
-    title: 'Halqa Brain Interface',
+    title: 'Bulz Brain Interface',
     description: 'Specialized LLM interface powered by Google Gemini for ecosystem knowledge.',
     difficulty: 'Senior',
     techStack: ['Next.js 15', 'Gemini API', 'Vercel AI SDK', 'Tailwind'],
-    githubUrl: 'https://github.com/Shuvo-code-dev/Halqa',
+    githubUrl: 'https://github.com/Shuvo-code-dev/Bulz',
     trinity: {
       roadmap: { name: 'Full-Stack Stage 01', link: '/roadmaps/fullstack', icon: '🗺️' },
       code: { name: 'Glassmorphism UI', link: '/codelab', icon: '🧪' },
@@ -74,7 +74,7 @@ export const PROJECT_REGISTRY: Record<string, ProjectData> = {
       },
       {
         title: 'Contextual Brain Prompting',
-        description: 'Implement "Brain" system instructions to specialize the AI response for Halqa ecosystem queries.'
+        description: 'Implement "Brain" system instructions to specialize the AI response for Bulz ecosystem queries.'
       },
       {
         title: 'Streaming UI Rendering',
@@ -106,17 +106,17 @@ export const PROJECT_REGISTRY: Record<string, ProjectData> = {
       },
       {
         title: 'Visual Asset Management',
-        description: 'Render NFT collections and token balances with premium "Halqa Glow" card variants.'
+        description: 'Render NFT collections and token balances with premium "Bulz Glow" card variants.'
       }
     ]
   },
-  'halqa-mobile': {
-    id: 'halqa-mobile',
-    title: 'Halqa Mobile',
-    description: 'The portable ecosystem. Entire Halqa platform in your pocket.',
+  'bulz-mobile': {
+    id: 'bulz-mobile',
+    title: 'Bulz Mobile',
+    description: 'The portable ecosystem. Entire Bulz platform in your pocket.',
     difficulty: 'Senior',
     techStack: ['Expo', 'Native Stack', 'Reanimated', 'SQLite'],
-    githubUrl: 'https://github.com/Shuvo-code-dev/Halqa-Mobile',
+    githubUrl: 'https://github.com/Shuvo-code-dev/Bulz-Mobile',
     isComingSoon: true,
     trinity: {
       roadmap: { name: 'Mobile Stage 01', link: '/roadmaps/mobile', icon: '🗺️' },

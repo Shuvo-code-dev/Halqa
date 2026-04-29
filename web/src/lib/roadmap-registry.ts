@@ -159,7 +159,7 @@ export const ROADMAP_REGISTRY: Record<string, RoadmapData> = {
           { name: 'Fireship - Mobile App Dev', url: 'https://www.youtube.com/watch?v=0-S5a0eWli4' },
           { name: 'MDN - Mobile Web Best Practices', url: 'https://developer.mozilla.org/en-US/docs/Web/Guide/Mobile' }
         ],
-        codelabId: 'halqa-qr'
+        codelabId: 'bulz-qr'
       },
       {
         id: '02',

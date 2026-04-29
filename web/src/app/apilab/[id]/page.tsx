@@ -13,15 +13,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!api) {
     return {
-      title: 'API Not Found | Halqa',
+      title: 'API Not Found | Bulz',
     };
   }
 
   return {
-    title: `Halqa | Test ${api.name}`,
+    title: `Bulz | Test ${api.name}`,
     description: `Real-time testing and integration for the ${api.name} API. View documentation and hit live endpoints.`,
     openGraph: {
-      title: `API Tester: ${api.name} | Halqa`,
+      title: `API Tester: ${api.name} | Bulz`,
       description: api.description,
     }
   };

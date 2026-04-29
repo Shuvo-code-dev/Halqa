@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a bug to help us improve Halqa
+about: Report a bug to help us improve Bulz
 title: ''
 labels: ''
 assignees: ''

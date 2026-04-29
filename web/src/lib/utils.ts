@@ -1,5 +1,5 @@
 /**
- * Halqa Unified Utility Layer
+ * Bulz Unified Utility Layer
  * Phase 33: Enterprise Sanitation
  */
 

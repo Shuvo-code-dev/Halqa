@@ -21,26 +21,26 @@ const inter = Inter({
   display: "swap",
 });
 
-const CANONICAL_URL = "https://halqa.dev";
+const CANONICAL_URL = "https://bulz.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(CANONICAL_URL),
   title: {
-    default: "Halqa | The Developer Sanctuary",
-    template: "%s | Halqa"
+    default: "Bulz | The Developer Sanctuary",
+    template: "%s | Bulz"
   },
   description: "Master the code with high-performance roadmaps, premium UI components, and curated resources for modern engineers.",
   openGraph: {
-    title: "Halqa | The Developer Sanctuary",
+    title: 'Bulz | The Developer Sanctuary',
     description: "The minimalist developer ecosystem. Zero distraction, ultra-high performance.",
     url: CANONICAL_URL,
-    siteName: "Halqa",
+    siteName: "Bulz",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Halqa Social Preview",
+        alt: "Bulz Social Preview",
       },
     ],
     locale: "en_US",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Halqa | The Developer Sanctuary",
+    title: 'Bulz | The Developer Sanctuary',
     description: "The minimalist developer ecosystem. Zero distraction, ultra-high performance.",
     creator: "@shuvocode",
     images: ["/og-image.png"],

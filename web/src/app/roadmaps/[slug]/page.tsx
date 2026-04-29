@@ -12,15 +12,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!roadmap) {
     return {
-      title: 'Roadmap Not Found | Halqa',
+      title: 'Roadmap Not Found | Bulz',
     };
   }
 
   return {
-    title: `Halqa | Learn ${roadmap.id.toUpperCase()}`,
+    title: `Bulz | Learn ${roadmap.id.toUpperCase()}`,
     description: roadmap.subtitle,
     openGraph: {
-      title: `Halqa | ${roadmap.id.toUpperCase()} Roadmap`,
+      title: `Bulz | ${roadmap.id.toUpperCase()} Roadmap`,
       description: roadmap.subtitle,
     }
   };

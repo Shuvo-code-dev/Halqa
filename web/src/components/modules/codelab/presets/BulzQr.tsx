@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
-import styles from './HalqaQr.module.css';
+import styles from './BulzQr.module.css';
 
-export default function HalqaQr() {
-  const [text, setText] = useState('https://halqa.dev');
+export default function BulzQr() {
+  const [text, setText] = useState('https://bulz.dev');
   const [color, setColor] = useState('#2dd4bf');
 
   return (

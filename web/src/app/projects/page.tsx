@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import ProjectsClient from './ProjectsClient';
 
 export const metadata: Metadata = {
-  title: 'Halqa | Project Hub',
+  title: 'Bulz | Project Hub',
   description: 'Architect real-world applications. Combine roadmap logic with Code Lab components to build high-performance developer projects.',
 };
 

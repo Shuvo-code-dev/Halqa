@@ -12,7 +12,7 @@ assignees: ''
 - **Link:** - **Target Roadmap:** (e.g. Frontend)
 
 ## ⚡ Why it's useful?
-Explain briefly why this should be in the Halqa library.
+Explain briefly why this should be in the Bulz library.
 
 ---
 **Signal over noise. Thanks for sharing! 🪶**

@@ -18,7 +18,7 @@ export default function Footer() {
     if (pathname.includes('/roadmaps')) return { text: "Ready to implement? Get raw data", link: "/apilab", label: "Go to API Lab" };
     if (pathname.includes('/apilab')) return { text: "Master these components", link: "/codelab", label: "View Code Lab" };
     if (pathname.includes('/codelab')) return { text: "Scale into a real-world app", link: "/projects", label: "Build a Project" };
-    if (pathname.includes('/projects')) return { text: "Return to the Neural Center", link: "/", label: "Halqa Home" };
+    if (pathname.includes('/projects')) return { text: "Return to the Neural Center", link: "/", label: "Bulz Home" };
     return { text: "Continue your journey", link: "/roadmaps", label: "View Roadmaps" };
   }, [pathname]);
 
@@ -55,13 +55,13 @@ export default function Footer() {
         <div className={styles.footerContainer}>
           <div className={styles.footerBrand}>
             <p className={styles.footerText}>
-              © 2026 Halqa Ecosystem
+              © 2026 Bulz Ecosystem
             </p>
             <p className={styles.footerTagline}>Powered by Oi Applications</p>
             <div className={styles.legalLinks}>
               <Link href="/privacy">Privacy</Link>
               <Link href="/terms">Terms</Link>
-              <a href="https://github.com/Shuvo-code-dev/Halqa/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0 License</a>
+              <a href="https://github.com/Shuvo-code-dev/Bulz/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0 License</a>
             </div>
           </div>
 

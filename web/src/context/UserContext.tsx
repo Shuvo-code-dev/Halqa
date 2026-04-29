@@ -19,14 +19,14 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
    * This decoupled approach prevents the "cascading renders" warning.
    */
   useEffect(() => {
-    const savedProgress = localStorage.getItem('halqa-progress');
+    const savedProgress = localStorage.getItem('bulz-progress');
     if (savedProgress) {
       try {
         const parsed = JSON.parse(savedProgress);
         // Defer state update to avoid synchronous cascading renders during hydration
         setTimeout(() => setCompletedStages(parsed), 0);
       } catch (e) {
-        console.error("Halqa Registry: Failed to restore local progress data.", e);
+        console.error("Bulz Registry: Failed to restore local progress data.", e);
       }
     }
   }, []);
@@ -39,7 +39,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
         : [...pathStages, stageId];
       
       const next = { ...prev, [roadmapPath]: nextStages };
-      localStorage.setItem('halqa-progress', JSON.stringify(next));
+      localStorage.setItem('bulz-progress', JSON.stringify(next));
       return next;
     });
   };

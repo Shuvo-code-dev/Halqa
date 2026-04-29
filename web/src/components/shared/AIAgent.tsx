@@ -53,7 +53,7 @@ export default function AIAgent() {
           <div className={styles.header}>
             <div className={styles.headerTitle}>
               <div className={styles.onlineDot}></div>
-              Halqa Brain
+              Bulz Brain
             </div>
             <button className={styles.clearBtn} onClick={clearHistory}>Reset Cache</button>
           </div>

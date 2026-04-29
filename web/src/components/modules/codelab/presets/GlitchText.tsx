@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 
 import styles from './GlitchText.module.css';
 
-export default function GlitchText({ text = "HALQA GLITCH", paused = false }) {
+export default function GlitchText({ text = "BULZ GLITCH", paused = false }) {
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

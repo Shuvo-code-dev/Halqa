@@ -139,7 +139,7 @@ export default function ResourcesClient() {
             >
               <TouchScale isLarge={true} scale={0.98}>
                 <Spotlight className="h-full group rounded-2xl">
-                  <div className={`${styles.card} halqa-card`}>
+                  <div className={`${styles.card} bulz-card`}>
                     <div className={styles.cardTop}>
                        <span className={styles.categoryTag}>{res.category}</span>
                        <span className={styles.tierBadge}>{res.tier}</span>
@@ -148,7 +148,7 @@ export default function ResourcesClient() {
                     <h3 className={styles.name}>{res.name}</h3>
                     
                     <p className={styles.recommendation}>
-                       <span style={{ color: 'var(--accent)', fontWeight: 700 }}>Halqa Note:</span> {res.recommendation}
+                       <span style={{ color: 'var(--accent)', fontWeight: 700 }}>Bulz Note:</span> {res.recommendation}
                     </p>
 
                     <div className={styles.cardFooter}>

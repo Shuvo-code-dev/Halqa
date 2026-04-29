@@ -26,7 +26,7 @@ export const AIProvider = ({ children }: { children: ReactNode }) => {
 
   // Load from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem('halqa-ai-history');
+    const saved = localStorage.getItem('bulz-ai-history');
     if (saved) {
       setMessages(JSON.parse(saved));
     } else {
@@ -34,7 +34,7 @@ export const AIProvider = ({ children }: { children: ReactNode }) => {
       setMessages([
         { 
           role: 'assistant', 
-          content: "Welcome to Halqa. I am the central intelligence of this ecosystem. How can I guide your mastery today?", 
+          content: "Welcome to Bulz. I am the central intelligence of this ecosystem. How can I guide your mastery today?", 
           timestamp: Date.now() 
         }
       ]);
@@ -44,7 +44,7 @@ export const AIProvider = ({ children }: { children: ReactNode }) => {
   // Save to localStorage
   useEffect(() => {
     if (messages.length > 0) {
-      localStorage.setItem('halqa-ai-history', JSON.stringify(messages));
+      localStorage.setItem('bulz-ai-history', JSON.stringify(messages));
     }
   }, [messages]);
 
@@ -94,7 +94,7 @@ export const AIProvider = ({ children }: { children: ReactNode }) => {
         timestamp: Date.now() 
       }
     ]);
-    localStorage.removeItem('halqa-ai-history');
+    localStorage.removeItem('bulz-ai-history');
   };
 
   return (

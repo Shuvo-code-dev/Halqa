@@ -81,7 +81,7 @@ export default function ProjectsClient() {
           <Link 
             key={project.id} 
             href={`/projects/${project.id}`}
-            className={`${styles.card} ${index === 0 ? styles.large : ''} halqa-card`}
+            className={`${styles.card} ${index === 0 ? styles.large : ''} bulz-card`}
           >
             <div className={styles.cardGlow} />
             

@@ -1,6 +1,6 @@
 ---
 name: Roadmap Suggestion
-about: Propose a new learning path for the Halqa
+about: Propose a new learning path for the Bulz
 title: ''
 labels: ''
 assignees: ''

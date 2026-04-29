@@ -1,6 +1,6 @@
-# Halqa | The Global Developer Ecosystem
+# Bulz | The Global Developer Ecosystem
 
-**Halqa** (حلقة - Circle of Learning) is a high-density, world-class educational platform designed to turn noise into mastery. It provides a premium, bootcamp-style learning experience through structured roadmaps and an elite UI repository.
+**Bulz** (حلقة - Circle of Learning) is a high-density, world-class educational platform designed to turn noise into mastery. It provides a premium, bootcamp-style learning experience through structured roadmaps and an elite UI repository.
 
 ## 🚀 Key Features
 
@@ -26,7 +26,7 @@
 - **State**: React Context (Language, User Space)
 
 ## 🎯 V1.0 Launch Status: MISSION COMPLETE
-Halqa has evolved into a full-scale developer ecosystem. It is ready for deployment as a professional-grade learning hub.
+Bulz has evolved into a full-scale developer ecosystem. It is ready for deployment as a professional-grade learning hub.
 
 ---
 *Created with ❤️ by Shuvo-code-dev and the Antigravity AI.*

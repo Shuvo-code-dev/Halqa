@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Halqa | Terms of Service',
-  description: 'Halqa is an open-source educational platform. Our terms of service emphasize community-driven learning and collective improvement.',
+  title: 'Bulz | Terms of Service',
+  description: 'Bulz is an open-source educational platform. Our terms of service emphasize community-driven learning and collective improvement.',
 };
 
 export default function TermsPage() {
@@ -13,20 +13,20 @@ export default function TermsPage() {
       
       <div style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1.1rem' }}>
         <p style={{ marginBottom: '2rem' }}>
-          By using Halqa, you agree to join a community of builders. Halqa is provided &quot;as is&quot; under the 
+          By using Bulz, you agree to join a community of builders. Bulz is provided &quot;as is&quot; under the 
           GPL-3.0 License.
         </p>
 
         <h2 style={{ color: 'var(--text-primary)', marginTop: '3rem', marginBottom: '1rem' }}>1. Educational Usage</h2>
         <p>
-          Halqa is an educational directory. While we strive for 100% technical accuracy in our roadmaps and 
+          Bulz is an educational directory. While we strive for 100% technical accuracy in our roadmaps and 
           components, we are not liable for any specific engineering decisions made by users in their 
           external production environments.
         </p>
 
         <h2 style={{ color: 'var(--text-primary)', marginTop: '3rem', marginBottom: '1rem' }}>2. Open Source Contributions</h2>
         <p>
-          Contributors to the Halqa ecosystem maintain their respective copyright but agree to release 
+          Contributors to the Bulz ecosystem maintain their respective copyright but agree to release 
           the work under the GPL-3.0 License. This ensures the collective roadmap remains free for all developers, forever.
         </p>
 

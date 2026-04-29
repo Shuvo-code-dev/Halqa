@@ -74,7 +74,7 @@ export default function TesterClient({ api }: { api: PublicApi }) {
           <p className="text-xl text-gray-400 leading-relaxed">{api.description}</p>
         </div>
 
-        <div className="halqa-card p-8 bg-white/5 border border-white/10 rounded-2xl mb-8">
+        <div className="bulz-card p-8 bg-white/5 border border-white/10 rounded-2xl mb-8">
           <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
             <Terminal className="w-5 h-5 text-accent" />
             Stream Specifications

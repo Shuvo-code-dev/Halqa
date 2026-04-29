@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import styles from './BlurText.module.css';
 
-export default function BlurText({ text = "Halqa Lab", paused = false }) {
+export default function BlurText({ text = "Bulz Lab", paused = false }) {
   const words = text.split(" ");
 
   return (

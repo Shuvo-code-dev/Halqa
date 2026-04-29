@@ -29,7 +29,7 @@ export default function Navbar() {
     <header className={`${styles.navbar} glass-panel`} ref={navRef}>
       <div className={styles.navContainer}>
         <Link href="/" className={styles.logo}>
-          Halqa<span className={styles.accent}>.</span>
+          Bulz<span className={styles.accent}>.</span>
         </Link>
         
         <GlobalSearch />
@@ -41,7 +41,7 @@ export default function Navbar() {
           <Link href="/apilab" className={styles.navLink}>API Lab</Link>
           <Link href="/projects" className={styles.navLink}>Projects</Link>
           <Link href="/resources" className={styles.navLink}>Resources</Link>
-          <a href="https://github.com/Shuvo-code-dev/Halqa" target="_blank" rel="noopener noreferrer" className={styles.navBtn}>
+          <a href="https://github.com/Shuvo-code-dev/Bulz" target="_blank" rel="noopener noreferrer" className={styles.navBtn}>
             GitHub
           </a>
         </nav>

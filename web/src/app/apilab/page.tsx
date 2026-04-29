@@ -4,8 +4,8 @@ import ApiLabClient from './ApiLabClient';
 import { getFlattenedApis } from '@/lib/api-service';
 
 export const metadata: Metadata = {
-  title: 'Halqa | API Lab',
-  description: 'Master public data streams. Explore, test, and integrate high-performance APIs directly from the Halqa ecosystem.',
+  title: 'Bulz | API Lab',
+  description: 'Master public data streams. Explore, test, and integrate high-performance APIs directly from the Bulz ecosystem.',
 };
 
 export default function ApiLab() {

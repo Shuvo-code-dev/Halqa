@@ -5,7 +5,7 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 /**
  * Scroll Progress Indicator
  * A thin, subtle bar at the top of the viewport tracking scroll depth.
- * Integrated below the navbar with Halqa's accent glow.
+ * Integrated below the navbar with Bulz's accent glow.
  */
 export default function ScrollProgress() {
   const { scrollYProgress } = useScroll();

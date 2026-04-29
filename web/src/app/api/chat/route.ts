@@ -4,8 +4,8 @@ import { NextResponse } from "next/server";
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY || "");
 
 const SYSTEM_PROMPT = `
-You are the "Halqa Brain", the central artificial intelligence of the Halqa (حلقة). 
-Halqa is a premium, high-density developer resource designed to turn "noise into mastery".
+You are the "Bulz Brain", the central artificial intelligence of the Bulz (حلقة). 
+Bulz is a premium, high-density developer resource designed to turn "noise into mastery".
 
 Your Goal:
 Empower developers by providing expert guidance on roadmaps, code components, and public APIs. 
@@ -24,10 +24,10 @@ Knowledge Base:
 
 Tone & Constraints:
 - FLUENT SUPPORT: Support English and Bengali (বাংলা) primarily. If a user asks a question in Bengali, you MUST respond in Bengali. If they ask in English, respond in English.
-- FOCUS: Do not provide code for entire applications; focus on Halqa's specific components and guides.
-- REDIRECT: If a user asks about something outside the developer ecosystem, gently redirect them to Halqa's mastery path.
+- FOCUS: Do not provide code for entire applications; focus on Bulz's specific components and guides.
+- REDIRECT: If a user asks about something outside the developer ecosystem, gently redirect them to Bulz's mastery path.
 - BREVITY: Keep responses concise but information-dense.
-- MINIMALISM: Halqa is a sanctuary. No bookmarks, no external syncs, no distractions. Just resources.
+- MINIMALISM: Bulz is a sanctuary. No bookmarks, no external syncs, no distractions. Just resources.
 `;
 
 export async function POST(req: Request) {
@@ -36,7 +36,7 @@ export async function POST(req: Request) {
 
     if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
       return NextResponse.json(
-        { reply: "Halqa Brain is currently offline. Please ensure the API core is configured." },
+        { reply: "Bulz Brain is currently offline. Please ensure the API core is configured." },
         { status: 500 }
       );
     }
@@ -58,7 +58,7 @@ export async function POST(req: Request) {
     const result = await model.generateContent({
       contents: [
         { role: 'user', parts: [{ text: SYSTEM_PROMPT }] },
-        { role: 'model', parts: [{ text: "Understood. I am now the Halqa Brain. I will guide users through the ecosystem with elite mastery and minimalist focus." }] },
+        { role: 'model', parts: [{ text: "Understood. I am now the Bulz Brain. I will guide users through the ecosystem with elite mastery and minimalist focus." }] },
         ...contents,
         { role: 'user', parts: [{ text: message }] }
       ],

@@ -1,13 +1,13 @@
-# Contributing to Halqa 🤝
+# Contributing to Bulz 🤝
 
-First off, thank you for considering contributing to Halqa! It’s people like you who make open-source projects such a great tool for everyone.
+First off, thank you for considering contributing to Bulz! It’s people like you who make open-source projects such a great tool for everyone.
 
 By participating in this project, you agree to abide by its terms and licensing.
 
 ## How Can I Contribute?
 
 ### Reporting Bugs 🐛
-* Check the [Issues tab](https://github.com/Shuvo-code-dev/halqa/issues) to see if the bug has already been reported.
+* Check the [Issues tab](https://github.com/Shuvo-code-dev/bulz/issues) to see if the bug has already been reported.
 * If not, open a new issue. Clearly describe the problem, including steps to reproduce it and your environment (OS, version, etc.).
 
 ### Suggesting Enhancements ✨
@@ -28,9 +28,9 @@ By participating in this project, you agree to abide by its terms and licensing.
 * Add comments where necessary to help others understand your logic.
 
 ## Licensing ⚖️
-By contributing to Halqa, you agree that your contributions will be licensed under the project's:
+By contributing to Bulz, you agree that your contributions will be licensed under the project's:
 * **Source Code:** GNU General Public License v3.0 (GPL-3.0)
 * **Assets/Documentation:** Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
 
 ---
-Thanks for making Halqa better!
+Thanks for making Bulz better!
