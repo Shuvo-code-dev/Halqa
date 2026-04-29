@@ -2,8 +2,6 @@
 
 <br />
 
-<img src="web\public\og-image.png" width="100%" height="100%" />
-
 ### `[ ⬡ Navigate the Noise. Master the Code. ]`
 
 > A high-fidelity, unified ecosystem for the modern developer —  
@@ -369,12 +367,6 @@ Bulz uses a **dual-license model** to protect both engineering labor and educati
 ---
 
 <div align="center">
-
-<br />
-
-<img src="assets/banner.png" width="100%" height="100%" />
-
-<br/>
 
 _Built with precision. Designed for engineers who care._
 
