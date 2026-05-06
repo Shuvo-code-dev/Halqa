@@ -1,60 +1,57 @@
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 8rem 2rem 6rem;
+  padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-2xl);
 }
 
 .header {
   text-align: center;
-  margin-bottom: 6rem;
+  margin-bottom: var(--spacing-3xl);
 }
 
 .title {
-  font-size: clamp(3rem, 8vw, 4.5rem);
-  font-weight: 900;
-  margin-bottom: 1rem;
-  letter-spacing: -0.04em;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 320px;
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: auto;
+  gap: var(--spacing-lg);
 }
 
 .card {
   position: relative;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-glass);
-  border-radius: 16px;
-  padding: 2.5rem;
+  background: var(--bg-glass);
+  border: var(--border-thin);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   text-decoration: none;
   overflow: hidden;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  transform-style: preserve-3d;
-}
-
-.card.large {
-  grid-column: span 2;
-  grid-row: span 1;
-  background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), transparent), var(--bg-secondary);
+  transition: all var(--transition-base);
+  min-height: 280px;
 }
 
 .card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: var(--accent-muted);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+  background: var(--bg-glass-hover);
 }
 
 .cardGlow {
@@ -65,43 +62,97 @@
   bottom: 0;
   background: radial-gradient(circle at center, var(--accent-glow), transparent 70%);
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity var(--transition-base);
   pointer-events: none;
 }
 
 .card:hover .cardGlow {
-  opacity: 0.15;
+  opacity: 1;
 }
 
 .cardHeader {
   margin-bottom: auto;
-  transform: translateZ(30px);
 }
 
 .meta {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
 }
 
 .difficulty {
   color: var(--accent);
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
 .comingSoonBadge {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--accent-muted);
+  color: var(--accent);
+  font-size: 0.7rem;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
   color: var(--text-muted);
-  font-size: 0.65rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 100px;
-  border: 1px solid var(--border-glass);
-  font-weight: 700;
-  text-transform: uppercase;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+}
+
+.tags {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.8rem;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--accent-muted);
+  color: var(--accent);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-xl);
+  }
+
+  .title {
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .card {
+    min-height: 250px;
+  }
 }
 
 .cardTitle {

@@ -148,26 +148,270 @@
 }
 
 .heroTitle {
-  font-size: clamp(var(--text-6xl), 8vw, var(--text-9xl));
-  font-weight: 900;
-  line-height: 0.85;
-  margin-bottom: 2rem;
-  background: linear-gradient(135deg, var(--slate-50) 0%, var(--slate-300) 50%, var(--slate-50) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: slideInUp 1s var(--transition-smooth) 0.2s both;
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: var(--spacing-2xl);
+  color: var(--text-primary);
   letter-spacing: -0.02em;
+  animation: slideInUp 1s var(--transition-smooth) 0.2s both;
 }
 
 .heroSubtitle {
-  font-size: clamp(var(--text-xl), 2.5vw, var(--text-2xl));
-  color: var(--slate-400);
-  max-width: 800px;
-  margin: 0 auto 4rem;
-  line-height: 1.6;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto var(--spacing-2xl);
+  line-height: 1.7;
   animation: slideInUp 1s var(--transition-smooth) 0.4s both;
   font-weight: 400;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== SEARCH CONTAINER ===== */
+.searchContainer {
+  max-width: 600px;
+  margin: 0 auto var(--spacing-2xl);
+  position: relative;
+  animation: slideInUp 1s var(--transition-smooth) 0.6s both;
+}
+
+.searchBar {
+  display: flex;
+  background: var(--bg-glass);
+  border: var(--border-bright);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  backdrop-filter: blur(var(--blur-lg));
+  transition: all var(--transition-base);
+}
+
+.searchBar:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-focus);
+}
+
+.searchBar:hover {
+  border-color: var(--accent-muted);
+  box-shadow: var(--shadow-glow);
+}
+
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: var(--spacing-lg);
+  font-size: 1rem;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: var(--text-muted);
+}
+
+.searchButton {
+  background: var(--accent);
+  color: var(--bg-primary);
+  border: none;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.searchButton:hover {
+  background: var(--accent-bright);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-glow);
+}
+
+.searchButton:active {
+  transform: translateY(0);
+  background: var(--accent-dim);
+}
+
+/* ===== ACTION BUTTONS ===== */
+.magneticButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: var(--accent);
+  color: var(--bg-primary);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+}
+
+.magneticButton:hover {
+  transform: translateY(-2px);
+  background: var(--accent-bright);
+  box-shadow: var(--shadow-glow);
+}
+
+.magneticButton:active {
+  transform: translateY(0);
+  background: var(--accent-dim);
+}
+
+.magneticButtonSecondary {
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  border: var(--border-bright);
+}
+
+.magneticButtonSecondary:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--accent-muted);
+}
+
+/* ===== BENTO SECTION ===== */
+.bentoSection {
+  padding: var(--spacing-3xl) var(--spacing-lg);
+  position: relative;
+  z-index: var(--z-base);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.sectionLabel {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-lg);
+  display: inline-block;
+}
+
+.sectionTitle {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.bentoItem {
+  background: var(--bg-glass);
+  border: var(--border-thin);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  backdrop-filter: blur(var(--blur-lg));
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 250px;
+}
+
+.bentoItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.bentoItem:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--accent-muted);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+
+.bentoItem:hover::before {
+  opacity: 0.5;
+}
+
+.bentoIcon {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-muted);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.bentoTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+}
+
+.bentoDescription {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .searchContainer {
+    padding: 0 var(--spacing-md);
+  }
+
+  .searchBar {
+    flex-direction: column;
+  }
+
+  .searchButton {
+    width: 100%;
+    padding: var(--spacing-md);
+  }
+
+  .bentoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .magneticButton {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* ===== DOMAIN SEARCH BAR (Hero Centerpiece) ===== */
