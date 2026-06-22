@@ -198,6 +198,19 @@
     "endpoint": "https://api.nytimes.com/svc/topstories/v2/home.json"
   },
   {
+    "id": "xquik",
+    "category": "Social Data",
+    "name": "Xquik API",
+    "method": "GET",
+    "description": "Search X posts, users, trends, media, and monitor accounts.",
+    "auth": "API Key",
+    "https": "Yes",
+    "cors": "Yes",
+    "endpoint": "https://xquik.com/api/v1/x/tweets/search",
+    "schema": "interface XquikTweetSearch { data: unknown[]; meta?: Record<string, unknown>; }",
+    "docsUrl": "https://docs.xquik.com/api-reference/overview"
+  },
+  {
     "id": "openweathermap",
     "category": "Weather",
     "name": "OpenWeatherMap",
